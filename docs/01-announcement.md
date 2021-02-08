@@ -1,5 +1,7 @@
 # 首届 Parity 官方 Substrate 开发者黑客马拉松报名开始了！
 
+[微信原文](https://mp.weixin.qq.com/s/eoWgLSrjptHoyMrAE4UP-g)
+
 <!-- MarkdownTOC autolink="true" lowercase="false" -->
 
 - [活动亮点](#%E6%B4%BB%E5%8A%A8%E4%BA%AE%E7%82%B9)
