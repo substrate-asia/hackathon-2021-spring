@@ -26,13 +26,11 @@
 |2 月 26 日 | Workshop [技术] | Aten | 如何更轻松的开发 WASM 合约 |
 |2 月 28 日 | Office Hour | Maggie (Parity) | 答疑 |
 |3 月 3 日 | Workshop [技术] | 郭斌 | 如何在 ARM 架构下运行 Substrate |
-|3 月 4 日 | Office Hour | Kaichao (Parity) | 答疑 |
-|3 月 7 日 | Office Hour | Jimmy (Parity) | 答疑 |
+|3 月 7 日 | Office Hour | Kaichao (Parity) | 答疑 |
 |3 月 9 日 | Workshop [生态] | SNZ | 如何选择波卡生态的投资赛道 |
-|3 月 10 日 | Office Hour | Junius (Parity) | 答疑 |
-|3 月 14 日 | Office Hour | Maggie (Parity) | 答疑 |
+|3 月 14 日 | Office Hour | Jimmy (Parity) | 答疑 |
 |3 月 15 日 | Workshop [生态] | Hashkey | 投资波卡生态项目的5个纬度 |
-|3 月 17 日 | Office Hour | Kaichao (Parity) | 答疑 |
+|3 月 17 日 | Office Hour | Junius (Parity) | 答疑 |
 |3 月 18 日 | Workshop [生态] | Helena (Parity) | Parity 与 Web3 基金会将如何支持开发者加入波卡生态 |
 
 - Workshop 为上述日期的 19:00 - 20:00 (UTC +8 / 中国时间)
