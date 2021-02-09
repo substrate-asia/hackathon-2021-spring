@@ -1,5 +1,10 @@
 # 参赛类别
 
+## 目录
+
+<details>
+  <summary>点击打开看目录</summary>
+
 <!-- MarkdownTOC -->
 
 - [类别 1：构建平行链 + 独立链](#%E7%B1%BB%E5%88%AB-1%E6%9E%84%E5%BB%BA%E5%B9%B3%E8%A1%8C%E9%93%BE--%E7%8B%AC%E7%AB%8B%E9%93%BE)
@@ -28,6 +33,8 @@
 - [类别 5：开放黑客](#%E7%B1%BB%E5%88%AB-5%E5%BC%80%E6%94%BE%E9%BB%91%E5%AE%A2)
 
 <!-- /MarkdownTOC -->
+
+</details>
 
 ## 类别 1：构建平行链 + 独立链
 
