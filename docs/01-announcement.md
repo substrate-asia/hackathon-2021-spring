@@ -2,34 +2,42 @@
 
 [微信原文](https://mp.weixin.qq.com/s/eoWgLSrjptHoyMrAE4UP-g)
 
-<!-- MarkdownTOC autolink="true" -->
+## 目录
+
+<details>
+  <summary>点击打开看目录</summary>
+
+
+<!-- MarkdownTOC -->
 
 - [活动亮点](#%E6%B4%BB%E5%8A%A8%E4%BA%AE%E7%82%B9)
 - [参赛类别](#%E5%8F%82%E8%B5%9B%E7%B1%BB%E5%88%AB)
-- [Hackathon 奖金](#Hackathon-%E5%A5%96%E9%87%91)
+- [Hackathon 奖金](#hackathon-%E5%A5%96%E9%87%91)
 - [评委](#%E8%AF%84%E5%A7%94)
 - [比赛形式](#%E6%AF%94%E8%B5%9B%E5%BD%A2%E5%BC%8F)
 - [你将收获](#%E4%BD%A0%E5%B0%86%E6%94%B6%E8%8E%B7)
 - [评分维度](#%E8%AF%84%E5%88%86%E7%BB%B4%E5%BA%A6)
 - [合法合规性](#%E5%90%88%E6%B3%95%E5%90%88%E8%A7%84%E6%80%A7)
 - [比赛提交](#%E6%AF%94%E8%B5%9B%E6%8F%90%E4%BA%A4)
-  - [A. 代码提交（3月15日）](#A-%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4%EF%BC%883%E6%9C%8815%E6%97%A5%EF%BC%89)
-  - [B. Demo Day 演示前修改审核阶段（3月15日-3月18日）](#B-Demo-Day-%E6%BC%94%E7%A4%BA%E5%89%8D%E4%BF%AE%E6%94%B9%E5%AE%A1%E6%A0%B8%E9%98%B6%E6%AE%B5%EF%BC%883%E6%9C%8815%E6%97%A5-3%E6%9C%8818%E6%97%A5%EF%BC%89)
-  - [C. 赛前淘汰（3月18日-3月19日）](#C-%E8%B5%9B%E5%89%8D%E6%B7%98%E6%B1%B0%EF%BC%883%E6%9C%8818%E6%97%A5-3%E6%9C%8819%E6%97%A5%EF%BC%89)
-  - [D. Demo Day 演示提交内容规则（3月19日）](#D-Demo-Day-%E6%BC%94%E7%A4%BA%E6%8F%90%E4%BA%A4%E5%86%85%E5%AE%B9%E8%A7%84%E5%88%99%EF%BC%883%E6%9C%8819%E6%97%A5%EF%BC%89)
+  - [A. 代码提交（3月15日）](#a-%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A43%E6%9C%8815%E6%97%A5)
+  - [B. Demo Day 演示前修改审核阶段（3月15日-3月18日）](#b-demo-day-%E6%BC%94%E7%A4%BA%E5%89%8D%E4%BF%AE%E6%94%B9%E5%AE%A1%E6%A0%B8%E9%98%B6%E6%AE%B53%E6%9C%8815%E6%97%A5-3%E6%9C%8818%E6%97%A5)
+  - [C. 赛前淘汰（3月18日-3月19日）](#c-%E8%B5%9B%E5%89%8D%E6%B7%98%E6%B1%B03%E6%9C%8818%E6%97%A5-3%E6%9C%8819%E6%97%A5)
+  - [D. Demo Day 演示提交内容规则（3月19日）](#d-demo-day-%E6%BC%94%E7%A4%BA%E6%8F%90%E4%BA%A4%E5%86%85%E5%AE%B9%E8%A7%84%E5%88%993%E6%9C%8819%E6%97%A5)
 - [关于所有权和知识产权](#%E5%85%B3%E4%BA%8E%E6%89%80%E6%9C%89%E6%9D%83%E5%92%8C%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83)
-- [Hackathon 周末时间地点安排](#Hackathon-%E5%91%A8%E6%9C%AB%E6%97%B6%E9%97%B4%E5%9C%B0%E7%82%B9%E5%AE%89%E6%8E%92)
-  - [A. 重要时间安排](#A-%E9%87%8D%E8%A6%81%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92)
-  - [B. 48 小时 Hackathon 赛程](#B-48-%E5%B0%8F%E6%97%B6-Hackathon-%E8%B5%9B%E7%A8%8B)
-  - [C. 地址](#C-%E5%9C%B0%E5%9D%80)
-- [谁适合参加 Hackathon？](#%E8%B0%81%E9%80%82%E5%90%88%E5%8F%82%E5%8A%A0-Hackathon%EF%BC%9F)
-- [如何报名？](#%E5%A6%82%E4%BD%95%E6%8A%A5%E5%90%8D%EF%BC%9F)
-  - [Step1](#Step1)
-  - [Step2](#Step2)
+- [Hackathon 周末时间地点安排](#hackathon-%E5%91%A8%E6%9C%AB%E6%97%B6%E9%97%B4%E5%9C%B0%E7%82%B9%E5%AE%89%E6%8E%92)
+  - [A. 重要时间安排](#a-%E9%87%8D%E8%A6%81%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92)
+  - [B. 48 小时 Hackathon 赛程](#b-48-%E5%B0%8F%E6%97%B6-hackathon-%E8%B5%9B%E7%A8%8B)
+  - [C. 地址](#c-%E5%9C%B0%E5%9D%80)
+- [谁适合参加 Hackathon？](#%E8%B0%81%E9%80%82%E5%90%88%E5%8F%82%E5%8A%A0-hackathon)
+- [如何报名？](#%E5%A6%82%E4%BD%95%E6%8A%A5%E5%90%8D)
+  - [Step1](#step1)
+  - [Step2](#step2)
 - [合作方/赞助商/志愿者招募](#%E5%90%88%E4%BD%9C%E6%96%B9%E8%B5%9E%E5%8A%A9%E5%95%86%E5%BF%97%E6%84%BF%E8%80%85%E6%8B%9B%E5%8B%9F)
-- [准备好了吗？](#%E5%87%86%E5%A4%87%E5%A5%BD%E4%BA%86%E5%90%97%EF%BC%9F)
+- [准备好了吗？](#%E5%87%86%E5%A4%87%E5%A5%BD%E4%BA%86%E5%90%97)
 
 <!-- /MarkdownTOC -->
+
+</details>
 
 ![01](../assets/01-announcement/01.png)
 
