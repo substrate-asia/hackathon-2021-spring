@@ -17,21 +17,21 @@
 ## Workshop 及 Office Hour 时间表
 
 |日期     | 类别 | 主讲者 | 事项 |
-|---------|------|------|-------|
-|2 月 7 日 | Office Hour | Jimmy (Parity) | 答疑 |
-|2 月 8 日 | Workshop [技术] | Jimmy (Parity) | 参赛任务涉及到的Substrate技术领域和内容 |
-|2 月 18 日 | Workshop [技术] | 陈锡亮 (Acala Network) | 如何利用 ORML 实现多币种支持和 NFT |
-|2 月 21 日 | Office Hour | Junius (Parity) | 答疑 |
-|2 月 23 日 | Workshop [技术] | 吴逸飞 | Offchain Workers 入门 |
-|2 月 26 日 | Workshop [技术] | Aten (Patract Labs) | 如何更轻松的开发 WASM 合约 |
-|2 月 28 日 | Office Hour | Maggie (Parity) | 答疑 |
-|3 月 3 日 | Workshop [技术] | 郭斌 | 如何在 ARM 架构下运行 Substrate |
-|3 月 7 日 | Office Hour | Kaichao (Parity) | 答疑 |
-|3 月 9 日 | Workshop [生态] | SNZ | 如何选择波卡生态的投资赛道 |
-|3 月 14 日 | Office Hour | Jimmy (Parity) | 答疑 |
-|3 月 15 日 | Workshop [生态] | 肖晓 (Hashkey) | 投资波卡生态项目的5个纬度 |
-|3 月 17 日 | Office Hour | Junius (Parity) | 答疑 |
-|3 月 18 日 | Workshop [生态] | Helena (Parity) | Parity 与 Web3 基金会将如何支持开发者加入波卡生态 |
+|--------|------|------|-------|
+|2月7日  | Office Hour | Jimmy (Parity) | 答疑 |
+|2月8日  | Workshop[技术] | Jimmy (Parity) | 参赛任务涉及到的Substrate技术领域和内容 |
+|2月18日 | Workshop[技术] | 陈锡亮 (Acala) | 如何利用 ORML 实现多币种支持和 NFT |
+|2月21日 | Office Hour | Junius (Parity) | 答疑 |
+|2月23日 | Workshop[技术] | 吴逸飞 | Offchain Workers 入门 |
+|2月26日 | Workshop[技术] | Aten (Patract Labs) | 如何更轻松的开发 WASM 合约 |
+|2月28日 | Office Hour | Maggie (Parity) | 答疑 |
+|3月3日  | Workshop[技术] | 郭斌 | 如何在 ARM 架构下运行 Substrate |
+|3月7日  | Office Hour | Kaichao (Parity) | 答疑 |
+|3月9日  | Workshop[生态] | SNZ | 如何选择波卡生态的投资赛道 |
+|3月14日 | Office Hour | Jimmy (Parity) | 答疑 |
+|3月15日 | Workshop[生态] | 肖晓 (Hashkey) | 投资波卡生态项目的5个纬度 |
+|3月17日 | Office Hour | Junius (Parity) | 答疑 |
+|3月18日 | Workshop[生态] | Helena (Parity) | Parity 与 Web3 基金会将如何支持开发者加入波卡生态 |
 
 - Workshop 为上述日期的 19:00 - 20:00 (UTC +8 / 中国时间)
 - Office Hours 为上述日期的 19:00 - 20:00 (UTC +8 / 中国时间)
