@@ -33,8 +33,8 @@
 |3月17日 | Office Hour | Junius (Parity) | 答疑 |
 |3月18日 | Workshop[生态] | Helena (Parity) | Parity 与 Web3 基金会将如何支持开发者加入波卡生态 |
 
-- Workshop 为上述日期的 19:00 - 20:00 (UTC +8 / 中国时间)
-- Office Hours 为上述日期的 19:00 - 20:00 (UTC +8 / 中国时间)
+- Workshop 及 Office Hour 为上述日期的 19:00 - 20:00 (UTC +8 / 中国时间)
+- 到这里 [实时收听 Workshop 及 Office Hour](https://parity.link/asia-hackathon-wo) (用[腾讯会议](https://meeting.tencent.com/))
 
 ## 提交参赛项目信息
 
