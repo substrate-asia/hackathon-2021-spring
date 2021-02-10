@@ -35,6 +35,7 @@
 
 - Workshop 及 Office Hour 为上述日期的 19:00 - 20:00 (UTC +8 / 中国时间)
 - 到这里 [实时收听 Workshop 及 Office Hour](https://parity.link/asia-hackathon-wo) (用[腾讯会议](https://meeting.tencent.com/))
+- 到我们 [B 站频道](https://space.bilibili.com/67358318) 观看过往录播
 
 ## 提交参赛项目信息
 
