@@ -38,24 +38,24 @@ growth space in the next two to three years.
 
 - Go-RPC client cannot work,after open an issue for the repo, we change to node.js sdk as our on-chain data and combine the go server to cache on-chain dat
 
+## Business plan for the next 6 months
 
-
-## Plan
-
-- Testnet 2021 June
-  - Web interactive interface completed 
-  - Business cooperation started, import offline resources on-chain
-- Public version 2021 August
-  - OpenApi complete 
-  - Community operation officially 
-  - Introduce at least two NFT issuers start auction on-chain
-- ERC-721 ERC-1155 support
-  - Asset gateway centralize
-  - Asset Bridge decentrlize decentralize
-
+* Complete financing in April
+* Complete testnet development in May
+* Start to expand NFT resource cooperation in May
+* Complete the mainnet launch and cross-chain solution in August
 
 ## Market positioning and research
+### research
 
-WIP
+Since the second half of 2020, the NFT market has exploded, with daily trading users increasing by 4 times, and daily transaction volume increasing by 10 times. NFT has become a hot spot in the entire crypto world. Judging from the current development trend, this year's data will increase by more than 10 times. NFT is currently in the industry's public technology infrastructure construction stage. NFT issuance and trading are its most important track. The existing head products include Opensea, Superrare, Rarible, NFTMart is closer to Opensea in terms of product form, but NFTMart is more capable
 
-## 现在拥有的资源及项目运营到什么程度
+###  NFTMart market positioning
+
+NFTMart.io will use the Asian digital art market and trendy toys as the entry point in its operations to target the global market. NFTMart aims to integrate the NFT assets of the entire network and become the best platform for players to participate in NFT transactions
+
+
+
+### Resources and operating status
+
+The R&D team has 5 people and has not yet started operations. Before the product goes online, we reach more cooperation with NFT resources
