@@ -102,6 +102,8 @@
 
 1. [首届 Parity 官方 Substrate 开发者黑客马拉松报名开始](./docs/01-announcement.md)
 2. [Polkadot Hackathon 豪华评审团19位导师公布](./docs/02-judges.md)
+3. [Polkadot Hackathon 前 15 支队伍项目概览](https://mp.weixin.qq.com/s/NOmlm2EToCyibF8e7qzeyg)
+4. [Polkadot Hackathon 全部参赛队伍项目概览 (下篇)](https://mp.weixin.qq.com/s/aHDuL6QZkBhNdBD4PnLdYg)
 
 ## 联络
 
