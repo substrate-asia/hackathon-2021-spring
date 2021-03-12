@@ -1,9 +1,12 @@
-#ForgeLabs
+#OAK Foundation
 ---
 
 ### 项目/团队介绍
 
-OAK Foundation (网站 https://oak.tech) 团队自2017年以来深耕区块链技术，曾制作并运营Ethereum、EOS、RSK上的Dapp和手机钱包，多年以来积累了深厚的区块链开发履历，创始人Chris Li从2017年投资首轮波卡公募，是波卡币的信仰者和长期持有者，坚信波卡的价值在两年之内会超越以太坊成为最大的跨链智能合约平台。此次参加Substrate开发者黑客马拉松我们团队里四位有Rust经验的资深区块链开发者会全部参赛，并由我们的美女产品经理最后上台展示项目。希望通过这次参加比赛我们能吸引更多的全职rust开发者，跟我们一起在波卡上做DAO。
+OAK(网站 https://oak.tech)是Substrate网络的自动化中间件。OAK Foundation团队自2017年以来深耕区块链技术，曾制作并运营Ethereum、EOS、RSK上的智能合约和Dapp，多年以来积累了深厚的区块链开发履历。创始人Chris Li从2017年投资首轮波卡公募，是DOT的信仰者和长期持有者，坚信波卡的价值在两年之内会超越以太坊成为最大的跨链智能合约平台。此次参加Substrate开发者黑客马拉松我们团队里四位有Rust经验的资深区块链开发者会全部参赛，并由我们的产品经理最后上台展示项目。希望通过这次参加比赛我们能吸引更多的全职Rust开发者，跟我们一起开发波卡生态。
+
+logo-large.png![image](https://user-images.githubusercontent.com/2616844/110753830-ea250080-81fb-11eb-99dc-c9c7f587e1fc.png)
+logo-small.png![image](https://user-images.githubusercontent.com/2616844/110753853-f0b37800-81fb-11eb-8d07-2e1cb39e3d10.png)
 
 
 ### 参赛项目名称和所属参赛类别
@@ -23,7 +26,6 @@ Polkadot.js是波卡生态里面一个重要的工具，其作用是用来在浏
 
 ### 有什么行业应用场景用到你的方案
 像以太坊上的dapp一样，所有的波卡dapp在浏览器端运行的时候，都需要polkadot.js插件来签名，现在我们还没有看到dapp大量的涌现，但是当应用场景多起来的时候，现有的插件功能将远远不能满足生态的需求，所以我们添加的功能在未来会有很大的潜能。
-
 
 
 
