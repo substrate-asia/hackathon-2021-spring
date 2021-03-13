@@ -15,7 +15,7 @@ Decentralzied Anonymous eXchange (DAX) is a decentralized anonymous exchange sch
 * Kenny Li: [LinkedIn](https://www.linkedin.com/in/kennymuli/), [Github](https://github.com/kennymuli) 
 * Victor Ji, [LinkedIn](https://www.linkedin.com/in/canghai-victor-ji-cpa-37688a5b/), 
 * Qiudong Xia, [Github](https://github.com/xialovexia)
-* Zhenfei Zhang [LinkedIn](https://www.linkedin.com/in/zhenfeizhang/), Github(https://github.com/zhenfeizhang)
+* Zhenfei Zhang [LinkedIn](https://www.linkedin.com/in/zhenfeizhang/), [Github](https://github.com/zhenfeizhang)
 
 ### Team Website	
 * https://manta.network
