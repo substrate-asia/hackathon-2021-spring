@@ -2,7 +2,7 @@
 
 ## Project Overview :page_facing_up: 
 
-[Manta Network](www.manta.network) is the first privacy-preserving DeFi stack powered by zkSNARK. 
+[Manta Network](www.manta.network) is the first privacy-preserving DeFi stack powered by zkSNARK. ([Join us!](https://angel.co/company/manta-network/jobs))
 It includes the Decentralized Anonymous Payment (DAP) and Decentralzied Anonymous eXchange (DAX). 
 Decentralized Anonymous Payment (DAP) is a decentralized anonymous payment scheme for Polkadot and Parachain assets (including wrapped assets and stablecoins). 
 Decentralzied Anonymous eXchange (DAX) is a decentralized anonymous exchange scheme based on AMM and zkSNARK.
