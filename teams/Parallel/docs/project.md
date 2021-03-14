@@ -3,7 +3,7 @@ Parallel Finance
 
 ### Project background
 
-Parallel finance aims to be the first and largest decentralized lending protocol built on top of the polkadot ecosystem. Currently, there is a substantial demand from DOT and KSM token holders to access cash liquidity and add leverage, and there isn't a mature solution on the market yet. In addition to providing lending and borrowing features, we will also allow users to earn "double interests" by staking their tokens and their profits from deposits. 
+Currently, there is a substantial demand from DOT and KSM token holders to access cash liquidity and earn interests from their assets, and there isn't a mature solution on the market. Parallel finance aims to be the first and largest decentralized lending protocol built on top of the polkadot ecosystem. In addition to providing lending and borrowing features, we will also allow users to earn "double interests" by offering a way for users to earn interests from staking and lending their tokens simultaneously.
 
 ### Table of contents
 ----
@@ -22,8 +22,7 @@ Parallel finance aims to be the first and largest decentralized lending protocol
 
 ### Technology
 
-The loans protocol get inspired by compound protocol and the blockchain is developed on substrate 3.0. 
-We get tons of benefit from substrate for its efficient and scalable. The following is the key design:
+The lending protocol was inspired by compound protocol and our blockchain solution is developed on substrate 3.0, which allows for efficiency and scalability. Here's our key design:
 #### The workflow of Parallel
 ----
 ![text](../images/work_flow_of_Parallel.png)
@@ -97,9 +96,9 @@ unstake_internal(who: &T::AccountId, amount: Balance)
 
 #### Interest Rate Model
 ----
-The interest rate in Parallel finance is dynamically determined by demand and supply. Therefore, the borrowing and supply interest could vary in different block.
+The interest rate in Parallel finance is dynamically determined by the supply and demand. Therefore, the borrow and supply interests could vary in different blocks.
 ##### 1. Exchange Rate
-When lender deposits asset to the money market, it will be converted to cTokens based on the exchange rate. Lender earn interest through the cToken's exchange rate
+When a lender deposits an asset to the money market, it will be converted to cTokens based on the exchange rate. The lender earns interest through the appreciation of cToken's exchange rate
 ```
 exchangeRate = (totalCash + totalBorrows - totalReserve) / totalSupply
 ```
@@ -110,12 +109,12 @@ Utilization rate represents the percentage of borrows in the total money market.
 UtilizationRatio = Borrows / (Cash + Borrows)
 ```
 ##### 3. Reserves
-Parallel finance converts certain portion of borrower interest into reserves
+Parallel finance converts a certain portion of borrower interest into reserves
 ```
 totalReserve_t+1 = interestAccumulated * reserveFactor + totalReserve_t
 ```
 ##### 4. Borrow Rate
-Parallel finance implements the jump interest model. When the utilization rate exceeds the kinks, jump rate will be applied to the excess portion.
+Parallel finance implements the jump interest model. When the utilization rate exceeds the kinks, the jump rate will be applied to the excess portion.
 
 If utilization rate <= kink,
 ```
@@ -148,19 +147,16 @@ Borrow Interest Rate = Base Rate + Multiplier ∗ Utilization Rate + (Utilizatio
 - [x] Lenders can deposit asset and accure interest
 - [x] Borrowers can use assets as collateral to borrow
 - [x] Off chain worker price feed
-- [x] Auto luquadition by off chain worker
+- [x] Auto liquidation by off chain worker
 - [ ] Staking DOT to earn double interests from both staking and lending (In progess)
 
 
 
 ### Challenge and Solution
 ---
-- We noticed many DOT and KSM would be staked as validators/nominators. Token holders may want to utilize their staked tokens.
-
-  User can stake DOT through Parallel finance and get back xDOT. User can lend out xDOT to earn additional interest or use xDOT as collateral to borrow other assets. We will explore more use case in the future.
-- We couldn't find a matured oracle solution during the development. 
-  
-  We implement price feed using off chain worker. We will use multple sources and time-weighted average price in the future development.
+- We noticed many DOT and KSM tokens will be staked as validators/nominators. However, token holders may want to earn interests with their staked tokens.
+Through Parallel Finance, users can stake DOT and get xDOT in return. Users can then lend out xDOT to earn interests or use it as collateral to borrow other assets. We will explore more use case in the future.
+- We couldn't find a matured oracle solution during the development, so we implemented the price feed using off-chain worker, which will use multiple sources and time-weighted average price.
 
 
 ### References
