@@ -8,7 +8,7 @@ Parallel finance aims to be the first and largest lending protocol on top of pol
 ----
 <!--ts-->
    * [Technology](#technology)
-      * [work flow](#the-work-flow-of-parallel)
+      * [workflow](#the-workflow-of-parallel)
       * [Storage](#storage)
       * [Calls](#calls)
       * [Interest Rate Model](#interest-rate-model)
@@ -20,10 +20,10 @@ Parallel finance aims to be the first and largest lending protocol on top of pol
 <!--te-->
 
 ### Technology
-----
+
 The loans protocol get inspired by compound protocol and the blockchain is developed on substrate 3.0. 
 We get tons of benefit from substrate for its efficient and scalable. The following is the key design:
-#### The work flow of Parallel
+#### The workflow of Parallel
 ----
 ![text](../images/work_flow_of_Parallel.png)
 
@@ -98,7 +98,7 @@ unstake_internal(who: &T::AccountId, amount: Balance)
 ----
 The interest rate in Parallel finance is dynamically determined by demand and supply. Therefore, the borrowing and supply interest could vary in different block.
 ##### 1. Exchange Rate
-When lender deposits asset to the money market, it will be converted to cTokens based on the exchange rate. Lender earn interest throught the cToken's exchange rate
+When lender deposits asset to the money market, it will be converted to cTokens based on the exchange rate. Lender earn interest through the cToken's exchange rate
 ```
 exchangeRate = (totalCash + totalBorrows - totalReserve) / totalSupply
 ```
@@ -114,7 +114,7 @@ Parallel finance converts certain portion of borrower interest into reserves
 totalReserve_t+1 = interestAccumulated * reserveFactor + totalReserve_t
 ```
 ##### 4. Borrow Rate
-Parallel implements the jump interest model. When the utilization rate exceeds the kinks, jump rate will be apllied to the excess portion.
+Parallel finance implements the jump interest model. When the utilization rate exceeds the kinks, jump rate will be applied to the excess portion.
 
 If utilization rate <= kink,
 ```
@@ -148,11 +148,18 @@ Borrow Interest Rate = Base Rate + Multiplier ∗ Utilization Rate + (Utilizatio
 - [x] Borrowers can use assets as collateral to borrow
 - [x] Off chain worker price feed
 - [x] Auto luquadition by off chain worker
-- [] Staking DOT to earn double interests from both staking and lending (In progess)
+- [ ] Staking DOT to earn double interests from both staking and lending (In progess)
 
 
 
 ### Challenge and Solution
+---
+- We noticed many DOT and KSM would be staked as validators/nominators. Token holders may want to utilize their staked tokens.
+
+  User can stake DOT through Parallel finance and get back xDOT. User can lend out xDOT to earn additional interest or use xDOT as collateral to borrow other assets. We will explore more use case in the future.
+- We couldn't find a matured oracle solution during the development. 
+  
+  We implement price feed using off chain worker. We will use multple sources and time-weighted average price in the future development.
 
 
 ### References
