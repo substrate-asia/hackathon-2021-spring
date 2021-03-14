@@ -103,3 +103,113 @@ PolkaBTC基于波卡平行链，采用了XCLAIM框架开发。允许用户1:1锁
 * wBTC
 
 wBTC等以太生态中的BTC跨链项目是中心化控制的双向锚定跨链项目。只能由具备完整KYC/AML资格的注册商家发起。
+
+
+
+# Background of the project
+
+There are thousands of public chains in the current blockchain world, and each project has its own innovation. However, a single public chain can't cover all application scenarios and meet all innovation needs. This has led to the emergence of cross-chain technology. Cross-chain technology can realize the transfer of assets between different blockchains, read and verify the status and events of other chains and improve the processing capability of the blockchain.
+
+The current cross-chain technology of blockchain mainly includes notary mechanism, side chain/relay chain, and hash lock. Polkadot is the technical representative of cross-chain realization by side chain/relay chain. Parachains developed with substrate can be easily connected to the Polkadot network. At the same time, Polkadot provides transit bridge services to connect existing public chains (such as BTC, ETH, etc.) to the Polkadot ecosystem.
+
+The current transit bridge projects in the Polkadot ecology mainly include PolkaBTC, Snowfork, etc. After studying these projects, we found that they have the following shortcomings:
+
+1. It is mostly developed at the level of parachains. In this case, slots need to be obtained through auctions, which is costly
+2. Most of them aim at value transfer, and can't provide verification of other chain's status, let alone provide custom format transaction verification for other parachains or contracts
+3. A project can only connect one public chain, which is inefficient
+
+In summary, the existing transit bridge projects have low scalability and high operating costs. So we proposed the InkBridge project. InkBridge is written based on the Ink language and uses Wasm contract technology to build a transit bridge. It can be deployed to all parachains that support Wasm contracts. The transit bridges of multiple public chains (BTC, ETH, etc.) will perform as a platform for upper-level applications. And it's not just transferring BTC to the Polkadot but also the verification of chain data and status. Community project parties can call the interface provided by the contract to connect to InkBridge to achieve more functions. Implementation at the contract level greatly improves scalability while also reducing access costs. At the same time, InkBridge relies on the free development tools and infrastructure services provided by the Patract smart contract ecosystem and uses their tool suites such as Redspot, Europa and Elara to facilitate the deployment and debugging of contracts and front-ends, which greatly reduces the learning costs of organizations and developers.
+
+InkBridge will first provide basic transit bridge services for BTC. At the same time, in order to help organizations and developers to connect to our project, we also provide a demo application(InkBTC), which implements basic BTC locking and transfer functions.
+
+
+# Project Technical Design
+## InkBridge
+![InkBridge](pic/1.png)
+
+In the architecture of InkBridge, it mainly includes four parts: InkBridge contract, Relayer, front-end, and upper application.
+
+### InkBridge contract
+The InkBridge contract is the most core part of this project, which mainly provides chain information storage and upper-level application interfaces.
+
+* Chain information storage
+
+The InkBridge contract is a light node implemented at the contract layer, accepting block information submitted by the relayer and verifying the difficulty of the block. After successful verification, it will update the latest block and distribute rewards to Relayer.
+
+* Upper-level application interfaces
+
+The InkBridge contract allows upper-level applications to verify transactions and blocks, and obtain block and transaction information of the target blockchain. Other projects can submit the transaction hash and corresponding merkle tree information to verify the legitimacy of the transaction, thereby implementing its own application logic. The InkBridge contract will charge part of the fees to the connected projects to pay for the maintenance of the Relayer and the development.
+
+### Relayer
+Relayer obtains the latest block of the target chain and submits it to the InkBridge contract. In order to incentivize the relayer to submit the block, the first relayer who submits successfully will be rewarded.
+
+### front end
+The front end will request internal storage information from the InkBridge contract in real time, and show users the latest block header of the blockchain stored in Bridge. Verification requests and results from other projects will also be listed.
+
+### Upper application
+The upper application obtains the block and transaction information of the target chain by calling the interface of the InkBridge contract, and verifies the relevant information to implement its own logic.
+
+
+## InkBTC
+![InkBTC](pic/2.png)
+
+InkBTC is a sample demo provided by us, which demonstrates how to transfer BTC to the Polkadot network by interacting with our InkBridge. The steps to obtain InkBTC are as follows.
+1. The user initiates a request for the BTC deposit address to the InkBTC contract through the front-end provided by us. The contract will return a BTC address to the user.
+2. The user sends BTC to the obtained address.
+3. After the transaction is packed, the user sends the hash of the transaction to the InkBTC contract for verification.
+4. After the contract receives the transaction verification request, it will initiate a transaction verification request to the InkBridge contract to ensure that the verification transaction submitted by the user has been packed and is irreversible.
+5. After confirming the authenticity of the transaction, InkBTC will send the corresponding ERC20 BTC to the user.
+
+
+# Project Progress
+The current project has been basically completed, mainly including the following content.
+1. InkBridge contract. The contract can receive the relayers' submission of the block, verify it and update the longest chain in the contract. At the same time, we also completes the interface provided to the external contracts for other projects to query the stored chain information and verify the transactions.
+2. Relayer. A Relayer client has been completed, which can be used to submit the latest block information to the InkBridge contract.
+3. InkBridge front end. The front end of InkBridge has been completed, which can dynamically display the longest chain information stored in the contract and transaction verification requests.
+4. InkBTC sample application. The front end and contract of the sample application have been completed, and BTC can be transferred to the Polkadot parachain on testnet.
+
+
+# Technical difficulties and solutions
+
+
+# Project Plan
+
+## Development Plan
+1. In the first quarter of 2021, the transit bridge will support BTC, and the transit bridge and sample applications will be deployed to Jupiter, Canvas and other test networks that support wasm contracts for projects and developers to test
+
+2. Second quarter of 2021
+* Collect the suggestions of other projects and developers, improve the transit bridge function, improve the sample application, and formally deploy InkBridge to Jupiter, Canvas and other main networks
+* Realize the ETH support of the transit bridge and test related functions on the test network to ensure that the functions are completed and deploy to the main network
+* Improve the economic model of charging fees and incentive Relayers. Complete the DAO model of community governance
+* Further rely on the tool suite of the Patract platform to provide developers and users with better support and experience
+
+3. Follow-up development plan
+* Research and develop the transit bridge of non-POW chains
+
+## Operation Plan
+* Improve the development documentation to facilitate projects and developers to access the project and the deployment of Relayer nodes
+* Develop a reasonable governance model, and use community governance to determine key parameters and access to new transit bridges, etc.
+* Seek cooperation with well-known wasm contract platforms such as Patract
+* Submit the project to various DApp stores and platforms (such as PatraStore, etc.) to increase the visibility of the project
+* Establish a developer community to receive suggestions from projects and developers to improve the product
+
+## Business Model
+* The team is a non-profit organization, and all fees collected will be transferred to the treasury to pay for relayer rewards and cover development costs
+* At the beginning of the project, we will run the relay node to ensure that the chain information stored in InkBridge is synchronized with the main network of the target chain
+* After more project connected to InkBridge, a verification fee will be charged and the fee will be transferred to the treasury. The treasury is managed by the community's DAO organization and will be rewarded regularly based on Relayer's performance. The development team needs to apply to the DAO organization for rewards to cover its own development costs.
+
+
+# Market Position and Research
+## Market Position
+InkBridge is an underlying platform that provides cross-chain services based on wasm contract technology. Its main purpose is to provide cross-chain information transmission and verification for the on-chain contracts and parachains in the Polkadot ecology. We are not only satisfied with cross-chain value transfer, but have further implemented a contract-based light node. In terms of scalability, we write based on the wasm contract, which can not only be deployed to all wasm contract platforms, but also the contract interfaces greatly reduce the cost of other projects who want to connect to our bridge. We do not constitute a competitive relationship with other cross-chain projects in the ecosystem (such as PolkaBTC). On the contrary, other cross-chain projects can also use our interfaces to assist their own development.
+
+## Market Research
+There is no underlying platform for cross-chain information transmission and verification in the current Polkadot ecosystem. Other cross-chain projects such as PolkaBTC and wBTC are BTC value-anchored projects. As we've mentioned before, these projects have no competitive relationship with our projects.
+
+* PolkaBTC
+
+PolkaBTC is based on the Polka Parachain and is developed using the XCLAIM framework. Allow users to lock BTC 1:1 and mint PolkaBTC, thereby transferring the value of BTC to the Polkadot Ecology.
+* wBTC
+
+BTC cross-chain projects in the ethereum ecosystem such as wBTC are two-way anchored cross-chain projects under centralized control. It can only be initiated by registered merchants with complete KYC/AML qualifications.
+
