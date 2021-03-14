@@ -9,7 +9,7 @@ Currently, there is a substantial demand from DOT and KSM token holders for cash
 ----
 <!--ts-->
    * [Technology](#technology)
-      * [workflow](#the-workflow-of-parallel)
+      * [Workflow](#the-workflow-of-parallel)
       * [Storage](#storage)
       * [Calls](#calls)
       * [Interest Rate Model](#interest-rate-model)
