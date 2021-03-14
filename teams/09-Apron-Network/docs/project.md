@@ -1,4 +1,4 @@
-# 项目背景/原由/要解决的问题
+## Background and Overview
 With the development of Ethereum and the enhancement of the smart contracts, an increasing number of developers are getting involved in the construction of an open-source community, and are realising their ideals using smart contracts. Since the Ethereum Network launched, DApps have exploded in popularity. As of December 1st, 2020, there have been  a total of 14,161 smart contracts executed and 5,714 DApps deployed on Ethereum with daily volume reaching upwards of $1.2 billion.
 
 Operating Ethereum nodes has always been an expensive and energy intensive task. Initially, most Ethereum nodes were able to provide public services for the community. Now, however, most Ethereum nodes are exclusively serving the specific business interests of operators. Due to the restrictions of public operation and maintenance costs, and the lack of an ecosystem for Ethereum node service operators to find corresponding community developers, fewer and fewer Ethereum node operators are willing to make node services public. Consequently, it has become increasingly difficult for DApp developers to operate an Ethereum node or find a stable and usable Ethereum node service.
@@ -11,7 +11,7 @@ Our team at Apron Labs had been developing dApps in the Ethereum ecosystem and e
 
 In order to solve the problems of infrastructure Service Discovery, Service Call and Service Billing, Apron Labs proposed Apron Network as a solution to improve the infrastructure service ecosystem of the Web 3.0 world. The Web 3.0 era makes it possible for developers to freely provide and use any infrastructure services, which will connect the real world to the Web 3.0 world and return freedom to the individual.
 
-# 项目技术设计
+## Architecture and Design
 Apron Network is based on the Substrate framework and can be a parachain of both Kusama andPolkadot. The nodes running in Apron Network are divided into two types: the Apron Pillar Node and the Apron Nodes. In addition to the nodes[On the nodes which are able to run, Apron DAO will manage Apron Network. The entire Apron Network will be composed of the Apron Pillar Node, the Apron Nodes, Apron Service Marketplace and Apron SDK.
 
 ![image](./image1.png)
@@ -25,13 +25,13 @@ The Apron Pillar Node is developed on the Substrate framework, which provides a 
 - Apron Node
 
 Apron Network is made of Apron Nodes, which are based on the Substrate framework with OCW (off-chain worker) enabled. The basic service providers provide service publicly through thean Apron Node, which synchronizes the basic service upon-chain, and synchronizes the information of service usage and billing on the chain through thean OCW module.
- 
+
 Any infrastructure service provider can provide its infrastructure services to the public through Apron Node. Whether it is a block link point operator or a provider of information technology services in the traditional Internet and other fields, all you need to do is to deploy the Apron Node in any network that can connect to the Internet and access your own infrastructure services, which are provided to the public. By adding the corresponding service information to the configuration, it allows the public to discover and use the infrastructure services while also receiving service usage fees. Individuals, teams or companies that have been or will be able to provide infrastructure services can become Apron Network participants. They will also be able to provide infrastructure services for the Apron Network and the Web 3.0 world and obtain corresponding benefits by running Apron Nodes.
 
 - Apron Service Marketplace
 
 Apron Service Marketplace matches the services provided by infrastructure service providers with the needs of DApp developers. Infrastructure service providers can implement up-chain infrastructure services by deploying an Apron Node with one click. The Apron Node will provide infrastructure services to the Apron Market smart contract through OCW, and synchronize the infrastructure service usage data into the smart contract. The Apron Market smart contract will also charge for the service usage.
- 
+
 The Apron Market smart contract will use the data provided by OCW to calculate the revenue obtained by the infrastructure service provider and deduct the usage fee that should be paid by the service user. Apron Market is not only a smart contract, but also a web-based service discovery platform. Service users can search for the infrastructure services they want to use on Apron Market, and they can also post their infrastructure requirements on Apron Market to find a match between demand and supply.
 
 - Apron SDK
@@ -113,18 +113,16 @@ The ranking rules are introduced into the Apron Service Marketplace, and service
 
 The Inspector is responsible for checking the services in the network. When an infrastructure service provider or an infrastructure service user has been found to have acted maliciously, the Inspector will automatically request for punitive action to the DAO. Members of the DAO will then assess the incident and if the Inspector is found to be correct, action will be taken. When the decentralized arbitration court deems the Inspector to be correct, a portion of the fine will be delegated to the Inspector.  The same set of rules apply to the infrastructure service provider in the case that they come across malicious behaviors.
 
-# 项目现在做到的程度
+## Current state
 
-在2月1日前，进行项目方案调研和试验，2月1日后开始进行项目实施。 
-
-在黑客松期间 (2月1日 - 3月15日)完成了 Apron Gateway 的原型开发，公开测试版本已经发布社区进行测试；完成了 Market place 的原型服务端和前端开发，已经投放社区进行公开测试。
+之前在进行项目方案调研和试验，在黑客松开始前后进行 POC 版本开发，目前已经基于POC版本发布 Heco 和 BSC 节点 RPC 服务测试版本，并在社区进行测试；
 
 1. 完成 Apron Network Beta 1.0 版本发布
-2. 接入 Heco ，提供 Heco节点主网和测试网服务
-3. 接入 BSC ，提供 BSC 节点服务
-4. 发布 Apron Market
+2. 提供 Heco节点主网和测试网服务
+3. 提供 BSC 节点服务
+4. 发布 Apron Marketplace
 
-# 项目遇到的技术难点 及 解决方案
+## The challenge and solution
 
 1. 合约方案选型
 项目最开始时，合约技术选型使用 pallet，后来使用 Solidity进行深入的开发，但是由于框架限制 Solidity / Frontier 无法访问 OCW 数据，导致影响到项目功能，而这时项目已经搭建起基本框架，最终不得不放弃Solidity，切换到 ink重新开发!
