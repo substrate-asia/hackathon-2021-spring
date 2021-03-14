@@ -15,7 +15,7 @@ Parallel finance aims to be the first and largest lending protocol on top of pol
       * [Liquidation Process](#the-process-of-liquidation)
    * [Key Terms](#key-terms)
    * [Current Progress](#current-progress)
-   * Challenge and Solution](#challenge-and-solution)
+   * [Challenge and Solution](#challenge-and-solution)
    * [References](#references)
 <!--te-->
 
