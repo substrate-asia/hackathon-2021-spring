@@ -3,7 +3,7 @@ Parallel Finance
 
 ### Project background
 
-Currently, there is a substantial demand from DOT and KSM token holders to access cash liquidity and earn interests from their assets, and there isn't a mature solution on the market. Parallel finance aims to be the first and largest decentralized lending protocol built on top of the polkadot ecosystem. In addition to providing lending and borrowing features, we will also allow users to earn "double interests" by offering a way for users to earn interests from staking and lending their tokens simultaneously.
+Currently, there is a substantial demand from DOT and KSM token holders for cash liquidity and earn interests from their assets with no mature solution on the market. Parallel finance aims to be the first and largest decentralized lending protocol built on top of the polkadot ecosystem. In addition to providing lending and borrowing features, we will also allow users to earn "double interests" from staking and lending their tokens simultaneously.
 
 ### Table of contents
 ----
