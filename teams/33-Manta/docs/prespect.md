@@ -21,5 +21,13 @@
 * Media Coverage: ChainNews - [Manta Network - 首个基于 zkSNARK 的隐私保护 DeFi 网络](https://www.chainnews.com/articles/529681127788.htm)
 
 ### Current Resources
-* $1.1m USD [Seed Raise](https://www.theblockcrypto.com/linked/93365/polychain-privacy-dex-manta-seed) led by Polychain
-* Team of 5
+* $1.1m USD [Seed Raise](https://www.theblockcrypto.com/linked/93365/polychain-privacy-dex-manta-seed) led by Polychain including Hypersphere, Multicoin Capital, DeFiance Capital, Alameda Research, Rarestone Capital, and TRG Capital.
+* Core team of 5 people
+* Advisor: [Jack Platts](https://www.linkedin.com/in/jack-platts-b0407360), cofounder of Hypersphere
+* Advisor: [Ashley Tyson](https://www.crunchbase.com/person/ashley-tyson), Cofounder of W3F
+* Advisor: [Tekin Salimi](https://www.linkedin.com/in/tmsalimi), General Partner at Polychain
+* Advisor: [Shuyao Kong](https://www.linkedin.com/in/shuyao-kong), Corporate Development at Consensys
+* Partnership: [Equilibrium](https://equilibrium.io/) - Working on token standardization
+* Partnership: [Tidal Finance](https://tidal.finance/) - Bringing insurance products to Manta Newtork to protect liquidity providers
+* Partnership: [Reef Finance](https://reef.finance/) - Adding liquidity to Manta Network's MantaSwap (private DEX)
+* Partnership: [Clover Finance](https://clover.finance/) - Porting over ERC20 compatibility as tradeable assets on MantaSwap (private DEX)
