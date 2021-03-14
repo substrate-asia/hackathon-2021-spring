@@ -1,6 +1,78 @@
 ## The work flow of Parallel
 
+### Project background
+
+Parallel finance aims to be the first and largest lending protocol on top of polkadot ecosystem. We notice that DOT and KSM token holders have substantial demand to utilize decentralized lending protocol which enables users to get cash liquidity and add leverage. However, we couldn't find a matured solution on the market. For the next step, we will provide "double interest" from both staking DOT and earning interests from deposits. 
+
+### Technology
+
+The loans protocol get inspired by compound protocol and the blockchain is developed on substrate 3.0. 
+We get tons of benefit from substrate for its efficient and scalable. The following is the key design:
+
 ![text](../images/work_flow_of_Parallel.png)
+
+##### Storage
+```
+/// Container for borrow balance information
+pub struct BorrowSnapshot {
+    pub principal: Balance,
+    pub interest_index: u128,
+}
+
+/// Total number of collateral tokens in circulation
+TotalSupply = StorageMap<CurrencyId, Balance>
+
+/// Total amount of outstanding borrows of the underlying in this market
+TotalBorrows = StorageMap<CurrencyId, Balance>
+
+/// Mapping of account addresses to outstanding borrow balances
+AccountBorrows = StorageDoubleMap<CurrencyId,T::AccountId,BorrowSnapshot>
+
+/// Mapping of account addresses to collateral tokens balances
+AccountCollateral = StorageDoubleMap<CurrencyId,T::AccountId,Balance>
+
+/// Accumulator of the total earned interest rate since the opening of the market
+BorrowIndex = StorageMap<CurrencyId, u128>
+
+/// exchangeRate = (totalCash + totalBorrows - totalReserves) / totalSupply    
+ExchangeRate = StorageMap<CurrencyId, u128>
+```
+
+##### Calls
+```
+// Sender supplies assets into the market and receives cTokens in exchange
+mint(who: &T::AccountId, currency_id: &CurrencyId, mint_amount: Balance)
+
+// Sender redeems cTokens in exchange for the underlying asset
+redeem(who: &T::AccountId, currency_id: &CurrencyId, redeem_amount: Balance)
+
+// Sender borrows assets from the protocol to their own address
+borrow(borrower: &T::AccountId, currency_id: &CurrencyId, borrow_amount: Balance)
+
+// Sender repays their own borrow
+repay_borrow(borrower: &T::AccountId, currency_id: &CurrencyId, repay_amount: Balance)
+
+// The sender liquidates the borrowers collateral and the collateral seized is transferred to the liquidator
+liquidate_borrow_internal(liquidator: T::AccountId, borrower: T::AccountId, liquidate_token: CurrencyId, repay_amount: Balance, collateral_token: CurrencyId)
+
+// Sender stakes DOTs to the validator and receives xDOTs in exchange
+stake_internal(who: &T::AccountId, amount: Balance)
+
+// Sender redeems DOTs from staking using the xDOTs
+unstake_internal(who: &T::AccountId, amount: Balance)
+```
+
+##### The process of Liquidation
+-   Auto trigger in OCW
+-   Iterate borrowers' account and fetch each Currency Collateral one by one
+-   Calculate liquation threshold: liquidate limit = Collateral currency _ current price _ liquation ratio
+-   Fetch each currency's debt position, such as DAI\USDC
+-   Compare debt position and liquation threshold
+-   If debt position > liquidate limit, trigger liquidation
+-   Only liquation pool can execute liquidation
+-   Every time we can only liquidate 50% of debt position, until debt position < liquidate limit
+-   The Collateral token will be liquidated at 90 percent of current market price
+-   the 10 percent will be incentive for the liquidator and punishment for the debtor
 
 ### Key Terms
 
@@ -27,35 +99,11 @@ Total borrowing _ borrowing interest rate = total deposit _ deposit interest rat
 3. Standard Borrow Interest Rate = Multiplier ∗ Utilization Rate + Base Rate
 4. Jump Borrow Interest Rate = Multiplier ∗ min(Utilization Rate, Kink) + Jump Multiplier ∗ max(0, Utilization Rate − Kink) + Base Rate
 
-
-### Project background
-
-Parallel finance aims to be the first and largest lending protocol on top of polkadot ecosystem. We notice that DOT and KSM token holders have substantial demand to utilize decentralized lending protocol which enables users to get cash liquidity and add leverage. However, we couldn't find a matured solution on the market. For the next step, we will provide "double interest" from both staking DOT and earning interests from deposits. 
-
-
-### Technology
-
-
-
 ### Current Progress
 
 
 ### Challenge and Solution
 
-
-
-### The process of Liquidation
-
--   Auto trigger in OCW
--   Iterate borrowers' account and fetch each Currency Collateral one by one
--   Calculate liquation threshold: liquidate limit = Collateral currency _ current price _ liquation ratio
--   Fetch each currency's debt position, such as DAI\USDC
--   Compare debt position and liquation threshold
--   If debt position > liquidate limit, trigger liquidation
--   Only liquation pool can execute liquidation
--   Every time we can only liquidate 50% of debt position, until debt position < liquidate limit
--   The Collateral token will be liquidated at 90 percent of current market price
--   the 10 percent will be incentive for the liquidator and punishment for the debtor
 
 ### References
 
