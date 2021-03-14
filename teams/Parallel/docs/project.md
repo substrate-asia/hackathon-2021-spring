@@ -5,7 +5,7 @@ Parallel Finance
 
 Parallel finance aims to be the first and largest lending protocol on top of polkadot ecosystem. We notice that DOT and KSM token holders have substantial demand to utilize decentralized lending protocol which enables users to get cash liquidity and add leverage. However, we couldn't find a matured solution on the market. For the next step, we will provide "double interest" from both staking DOT and earning interests from deposits. 
 ### Table of contents
-
+----
 <!--ts-->
    * [Technology](#technology)
       * [work flow](#the-work-flow-of-parallel)
@@ -20,13 +20,15 @@ Parallel finance aims to be the first and largest lending protocol on top of pol
 <!--te-->
 
 ### Technology
-
+----
 The loans protocol get inspired by compound protocol and the blockchain is developed on substrate 3.0. 
 We get tons of benefit from substrate for its efficient and scalable. The following is the key design:
 #### The work flow of Parallel
+----
 ![text](../images/work_flow_of_Parallel.png)
 
-##### Storage
+#### Storage
+----
 ```
 /// Container for borrow balance information
 pub struct BorrowSnapshot {
@@ -53,7 +55,8 @@ BorrowIndex = StorageMap<CurrencyId, u128>
 ExchangeRate = StorageMap<CurrencyId, u128>
 ```
 
-##### Calls
+#### Calls
+----
 ```
 // Sender supplies assets into the market and receives cTokens in exchange
 mint(who: &T::AccountId, currency_id: &CurrencyId, mint_amount: Balance)
@@ -77,7 +80,8 @@ stake_internal(who: &T::AccountId, amount: Balance)
 unstake_internal(who: &T::AccountId, amount: Balance)
 ```
 
-##### The process of Liquidation
+#### The process of Liquidation
+----
 -   Auto trigger in OCW
 -   Iterate borrowers' account and fetch each Currency Collateral one by one
 -   Calculate liquation threshold: liquidate limit = Collateral currency _ current price _ liquation ratio
@@ -91,6 +95,7 @@ unstake_internal(who: &T::AccountId, amount: Balance)
 
 
 #### Interest Rate Model
+----
 The interest rate in Parallel finance is dynamically determined by demand and supply. Therefore, the borrowing and supply interest could vary in different block.
 ##### 1. Exchange Rate
 When lender deposits asset to the money market, it will be converted to cTokens based on the exchange rate. Lender earn interest throught the cToken's exchange rate
@@ -121,6 +126,7 @@ Borrow Interest Rate = Base Rate + Multiplier ∗ Utilization Rate + (Utilizatio
 
 ```
 ### Key Terms
+----
 
 -   **Underlying Asset**: The assets provided by users
 -   **cToken**: After the collateral of underlying assets, the system will return a certain amount of cToken to the user according to the exchange rate
@@ -137,6 +143,13 @@ Borrow Interest Rate = Base Rate + Multiplier ∗ Utilization Rate + (Utilizatio
 
 
 ### Current Progress
+---
+- [x] Lenders can deposit asset and accure interest
+- [x] Borrowers can use assets as collateral to borrow
+- [x] Off chain worker price feed
+- [x] Auto luquadition by off chain worker
+- [] Staking DOT to earn double interests from both staking and lending (In progess)
+
 
 
 ### Challenge and Solution
