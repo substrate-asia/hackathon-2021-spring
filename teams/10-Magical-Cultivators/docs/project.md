@@ -9,7 +9,7 @@
 
 ### Background - What we want to do?
 
-This is a framework for building a 'assets-on-chain' rogue-like game.
+> This is a framework for building a 'assets-on-chain' rogue-like game.
 
 We want to resolve these problems:
 
@@ -19,11 +19,13 @@ We want to resolve these problems:
 
 ### Design - How we do it?
 
-The following state diagram shows the mechanism.
+> The following state diagram shows the mechanism.
 
 ![State Diagram][diagram]
 
 ### Schedule - What we have done?
+
+> (>.<) Too much work to be done, but we are a little too late.
 
 * ~~Framework design(Substrate, Phase 1)~~
 * Pallets implementation(Phase 1)
@@ -37,8 +39,6 @@ The following state diagram shows the mechanism.
 * Demo Game(Phase 1)
   * GameServer
   * Frontend
-
-(>.<) Too much work to be done, but we are a little too late.
 
 ### Problems and Solutions - Which issues we have met?
 
