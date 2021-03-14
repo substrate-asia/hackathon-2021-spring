@@ -1,0 +1,66 @@
+[package]
+name = 'mintcraft'
+version = '0.1.0'
+authors = ['Tang Bo Hao<tech@btang.cn>','Yin Nan']
+description = 'A Rogue-like Blockchain Game Framework.'
+edition = '2018'
+license = 'MIT'
+build = 'build.rs'
+homepage = 'https://substrate.dev'
+repository = 'https://github.com/btspoony/mintcraft'
+
+[[bin]]
+name = 'mintcraft'
+
+[package.metadata.docs.rs]
+targets = ['x86_64-unknown-linux-gnu']
+
+[build-dependencies]
+substrate-build-script-utils = '3.0.0'
+
+# local dependencies
+[dependencies.mintcraft-runtime]
+path = '../runtime'
+
+[dependencies]
+structopt = '0.3.8'
+
+# Substrate dependencies
+sc-cli = { features = ['wasmtime'], version = '0.9.0' }
+sc-client-api = '3.0.0'
+sc-consensus = '0.9.0'
+sc-consensus-aura = '0.9.0'
+sc-executor = { features = ['wasmtime'], version = '0.9.0' }
+sc-finality-grandpa = '0.9.0'
+sc-keystore = '3.0.0'
+sc-service = { features = ['wasmtime'], version = '0.9.0' }
+sc-transaction-pool = '3.0.0'
+# sp
+sp-core = '3.0.0'
+sp-consensus = '0.9.0'
+sp-consensus-aura = '0.9.0'
+sp-finality-grandpa = '3.0.0'
+sp-inherents = '3.0.0'
+sp-runtime = '3.0.0'
+sp-transaction-pool = '3.0.0'
+
+# These dependencies are used for RPCs
+jsonrpc-core = '15.1.0'
+sc-basic-authorship = '0.9.0'
+sc-rpc = '3.0.0'
+sc-rpc-api = '0.9.0'
+sp-api = '3.0.0'
+sp-block-builder = '3.0.0'
+sp-blockchain = '3.0.0'
+pallet-transaction-payment-rpc = '3.0.0'
+substrate-frame-rpc-system = '3.0.0'
+
+# These dependencies are used for runtime benchmarking
+frame-benchmarking = '3.0.0'
+frame-benchmarking-cli = '3.0.0'
+
+[features]
+default = []
+runtime-benchmarks = [
+	'mintcraft-runtime/runtime-benchmarks',
+]
