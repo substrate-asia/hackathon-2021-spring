@@ -8,11 +8,7 @@ This means anyone can provide VPN services, face recognition, network storage, i
 In the era of Web 3.0, the decentralized Apron Network, which belongs to the community, will replace the centralized infrastructure service platform controlled by commercial companies.It provides infrastructure services for developers, and gives everyone the freedom to explore the limitless potential of decentralization.
 
 
-2022 Q4	
-Apron Network 主网上线
-构建 DAO
-为 Apron Network 接入更多传统基础设施服务
-移交 Apron Network
+Apron Network 主网上线、构建 DAO、为 Apron Network 接入更多传统基础设施服务、移交 Apron Network
 # 市场定位及调研
 
 - 市场定位
@@ -33,37 +29,26 @@ The Graph proposes a novel Ethereum and IPFS on-chain service index protocol. By
 # 现在拥有的资源及项目运营到什么程度
 
 - 现有资源
-Apron Network社区合作
+1. Apron Network社区合作
 BlockArk、加密阁、真本聪、币Coin、Snapfingers、Doter社区、老陆社区、Cobo社区、加密情报局、西南社区、Sars Capital社区、波卡俱乐部等等
 
-媒体支持
+2. 媒体支持
 链闻、金色财经、币世界、力场、深链财经、星球日报、波卡生态研究院等等
 
 
-项目合作
-技术社区
-一块+
-Rebase社区
+3. 项目合作
+1）技术社区：一块+、Rebase社区
 
-已支持项目、使用案例
+2）已支持项目、使用案例
+
 Heco RPC 服务 https://dashboard.apron.network
+
 BSC RPC 服务 https://dashboard.apron.network
 
-已经披露合作项目
-Phala Network
-Bifrost
-TrustBase
-Bandot
+3）已经披露合作项目
 
-正在进行技术对接近期披露项目
-DEGO Finance
-Darwinia
-Crust Network
-Seascape
-IOST
-Stone
-Litentry
-Stafi 
-Konomi Network
-Moonbeam
-SubDAO
+Phala Network、Bifrost、TrustBase、Bandot
+
+4）正在进行技术对接近期披露项目
+
+DEGO Finance、Darwinia、Crust Network、Seascape、IOST、Stone、Litentry、Stafi 、Konomi Network、Moonbeam、SubDAO
