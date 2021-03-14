@@ -22,3 +22,4 @@
 
 ### Current Resources
 * $1.1m USD [Seed Raise](https://www.theblockcrypto.com/linked/93365/polychain-privacy-dex-manta-seed) led by Polychain
+* Team of 5
