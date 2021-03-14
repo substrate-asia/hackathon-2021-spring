@@ -27,6 +27,23 @@ Total borrowing _ borrowing interest rate = total deposit _ deposit interest rat
 3. Standard Borrow Interest Rate = Multiplier ∗ Utilization Rate + Base Rate
 4. Jump Borrow Interest Rate = Multiplier ∗ min(Utilization Rate, Kink) + Jump Multiplier ∗ max(0, Utilization Rate − Kink) + Base Rate
 
+
+### Project background
+
+Parallel finance aims to be the first and largest lending protocol on top of polkadot ecosystem. We notice that DOT and KSM token holders have substantial demand to utilize decentralized lending protocol which enables users to get cash liquidity and add leverage. However, we couldn't find a matured solution on the market. For the next step, we will provide "double interest" from both staking DOT and earning interests from deposits. 
+
+
+### Technology
+
+
+
+### Current Progress
+
+
+### Challenge and Solution
+
+
+
 ### The process of Liquidation
 
 -   Auto trigger in OCW
