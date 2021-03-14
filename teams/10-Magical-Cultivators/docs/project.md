@@ -19,9 +19,19 @@ We want to resolve these problems:
 
 ### Design - How we do it?
 
-> The following state diagram shows the mechanism.
+> The following diagrams shows the mechanism.
 
-![State Diagram][diagram]
+#### **Activities Diagram**
+
+![Activities Diagram][diagram-activities]
+
+#### **Resources Loop**
+
+![Resources Loop][diagram-resources]
+
+#### **Pallets Diagram**
+
+![Pallets Diagram][diagram-pallets]
 
 ### Schedule - What we have done?
 
@@ -77,4 +87,6 @@ But we are still trying to build a rogue-like game with some impressive techolog
 May be posting our dev progress at some video sharing or live broadcasting website is a good idea.
 
 [logo]: logos/logo_en_small.png "logo"
-[diagram]: logos/logo_en.png "State Diagram"
+[diagram-activities]: imgs/activities.png "Activities Diagram"
+[diagram-resources]: logos/logo_en.png "Resources Loop"
+[diagram-pallets]: logos/logo_en.png "Pallets Diagram"
