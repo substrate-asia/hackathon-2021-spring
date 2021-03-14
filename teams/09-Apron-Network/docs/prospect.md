@@ -41,6 +41,7 @@ BlockArk、加密阁、真本聪、币Coin、Snapfingers、Doter社区、老陆�
 
 
 3. 项目合作
+
 1）技术社区：一块+、Rebase社区
 
 2）已支持项目、使用案例
@@ -51,8 +52,8 @@ BSC RPC 服务 https://dashboard.apron.network
 
 3）已经披露合作项目
 
-Phala Network、Bifrost、TrustBase、Bandot
+Phala Network、Bifrost、TrustBase、Bandot、DEGO Finance、Darwinia
 
 4）正在进行技术对接近期披露项目
 
-DEGO Finance、Darwinia、Crust Network、Seascape、IOST、Stone、Litentry、Stafi 、Konomi Network、Moonbeam、SubDAO
+Crust Network、Seascape、IOST、Stone、Litentry、Stafi 、Konomi Network、Moonbeam、SubDAO
