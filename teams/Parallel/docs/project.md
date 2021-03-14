@@ -1,14 +1,29 @@
-## The work flow of Parallel
+Parallel Finance
+=================
 
 ### Project background
 
 Parallel finance aims to be the first and largest lending protocol on top of polkadot ecosystem. We notice that DOT and KSM token holders have substantial demand to utilize decentralized lending protocol which enables users to get cash liquidity and add leverage. However, we couldn't find a matured solution on the market. For the next step, we will provide "double interest" from both staking DOT and earning interests from deposits. 
+### Table of contents
+
+<!--ts-->
+   * [Technology](#technology)
+      * [work flow](#the-work-flow-of-parallel)
+      * [Storage](#storage)
+      * [Calls](#calls)
+      * [Interest Rate Model](#interest-rate-model)
+      * [Liquidation Process](#the-process-of-liquidation)
+   * [Key Terms](#key-terms)
+   * [Current Progress](#current-progress)
+   * Challenge and Solution](#challenge-and-solution)
+   * [References](#references)
+<!--te-->
 
 ### Technology
 
 The loans protocol get inspired by compound protocol and the blockchain is developed on substrate 3.0. 
 We get tons of benefit from substrate for its efficient and scalable. The following is the key design:
-
+#### The work flow of Parallel
 ![text](../images/work_flow_of_Parallel.png)
 
 ##### Storage
@@ -74,6 +89,37 @@ unstake_internal(who: &T::AccountId, amount: Balance)
 -   The Collateral token will be liquidated at 90 percent of current market price
 -   the 10 percent will be incentive for the liquidator and punishment for the debtor
 
+
+#### Interest Rate Model
+The interest rate in Parallel finance is dynamically determined by demand and supply. Therefore, the borrowing and supply interest could vary in different block.
+##### 1. Exchange Rate
+When lender deposits asset to the money market, it will be converted to cTokens based on the exchange rate. Lender earn interest throught the cToken's exchange rate
+```
+exchangeRate = (totalCash + totalBorrows - totalReserve) / totalSupply
+```
+
+##### 2. Utilization Rate
+Utilization rate represents the percentage of borrows in the total money market.
+```
+UtilizationRatio = Borrows / (Cash + Borrows)
+```
+##### 3. Reserves
+Parallel finance converts certain portion of borrower interest into reserves
+```
+totalReserve_t+1 = interestAccumulated * reserveFactor + totalReserve_t
+```
+##### 4. Borrow Rate
+Parallel implements the jump interest model. When the utilization rate exceeds the kinks, jump rate will be apllied to the excess portion.
+
+If utilization rate <= kink,
+```
+Borrow Interest Rate = Base Rate + Multiplier ∗ Utilization Rate
+```
+If utilization rate > kink,
+```
+Borrow Interest Rate = Base Rate + Multiplier ∗ Utilization Rate + (Utilization Rate - kink) * jumoMultiplier
+
+```
 ### Key Terms
 
 -   **Underlying Asset**: The assets provided by users
@@ -88,16 +134,7 @@ unstake_internal(who: &T::AccountId, amount: Balance)
 -   **Close Factor**: During the liquidation process, the liquidator can help the lender to pay off the maximum debt ratio, between 0 and 1, currently 50%. This factor can be called continuously until the user's loan order is in a safe state.
 -   **Liquidation Incentive**: liquidators get some rewards. For example: 8%.
 
-### Mathematical formula
 
-Total borrowing _ borrowing interest rate = total deposit _ deposit interest rate
-
-> Borrower pays depositor's interest
-
-1. Utilization Rate = Total Borrows / (Total Cash + Total Borrows − Total Reserves)
-2. Supply Interest Rate = Borrowing Interest Rate ∗ Utilization Rate ∗ (1 − Reserve Factor)
-3. Standard Borrow Interest Rate = Multiplier ∗ Utilization Rate + Base Rate
-4. Jump Borrow Interest Rate = Multiplier ∗ min(Utilization Rate, Kink) + Jump Multiplier ∗ max(0, Utilization Rate − Kink) + Base Rate
 
 ### Current Progress
 
