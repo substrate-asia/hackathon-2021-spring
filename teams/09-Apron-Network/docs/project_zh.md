@@ -7,7 +7,7 @@
 于是在 Ethereum 生态中逐渐产生了少数几个能够提供 Ethereum 节点服务的商业公司，例如 infura.io，世界上最大的 Ethereum 节点服务提供商。一直以来 Infura 由 Consensys 资助，为 Ethereum 生态里数以万计的开发者们提供基础的节点服务。开发者们在自己的代码中调用着 Infura 提供的 Ethereum API 服务，使得开发者们开发出来的应用可以通过这些 API 服务访问 Ethereum 网络中的的一切。众多的开源社区应用和公司产品强烈依赖于 Infura 所提供的 Ethereum 节点服务，其中不乏区块链领域中的头部企业。
 
 2020 年 11 月 11 日，Ethereum 节点服务提供商 Infura 的服务因故障导致不可访问，各种形形色色的应用、各种大大小小的交易所、各种功能各异的服务都出现了严重事故，成为区块链历史上影响最为广泛的事件之一。这对于以去中心化为基石的区块链世界而言看起来就是个充满矛盾的笑话。
- 
+
 我们 Apron Labs 的成员一直以来在 Ethereum 生态中开发 DApp，并且亲身经历了这一次重大事故。我们反思是时候对 Web 3.0 世界里这种严重依赖中心化服务的现状作出改变，并且决定开始创建去中心化基础设施服务网络来改变现状。
 
 为解决 Web 3.0 世界中的基础设施服务发现、调用和计费中存在的问题，Apron Labs 提出 Apron Network 作为完善 Web 3.0 世界基础设施服务生态的解决方案，在 Web 3.0 时代让广大开发者们自由的提供和使用任何基础设施服务成为可能，将真实世界同 Web 3.0 世界链接起来，把自由还给每一个人！
@@ -42,19 +42,19 @@ Apron Network 中的服务除了可以直接无缝迁移的方式从原有的基
 - Roles
 
 Provider（服务提供者） 是基础设施服务的提供者，将其具有的能力通过 Apron Node 提供给广大开发者和用户，是 Apron Network 的关键参与者之一。任何能够提供服务的人或者组织均可以在 Apron Network 中成为 Provider 。
- 
+
 Miner（节点矿工）是 Apron Network 网络的重要维护者，运行 Apron Node 来确保 Provider 提供的服务能够被使用，同时通过维护网络来获得奖励，是 Apron Network 的关键参与者之一。
- 
+
 Delegator（委托人）并不直接参与网络建设，而是通过向 Miner 、 Provider 等等其他角色提供 Token 进行质押，协助 Provider 和 Miner 来参与网络建设，并从中获取收益。
- 
+
 Arbitrator（仲裁者） 将在去中心化仲裁法庭中对网络中的出现的冲突或仲裁申请进行仲裁，是 DAO 和去中心化仲裁法庭的重要组成部分。 
- 
+
 Inspector（视察员）在网络中巡视网络上已注册服务的运行情况，同时对已注册服务进行巡检，一旦发现服务出现问题或者作恶，Inspector 将向 Arbitrator 提供信息并发起仲裁申请。当遇到其他人发起仲裁申请时，Inspector 将向 Arbitrator 提供相应信息以便 Arbitrator 对仲裁案进行判断。
- 
+
 Developer（服务使用开发者）基于 Apron Network 中存在的基础设施服务来开发应用，向服务提供者支付服务使用费，是 Apron Network 的关键参与者之一。
- 
+
 Counselor（服务顾问）协助 Provider 在 Apron Network 上注册基础设施服务，对服务状态进行检查，并发起请求将 Provider 所提供的服务列到 Apron Service Marketplace 中。Counselor 也将根据统计数据信息对 Apron Service Marketplace 中的服务进行评分和排行，为开发者们挑选基础设施服务提供参考依据。
- 
+
 Consumer（使用者）是服务的使用者。
 
 - Apron DAO
@@ -112,6 +112,18 @@ Inspector 对网络中的服务进行巡检，在发现基础设施服务提供�
 4. 发布 Apron Marketplace
 
 # 项目遇到的技术难点 及 解决方案
-1. 合约方案选型
-项目最开始时，合约技术选型使用 pallet，后来使用 Solidity进行深入的开发，但是由于框架限制 Solidity / Frontier 无法访问 OCW 数据，导致影响到项目功能，而这时项目已经搭建起基本框架，最终不得不放弃Solidity，切换到 ink重新开发!
+#### 如何解决计费问题
 
+通过区块链网络来解决积分问题很难，因为无法知道开发者使用 API 的情况。在经过长时间的调研后，我们认为，关键点在于提供 API 服务的组件。于是我们决定要构建我们自己的 gateway，用来集成到区块链节点中。我们如是就这么做了。
+
+
+
+#### Pallet vs Contract
+
+Pallet 在 Substrate 技术栈中很出名。而智能合约是我们刚开始接触区块链开发时第一眼看到的。Pallet 设计很棒，同时也很容易使用。为了实现我们的目标，我们不知道如何选择。于是我们又投入了大量时间来学习两种技术。最后我们决定使用 Contract，因为 Pallet 可以很好的用来自定义和升级链，但是 Contract 更好的为第三方开发者提供了使用的自由。
+
+
+
+#### 如何选择智能合约方案
+
+在最初决定使用智能合约时，我们不知道该怎么选，是使用 Solidity 还是使用 ink!。 于是我们又在这个问题上浪费了3周时间来进行调研。我们尝试了 Frontier、Solang 来支持 Solidity。大多数情况下两个方案都可以，但是有些关键的功能并不能实现。于是我们又迁移到 ink！的方案。我们重新将项目采用 ink! 做了实现，好在代码量很少。

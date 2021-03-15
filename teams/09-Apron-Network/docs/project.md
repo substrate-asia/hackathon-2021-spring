@@ -115,15 +115,30 @@ The Inspector is responsible for checking the services in the network. When an i
 
 ## Current state
 
-之前在进行项目方案调研和试验，在黑客松开始前后进行 POC 版本开发，目前已经基于POC版本发布 Heco 和 BSC 节点 RPC 服务测试版本，并在社区进行测试；
+We did researches and tests with Substrate Framework in Jan 2021, and started the coding work from Feb 2021.
 
-1. 完成 Apron Network Beta 1.0 版本发布
-2. 提供 Heco节点主网和测试网服务
-3. 提供 BSC 节点服务
-4. 发布 Apron Marketplace
+Currently we finished the POC version and tried to provide free node RPC services for Heco and BSC to verify our idea. Now the free node RPC services are published as test version.
+
+What we have done now:
+
+* Customized Substrate Node Alpha version
+* Simple Marketplace by ink! contracts
+* A self developed gateway
 
 ## The challenge and solution
 
-1. 合约方案选型
-项目最开始时，合约技术选型使用 pallet，后来使用 Solidity进行深入的开发，但是由于框架限制 Solidity / Frontier 无法访问 OCW 数据，导致影响到项目功能，而这时项目已经搭建起基本框架，最终不得不放弃Solidity，切换到 ink重新开发!
+#### 1. How to solve the problem of Billing. 
 
+It's very hard to provide billing through blockchain, because it's not possible to know how is the usage status of an API service by a developer. After a long time of investigation, we think, the key point would be component which serve the API. So we figured out to build a our own gateway from scratch which is can be integrated into the blockchain node. Then we built one.
+
+
+
+#### 2. Pallet vs Contract
+
+Pallet is well known in Substrate world. While smart contract is what we see for the first sight when we meet the development on blockchain. Pallet is quite easy to be used and well designed. We donot which one should be choosed. So we paid lots of time on learning both. Finally, we decided to use contrat, because pallet is good enough to customize a chain with proper functions but contract will give more freedom to third party developers.
+
+
+
+#### 3. How to choose the proper smart contract solution
+
+At the begining, we donot know which is the proper way to build smart contracts Solidity or ink!. And we wasted 3 weeks on investigating Solidity solution on Substrate. We have tried Frontier, Solang, most of the test cases are passed, only few key features are not satisfied. So we move to ink!. And we implement the whole project with ink! again, but fortuntely, there is not so much code yet.
