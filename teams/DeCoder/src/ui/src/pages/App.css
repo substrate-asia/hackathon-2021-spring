@@ -1,0 +1,57 @@
+@import '~antd/dist/antd.css';
+:root {
+  --primary-color: #2BC2DB;
+  --primary-color-light: #3DD1EA;
+  --primary-color-mint: #B1F4FF;
+  --primary-color-dark: #26AEC4;
+  --normal-color: #101010;
+  --blue:var(--primary-color);
+  --purple:#708AFF;
+  --mint-purple:#bec9fc;
+  --dark-purple:#576fdb;
+  --light-purple:#95a9ff;
+  --dark-orange:#DD6817;
+  --orange:#F47E2B;
+  --light-orange:#ffa25f;
+  --mint-orange:#FFD2B2;
+  --dark-red:#a5020a;
+  --light-gray-color: #999;
+  --light-bg: #f3f5f7;
+  --border-color: #ddd;
+  --sm-radius: 4px;
+  --normal-radius: 6px;
+  --lg-radius: 12px;
+}
+
+.card-container > .ant-tabs-card .ant-tabs-content {
+  margin-top: -16px;
+}
+
+.card-container > .ant-tabs-card .ant-tabs-content .ant-tabs-tabpane {
+  background: #fff;
+  padding: 32px 16px;
+}
+
+.card-container > .ant-tabs-card > .ant-tabs-bar {
+  border-color: #fff;
+}
+
+.card-container > .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  border-color: transparent;
+  background: transparent;
+  padding: 15px 30px;
+}
+.card-container > .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab:hover {
+  color: var(--normal-color);
+}
+.card-container > .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active {
+  border-color: #fff;
+  color: var(--normal-color);
+  background: #fff;
+  font-weight: bold;
+}
+.card-container > .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+
+  color: var(--normal-color);
+  font-weight: bold;
+}

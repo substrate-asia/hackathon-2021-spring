@@ -1,0 +1,463 @@
+{
+  "metadataVersion": "0.1.0",
+  "source": {
+    "hash": "0xfc9b868884212a130fbd0e108d58db5db95c68936889ab2099ebaa490bb11839",
+    "language": "ink! 3.0.0-rc2",
+    "compiler": "rustc 1.52.0-nightly"
+  },
+  "contract": {
+    "name": "patrapixel",
+    "version": "0.1.0",
+    "authors": [
+      "[your_name] <[your_email]>"
+    ]
+  },
+  "spec": {
+    "constructors": [
+      {
+        "args": [
+          {
+            "name": "x",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 3
+            }
+          },
+          {
+            "name": "y",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 3
+            }
+          }
+        ],
+        "docs": [],
+        "name": [
+          "new"
+        ],
+        "selector": "0x9bae9d5e"
+      },
+      {
+        "args": [],
+        "docs": [],
+        "name": [
+          "default"
+        ],
+        "selector": "0xed4b9d1b"
+      }
+    ],
+    "docs": [],
+    "events": [
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "creator",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 12
+            }
+          }
+        ],
+        "docs": [],
+        "name": "PixelUpdate"
+      }
+    ],
+    "messages": [
+      {
+        "args": [],
+        "docs": [
+          " Get and returns pixel metadata"
+        ],
+        "mutates": false,
+        "name": [
+          "metadata"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Vec"
+          ],
+          "type": 9
+        },
+        "selector": "0x6394e97a"
+      },
+      {
+        "args": [],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "pool"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Balance"
+          ],
+          "type": 8
+        },
+        "selector": "0xd92c9b21"
+      },
+      {
+        "args": [],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "size"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [],
+          "type": 11
+        },
+        "selector": "0x5bcd7160"
+      },
+      {
+        "args": [
+          {
+            "name": "points",
+            "type": {
+              "displayName": [
+                "Vec"
+              ],
+              "type": 9
+            }
+          }
+        ],
+        "docs": [
+          " update pixel with metadata"
+        ],
+        "mutates": true,
+        "name": [
+          "update"
+        ],
+        "payable": true,
+        "returnType": null,
+        "selector": "0x5f234f5d"
+      }
+    ]
+  },
+  "storage": {
+    "struct": {
+      "fields": [
+        {
+          "layout": {
+            "cell": {
+              "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+              "ty": 1
+            }
+          },
+          "name": "name"
+        },
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "struct": {
+                      "fields": [
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x0100000000000000000000000000000000000000000000000000000000000000",
+                              "ty": 2
+                            }
+                          },
+                          "name": "header"
+                        },
+                        {
+                          "layout": {
+                            "struct": {
+                              "fields": [
+                                {
+                                  "layout": {
+                                    "cell": {
+                                      "key": "0x0200000000000000000000000000000000000000000000000000000000000000",
+                                      "ty": 3
+                                    }
+                                  },
+                                  "name": "len"
+                                },
+                                {
+                                  "layout": {
+                                    "array": {
+                                      "cellsPerElem": 1,
+                                      "layout": {
+                                        "cell": {
+                                          "key": "0x0200000001000000000000000000000000000000000000000000000000000000",
+                                          "ty": 4
+                                        }
+                                      },
+                                      "len": 4294967295,
+                                      "offset": "0x0300000000000000000000000000000000000000000000000000000000000000"
+                                    }
+                                  },
+                                  "name": "elems"
+                                }
+                              ]
+                            }
+                          },
+                          "name": "entries"
+                        }
+                      ]
+                    }
+                  },
+                  "name": "keys"
+                },
+                {
+                  "layout": {
+                    "hash": {
+                      "layout": {
+                        "cell": {
+                          "key": "0x0300000001000000000000000000000000000000000000000000000000000000",
+                          "ty": 6
+                        }
+                      },
+                      "offset": "0x0200000001000000000000000000000000000000000000000000000000000000",
+                      "strategy": {
+                        "hasher": "Blake2x256",
+                        "postfix": "",
+                        "prefix": "0x696e6b20686173686d6170"
+                      }
+                    }
+                  },
+                  "name": "values"
+                }
+              ]
+            }
+          },
+          "name": "metadata"
+        },
+        {
+          "layout": {
+            "cell": {
+              "key": "0x0300000001000000000000000000000000000000000000000000000000000000",
+              "ty": 8
+            }
+          },
+          "name": "pool"
+        },
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x0400000001000000000000000000000000000000000000000000000000000000",
+                      "ty": 3
+                    }
+                  },
+                  "name": null
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x0500000001000000000000000000000000000000000000000000000000000000",
+                      "ty": 3
+                    }
+                  },
+                  "name": null
+                }
+              ]
+            }
+          },
+          "name": "size"
+        }
+      ]
+    }
+  },
+  "types": [
+    {
+      "def": {
+        "primitive": "str"
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "last_vacant",
+              "type": 3,
+              "typeName": "Index"
+            },
+            {
+              "name": "len",
+              "type": 3,
+              "typeName": "u32"
+            },
+            {
+              "name": "len_entries",
+              "type": 3,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "Header"
+      ]
+    },
+    {
+      "def": {
+        "primitive": "u32"
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "fields": [
+                {
+                  "type": 5,
+                  "typeName": "VacantEntry"
+                }
+              ],
+              "name": "Vacant"
+            },
+            {
+              "fields": [
+                {
+                  "type": 3,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Occupied"
+            }
+          ]
+        }
+      },
+      "params": [
+        3
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "Entry"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "next",
+              "type": 3,
+              "typeName": "Index"
+            },
+            {
+              "name": "prev",
+              "type": 3,
+              "typeName": "Index"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "VacantEntry"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "value",
+              "type": 7,
+              "typeName": "V"
+            },
+            {
+              "name": "key_index",
+              "type": 3,
+              "typeName": "KeyIndex"
+            }
+          ]
+        }
+      },
+      "params": [
+        7
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "hashmap",
+        "ValueEntry"
+      ]
+    },
+    {
+      "def": {
+        "primitive": "u8"
+      }
+    },
+    {
+      "def": {
+        "primitive": "u128"
+      }
+    },
+    {
+      "def": {
+        "sequence": {
+          "type": 10
+        }
+      }
+    },
+    {
+      "def": {
+        "tuple": [
+          3,
+          7
+        ]
+      }
+    },
+    {
+      "def": {
+        "tuple": [
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "type": 13,
+              "typeName": "[u8; 32]"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_env",
+        "types",
+        "AccountId"
+      ]
+    },
+    {
+      "def": {
+        "array": {
+          "len": 32,
+          "type": 7
+        }
+      }
+    }
+  ]
+}
