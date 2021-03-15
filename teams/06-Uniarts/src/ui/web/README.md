@@ -15,7 +15,7 @@ This project is developed based on Vue 2.0
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Run
 ```
 yarn serve
 ```
@@ -24,11 +24,3 @@ yarn serve
 ```
 yarn build
 ```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
