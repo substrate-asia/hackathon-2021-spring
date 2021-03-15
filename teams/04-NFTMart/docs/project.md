@@ -1,12 +1,47 @@
-## 项目背景/原由/要解决的问题
+# NFTMart info
 
-- 项目技术设计
+## Background
+
+Starting from 2017, the NFT market has only 3 years of history so far, which is very immature compared to Bitcoin (11 years) or the traditional 
+financial market (hundreds of years). As an on-chain mapping of the real economy, the market size of NFT will be much larger than the FT Token 
+market. The current monthly transaction amount is only about 10 million US dollars, which is less than one hundred thousandth of the FT Token 
+market. Even with a conservative attitude toward the development of NFTs, there will be hundreds or even thousands of times the market size 
+growth space in the next two to three years.
+
+### Problem
+- High transaction cost and slow speed
+- Few NFT categories
+- Lack of quality NFT
+- High-quality assets are not easy to mine
+
+### How to solve
+- Use substrate to solve cost and transaction speed issues
+- Adopt POB mining mechanism to increase the activity of merchants and players
+- Operations will generally cooperate with institutions to establish NFT alliances
+- Strengthen the support of key industries and increase the supply of high-quality assets highquality assets
+- Provide better tools and services
 
 
-- 项目现在做到的程度
+### Technical design
 
+- Substrate as our asset chain
+- IPFS as our media store service
+- Go and data collector as our data cache service
+- Client APP with react and integrate with polkadot{js} and polkadot extension
 
-- 项目遇到的技术难点 及 解决方案
+### what we do now 
 
+- Substrae on-chain logic and api done
+- data collector and graphQL api done
+- client with polkadot api and ipfs client integration done
 
-- 项目如果报名时已经做到一定高度 (之前已经开始做)，请列点说明在黑客松期间 (2月1日 - 3月15日) 所完成的事项/开发工作。
+### What we got and fixed
+
+- Go-RPC client cannot work,after open an issue for the repo, we change to node.js sdk as our on-chain data and combine the go server to cache on-chain dat
+
+## Business plan for the next 6 months
+
+* Complete financing in April
+* Complete testnet development in May
+* Start to expand NFT resource cooperation in May
+* Complete the mainnet launch and cross-chain solution in August
