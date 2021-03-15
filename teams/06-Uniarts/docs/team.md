@@ -21,3 +21,20 @@
 * github: @xuxiaohu
 * weixin: xxhxry0228
 
+## Lay Hunt
+* Frontend developer
+* github: @tianxiemaochiyu
+* wechat: tianxiemaochiyu
+
+## Kwin Song
+* Backend developer
+* GoLang, Substrate and Ruby developer
+* github: @songky
+* weixin: i_Sky_
+
+## Yang Yin
+* Product Manager
+* Responsible for uni-arts chain product design
+* github: @yinyang911
+* weixin: y1358798717
+
