@@ -6,11 +6,11 @@ Refer to SubDAO_Deck_en.pdf or SubDAO-Deck-中文.pdf
 Refer to [article] 
 
 # Progress of the project
-Completion of  main core code (master chain building and contract integration) 
-Complete project presentation documents, and related technical documents
-Complete integration with Polkadot JS Extention
-Build the chain browser and deploy it online.
-Complete the visibility Front-end,demo is completed.
+* Completion of  main core code (master chain building and contract integration) 
+* Complete project presentation documents, and related technical documents
+* Complete integration with Polkadot JS Extention
+* Build the chain browser and deploy it online.
+* Complete the visibility Front-end,demo is completed.
 
 # Ecosystem Fits
 In the area of Decentralized Autonomous Organizations, there are many mature DAOs maintained in different ways with different tools or platforms, such as Maker, The DAO, and The LAO. Also, there are some other tools to help governors building a DAO, such as Aragon. Aragon is a project providing tools to create and the governor a DAO, but only available on Ethereum.
