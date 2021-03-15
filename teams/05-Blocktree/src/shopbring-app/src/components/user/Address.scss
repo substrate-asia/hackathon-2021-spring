@@ -1,0 +1,40 @@
+.address {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .content {
+    display: inline-block;
+  }
+
+  .identicon {
+    margin-right: 0.25rem;
+  }
+
+  .identityName {
+    filter: grayscale(100%);
+  }
+
+  .header {
+    color: black_text;
+    font-weight: 500;
+    font-size: sm;
+    margin-right: 0.4rem;
+  }
+
+  .description {
+    color: grey_primary;
+    font-size: xs;
+    margin-right: 0.4rem;
+  }
+
+  .inline {
+    display: inline-flex !important;
+    font-size: sm !important;
+  }
+
+  .sub {
+    color: grey_secondary;
+    line-height: inherit;
+  }
+}

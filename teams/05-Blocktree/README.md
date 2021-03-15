@@ -16,6 +16,16 @@ In 2020, blocktree began to study the Polkadot ecosystem and found that Polkadot
 
 In src folder:
 
-- `shopbring` is the blockchain node based Substrate.
+- `shopbring` is the blockchain node based Substrate. You can interact it with [polkadot.js.org/apps](https://polkadot.js.org/apps/).
 - `shopbring-server` is the off-chain order system based NodeJS.
-- `shopbring-app` is the web app based polkadot-js/api.
+- `shopbring-app` is the web app based polkadot-js/api, for Polkadot wallet users.
+
+## Demo Video
+
+### Invitation
+
+https://drive.google.com/file/d/1qikJ8gQteAUiZyn0_gnevOl-XT8-goJY/view?usp=sharing
+
+### Commissioned Shopping
+
+https://drive.google.com/file/d/1T4_C9X65kMP2vGwDn2KsVnbEP9ZTlmMn/view

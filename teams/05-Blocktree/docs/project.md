@@ -102,10 +102,10 @@ At the beginning, the Shopping agents had no native token on Shopbring, so they 
 
 Shopbring users who hold native token can become invitees. The operation is as follows:
 
-1. The inviter randomly generates an ECDSA key pair, and then initiates an application to become the inviter. The parameters are: inviter's address, ECDSA public key, single donation amount and maximum number of invitees.
-1. The inviter provides the ECDSA private key to the invitee, and the invitee uses the private key to sign keccak256(account public key) to obtain "accept invitation signature".
+1. The inviter randomly generates an `ed25519` key pair, and then initiates an application to become the inviter. The parameters are: inviter's address, `ed25519` public key, single donation amount and maximum number of invitees.
+1. The inviter provides the `ed25519` private key to the invitee, and the invitee uses the private key to sign account public key to obtain "accept invitation signature".
 1. Invitee submits and accepts the invitation, parameters are: invitee's address, acceptance invitation signature, and the account inviter's address.
-1. The system uses ECDSA algorithm to verify the invitation signature. After approval, the amount of single donation will be transferred to the invitee, and the fee of this transaction will be paid by the inviter.
+1. The system uses `ed25519` algorithm to verify the invitation signature. After approval, the amount of single donation will be transferred to the invitee, and no fee of this transaction will be paid.
 1. Every time the invitee completes a commissioned shopping order, his credit value will increase, and the credit value of the person who invited him will also increase slightly.
 
 ### The Commissioned Shopping Process
