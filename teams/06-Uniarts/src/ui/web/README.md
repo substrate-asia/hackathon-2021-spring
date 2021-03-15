@@ -1,14 +1,17 @@
 # uni-arts-web-frontend
 
-The framework for interaction between the front end of Uniarts and substrate is @polkadot/api, document address: [https://polkadot.js.org/docs](https://polkadot.js.org/docs)
+This project is developed based on Vue 2
 
-The interaction with the wallet is @polkadot/extension-dapp, document address: [https://github.com/polkadot-js/extension](https://github.com/polkadot-js/extension)
+The framework for interaction between the front end of Uniarts and substrate is [@polkadot/api](https://polkadot.js.org/docs/api)
 
-The browser wallet uses Polkadot{.js} Extension, Chrome Store: [https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd](https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
+The interaction with the wallet is [@polkadot/extension-dapp](https://github.com/polkadot-js/extension)
 
-Polkadot explorer is used to query information on the substrate chain, URL: [https://polkadot.js.org/apps/#/explorerhttps://polkadot.js.org/apps/#/explorer](https://polkadot.js.org/apps/#/explorerhttps://polkadot.js.org/apps/#/explorer)
+[Explorer](https://polkadot.js.org/apps/#/explorerhttps://polkadot.js.org/apps/#/explorer) is used to query information on the substrate chain
 
-This project is developed based on Vue 2.0
+## Requirements
+* [Node.js](https://nodejs.org/en/download/) version >= 12.16.3 or above (which can be checked by running `node -v`). You can use [nvm](https://github.com/nvm-sh/nvm/) for managing multiple Node versions on a single machine installed
+
+* [Yarn](https://yarnpkg.com/en/) version >= 1.22.5 (which can be checked by running `yarn --version`). Yarn is a performant package manager for JavaScript and replaces the `npm` client. It is not strictly necessary but highly encouraged.
 
 ## Project setup
 ```
