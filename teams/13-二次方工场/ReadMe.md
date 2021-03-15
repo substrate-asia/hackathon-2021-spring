@@ -1,5 +1,9 @@
 # Quadratic Funding Pallet
 
+
+![DoraHacsk](https://miro.medium.com/max/1400/1*zO0Jim7I5hffP8Q_9y9b5g.jpeg)
+
+
 ## Navigation
 [prospect](./docs/prospect.md)
 
