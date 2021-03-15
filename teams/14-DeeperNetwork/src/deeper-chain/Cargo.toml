@@ -1,0 +1,22 @@
+[profile.release]
+panic = 'unwind'
+
+[workspace]
+members = [
+    'bench',
+    'browser-testing',
+    'cli',
+    'executor',
+    'inspect',
+    'primitives',
+    'rpc',
+    'rpc-client',
+    'runtime',
+    'pallets/balances',
+    'pallets/deeper-node',
+    'pallets/micropayment',
+    'pallets/credit',
+    'pallets/delegating',
+    'pallets/staking_with_credit',
+    'testing',
+]

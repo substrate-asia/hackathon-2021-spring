@@ -1,0 +1,50 @@
+{
+  "name": "cp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cp.js",
+  "bin": "cp.js",
+  "scripts": {
+    "test": "jest",
+    "pkg": "./package.sh"
+  },
+  "pkg": {
+    "assets": "./node_modules/ed25519-supercop/prebuilds/linux-x64/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomos-dev/control-plane.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atomos-dev/control-plane/issues"
+  },
+  "homepage": "https://github.com/atomos-dev/control-plane#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "@polkadot/api": "^2.9.1",
+    "@polkadot/keyring": "^4.0.1",
+    "@polkadot/util": "^4.1.1",
+    "@polkadot/util-crypto": "^4.1.1",
+    "await-to-js": "^2.1.1",
+    "bn": "^1.0.5",
+    "crypto-js": "^4.0.0",
+    "fs": "0.0.1-security",
+    "fs-ext": "^1.2.1",
+    "minimist": "^1.2.0",
+    "node-exec-promise": "^1.0.2",
+    "pkg": "^4.4.9",
+    "public-ip": "^3.2.0",
+    "superagent": "^5.2.2",
+    "v8-profiler-node8": "^6.1.1"
+  }
+}
