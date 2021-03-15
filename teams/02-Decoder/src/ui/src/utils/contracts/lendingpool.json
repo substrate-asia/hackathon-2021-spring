@@ -1,0 +1,1035 @@
+{
+  "metadataVersion": "0.1.0",
+  "source": {
+    "hash": "0x42de3d04ad91ef6f2076ff5cd28b8b0cad79e7290eed2b6cb2024f96c4791f07",
+    "language": "ink! 3.0.0-rc3",
+    "compiler": "rustc 1.52.0-nightly"
+  },
+  "contract": {
+    "name": "lendingpool",
+    "version": "0.1.0",
+    "authors": [
+      "[your_name] <[your_email]>"
+    ]
+  },
+  "spec": {
+    "constructors": [
+      {
+        "args": [
+          {
+            "name": "stoken",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "name": "debt_token",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          }
+        ],
+        "docs": [],
+        "name": [
+          "new"
+        ],
+        "selector": "0x9bae9d5e"
+      }
+    ],
+    "docs": [],
+    "events": [
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "user",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "on_behalf_of",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          " * @dev Emitted on deposit()",
+          " * @param reserve The address of the underlying asset of the reserve",
+          " * @param user The address initiating the deposit",
+          " * @param onBehalfOf The beneficiary of the deposit, receiving the aTokens",
+          " * @param amount The amount deposited"
+        ],
+        "name": "Deposit"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "user",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "to",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          " * @dev Emitted on withdraw()",
+          " * @param reserve The address of the underlyng asset being withdrawn",
+          " * @param user The address initiating the withdrawal, owner of aTokens",
+          " * @param to Address that will receive the underlying",
+          " * @param amount The amount to be withdrawn"
+        ],
+        "name": "Withdraw"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "user",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "on_behalf_of",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          "\n     * @dev Emitted on borrow() when debt needs to be opened\n     * @param user The address of the user initiating the borrow(), receiving the funds on borrow()\n     * @param onBehalfOf The address that will be getting the debt\n     * @param amount The amount borrowed out\n     * @param borrowRate The numeric rate at which the user has borrowed\n     *"
+        ],
+        "name": "Borrow"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "receiver",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "repayer",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          "\n     * @dev Emitted on repay()\n     * @param receiver The beneficiary of the repayment, getting his debt reduced\n     * @param repayer The address of the user initiating the repay(), providing the funds\n     * @param amount The amount repaid\n     *"
+        ],
+        "name": "Repay"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "delegator",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "delegatee",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          "\n     * @dev emitted on approvedelegation\n     * @param delegator  who have money and allow delegatee use it as collateral\n     * @param delegatee who can borrow money from pool without collateral\n     * @param amount the amount\n     *"
+        ],
+        "name": "Delegate"
+      }
+    ],
+    "messages": [
+      {
+        "args": [
+          {
+            "name": "on_behalf_of",
+            "type": {
+              "displayName": [
+                "Option"
+              ],
+              "type": 15
+            }
+          }
+        ],
+        "docs": [
+          " * @dev Deposits an `amount` of underlying asset into the reserve, receiving in return overlying aTokens.",
+          " * - E.g. User deposits 100 USDC and gets in return 100 aUSDC",
+          " * @param asset The address of the underlying asset to deposit",
+          " * @param amount The amount to be deposited",
+          " * @param onBehalfOf The address that will receive the aTokens, same as msg.sender if the user",
+          " *   wants to receive them on his own wallet, or a different address if the beneficiary of aTokens",
+          " *   is a different wallet"
+        ],
+        "mutates": true,
+        "name": [
+          "deposit"
+        ],
+        "payable": true,
+        "returnType": null,
+        "selector": "0x2d10c9bd"
+      },
+      {
+        "args": [
+          {
+            "name": "user",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "get_reserve_data"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 16
+        },
+        "selector": "0x8e7f29a6"
+      },
+      {
+        "args": [
+          {
+            "name": "user",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "get_scaled_balance"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Balance"
+          ],
+          "type": 1
+        },
+        "selector": "0xb26395db"
+      },
+      {
+        "args": [
+          {
+            "name": "amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          },
+          {
+            "name": "to",
+            "type": {
+              "displayName": [
+                "Option"
+              ],
+              "type": 15
+            }
+          }
+        ],
+        "docs": [
+          " * @dev Withdraws an `amount` of underlying asset from the reserve, burning the equivalent aTokens owned",
+          " * E.g. User has 100 aUSDC, calls withdraw() and receives 100 USDC, burning the 100 aUSDC",
+          " * @param asset The address of the underlying asset to withdraw",
+          " * @param amount The underlying amount to be withdrawn",
+          " *   - Send the value type(uint256).max in order to withdraw the whole aToken balance",
+          " * @param to Address that will receive the underlying, same as msg.sender if the user",
+          " *   wants to receive it on his own wallet, or a different address if the beneficiary is a",
+          " *   different wallet",
+          " * @return The final amount withdrawn"
+        ],
+        "mutates": true,
+        "name": [
+          "withdraw"
+        ],
+        "payable": false,
+        "returnType": null,
+        "selector": "0x410fcc9d"
+      },
+      {
+        "args": [
+          {
+            "name": "amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          },
+          {
+            "name": "on_behalf_of",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          }
+        ],
+        "docs": [
+          "\n         * @dev Allows users to borrow a specific `amount` of the reserve underlying asset, provided that the borrower\n         * already deposited enough collateral, or he was given enough allowance by a credit delegator on the\n         * corresponding debt token\n         * - E.g. User borrows 100 USDC passing as `onBehalfOf` his own address, receiving the 100 USDC in his wallet\n         *   and 100 stable debt tokens\n         * @param amount The amount to be borrowed\n         * @param onBehalfOf Address of the user who will receive the debt. Should be the address of the borrower itself\n         * calling the function if he wants to borrow against his own collateral, or the address of the credit delegator\n         * if he has been given credit delegation allowance\n         *"
+        ],
+        "mutates": true,
+        "name": [
+          "borrow"
+        ],
+        "payable": false,
+        "returnType": null,
+        "selector": "0x7acb5e2e"
+      },
+      {
+        "args": [
+          {
+            "name": "on_behalf_of",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          }
+        ],
+        "docs": [
+          "\n         * @notice Repays a borrowed `amount` on a specific reserve, burning the equivalent debt tokens owned\n         * - E.g. User repays 100 USDC, burning 100 stable debt tokens of the `onBehalfOf` address\n         * @param amount The amount to repay\n         * - Send the value type(uint256).max in order to repay the whole debt for `asset` on the specific `debtMode`\n         * @param onBehalfOf Address of the user who will get his debt reduced/removed. Should be the address of the\n         * user calling the function if he wants to reduce/remove his own debt, or the address of any other\n         * other borrower whose debt should be removed\n         * @return The final amount repaid\n         *"
+        ],
+        "mutates": true,
+        "name": [
+          "repay"
+        ],
+        "payable": true,
+        "returnType": null,
+        "selector": "0xa9f4b044"
+      },
+      {
+        "args": [
+          {
+            "name": "delegatee",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "name": "amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          "\n         * @dev delgator can delegate some their own credits which get by deposit funds to delegatee\n         * @param delegatee who can borrow without collateral\n         * @param amount\n         "
+        ],
+        "mutates": true,
+        "name": [
+          "delegate"
+        ],
+        "payable": false,
+        "returnType": null,
+        "selector": "0xc59654fe"
+      },
+      {
+        "args": [
+          {
+            "name": "delegator",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "name": "delegatee",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 2
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "delegate_amount"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Balance"
+          ],
+          "type": 1
+        },
+        "selector": "0x3151c067"
+      }
+    ]
+  },
+  "storage": {
+    "struct": {
+      "fields": [
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                      "ty": 1
+                    }
+                  },
+                  "name": "stable_liquidity_rate"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x0100000000000000000000000000000000000000000000000000000000000000",
+                      "ty": 1
+                    }
+                  },
+                  "name": "stable_borrow_rate"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x0200000000000000000000000000000000000000000000000000000000000000",
+                      "ty": 2
+                    }
+                  },
+                  "name": "stoken_address"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x0300000000000000000000000000000000000000000000000000000000000000",
+                      "ty": 2
+                    }
+                  },
+                  "name": "stable_debt_token_address"
+                }
+              ]
+            }
+          },
+          "name": "reserve"
+        },
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "struct": {
+                      "fields": [
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x0400000000000000000000000000000000000000000000000000000000000000",
+                              "ty": 5
+                            }
+                          },
+                          "name": "header"
+                        },
+                        {
+                          "layout": {
+                            "struct": {
+                              "fields": [
+                                {
+                                  "layout": {
+                                    "cell": {
+                                      "key": "0x0500000000000000000000000000000000000000000000000000000000000000",
+                                      "ty": 6
+                                    }
+                                  },
+                                  "name": "len"
+                                },
+                                {
+                                  "layout": {
+                                    "array": {
+                                      "cellsPerElem": 1,
+                                      "layout": {
+                                        "cell": {
+                                          "key": "0x0500000001000000000000000000000000000000000000000000000000000000",
+                                          "ty": 7
+                                        }
+                                      },
+                                      "len": 4294967295,
+                                      "offset": "0x0600000000000000000000000000000000000000000000000000000000000000"
+                                    }
+                                  },
+                                  "name": "elems"
+                                }
+                              ]
+                            }
+                          },
+                          "name": "entries"
+                        }
+                      ]
+                    }
+                  },
+                  "name": "keys"
+                },
+                {
+                  "layout": {
+                    "hash": {
+                      "layout": {
+                        "cell": {
+                          "key": "0x0600000001000000000000000000000000000000000000000000000000000000",
+                          "ty": 9
+                        }
+                      },
+                      "offset": "0x0500000001000000000000000000000000000000000000000000000000000000",
+                      "strategy": {
+                        "hasher": "Blake2x256",
+                        "postfix": "",
+                        "prefix": "0x696e6b20686173686d6170"
+                      }
+                    }
+                  },
+                  "name": "values"
+                }
+              ]
+            }
+          },
+          "name": "users_data"
+        },
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "struct": {
+                      "fields": [
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x0600000001000000000000000000000000000000000000000000000000000000",
+                              "ty": 5
+                            }
+                          },
+                          "name": "header"
+                        },
+                        {
+                          "layout": {
+                            "struct": {
+                              "fields": [
+                                {
+                                  "layout": {
+                                    "cell": {
+                                      "key": "0x0700000001000000000000000000000000000000000000000000000000000000",
+                                      "ty": 6
+                                    }
+                                  },
+                                  "name": "len"
+                                },
+                                {
+                                  "layout": {
+                                    "array": {
+                                      "cellsPerElem": 1,
+                                      "layout": {
+                                        "cell": {
+                                          "key": "0x0700000002000000000000000000000000000000000000000000000000000000",
+                                          "ty": 12
+                                        }
+                                      },
+                                      "len": 4294967295,
+                                      "offset": "0x0800000001000000000000000000000000000000000000000000000000000000"
+                                    }
+                                  },
+                                  "name": "elems"
+                                }
+                              ]
+                            }
+                          },
+                          "name": "entries"
+                        }
+                      ]
+                    }
+                  },
+                  "name": "keys"
+                },
+                {
+                  "layout": {
+                    "hash": {
+                      "layout": {
+                        "cell": {
+                          "key": "0x0800000002000000000000000000000000000000000000000000000000000000",
+                          "ty": 14
+                        }
+                      },
+                      "offset": "0x0700000002000000000000000000000000000000000000000000000000000000",
+                      "strategy": {
+                        "hasher": "Blake2x256",
+                        "postfix": "",
+                        "prefix": "0x696e6b20686173686d6170"
+                      }
+                    }
+                  },
+                  "name": "values"
+                }
+              ]
+            }
+          },
+          "name": "delegate_allowance"
+        }
+      ]
+    }
+  },
+  "types": [
+    {
+      "def": {
+        "primitive": "u128"
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "type": 3,
+              "typeName": "[u8; 32]"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_env",
+        "types",
+        "AccountId"
+      ]
+    },
+    {
+      "def": {
+        "array": {
+          "len": 32,
+          "type": 4
+        }
+      }
+    },
+    {
+      "def": {
+        "primitive": "u8"
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "last_vacant",
+              "type": 6,
+              "typeName": "Index"
+            },
+            {
+              "name": "len",
+              "type": 6,
+              "typeName": "u32"
+            },
+            {
+              "name": "len_entries",
+              "type": 6,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "Header"
+      ]
+    },
+    {
+      "def": {
+        "primitive": "u32"
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "fields": [
+                {
+                  "type": 8,
+                  "typeName": "VacantEntry"
+                }
+              ],
+              "name": "Vacant"
+            },
+            {
+              "fields": [
+                {
+                  "type": 2,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Occupied"
+            }
+          ]
+        }
+      },
+      "params": [
+        2
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "Entry"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "next",
+              "type": 6,
+              "typeName": "Index"
+            },
+            {
+              "name": "prev",
+              "type": 6,
+              "typeName": "Index"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "VacantEntry"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "value",
+              "type": 10,
+              "typeName": "V"
+            },
+            {
+              "name": "key_index",
+              "type": 6,
+              "typeName": "KeyIndex"
+            }
+          ]
+        }
+      },
+      "params": [
+        10
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "hashmap",
+        "ValueEntry"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "cumulated_liquidity_interest",
+              "type": 1,
+              "typeName": "u128"
+            },
+            {
+              "name": "cumulated_stable_borrow_interest",
+              "type": 1,
+              "typeName": "u128"
+            },
+            {
+              "name": "last_update_timestamp",
+              "type": 11,
+              "typeName": "u64"
+            },
+            {
+              "name": "borrow_balance",
+              "type": 1,
+              "typeName": "u128"
+            }
+          ]
+        }
+      },
+      "path": [
+        "lendingpool",
+        "types",
+        "UserReserveData"
+      ]
+    },
+    {
+      "def": {
+        "primitive": "u64"
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "fields": [
+                {
+                  "type": 8,
+                  "typeName": "VacantEntry"
+                }
+              ],
+              "name": "Vacant"
+            },
+            {
+              "fields": [
+                {
+                  "type": 13,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Occupied"
+            }
+          ]
+        }
+      },
+      "params": [
+        13
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "Entry"
+      ]
+    },
+    {
+      "def": {
+        "tuple": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "value",
+              "type": 1,
+              "typeName": "V"
+            },
+            {
+              "name": "key_index",
+              "type": 6,
+              "typeName": "KeyIndex"
+            }
+          ]
+        }
+      },
+      "params": [
+        1
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "hashmap",
+        "ValueEntry"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 2,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        2
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 10,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        10
+      ],
+      "path": [
+        "Option"
+      ]
+    }
+  ]
+}
