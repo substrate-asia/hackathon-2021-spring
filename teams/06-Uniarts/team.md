@@ -16,7 +16,8 @@
 ## xuxiaohu
 
 * Backend developer
-* Presided over the development of many digital asset trading systems
+* Technical expert in blockchain and web development, has been using golang development since 2015 and ruby development since 2010.
+  Has experiences of EVM smart contract technology and  blockchain browser.
 * github: @xuxiaohu
 * weixin: xxhxry0228
 
