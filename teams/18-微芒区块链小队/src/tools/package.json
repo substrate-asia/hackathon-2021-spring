@@ -1,0 +1,13 @@
+{
+  "name": "highway-tools",
+  "dependencies": {
+    "@polkadot/api": "^4.0.3",
+    "@polkadot/api-contract": "^4.0.3",
+    "@polkadot/util": "^6.0.5",
+    "js-yaml": "^4.0.0"
+  },
+  "type": "commonjs",
+  "engines": {
+    "node": ">=14.15.1"
+  }
+}
