@@ -6,7 +6,21 @@ Uni-Arts is a decentralized exhibition & auction house for crypto artworks and c
 * Uni-Arts provide industry grade NFT pubilcation tools that support dynamic effects with random elements powered by blockchain based random number generator. 
 * Uni-Arts' support cross-chain assets and aim to become the major gateway between Ethereum & substrate based networks.
 
-## Solution
+## Technical design and Solution
+
+### DAO
+Uni-Arts plan to operate as a DAO (Decentralized Autonomous Organization) with following roles and functions:
+Backers & Viewers, include Uni-Arts Dapp users, NFT & Token holders:
+- Proposal, to incentivize a specific content, or propose to modify DAO’s rules Vote for proposal;
+- Election of members of the executive committee
+
+Uni-Arts executive committee main functions include:
+- None-technical admin;
+- Remove content that are illegal or anti-public interest;
+- Grant Approval
+- Set bounty
+
+Contributor Network are creators, producers of content, PR services provider or anyone who makes contribution to the network. Contributors can get incentives by submitting content specified by DAO (provided that the content is published), or by completing Bounty bounty.
 
 ### Multi-Chain NFT Support
 The protocol layer of Uni-Arts is an Application Blockchain (App Chain) which focuses on providing security and other decentralized infrastructure for the exhibition & auction house built above. Uni-Arts chain is developed via substrate, and it can interact with other substrate based bridge chain (i.e.. Darwinia) to support NFTs transferred from established blockchain network (i.e.. Ethereum) to list in the auction house or to transfer away.
@@ -18,8 +32,6 @@ Uni-Arts NFT Maker is a windows application that allow its user to pack and publ
 Create NFT via NFT maker cost U-ink as gas, and can be listed in the Uni-Arts exhibition hall. Every user can upvote for NFTs they like in the exhibition hall with U-ink, and the NFT received most amount of upvotes will become the ‘Daily Auction Star’ for next day. Once selected, the NTF owner can receive 50% of the U-ink spent for upvotes.
 Once the NFT was sold though auction, the winner (new owner) can issue tokens NSH-X,(NFT Stakeholder) where X is the name of NFT, to represent the value-added part of the NFT from its next sale. NSH serves as an effective tool of value discovery for NFT in the market. Once the NFT is sold again, NSH-X holder can spend the NSH-X to claim the benefit.
 
-## 项目技术设计
-
 ## Progress of the project
 
 * Complete the chain building, NFT creation, registration, commission sales, pricing and auction module.
@@ -29,9 +41,10 @@ Once the NFT was sold though auction, the winner (new owner) can issue tokens NS
 * The design documents of chain and application are being perfected.
 
 
-## 项目遇到的技术难点 及 解决方案
+## Technical difficulties encountered in the project and Solutions
 
-## 项目如果报名时已经做到一定高度 (之前已经开始做)，请列点说明在黑客松期间 (2月1日 - 3月15日) 所完成的事项/开发工作。
+* NFT standards are inconsistent, there is no mature NFT technology.
+
 
 
 
