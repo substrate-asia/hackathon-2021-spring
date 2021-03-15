@@ -1,0 +1,59 @@
+[package]
+name = "highway-node"
+version = "0.1.0"
+authors = ["Highway"]
+build = "build.rs"
+edition = "2018"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+bs58 = "0.3.1"
+structopt = "0.3.8"
+hex-literal = "0.2.1"
+hex = "0.4"
+libp2p="0.35.1"
+serde = "1.0"
+serde_yaml = "0.8"
+substrate-bip39 = "0.4.2"
+tiny-bip39 = "0.8.0"
+
+sc-cli = { version = "0.9.0", git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-cli", features = ["wasmtime"] }
+sp-core = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sp-core" }
+sc-executor = { version = "0.9.0", git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-executor", features = ["wasmtime"] }
+sc-service = { version = "0.9.0", git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-service", features = ["wasmtime"] }
+sc-telemetry = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-telemetry" }
+sp-inherents = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sp-inherents" }
+sc-transaction-pool = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-transaction-pool" }
+sp-transaction-pool = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sp-transaction-pool" }
+sc-consensus-aura = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-consensus-aura" }
+sp-consensus-aura = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sp-consensus-aura" }
+sp-consensus = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sp-consensus" }
+sc-consensus = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-consensus" }
+sc-finality-grandpa = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-finality-grandpa" }
+sp-finality-grandpa = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sp-finality-grandpa" }
+sc-client-api = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-client-api" }
+sp-runtime = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sp-runtime" }
+pallet-contracts = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "pallet-contracts" }
+
+# These dependencies are used for the node's RPCs
+jsonrpc-core = "15.0.0"
+sc-rpc = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-rpc" }
+sp-api = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sp-api" }
+sc-rpc-api = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-rpc-api" }
+sp-blockchain = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sp-blockchain" }
+sp-block-builder = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sp-block-builder" }
+sc-basic-authorship = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "sc-basic-authorship" }
+substrate-frame-rpc-system = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "substrate-frame-rpc-system" }
+pallet-transaction-payment-rpc = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "pallet-transaction-payment-rpc" }
+pallet-contracts-rpc = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "pallet-contracts-rpc" }
+
+highway-runtime = { version = "0.1.0", path = "../runtime" }
+
+[build-dependencies]
+substrate-build-script-utils = { git = "https://github.com/paritytech/substrate", rev = "8643b9d5179cbef1002a2943922a68e1e6137c60", package = "substrate-build-script-utils" }
+
+[[bin]]
+name = "highway"
+path = "src/main.rs"
