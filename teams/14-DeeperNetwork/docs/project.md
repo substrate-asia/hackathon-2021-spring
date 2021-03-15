@@ -12,7 +12,11 @@ The light nodes of the Deeper layer discover peer IP addresses and establish con
 
 In the future, users can use Deeper Connect as the gateway to easily access various decentralized applications (DApp) and interact with other blockchain applications.
 
+For detailed information, please refer to our [whitepaper](https://deeper.network/whitepaper_en.pdf)
+
 ## Progress
+
+
 
 In terms of products, Deeper Connect has iterated several versions and is a mature product combining software and hardware. The core component is the network operating system, AtomOS, which is independently researched and developed by us. It can achieve a network speed of 1GB running inside low cost hardwares. It also provides the function of a 7-layer enterprise level firewall. A total of tens of thousands of nodes have been deployed around the world. A large part of them are users who need network security, privacy, and network acceleration.
 
