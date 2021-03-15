@@ -1,0 +1,85 @@
+{
+  "name": "prettier-eslint-cli",
+  "version": "5.0.0",
+  "description": "CLI for prettier-eslint",
+  "main": "dist/no-main.js",
+  "engines": {
+    "node": ">=8"
+  },
+  "bin": {
+    "prettier-eslint": "dist/index.js"
+  },
+  "scripts": {
+    "start": "nps",
+    "test": "nps test",
+    "precommit": "lint-staged && opt --in pre-commit --exec \"npm start validate\""
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
+  "maintainers": [
+    "Simon Fridlund <simon@fridlund.email>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "arrify": "^2.0.1",
+    "boolify": "^1.0.0",
+    "camelcase-keys": "^6.0.0",
+    "chalk": "^2.4.2",
+    "common-tags": "^1.8.0",
+    "core-js": "^3.1.4",
+    "eslint": "^5.0.0",
+    "find-up": "^4.1.0",
+    "get-stdin": "^7.0.0",
+    "glob": "^7.1.4",
+    "ignore": "^5.1.2",
+    "lodash.memoize": "^4.1.2",
+    "loglevel-colored-level-prefix": "^1.0.0",
+    "messageformat": "^2.2.1",
+    "prettier-eslint": "^9.0.0",
+    "rxjs": "^6.5.2",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "acorn": "^6.1.1",
+    "ajv": "^6.10.0",
+    "all-contributors-cli": "^6.7.0",
+    "babel-jest": "^24.8.0",
+    "eslint-config-kentcdodds": "^14.3.3",
+    "husky": "^2.4.1",
+    "indent-string": "^4.0.0",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.8.0",
+    "lint-staged": "^8.2.1",
+    "nps": "^5.9.5",
+    "nps-utils": "^1.7.0",
+    "opt-cli": "^1.5.1",
+    "pify": "^4.0.1",
+    "rimraf": "^2.6.3",
+    "semantic-release": "^15.13.16",
+    "spawn-command": "0.0.2-1",
+    "strip-indent": "^3.0.0",
+    "yargs-parser": "^13.1.1"
+  },
+  "lint-staged": {
+    "*.+(js|json|md)": [
+      "node ./dist/index --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prettier/prettier-eslint-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prettier/prettier-eslint-cli/issues"
+  },
+  "homepage": "https://github.com/prettier/prettier-eslint-cli#readme"
+}
