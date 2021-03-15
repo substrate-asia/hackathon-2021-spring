@@ -189,7 +189,7 @@ mod inkbridge {
 
         #[ink(message)]
         pub fn set_key_pair(&mut self, btc_addr: String, receiver: AccountId) {
-            assert_eq!(self.env().caller(), self.owner, "not owner");
+            // assert_eq!(self.env().caller(), self.owner, "not owner");
             self.deposit_addresses.entry(btc_addr).or_insert(receiver);
         }
 
@@ -210,10 +210,19 @@ mod inkbridge {
 
         #[ink(message)]
         pub fn add_btc_deposit_address(&mut self, btc_addr: String) {
-            assert_eq!(self.env().caller(), self.owner, "not owner");
+            // assert_eq!(self.env().caller(), self.owner, "not owner");
             assert!(self.deposit_addresses.get(&btc_addr).is_none());
 
             self.deposit_addresses.insert(btc_addr, Default::default());
+        }
+
+        #[ink(message)]
+        pub fn verified_transactions(&self) -> Vec<Hash> {
+            let mut txs = vec![];
+            for v in self.tx_state.iter().filter(|x| *(*x).1 == true) {
+                txs.push(*v.0)
+            }
+            txs
         }
 
         #[ink(message)]
@@ -237,17 +246,21 @@ mod inkbridge {
             relayed_info: Vec<u8>,
             prev_tx: Option<Vec<u8>>,
         ) -> Result<()> {
+            // let raw_tx: Transaction =
+            //     deserialize(Reader::new(raw_tx.as_slice())).map_err(|_| Error::DeserializeErr)?;
             let raw_tx: Transaction =
-                deserialize(Reader::new(raw_tx.as_slice())).map_err(|_| Error::DeserializeErr)?;
+                deserialize(Reader::new(raw_tx.as_slice())).expect("failed to deserialize tx vec");
             let prev_tx = if let Some(prev_tx) = prev_tx {
+                // let prev_tx: Transaction = deserialize(Reader::new(prev_tx.as_slice()))
+                //     .map_err(|_| Error::DeserializeErr)?;
                 let prev_tx: Transaction = deserialize(Reader::new(prev_tx.as_slice()))
-                    .map_err(|_| Error::DeserializeErr)?;
+                    .expect("failed to deserialize pre_tx vec");
                 Some(prev_tx)
             } else {
                 None
             };
             let relayed_info = BtcRelayedTxInfo::decode(&mut relayed_info.as_slice())
-                .map_err(|_| Error::DeserializeErr)?;
+                .expect("failed to decode relayed info");
             let relay_tx = relayed_info.into_relayed_tx(raw_tx);
             info!(
                 "[push_transaction] from:{:?}, relay_tx:{:?}, prev_tx:{:?}",
@@ -256,7 +269,8 @@ mod inkbridge {
                 prev_tx
             );
 
-            Ok(self.apply_push_transaction(relay_tx, prev_tx)?)
+            assert!(self.apply_push_transaction(relay_tx, prev_tx).is_ok());
+            Ok(())
         }
     }
 
