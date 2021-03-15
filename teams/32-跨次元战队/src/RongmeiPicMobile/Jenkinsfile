@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+    environment {
+        ENVIRONMENT_TEST_FLAG = 'NO'
+    }
+    stages {
+        stage('Build for development') {
+            when {
+                branch 'develop'
+            }
+            steps {
+                sh 'echo Build develop stage ...'
+                sh 'bash develop-build.sh'
+                sh 'echo end develop stage ...'
+            }
+        }
+        stage('Build for production') {
+            when {
+                branch 'master'
+            }
+            steps {
+                sh 'echo Build production stage ...'
+                sh 'bash prod-build.sh'
+                sh 'echo end production stage ...'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'echo Test stage ...'
+            }
+        }
+        stage('Deliver for development') {
+            when {
+                branch 'develop'
+            }
+            steps {
+                sh 'echo develop stage ...'
+                sh 'bash develop.sh'
+                sh 'echo end develop stage ...'
+            }
+        }
+        stage('Deploy for production') {
+            when {
+                branch 'master'
+            }
+            steps {
+                sh 'echo production stage ...'
+                sh 'bash prod.sh'
+                sh 'echo end production stage ...'
+            }
+        }
+    }
+}
