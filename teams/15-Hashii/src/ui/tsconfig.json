@@ -1,0 +1,36 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"module": "esnext",
+		"target": "ES2018",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"outDir": "out/dist",
+		"declaration": false,
+		"alwaysStrict": true,
+		"allowJs": true,
+		"checkJs": false,
+		"strict": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"strictNullChecks": true,
+		"strictPropertyInitialization": true,
+		"emitDecoratorMetadata": false,
+		"experimentalDecorators": true,
+		"removeComments": true,
+		"jsx": "react",
+		"jsxFactory": "React.createElement",
+		"resolveJsonModule": true,
+		// "allowSyntheticDefaultImports": true,
+	},
+	"include": [
+		"**/*",
+	],
+	"exclude": [
+		"out",
+		"var",
+		".git",
+		"node_modules",
+		"_.js",
+	]
+}

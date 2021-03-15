@@ -1,0 +1,69 @@
+{
+  "contractName": "Primitive",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "payable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "destroy",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isRunning",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "setOwner",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "bin": "0x60806040526000805460ff60a01b196001600160a01b0319909116331716600160a01b1790556101bc806100346000396000f3fe60806040526004361061003f5760003560e01c806313af4035146100445780632014e5d11461007e57806383197ef0146100935780638da5cb5b1461009b575b600080fd5b61006a6004803603602081101561005a57600080fd5b50356001600160a01b03166100cc565b604080519115158252519081900360200190f35b34801561008a57600080fd5b5061006a61010e565b61006a61011e565b3480156100a757600080fd5b506100b061013b565b604080516001600160a01b039092168252519081900360200190f35b60006100d661014a565b6001600160a01b0382166100e957600080fd5b50600080546001600160a01b0383166001600160a01b03199091161790556001919050565b600054600160a01b900460ff1681565b600061012861014a565b506000805460ff60a01b19169055600190565b6000546001600160a01b031681565b61015261016b565b6000546001600160a01b0316331461016957600080fd5b565b600054600160a01b900460ff16151560011461016957600080fdfea26469706673582212206be3fdfe41ae46aec0174a9407652645f1b1efd72c87eba1bf8eef9ada80245864736f6c63430007050033"
+}

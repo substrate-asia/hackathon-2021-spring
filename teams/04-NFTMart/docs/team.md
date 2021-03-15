@@ -5,4 +5,6 @@
 - 陈威 @chenwei767
 - 储奎 @GoDotDotDot
 - 水中阳 @ztNozdormu
+- 肖杰桑 @AmagiDDmxh
+- 邹航标 @btwiuse
 

@@ -1,0 +1,31 @@
+{
+  "Address": "MultiAddress",
+  "LookupSource": "MultiAddress",
+  "Nft": {
+    "title": "String",
+    "url": "String",
+    "desc": "String"
+  },
+  "NftId": "u128",
+  "OrderId": "u128",
+  "OrderOf": {
+    "order_id": "u128",
+    "start_price": "Balance",
+    "end_price": "Balance",
+    "nft_id": "u128",
+    "create_block": "BlockNumber",
+    "keep_block_num": "BlockNumber",
+    "owner": "AccountId"
+  },
+  "BidOf": {
+    "order_id": "u128",
+    "price": "Balance",
+    "owner": "AccountId"
+  },
+  "VoteOf": {
+    "order_id": "u128",
+    "amount": "Balance",
+    "keep_block_num": "BlockNumber",
+    "owner": "AccountId"
+  }
+}
