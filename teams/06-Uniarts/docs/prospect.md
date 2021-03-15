@@ -1,12 +1,14 @@
 ## Business planning for the next six months
-Business planning: develop business from two directions of enterprise and media
-
-Enterprises: cooperate with Xuanfa company to expand the IP propaganda service of new movies, games and animation. In recent years, the investment in publicity and distribution of cultural industry has gradually increased. By NFT of IP assets, uni art provides a new way for enterprise oriented IP publicity and distribution, and also provides follow-up transaction and auction services.
-Personal aspect: do the conversion of traffic income for we media and creators and NFT distribution and auction of works. We media can release its personal IP related NFT products, such as: NFT photos of cosplayer, personal works of animation creators, encrypted works of art, etc
-
-Technology development planning:
-NFT cross chain bridge online, main network online, NFT distribution tool for b-end customers online, auction house DAPP and NFT sales app for French currency and mainstream social media online
-Commercial operation: signed cooperation agreement with the above three enterprises and officially announced, and issued the first batch of products at the same time. The NFT scheduled to be released with Gaia online is community NFT, and the NFT in the role of boxer king will be released in cooperation with Shanghai company
+BD Strategy: Focus on PR & Promotion company with self-media/branding as surplus 
+ 
+To cooperate with PR & Promotion company to expand method of IP promotion service for new movies, games and animation. Movie and gaming industry invest heavily in promotion and distribution of their products. Uni-arts provides a one-stop solution for enterprise users to transfer their client’s IP assets into NFT, and follow-up with transaction and auction services. This would create a new method for IP holders and their promotion company to spread its value and winning customers attentions.  
+ 
+To develop self-media/branding creators to issue NFT with their works via uni-arts. This could effectively monetize their existing traffic with products like as: NFT photos of cosplayer, youtuber, artworks of animation creators, and crypto-arts, etc
+ 
+Technology development goals within 6 months:
+NFT cross chain bridge online, main-net launch, NFT distribution tool for business customers online, auction house DAPP and NFT sales app for flat-money and mainstream social media.
+ 
+Commercial operation: signed cooperation agreement with several established company  and make officially announcement; issued the first batch of products within 6 months. The NFT scheduled to be released with Gaia online is its community NFT, also the NFT of characters form ‘king of fighters’ will be released in cooperation with Shanghai company
 
 
 ## Market positioning and research
@@ -27,8 +29,6 @@ At the same time, the Z generation economy of the main household group is gradua
 
 
 ## Current resources and project operation
-
-- Capital level: continuous communication with candaq and docking with some token funds of okex ecology
-
-- Business level: basically reach cooperation intention with Gaia online. Gaia online, founded in February 2003, is a social game community in the form of animation, with 26 million members. It won the U.S. Internet awards in 2007 and 2011. We have reached an initial agreement and intention with two IP promotion companies in Shanghai, which undertake more than 1000 promotion IP
+- Funding: continuous communication with Candaq and docking with several token funds from okex ecology
  
+- Business: Agreement is about to be reached with Gaia online. Gaia online, founded in February 2003, is a social gaming community in the form of animation with 26 million registered users. Also have reached an initial agreement with two IP promotion companies in Shanghai, which undertake more than 1000 IP promotions.
