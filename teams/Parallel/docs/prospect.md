@@ -1,3 +1,24 @@
+## Prospect
+
+---
+
+## Table of Contents
+
+<!-- vim-markdown-toc GFM -->
+
+* [Market positioning](#market-positioning)
+* [6 months business plan](#6-months-business-plan)
+* [TVL Pool](#tvl-pool)
+* [Security](#security)
+* [Governance](#governance)
+* [Token Model](#token-model)
+* [Community/Marketing](#communitymarketing)
+* [Operation](#operation)
+* [Partnerships](#partnerships)
+* [Team Resources](#team-resources)
+
+<!-- vim-markdown-toc -->
+
 ### Market positioning
 
 -   First lending protocols built on Substrate with the novel concept of double interests (thus the name "Parallel Finance") for DOT and KSM token holders.
