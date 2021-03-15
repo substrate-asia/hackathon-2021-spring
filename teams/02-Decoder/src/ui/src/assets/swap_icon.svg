@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.376" height="37.908" viewBox="0 0 26.376 37.908">
+  <g id="swap_icon" transform="translate(26.876 0) rotate(90)">
+    <g id="Generate-bUSD" transform="translate(-701 -445)">
+      <g id="swap_icon-2" data-name="swap_icon" transform="translate(701 445)">
+        <path id="路径" d="M12.469.5a8,8,0,0,1,8,7.751l0,.249v2.726h-3V8.5a5,5,0,0,0-10-.217l0,.217V25h-3V8.5A8,8,0,0,1,12.469.5Z" fill="#f5f6f9"/>
+        <path id="路径-2" data-name="路径" d="M33.469,7.876V18.5a8,8,0,0,1-16,.249l0-.249V11.226h3V18.5a5,5,0,0,0,10,.217l0-.217V7.876Z" fill="#f5f6f9"/>
+        <path id="形状结合" d="M0,20H11.939L5.969,26.876Z" fill="#da2484" fill-rule="evenodd"/>
+        <path id="形状结合备份" d="M25.969-1H37.908L31.939-7.876Z" transform="translate(0 8.876)" fill="#da2484" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>

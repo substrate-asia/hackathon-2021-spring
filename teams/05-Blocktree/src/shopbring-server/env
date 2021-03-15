@@ -1,0 +1,25 @@
+# http
+PORT=8088
+
+# nonce
+NONCE_KEY="4@hUI3Q*1B&#RS6#cYvDB1x4eymw^f7Hp"
+
+# jwt
+JWT_KEY="78$ey1N^DxQ%9WkD#XA%Hfi@U$z!2$5qj"
+
+# mysql
+MYSQL_HOST=127.0.0.1
+MYSQL_PORT="3306"
+MYSQL_ROOT_PASSWORD="123456"
+
+#mail test模式不发送邮件直接通过认证
+MAIL_MODE="test"
+MAIL_SECRET="*UhX1@c^$b8JTT3bs6#R&AmMlbTi"
+MAIL_SENDER="123456@qq.com"
+MAIL_PASS="123456"
+MAIL_CALLURL="http://localhost:8088/user/confirmMail"
+
+#polkadot
+POLKADOT_NETWORK="wss://testnet.shopbring.network"
+POLKADOT_WATCHER=10
+POLKADOT_SPEC_EXPIRED=1800000

@@ -1,0 +1,31 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8080
+  connection-timeout: 5000ms
+  servlet:
+    context-path: /ares   
+spring:
+  redis:
+    open: true  # 是否开启redis缓存  true开启   false关闭
+    database: 0
+    host: redis
+    port: 6379
+    password:  # 密码（默认为空）
+    timeout: 6000ms  # 连接超时时长（毫秒）
+  profiles:
+    active: dev
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+    
+symbol: huobi

@@ -1,0 +1,41 @@
+[package]
+authors = ['blocktree <https://github.com/blocktree/>']
+description = 'FRAME pallet template for defining custom runtime logic.'
+edition = '2018'
+homepage = 'https://github.com/blocktree/'
+license = 'Apache-2.0'
+name = 'pallet-commissioned-shopping'
+repository = 'https://github.com/blocktree/shopbring/'
+version = '1.0.0'
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "1.3.4", default-features = false }
+frame-support = { default-features = false, version = '2.0.1' }
+frame-system = { default-features = false, version = '2.0.1' }
+sp-std = { version = '2.0.1', default-features = false }
+primitives = { package = 'shopbring-primitives', path = '../../primitives', default-features = false }
+sp-core = { default-features = false, version = '2.0.1' }
+sp-io = { default-features = false, version = '2.0.1' }
+sp-runtime = { default-features = false, version = '2.0.1' }
+serde = { version = "1.0.119", optional = true }
+pallet-generic-asset = { path="../generic-asset", default-features = false }
+pallet-support = { path="../support", default-features = false }
+
+[dev-dependencies]
+hex = "0.4.2"
+blake2-rfc = "0.2.18"
+
+[features]
+default = ['std']
+std = [
+    'codec/std',
+    'frame-support/std',
+    'frame-system/std',
+    'primitives/std',
+    'sp-std/std',
+    'sp-io/std',
+    'sp-runtime/std',
+    'serde',
+    'pallet-generic-asset/std',
+    'pallet-support/std',
+]

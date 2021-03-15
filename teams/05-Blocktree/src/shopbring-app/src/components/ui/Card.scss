@@ -1,0 +1,21 @@
+.card {
+    background-color: white;
+	padding: 2rem 3rem 2rem 3rem;
+	border-radius: 3px;
+	box-shadow: box_shadow_card;
+	margin-bottom: 1rem;
+	@media only screen and (max-width: 768px) {
+		padding: 2rem;
+	}
+
+	font-size: sm;
+
+	h5, h6 {
+		font-size: 1.4rem;
+	}
+
+	.ui.divided.grid:not([class*="vertically divided"])>.column:not(.row),
+	.ui.divided.grid:not([class*="vertically divided"])>.row>.column {
+		box-shadow: none;
+	}
+}

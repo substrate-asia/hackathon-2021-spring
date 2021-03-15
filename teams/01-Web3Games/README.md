@@ -13,7 +13,7 @@ English / [中文](https://github.com/ParityAsia/hackathon-2021-spring/tree/main
 - [Project Introduction](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/docs/project.md)
 - [Team Members](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/docs/team.md)
 - [Source Codes](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/src/README.md)
-- [Presentation](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/presentation.pdf)
+- [Presentation](https://github.com/ParityAsia/hackathon-2021-spring/blob/main/teams/01-Web3Games/docs/presentation.pdf)
 
 
 

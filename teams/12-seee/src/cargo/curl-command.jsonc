@@ -1,0 +1,43 @@
+ 
+curl -X GET   'http://localhost:5000/cargos'  -H 'Content-Type: application/json; charset=utf-8'
+
+curl -X GET   'http://localhost:5000/cargo/123456' -H 'Content-Type: application/json; charset=utf-8'
+
+curl -X DELETE   'http://localhost:5000/cargo/123456'  -H 'Content-Type: application/json; charset=utf-8'
+
+
+curl -X POST   'http://localhost:5000/cargo'  \
+ -H 'Content-Type: application/json; charset=utf-8' \
+-d '{  
+  "account": "1234567",
+  "mkarr": [
+      "1231281",
+      "2323232",
+      "343434343"
+  ]
+}'
+
+
+curl -X PUT   'http://localhost:5000/cargo'  \
+ -H 'Content-Type: application/json; charset=utf-8' \
+-d '{  
+  "id": 1,
+  "account": "1234567",
+  "mkarr": [
+      "1231281",
+      "2323232",
+      "343434343"
+  ],
+  "done":true
+}'
+
+
+
+curl -X POST   'http://localhost:5000/verify'  \
+ -H 'Content-Type: application/json; charset=utf-8' \
+-d '{  
+  "cid": "019911542ae6168eb1a1a02eba615240a74fa6613e2110929c73c99a9e750f2b",
+  "hashcode": "1231281"
+}'
+
+
