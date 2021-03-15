@@ -1,0 +1,8 @@
+{
+	"dependencies": {
+		"@polkadot/api": "^4.0.4-11",
+		"@polkadot/util": "^6.0.5",
+		"rpc-websockets": "^7.4.8",
+		"commander": "^7.1.0"
+	}
+}
