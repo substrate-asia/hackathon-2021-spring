@@ -171,7 +171,6 @@ Parallel finance comes out a solution to unlock the liquidity of staked DOT with
 ##### Staking
 
 ---
-
 When the user deposit DOT to the staking pool, he will receive xDOT based on the exchange rate. The staking pool compounds the reward automatically which incentivizes the user to stake early and longer.
 
 ```
@@ -192,6 +191,7 @@ Parallel finance uses auto-selected validators recommanded by polkadot network f
 ---
 
 There is a 28 days cool down period for xDOT holders who want to redeem DOT. We will improve features to reduce the cool down period and create a xDOT/DOT market for users who need early redemption.
+
 
 If a nominated validator is slashed during the staking period, Parallel finance will use its reserve fund to cover the lose.
 
