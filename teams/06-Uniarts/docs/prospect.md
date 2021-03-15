@@ -1,53 +1,53 @@
-# EN
+# About Uni-Arts
+Uni-Arts is a decentralized exhibition & auction house for crypto artworks and collections, and it is developed on its own substrate based blockchain network. Uni-Arts offer user-friendly NFT creation tool that allow creators to publish their works on the network with almost zero knowledge of blockchain. Also, Uni-Arts’ economic model provide incentive for both creators and collectors to list and trade artworks though the auction house.
 
-## Business planning for the next six months
-Business planning: develop business from two directions of enterprise and media
+* Uni-Arts is a substrate based blockchain network for NFT creation, exhibition, and auction. 
+* Uni-Arts offer user-friendly NFT creation tool that allow community creators to publish their works on the network with almost zero knowledge of blockchain.  
+* Uni-Arts provide industry grade NFT pubilcation tools that support dynamic effects with random elements powered by blockchain based random number generator. 
+* Uni-Arts' support cross-chain assets and aim to become the major gateway between Ethereum & substrate based networks.
 
-Enterprises: cooperate with Xuanfa company to expand the IP propaganda service of new movies, games and animation. In recent years, the investment in publicity and distribution of cultural industry has gradually increased. By NFT of IP assets, uni art provides a new way for enterprise oriented IP publicity and distribution, and also provides follow-up transaction and auction services.
-Personal aspect: do the conversion of traffic income for we media and creators and NFT distribution and auction of works. We media can release its personal IP related NFT products, such as: NFT photos of cosplayer, personal works of animation creators, encrypted works of art, etc
+## Technical design and Solution
 
-Technology development planning:
-NFT cross chain bridge online, main network online, NFT distribution tool for b-end customers online, auction house DAPP and NFT sales app for French currency and mainstream social media online
-Commercial operation: signed cooperation agreement with the above three enterprises and officially announced, and issued the first batch of products at the same time. The NFT scheduled to be released with Gaia online is community NFT, and the NFT in the role of boxer king will be released in cooperation with Shanghai company
+### DAO
+Uni-Arts plan to operate as a DAO (Decentralized Autonomous Organization) with following roles and functions:
+Backers & Viewers, include Uni-Arts Dapp users, NFT & Token holders:
+- Proposal, to incentivize a specific content, or propose to modify DAO’s rules Vote for proposal;
+- Election of members of the executive committee
+
+Uni-Arts executive committee main functions include:
+- None-technical admin;
+- Remove content that are illegal or anti-public interest;
+- Grant Approval
+- Set bounty
+
+Contributor Network are creators, producers of content, PR services provider or anyone who makes contribution to the network. Contributors can get incentives by submitting content specified by DAO (provided that the content is published), or by completing Bounty bounty.
+
+### Multi-Chain NFT Support
+The protocol layer of Uni-Arts is an Application Blockchain (App Chain) which focuses on providing security and other decentralized infrastructure for the exhibition & auction house built above. Uni-Arts chain is developed via substrate, and it can interact with other substrate based bridge chain (i.e.. Darwinia) to support NFTs transferred from established blockchain network (i.e.. Ethereum) to list in the auction house or to transfer away.
+
+### User Friendly NFT Maker
+Uni-Arts NFT Maker is a windows application that allow its user to pack and publish their artworks on Uni-Arts chain as a NFT. User may combine visual and audio file (eg. Picture, video, gif …etc.) with one or few preset dynamic effects with random elements which supported by the random number generator of Uni-Arts blockchain network, thus the NFTs created by this tool are truly unique, not only in turns of crypto identification, but also in visual presentation. Uni-Arts aims to lower the barrier of NFT creation and collection, hence the degree of creation freedom is limited for now as a trade off, and its developers plan to add more feature for NFT Maker in the future.
+
+### Incentive for Both Creator and Collector
+Create NFT via NFT maker cost U-ink as gas, and can be listed in the Uni-Arts exhibition hall. Every user can upvote for NFTs they like in the exhibition hall with U-ink, and the NFT received most amount of upvotes will become the ‘Daily Auction Star’ for next day. Once selected, the NTF owner can receive 50% of the U-ink spent for upvotes.
+Once the NFT was sold though auction, the winner (new owner) can issue tokens NSH-X,(NFT Stakeholder) where X is the name of NFT, to represent the value-added part of the NFT from its next sale. NSH serves as an effective tool of value discovery for NFT in the market. Once the NFT is sold again, NSH-X holder can spend the NSH-X to claim the benefit.
+
+## Progress of the project
+
+* Complete the chain building, NFT creation, registration, commission sales, pricing and auction module.
+* The deployment test node of chain version 1.0 is completed.
+* Build the chain browser and deploy it online.
+* DAPP prototype design is completed.
+* The design documents of chain and application are being perfected.
 
 
-## Market positioning and research
-* Movie and Gaming: 
-    - Promotion and Distribution channel. 
-    - Work with IP holders or distributors to publish NFTs for Characters, in-game items, limited edition film tickets...etc.
-* Anime and Commuity
-    - Crypto Peripheral and Artworks
-    - Pubilsh dynamic NFT perihperal for animes, crypto arts from commuity creators.
-* Physic Artworks
-    - NFT credentials
-    - with RFID Traceability soultions
+## Technical difficulties encountered in the project and Solutions
 
-According to the data of iimedia research, the size of China's millionhouseholds in 2019 is about 332million,
-It is expected that the total amount of RMB 400 million will be exceeded in 2021. AI media consulting analysts believe that with the development of the generalization of the "dimension", the size of its households will continue to increase.
-
-At the same time, the Z generation economy of the main household group is gradually unique, and the consumption energy increases with it, and the commercial value of the sub-prime industry is constantly rising.
-
-
-## Current resources and project operation
-
-- Capital level: continuous communication with candaq and docking with some token funds of okex ecology
-
-- Business level: basically reach cooperation intention with Gaia online. Gaia online, founded in February 2003, is a social game community in the form of animation, with 26 million members. It won the U.S. Internet awards in 2007 and 2011. We have reached an initial agreement and intention with two IP promotion companies in Shanghai, which undertake more than 1000 promotion IP
+* NFT standards are inconsistent, there is no mature NFT technology.
 
 
 
-# ZH-CN
 
-## Uni-art 未来6个月的规划：
-商业规划：从企业和自媒体两个方向发展业务
-企业方面：与宣发公司合作，拓展新电影、游戏和动漫的IP宣发服务。近年来文化产业在宣发上投入有逐渐增加的趋势，Uni-art通过将IP资产NFT化，提供一个新的面向企业的IP宣发途径，同时也提供后续交易和拍卖服务。
-个人方面：做面向自媒体和创作者的流量收益转化和作品NFT发行与拍卖。自媒体可以发行其个人IP相关的NFT产品，如：cosplayer的NFT照片，动漫创作者的个人作品，加密艺术品等
- 
-技术开发规划：
-NFT跨链桥上线，主网上线，面向B端客户的NFT发行工具上线，拍卖行Dapp和面向法币及主流社交媒体的NFT销售APP上线
-商业运营方面：与上述三家企业正式签订合作协议并官宣，同时发行第一批产品。与盖亚在线预定发行的NFT为社区NFT，与上海公司合作发行拳皇角色的NFT
 
-## 目前已有的资源和运营程度：
-资本层面：与Candaq在持续沟通重，跟okex生态的一些token fund在对接中
-业务层面：与盖亚在线gaiaonline基本达成合作意向。Gaia在线创办于2003年2月，是动漫形式呈现的社交游戏社区，现有2600万会员，于2007年和2011年获得美国互联网方面奖项。跟上海两家IP宣发公司初步达成和作意向，这两家公司承接的宣发IP超过1000个
- 
+
+
