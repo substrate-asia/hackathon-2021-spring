@@ -15,6 +15,7 @@
 
 According to the data of iimedia research, the size of China's millionhouseholds in 2019 is about 332million,
 It is expected that the total amount of RMB 400 million will be exceeded in 2021. AI media consulting analysts believe that with the development of the generalization of the "dimension", the size of its households will continue to increase.
+
 At the same time, the Z generation economy of the main household group is gradually unique, and the consumption energy increases with it, and the commercial value of the sub-prime industry is constantly rising.
 
 
