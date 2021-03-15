@@ -90,7 +90,7 @@ export default {
   components: {},
   data() {
     return {
-      progress_num: 30,
+      progress_num: 50,
     };
   },
   methods: {},
