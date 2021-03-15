@@ -13,4 +13,10 @@
 * github: @yxf
 * weixin: yxf4559
 
+## xuxiaohu
+
+* Backend developer
+* Presided over the development of many digital asset trading systems
+* github: @xuxiaohu
+* weixin: xxhxry0228
 
