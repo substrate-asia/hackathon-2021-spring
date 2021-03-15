@@ -60,7 +60,7 @@ The second problem we met is that 'NFT' is not a 'Account'. But in the cultivate
 
 ### Since Hackathon
 
-This is a brand new project for this hackation season, we have done all these jobs part-time since March 1.
+This is a brand new project for this hackation season, we have done all these jobs part-time since March.
 
 ## Project Vision
 
@@ -78,11 +78,15 @@ It will be a fantasy world!
 
 We can say it is the most suitable game category for blockchain since the separation of player’s items and 'Procedural death labyrinths'.
 
+As the core game experience, the 'Procedural death labyrinths' can be completely provided by off-chain services, and its battle loots are stored in the form of on-chain data.
+
+We are very looking forward to becoming the beginning of blockchain games with rich gameplay.
+
 ### Resources and Operation Plans
 
 For now, No extra resources.
 
-But we are still trying to build a rogue-like game with some impressive techology like Substrate.
+But we think it is so cool to build a rogue-like game with some impressive techology like Substrate.
 
 May be posting our dev progress at some video sharing or live broadcasting website is a good idea.
 
