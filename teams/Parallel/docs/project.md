@@ -12,6 +12,7 @@ Currently, there is a substantial demand from DOT and KSM token holders for cash
 
 -   [Technology](#technology)
     -   [Workflow](#the-workflow-of-parallel)
+    -   [UI design](#ui-design)
     -   [Storage](#storage)
     -   [Calls](#calls)
     -   [Interest Rate Model](#interest-rate-model)
@@ -32,6 +33,28 @@ The lending protocol was inspired by compound protocol and our blockchain soluti
 ---
 
 ![text](../images/work_flow_of_Parallel.png)
+
+### UI Design
+
+The current UI has been implemented and deployed to our official site: [parallel.fi](https://parallel.fi).
+
+1. General Overview
+   ![overview](../images/overview.png)
+
+2. Portfolio Overview
+   ![portfolio](../images/portfolio.png)
+
+3. Market
+   ![market](../images/market.png)
+
+4. Deposit and collateral
+   ![deposit](../images/deposit.png)
+
+5. Withdraw
+   ![withdraw](../images/withdraw.png)
+
+6. DOT Staking
+   ![staking](../images/staking.png)
 
 #### Storage
 
