@@ -14,9 +14,13 @@ PNS的目标与互联网的域名服务DNS类似，与DNS一样，PNS也是在�
 
 ## Demo Video
 
-Chinese Edition (Recommended)
-https://dominic.pek3b.qingstor.com/07-PolkaName-demo-cn.mp4
+[Chinese Edition (Recommended)](https://dominic.pek3b.qingstor.com/07-PolkaName-demo-cn.mp4)
 
-English Edition
-https://dominic.pek3b.qingstor.com/07-PolkaName-demo-en.mp4
+[English Subtitle](https://dominic.pek3b.qingstor.com/EN_PolkaName.srt)
+
+
+## English Demo Video
+
+[English Edition](https://dominic.pek3b.qingstor.com/07-PolkaName-demo-en.mp4)
+
 
