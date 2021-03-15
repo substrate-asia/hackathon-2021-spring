@@ -1,0 +1,25 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "description": "common js code",
+  "main": "config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "await-to-js": "^2.1.1",
+    "ip-regex": "^4.1.0",
+    "superagent": "^5.2.2"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}

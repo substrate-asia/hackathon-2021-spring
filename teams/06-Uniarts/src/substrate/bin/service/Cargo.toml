@@ -1,0 +1,85 @@
+[package]
+name = "uniarts-service"
+version = "1.0.0"
+authors = ["terry.tu <tuminfei1981@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+structopt = "0.3.8"
+serde = { version = "1.0.101", features = ["derive"] }
+serde_json = { version = "1.0.41" }
+hex-literal = "0.2.1"
+futures = { version = "=0.3.8" }
+log = { version = "0.4.11" }
+codec = { package = "parity-scale-codec", version = "1.3.4", default-features = false }
+
+# Uniarts
+pangu-runtime = { path = "../../runtime/pangu" }
+fuxi-runtime = { path = "../../runtime/fuxi" }
+uniarts-primitives = { path = "../../primitives" }
+uniarts-rpc = { path = "../rpc" }
+
+# substrate client
+sc-cli = { version = "0.8.0", features = ["wasmtime"] }
+sc-executor = { version = "0.8.0", features = ["wasmtime"] }
+sc-service = { version = "0.8.0", features = ["wasmtime"] }
+sc-transaction-pool = { version = "2.0.1" }
+sc-consensus-aura = { version = "0.8.0" }
+sc-consensus = { version = "0.8.0" }
+sc-finality-grandpa = { version = "0.8.0" }
+sc-client-api = { version = "2.0.1" }
+sc-rpc = { version = "2.0.1" }
+sc-rpc-api = { version = "0.8.0" }
+sc-telemetry = { version = "2.0.1" }
+sc-chain-spec = { version = "2.0.1" }
+sc-basic-authorship = { version = "0.8.0" }
+
+# substrate primitives
+sp-core = { version = "2.0.1" }
+sp-inherents = { version = "2.0.1" }
+sp-transaction-pool = { version = "2.0.1"}
+sp-consensus-aura = { version = "0.8.0" }
+sp-consensus = { version = "0.8.0" }
+sp-finality-grandpa = { version = "2.0.1" }
+sp-runtime = { version = "2.0.1" }
+sp-api = { version = "2.0.1" }
+sp-blockchain = { version = "2.0.1" }
+sp-block-builder = { version = "2.0.1" }
+sp-offchain = { version = "2.0.1" }
+sp-session = { version = "2.0.1" }
+sp-trie = { version = "2.0.1" }
+
+frame-benchmarking = { version = "2.0.0" }
+frame-benchmarking-cli = { version = "2.0.0" }
+
+# pallet
+substrate-frame-rpc-system = { version = "2.0.0" }
+substrate-prometheus-endpoint = { version = "0.8.1" }
+pallet-transaction-payment-rpc = { version = "2.0.0" }
+pallet-staking-rpc = { path = "../../pallets/staking/rpc" }
+pallet-contracts-rpc = { version = "0.8.0" }
+pallet-contracts = { version = "2.0.0" }
+
+# API
+frame-system-rpc-runtime-api = { version = "2.0.0" }
+pallet-transaction-payment-rpc-runtime-api = { version = "2.0.0" }
+
+[build-dependencies]
+substrate-build-script-utils = { version = "2.0.0" }
+# frame-benchmarking-cli = { version = '2.0.0', optional = true }
+
+[features]
+default = ["db", "full-node"]
+
+db        = ["sc-service/db"]
+full-node = []
+
+dev = [
+    "pangu-runtime/dev",
+    "fuxi-runtime/dev",
+]
+
+runtime-benchmarks = [
+    "pangu-runtime/runtime-benchmarks",
+    "fuxi-runtime/runtime-benchmarks",
+]

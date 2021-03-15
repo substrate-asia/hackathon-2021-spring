@@ -1,0 +1,39 @@
+[package]
+authors = ['nft-swap']
+edition = '2018'
+license = 'Unlicense'
+name = 'pallet-nft'
+version = '2.0.1'
+
+[package.metadata.docs.rs]
+targets = ['x86_64-unknown-linux-gnu']
+
+# alias "parity-scale-code" to "codec"
+[dependencies.codec]
+default-features = false
+features = ['derive']
+package = 'parity-scale-codec'
+version = '1.3.4'
+
+[dependencies]
+frame-support = { default-features = false, version = '2.0.1' }
+frame-system = { default-features = false, version = '2.0.1' }
+sp-runtime = { default-features = false, version = '2.0.1' }
+sp-std = { default-features = false, version = '2.0.1' }
+sp-arithmetic = { default-features = false, version = '2.0.1' }
+substrate-fixed = { git = 'https://github.com/encointer/substrate-fixed.git', tag = "v0.5.6" }
+
+[dev-dependencies]
+sp-core = { default-features = false, version = '2.0.1' }
+sp-io = { default-features = false, version = '2.0.1' }
+pallet-balances = { package = 'pallet-balances', version = '2.0.1' }
+
+
+[features]
+default = ['std']
+std = [
+    'codec/std',
+    'frame-support/std',
+    'frame-system/std',
+    'sp-std/std',
+]

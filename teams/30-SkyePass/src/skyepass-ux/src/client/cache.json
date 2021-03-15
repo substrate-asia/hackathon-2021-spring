@@ -1,0 +1,11 @@
+{
+  "vaults": {
+    "0": {
+      "name": "Test Vault",
+      "nonce": 6,
+      "metadata": "QmTVxMtSYURKaUy2f1d3k1vbFPPcGQj8sSq2nzseiZeDTM",
+      "display": "0x99e9d85137db46ef"
+    }
+  },
+  "latest_vault_id": 1
+}

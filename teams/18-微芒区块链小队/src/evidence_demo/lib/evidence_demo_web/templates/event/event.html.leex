@@ -1,0 +1,55 @@
+<div style="width:60% ;margin: 0 auto;">
+    <p><%= live_flash(@flash, :info) %></p>
+    <p><%= live_flash(@flash, :error) %></p>
+    <%= for event <- @events do %>
+    <div class="card">
+        <div class="card-header">
+            事件编号： # <%= event.id %><br>
+            所在交易：
+            <a target="_blank" href= <%= "https://weimang.cyberemd.com/explorer/#/transaction/transactionDetail?pkHash=#{event.tx.tx_hash}"%>>
+                <%= event.tx.tx_hash %>
+            </a><br>
+            区块高度：
+            <a target="_blank" href= <%= "https://weimang.cyberemd.com/explorer/#/transaction/transactionDetail?pkHash=#{event.tx.block.block_hash}"%>>
+            <%= event.tx.block.block_height%>
+            </a>
+        </div>
+        <div class="card-body">
+            <!-- <%= inspect(event) %> -->
+            <h5 class="card-title">
+                <b>事件名称：</b><%= event.obvious_event.event.name %>
+                <br>
+                <b>事件参数：</b>
+                <br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">key</th>
+                        <th scope="col">value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%= for {key, value} <-  event.obvious_event.args do %>
+                            <tr>
+                            <th scope="row"><%= "#{key}"%></th>
+                            <td><%= "#{inspect(value)}"%></td>
+                            </tr>
+                        <% end %>
+
+                    </tbody>
+                </table>
+            </h5>
+            <br>
+
+        </div>
+    </div>
+    <% end %>
+    <!-- pages -->
+    <%= if @page > 1 do %>
+        <span><%= live_patch "prev", to: Routes.live_path(@socket, EvidenceDemoWeb.EventLive, %{page: @page - 1}) %></span>
+    <% end %>
+    <%= for i <- (@page - 5)..(@page + 5), i > 0 do %>
+        <span><%= live_patch "#{i}", to: Routes.live_path(@socket, EvidenceDemoWeb.EventLive, %{page: i}) %></span>
+    <% end %>
+    <span><%= live_patch "next", to: Routes.live_path(@socket, EvidenceDemoWeb.EventLive, %{page: @page + 1}) %></span>
+</div>
