@@ -1,12 +1,24 @@
-# 项目简介
+## Background
 
-Deeper Network致力于构建真正的去中心化因特网和安全网关。它旨在为每个家庭带来更好的互联网体验，并成为用户通往Web 3.0应用的入口。Deeper的愿景是将网络安全性，网络共享和区块链技术相结合，创建一个更安全，更自由，更快的去中心化网络。
- 
-我们的旗舰产品称为Deeper Connect，该设备可为用户提供安全的家庭网络环境。众多的Deeper Connect设备（又称为轻节点）组成p2p网络(layer2)。Deeper Chain是由substrate为基础开发的区块链节点组成(layer1)。Layer 2的轻节点通过Deeper Chain进行节点发现并建立连接，轻节点之间可以通过分享流量来赚取代币并积累信用分，轻节点可以抵押自己的信用分来参与共识并获得相应的出块奖励(Proof of Credit)。在将来，用户能够以Deeper Connect为入口，轻松的使用各种去中心应用(DApp)，并与其他区块链应用进行交互。
+Deeper Network is committed to building a truly decentralized Internet and security gateway. It aims to bring a better Internet experience for every family and become the gateway for users to Web 3.0 applications. Deeper's vision is to combine network security, network sharing and blockchain technology to create a safer, freer, and faster decentralized network.
 
-目前Deeper Connect已经迭代好几个版本，是软硬件结合的成熟产品，在全球总共部署了上万个节点。我们建立了包括亚马逊，BestBuy在内的面向欧洲，美国，加拿大，中国，日本，东南亚等的全球化销售网络，未来三年节点数量预期达到500万台。
+## Architecture
 
-Deeper的商业价值有明确的实现路径。
-1. 首先从每个人必须用到的上网设备开始，从解决网络安全和更好网络体验开始，迅速切入传统互联网用户，预计2021年底达到首个10万节点的关键里程碑，初步建立网络效应。
-1. 其次会通过拓展矿机，儿童上网设备，VPN等其他使用场景，在2022年底达到100万个节点的网络规模。我们目前已经有了具备此产能的生产线，我们对此非常有信心。
-1. 2023年Deeper会进一步加强节点部署力度，达到总共500万台的目标，同时也会拓展开放去中性化的数据市场(Data Marketplace)，隐私，存储等核心Dapp，成为区块链里的应用分发平台和流量入口，进一步巩固网络效应。
+The structure of our blockchain Deeper Chain is divided into two layers. The upper layer is the blockchain layer, which is composed of validator nodes developed on the basis of Substrate, and the number is around hundreds. The bottom layer is called Deeper layer, similar to Layer 2 in other blockchain projects, but the design is not exactly the same. In our design, the upper and lower layers are closely related. The lower nodes are composed of Deeper Connect devices (also called light nodes), and both software and hardware are independently developed by us. The device can provide users with a safe home network environment. The number of light nodes can reach millions. There are already tens of thousands of units bought by our customers all over the world.
+
+The light nodes of the Deeper layer discover peer IP addresses and establish connections through the blockchain layer; light nodes can earn DPR tokens and accumulate credits by sharing traffic; when the credits of light nodes accumulate to above certain threshold, the device can participate in consensus by staking its credit points and get the corresponding block rewards. In our consensus design, this part is called Proof of Credit (PoC). We have adopted the mixture of PoC and PoS to ensure the security of the network under the condition that the number of early nodes is small, and also allow users that don't have our devices and softwares to participate the staking. 
+
+In the future, users can use Deeper Connect as the gateway to easily access various decentralized applications (DApp) and interact with other blockchain applications.
+
+For detailed information, please refer to our [whitepaper](https://deeper.network/whitepaper_en.pdf)
+
+
+## Code
+
+`src/deeper-chain` contains the blockchain codebase. `src/control-plaine` is the client side codebase, which depends on `src/common-js`.
+
+Please use the following link to download our software for test run:
+
+[https://pan.baidu.com/s/1UBdXklPjyX3D9P5Cdq1LmA](https://pan.baidu.com/s/1UBdXklPjyX3D9P5Cdq1LmA)
+
+password: ita1
