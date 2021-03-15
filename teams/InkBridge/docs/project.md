@@ -69,10 +69,10 @@ InkBTC是我们提供的示例demo，为项目方和开发者演示了如何通�
 将比特币客户端的校验和分叉处理的功能通过ink来实现，判断最长链后存储。每次收到区块校验后都检查最长链是否更新。
 
 3. ink! 合约实现SPV功能，对用户上传的交易和merkle proof 进行验证
-将merkle proof验证功能分离出来，通过ink实现。由于将merkle proof获取的过程分解至线下，大大简化了合约编写的难度和压力。
+开发了工具可以根据比特币交易hash在链下获取交易的原文以及merkle证明，用户只需要将交易原文和证明信息上传到合约，合约可以验证交易的有效性。
 
 4. ink! 合约实现了对 btc 交易脚本解析，可得到交易的详细信息
-在原有库的基础上，修改了部分字段的偏移，使得能否解析btc交易。
+开发了no_std的比特币交易解析库，可以用于在ink！合约中解析交易。
 
 
 
@@ -189,10 +189,10 @@ After obtaining the block information from the node, separate the key block head
 The checksum and fork processing function of the Bitcoin client is implemented through ink, and the longest chain is judged and stored. Every time a block check is received, the longest chain will be updated.
 
 3. The ink! contract implements the SPV function to verify the transaction and merkle proof uploaded by the user
-Separate the merkle proof verification function and implement it through ink. Since the process of obtaining merkle proof is decomposed offline, the difficulty and pressure of contract are greatly simplified.
+A tool has been developed to obtain the original text of the transaction and the merkle proof under the chain based on the Bitcoin transaction hash. Users only need to upload the original transaction and proof information to the contract, and the contract can verify the validity of the transaction.
 
 4. The ink! contract has to analyze of the btc transaction script
-On the basis of the original library, the offset of some fields was modified to make it possible to parse btc transactions.
+Developed no_std bitcoin transaction analysis library, which can be used in ink! Analyze the transaction in the contract.
 
 
 
