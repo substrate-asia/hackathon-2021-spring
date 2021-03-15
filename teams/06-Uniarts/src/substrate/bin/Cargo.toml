@@ -1,0 +1,33 @@
+[package]
+name = "uart"
+version = "1.0.0"
+description = "Uni-Arts node implementation in Rust"
+authors = ["Uniarts Developers"]
+edition = "2018"
+license = "GPL-3.0"
+homepage = "https://uniarts.me"
+repository = "https://github.com/uni-arts-chain/uni-arts-network"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[[bin]]
+name = "uart"
+path = "src/main.rs"
+
+[dependencies]
+futures         = { version = "=0.3.8" }
+parity-util-mem = { version = "*", default-features = false, features = ["jemalloc-global"] }
+
+uniarts-cli = { path = "cli" }
+uniarts-service = { path = "service" }
+uniarts-rpc = { path = "rpc" }
+pangu-runtime = { path = "../runtime/pangu", optional = true }
+fuxi-runtime = { path = "../runtime/fuxi", optional = true }
+
+[profile.release]
+# runtime requires unwinding.
+panic = "unwind"
+
+[features]
+default = [ ]

@@ -1,0 +1,163 @@
+[package]
+name = "pangu-runtime"
+version = "2.0.1"
+authors = ["terry.tu <tuminfei1981@gmail.com>"]
+edition = "2018"
+build   = "build.rs"
+description = "Uniarts node runtime for pangu network"
+
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "1.3.4", default-features = false, features = ["derive"] }
+serde = { version = "1.0.101", optional = true, features = ["derive"] }
+hex-literal = { version = "0.3.1", optional = true }
+
+frame-system = { version = "2.0.1", default-features = false }
+frame-support = { version = "2.0.1", default-features = false }
+frame-executive = { version = "2.0.1", default-features = false }
+frame-system-rpc-runtime-api = { version = "2.0.1", default-features = false }
+
+sp-api = { version = "2.0.1", default-features = false }
+sp-block-builder = { default-features = false, version = "2.0.1"}
+sp-consensus-aura = { version = "0.8.0", default-features = false }
+sp-core = { version = "2.0.1", default-features = false }
+sp-inherents = {  default-features = false, version = "2.0.1"}
+sp-offchain = { version = "2.0.1", default-features = false }
+sp-runtime = { version = "2.0.1", default-features = false }
+sp-session = { version = "2.0.1", default-features = false }
+sp-std = { version = "2.0.1", default-features = false }
+sp-transaction-pool = { version = "2.0.1", default-features = false  }
+sp-version = { version = "2.0.1", default-features = false }
+
+pallet-aura = { version = "2.0.1", default-features = false }
+pallet-balances = { version = "2.0.1", default-features = false }
+pallet-grandpa = { version = "2.0.1", default-features = false }
+pallet-authorship = { version = "2.0.1", default-features = false }
+pallet-randomness-collective-flip = { version = "2.0.1", default-features = false }
+pallet-sudo = { version = "2.0.1", default-features = false }
+pallet-timestamp = { version = "2.0.1", default-features = false }
+pallet-transaction-payment = { version = "2.0.1", default-features = false }
+pallet-session = { version = "2.0.1", default-features = false, features = ["historical"] }
+pallet-nicks = { version = "2.0.1", default-features = false }
+pallet-vesting = { version = "2.0.1", default-features = false }
+pallet-collective = { version = "2.0.1", default-features = false }
+pallet-membership = { version = "2.0.1", default-features = false }
+pallet-treasury = { version = "2.0.1", default-features = false }
+pallet-identity = { version = "2.0.1", default-features = false }
+pallet-scheduler = { version = "2.0.1", default-features = false }
+pallet-multisig = { version = "2.0.1", default-features = false }
+pallet-proxy = { version = "2.0.1", default-features = false }
+pallet-utility = { version = "2.0.1", default-features = false }
+pallet-indices = { version = "2.0.1", default-features = false }
+pallet-recovery = { version = "2.0.1", default-features = false }
+pallet-society = { version = "2.0.1", default-features = false }
+pallet-elections-phragmen = { version = "2.0.1", default-features = false }
+pallet-contracts = { version = "2.0.1", default-features = false }
+pallet-contracts-primitives = { version = "2.0.1", default-features = false }
+pallet-contracts-rpc-runtime-api = { version = "0.8.0", default-features = false }
+
+# Used for RPCs
+pallet-transaction-payment-rpc-runtime-api = { version = "2.0.1", default-features = false }
+pallet-staking-rpc-runtime-api = { version = "0.1.0", default-features = false, path = "../../pallets/staking/rpc/runtime-api"}
+
+# Uni-Arts pallets
+uniarts-common = { path = "../../pallets/common", default-features = false }
+pallet-certificate = { path = "../../pallets/certificate", default-features = false }
+pallet-assets = { path = "../../pallets/assets", default-features = false }
+pallet-names = { path = "../../pallets/names", default-features = false }
+pallet-nft = { path = "../../pallets/nft", default-features = false }
+pallet-rewards = { path = "../../pallets/rewards", default-features = false }
+pallet-staking = { path = "../../pallets/staking", default-features = false }
+pallet-validator-set = { path = "../../pallets/validator-set", default-features = false }
+pallet-token = { path = "../../pallets/token", default-features = false }
+pallet-trade = { path = "../../pallets/trade", default-features = false }
+# pallet-lotteries = { path = "../../pallets/lotteries", default-features = false }
+primitives = { package = "uniarts-primitives", path = "../../primitives", default-features = false }
+
+# Used for runtime benchmarking
+frame-benchmarking = { version = "2.0.1", default-features = false, optional = true }
+frame-system-benchmarking = { version = "2.0.1", default-features = false, optional = true }
+
+
+[build-dependencies]
+wasm-builder-runner = { version = "1.0.5", package = "substrate-wasm-builder-runner" }
+
+[features]
+default = ["std"]
+std = [
+    "codec/std",
+    "serde",
+    "frame-executive/std",
+    "frame-support/std",
+    "frame-system/std",
+    "frame-system-rpc-runtime-api/std",
+    "frame-benchmarking/std",
+    "frame-system-benchmarking/std",
+    "pallet-aura/std",
+    "pallet-balances/std",
+    "pallet-grandpa/std",
+    "pallet-authorship/std",
+    "pallet-vesting/std",
+    "pallet-collective/std",
+    "pallet-membership/std",
+    "pallet-treasury/std",
+    "pallet-elections-phragmen/std",
+    "pallet-identity/std",
+    "pallet-randomness-collective-flip/std",
+    "pallet-session/std",
+    "pallet-society/std",
+    "pallet-sudo/std",
+    "pallet-timestamp/std",
+    "pallet-transaction-payment/std",
+    "pallet-transaction-payment-rpc-runtime-api/std",
+    "pallet-contracts/std",
+    "pallet-contracts-primitives/std",
+    "pallet-contracts-rpc-runtime-api/std",
+    "uniarts-common/std",
+    "pallet-names/std",
+    "pallet-nft/std",
+    "pallet-validator-set/std",
+    "pallet-token/std",
+    "pallet-trade/std",
+    "pallet-staking/std",
+    "pallet-rewards/std",
+    "pallet-staking-rpc-runtime-api/std",
+    "pallet-multisig/std",
+    "pallet-proxy/std",
+    "pallet-utility/std",
+    "pallet-indices/std",
+    "pallet-recovery/std",
+    "pallet-nicks/std",
+    "pallet-assets/std",
+    "sp-api/std",
+    "sp-block-builder/std",
+    "sp-consensus-aura/std",
+    "sp-core/std",
+    "sp-inherents/std",
+    "sp-offchain/std",
+    "sp-runtime/std",
+    "sp-session/std",
+    "sp-std/std",
+    "sp-transaction-pool/std",
+    "sp-version/std",
+    "primitives/std",
+]
+
+runtime-benchmarks = [
+    "sp-runtime/runtime-benchmarks",
+    "frame-benchmarking",
+    "frame-support/runtime-benchmarks",
+    "frame-system-benchmarking",
+    "hex-literal",
+    "frame-system/runtime-benchmarks",
+    "pallet-collective/runtime-benchmarks",
+    "pallet-society/runtime-benchmarks",
+    "pallet-balances/runtime-benchmarks",
+    "pallet-timestamp/runtime-benchmarks",
+    "pallet-rewards/runtime-benchmarks",
+]
+
+dev = []
