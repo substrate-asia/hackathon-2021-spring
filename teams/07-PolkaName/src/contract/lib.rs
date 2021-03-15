@@ -10,14 +10,13 @@ mod polka_name {
     // use ink_env::{Hash, AccountId};
 
     // Resolver is the resolved pns value
-    // It could be a wallet, contract, IPFS content hash, ipv4, ipv6 etc
+    // It could be a wallet, contract, IPFS content hash, IPv4, IPv6 etc
     pub type Resolver = AccountId;
     pub type Label = [u8; 32];
 
     #[ink(storage)]
     #[derive(Default)]
     pub struct PolkaName {
-        value: bool,
         root: AccountId,                    // contract owner
         records: HashMap<Hash, AccountId>,  // mapping of domain name to owner
         resolvers: HashMap<Hash, Resolver>, // mapping of domain name to resolver
@@ -28,7 +27,6 @@ mod polka_name {
         #[ink(constructor)]
         pub fn default() -> Self {
             Self {
-                value: true,
                 root: Default::default(),
                 records: Default::default(),
                 resolvers: Default::default(),

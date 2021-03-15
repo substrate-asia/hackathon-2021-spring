@@ -1,7 +1,7 @@
 {
-  "name": "ens.domains-v2",
+  "name": "Pns",
   "private": true,
-  "description": "ENS Domains homepage V2",
+  "description": "PNS Domains homepage V2",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
