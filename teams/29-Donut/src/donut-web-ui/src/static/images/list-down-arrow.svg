@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/arrow/m</title>
+    <g id="产品页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="NUTBOX-钱包-tron" transform="translate(-1312.000000, -120.000000)">
+            <g id="Group-10-Copy" transform="translate(336.000000, 104.000000)">
+                <g id="Balances" transform="translate(860.000000, 5.000000)">
+                    <g id="icon/arrow/m" transform="translate(116.000000, 11.000000)">
+                        <rect id="Rectangle-55" x="0" y="0" width="16" height="16"></rect>
+                        <path d="M5.67126465,13.8415527 C5.37837143,14.134446 4.9034977,14.134446 4.61060448,13.8415527 C4.31771126,13.5486595 4.31771126,13.0737858 4.61060448,12.7808926 L9.38400683,8.00749021 L4.61207186,3.23555523 C4.31917864,2.94266201 4.31917864,2.46778828 4.61207186,2.17489506 C4.90496508,1.88200184 5.37983881,1.88200184 5.67273203,2.17489506 L10.9760329,7.47819592 C11.2689261,7.77108914 11.2689261,8.24596287 10.9760329,8.53885609 C10.9648089,8.55008013 10.9533176,8.56087405 10.9415795,8.57123785 L5.67126465,13.8415527 Z" id="Combined-Shape" fill="#BDBFC2" fill-rule="nonzero" transform="translate(7.793319, 8.008224) rotate(-270.000000) translate(-7.793319, -8.008224) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
