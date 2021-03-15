@@ -1,134 +1,204 @@
-# 2021 春季 Polkadot / Substrate 黑客松
+# Mintcraft - A Rogue-like Blockchain Game Framework
 
-## 重要时间表
+## Getting Started
 
-|日期 | 事项|
-|----|-----|
-| 2 月 11 日* |截止参赛报名 |
-| 3 月 15 日* |截止提交参赛项目 |
-| 3 月 20 - 21 日 | 上海黑客松周末 |
+Follow these steps to get started.
+### Rust Setup
 
-- 截止报名时间点： **2 月 11 日 23:59**
-- 截止提交参赛项目时间点： **3 月 15 日 23:59**
+First, complete the [basic Rust setup instructions](./doc/rust-setup.md).
 
-- [报名链接](https://shimo.im/forms/gphHCQHpkXYcwKGP/fill)
-- [参赛类别](./docs/categories.md)
+### Run
 
-## 项目提交流程 (2021-03-10 更新)
+Use Rust's native `cargo` command to build and launch the template node:
 
-1. 由即日起，fork 这个代码仓库，到你们团队成员 repo 里。
+```sh
+cargo run --release -- --dev --tmp
+```
 
-2. 先在 `teams` 内生成一个目录，以你们团队名称命名，里面先放个空档案，或 readme 简单介绍团队。提交一个 PR 进来。目的是预留一个目录作为你们团队空间。**注意我们会把目录改名，在团队名称前加个编号。请 pull 下来。**
+### Build
 
-3. 之后，所有参赛项目相关代码都放在你们的团队名称里的目录里进行。可以这种形式存放：
+The `cargo run` command will perform an initial build. Use the following command to build the node
+without launching it:
 
-    ```
-    teams
-      L 01-撒亚人战队        // 团队目录名称
-        L src
-            L substrate // substrate 相关代码
-            L ui        // 前端相关代码
-            L 。。。     // 其他档案
-        L docs          // 这里放所有文档，项目资料，规划，demo 链接, ppt (链接)
-        L 。。。其他档案
-    ```
+```sh
+cargo build --release
+```
 
-4. 3月15日 时，提交一个 PR 进来本 repo 里，团队只可改修改他们目录里的档案。这样也可保持各团队们的参赛项目直到的保密性直到 3月15日。
+### Embedded Docs
 
-5. 我们 3月16日 凌晨会 merge PRs。海外评委们会以 3月16日前最后一个 PR 结果来打分。
+Once the project has been built, the following command can be used to explore all parameters and
+subcommands:
 
-6. 3月17日 中午 12:00 会给出初选名单，拟出被邀请出席 Demo Day 的团队，结果会在本网站公布。邀请通知会由工作人员另外发给项目联络人。
+```sh
+./target/release/mintcraft -h
+```
 
-7. 3月18日 中午 12:00 各团队联络人确认工作人员 3月20-21日 能否出席 Demo Day。
+### Types
 
-## 提交参赛项目信息 (2021-03-10 更新)
+Setup in 'Developers' when using [https://polkadot.js.org](https://polkadot.js.org)
 
-**3月15日** 最终提交参赛项目资料，用作给海外评委作初选审核。请包括以下信息：
+```json
+{
+  "CommodityId": "Hash",
+  "CommodityInfo": {
+    "name": "Vec<u8>",
+    "version": "Vec<u8>"
+  },
+  "MetaKeyValue": {
+   "key": "Vec<u8>",
+   "value": "bool"
+  },
+  "Commodity": {
+   "id": "CommodityId",
+   "info": "CommodityInfo"
+  }
+}
+```
 
-  1. 必须：项目完整代码，放在 `团队目录/src/` 目录里。需要是能单独跑起来的项目。不能是要让评委另外 git clone 其他项目代码来運行。
-  2. 必须：队员信息，包含参赛者名称 及 github 帐号。(工作人员此时应有团队联络人微信)。放在 `团队目录/docs/team.md` 里。
-  3. 必须：项目报告，包含以下部分：
+## Run
 
-     - 项目背景/原由/要解决的问题
-     - 项目技术设计
-     - 项目现在做到的程度
-     - 项目遇到的技术难点 及 解决方案
-     - 项目如果报名时已经做到一定高度 (之前已经开始做)，请列点说明在黑客松期间 (2月1日 - 3月15日) 所完成的事项/开发工作。
+The provided `cargo run` command will launch a temporary node and its state will be discarded after
+you terminate the process. After the project has been built, there are other ways to launch the
+node.
 
-     所有信息，必须有英文，放在 `团队目录/docs/project.md` 里。
+### Single-Node Development Chain
 
-  4. 必须：项目长远规划，可包含：
+This command will start the single-node development chain with persistent state:
 
-     - 未来 6 个月的商业规划
-     - 市场定位及调研
-     - 现在拥有的资源及项目运营到什么程度
+```bash
+./target/release/mintcraft --dev
+```
 
-     所有信息，必须有英文，放在 `团队目录/docs/prospect.md` 里。
+Purge the development chain's state:
 
-  5. 必须：一段不长于 **8 分钟** 的产品 DEMO 展示视频, 命名为 `团队目录/demo.mp4`, 可以的话用英文演示。不方便的话，请把中文讲话内容翻译到英文，放在 `团队目录/docs/script.md` 里。
+```bash
+./target/release/mintcraft purge-chain --dev
+```
 
-  6. 可选：项目 ppt, 以 pdf 形式储存。必须有英文。放在 `团队目录/docs/presentation.pdf` 里。这档案不一定要和 Demo Day 当天讲的一样。
+Start the development chain with detailed logging:
 
-请注意：
+```bash
+RUST_LOG=debug RUST_BACKTRACE=1 ./target/release/mintcraft -lruntime=debug --dev
+```
 
-- 参赛作品若出现剽窃其他作品行为，取消参赛资格。
+### Multi-Node Local Testnet
 
-- 作品初步提交时间需在规定时间内（3月15日 00:00 - 23:59），其他时间提交无效。
+If you want to see the multi-node consensus algorithm in action, refer to
+[our Start a Private Network tutorial](https://substrate.dev/docs/en/tutorials/start-a-private-network/).
 
-## Workshop 及 Office Hour 时间表
+## Template Structure
 
-|日期     | 类别 | 主讲者 | 事项 |
-|--------|------|------|-------|
-|2月7日  | Office Hour | Jimmy (Parity) | 答疑 |
-|2月8日  | Workshop[技术] | Jimmy (Parity) | 参赛任务涉及到的Substrate技术领域和内容 |
-|2月18日 | Workshop[技术] | 陈锡亮 (Acala) | 如何利用 ORML 实现多币种支持和 NFT |
-|2月21日 | Office Hour | Junius (Parity) | 答疑 |
-|2月23日 | Workshop[技术] | 吴逸飞 | Offchain Workers 入门 |
-|2月26日 | Workshop[技术] | Aten (Patract Labs) | 如何更轻松的开发 WASM 合约 |
-|2月28日 | Office Hour | Maggie (Parity) | 答疑 |
-|3月3日  | Workshop[技术] | 郭斌 | 如何在 ARM 架构下运行 Substrate |
-|3月7日  | Office Hour | Kaichao (Parity) | 答疑 |
-|3月9日  | Workshop[生态] | SNZ | 如何选择波卡生态的投资赛道 |
-|3月14日 | Office Hour | Jimmy (Parity) | 答疑 |
-|3月15日 | Workshop[生态] | 肖晓 (Hashkey) | 投资波卡生态项目的5个纬度 |
-|3月17日 | Office Hour | Junius (Parity) | 答疑 |
-|3月18日 | Workshop[生态] | Helena (Parity) | Parity 与 Web3 基金会将如何支持开发者加入波卡生态 |
+A Substrate project such as this consists of a number of components that are spread across a few
+directories.
 
-- Workshop 及 Office Hour 为上述日期的 19:00 - 20:00 (UTC +8 / 中国时间)
-- 到这里 [实时收听 Workshop 及 Office Hour](https://parity.link/asia-hackathon-wo) (用[腾讯会议](https://meeting.tencent.com/))
-- 到我们 [B 站频道](https://space.bilibili.com/67358318/channel/detail?cid=168675) 观看过往录播
+### Node
 
-## 官方宣发
+A blockchain node is an application that allows users to participate in a blockchain network.
+Substrate-based blockchain nodes expose a number of capabilities:
 
-1. [首届 Parity 官方 Substrate 开发者黑客马拉松报名开始](./docs/01-announcement.md)
-2. [Polkadot Hackathon 豪华评审团19位导师公布](./docs/02-judges.md)
-3. [Polkadot Hackathon 前 15 支队伍项目概览](https://mp.weixin.qq.com/s/NOmlm2EToCyibF8e7qzeyg)
-4. [Polkadot Hackathon 全部参赛队伍项目概览 (下篇)](https://mp.weixin.qq.com/s/aHDuL6QZkBhNdBD4PnLdYg)
+-   Networking: Substrate nodes use the [`libp2p`](https://libp2p.io/) networking stack to allow the
+    nodes in the network to communicate with one another.
+-   Consensus: Blockchains must have a way to come to
+    [consensus](https://substrate.dev/docs/en/knowledgebase/advanced/consensus) on the state of the
+    network. Substrate makes it possible to supply custom consensus engines and also ships with
+    several consensus mechanisms that have been built on top of
+    [Web3 Foundation research](https://research.web3.foundation/en/latest/polkadot/NPoS/index.html).
+-   RPC Server: A remote procedure call (RPC) server is used to interact with Substrate nodes.
 
-## 联络
+There are several files in the `node` directory - take special note of the following:
 
-对黑客松有任何疑问，可以下方法联系我们:
+-   [`chain_spec.rs`](./node/src/chain_spec.rs): A
+    [chain specification](https://substrate.dev/docs/en/knowledgebase/integrate/chain-spec) is a
+    source code file that defines a Substrate chain's initial (genesis) state. Chain specifications
+    are useful for development and testing, and critical when architecting the launch of a
+    production chain. Take note of the `development_config` and `testnet_genesis` functions, which
+    are used to define the genesis state for the local development chain configuration. These
+    functions identify some
+    [well-known accounts](https://substrate.dev/docs/en/knowledgebase/integrate/subkey#well-known-keys)
+    and use them to configure the blockchain's initial state.
+-   [`service.rs`](./node/src/service.rs): This file defines the node implementation. Take note of
+    the libraries that this file imports and the names of the functions it invokes. In particular,
+    there are references to consensus-related topics, such as the
+    [longest chain rule](https://substrate.dev/docs/en/knowledgebase/advanced/consensus#longest-chain-rule),
+    the [Aura](https://substrate.dev/docs/en/knowledgebase/advanced/consensus#aura) block authoring
+    mechanism and the
+    [GRANDPA](https://substrate.dev/docs/en/knowledgebase/advanced/consensus#grandpa) finality
+    gadget.
 
-* [Github 讨论区](https://github.com/ParityAsia/hackathon-2021-spring/discussions)
+After the node has been [built](#build), refer to the embedded documentation to learn more about the
+capabilities and configuration parameters that it exposes:
 
-* email: hackathon.asia@parity.io
+```shell
+./target/release/mintcraft --help
+```
 
-## 其他
+### Runtime
 
-### 合法合规性
+In Substrate, the terms
+"[runtime](https://substrate.dev/docs/en/knowledgebase/getting-started/glossary#runtime)" and
+"[state transition function](https://substrate.dev/docs/en/knowledgebase/getting-started/glossary#stf-state-transition-function)"
+are analogous - they refer to the core logic of the blockchain that is responsible for validating
+blocks and executing the state changes they define. The Substrate project in this repository uses
+the [FRAME](https://substrate.dev/docs/en/knowledgebase/runtime/frame) framework to construct a
+blockchain runtime. FRAME allows runtime developers to declare domain-specific logic in modules
+called "pallets". At the heart of FRAME is a helpful
+[macro language](https://substrate.dev/docs/en/knowledgebase/runtime/macros) that makes it easy to
+create pallets and flexibly compose them to create blockchains that can address
+[a variety of needs](https://www.substrate.io/substrate-users/).
 
-本次黑客松为符合国内法规，我们不会触碰以下任何有关题目
+Review the [FRAME runtime implementation](./runtime/src/lib.rs) included in this template and note
+the following:
 
-- 和发币 (Initial Coin Offering) 相关。
-- 和数字资产交易相关
-- 任何币价的讨论 (Decentralized Exchange 主题可讨论技术，不涉及币价)
-- 和博彩相关和有博彩成分的游戏
+-   This file configures several pallets to include in the runtime. Each pallet configuration is
+    defined by a code block that begins with `impl $PALLET_NAME::Config for Runtime`.
+-   The pallets are composed into a single runtime by way of the
+    [`construct_runtime!`](https://crates.parity.io/frame_support/macro.construct_runtime.html)
+    macro, which is part of the core
+    [FRAME Support](https://substrate.dev/docs/en/knowledgebase/runtime/frame#support-library)
+    library.
 
-### 参赛项目协议 (License)
+### Pallets
 
-所有参赛项目协议必须选用其中一个开源软件项目协议。下面有对主流协议的介绍 (包括 GPLv3, Apache License 2.0, BSD, MIT License)。如果真不知道怎么选，可考虑使用 MIT License。这协议给予其他开发者很大的自由度。
+The runtime in this project is constructed using many FRAME pallets that ship with the
+[core Substrate repository](https://github.com/paritytech/substrate/tree/master/frame) and a
+template pallet that is [defined in the `pallets`](./pallets/template/src/lib.rs) directory.
 
-参考链接
+A FRAME pallet is compromised of a number of blockchain primitives:
 
-- [主流开源协议介绍 - 英文](https://www.freecodecamp.org/news/how-open-source-licenses-work-and-how-to-add-them-to-your-projects-34310c3cf94/)
-- [主流开源协议介绍 - 中文](https://www.runoob.com/w3cnote/open-source-license.html)
+-   Storage: FRAME defines a rich set of powerful
+    [storage abstractions](https://substrate.dev/docs/en/knowledgebase/runtime/storage) that makes
+    it easy to use Substrate's efficient key-value database to manage the evolving state of a
+    blockchain.
+-   Dispatchables: FRAME pallets define special types of functions that can be invoked (dispatched)
+    from outside of the runtime in order to update its state.
+-   Events: Substrate uses [events](https://substrate.dev/docs/en/knowledgebase/runtime/events) to
+    notify users of important changes in the runtime.
+-   Errors: When a dispatchable fails, it returns an error.
+-   Config: The `Config` configuration interface is used to define the types and parameters upon
+    which a FRAME pallet depends.
+
+### Run in Docker
+
+First, install [Docker](https://docs.docker.com/get-docker/) and
+[Docker Compose](https://docs.docker.com/compose/install/).
+
+Then run the following command to start a single node development chain.
+
+```bash
+./scripts/docker_run.sh
+```
+
+This command will firstly compile your code, and then start a local development network. You can
+also replace the default command (`cargo build --release && ./target/release/mintcraft --dev --ws-external`)
+by appending your own. A few useful ones are as follow.
+
+```bash
+# Run Substrate node without re-compiling
+./scripts/docker_run.sh ./target/release/mintcraft --dev --ws-external
+
+# Purge the local dev chain
+./scripts/docker_run.sh ./target/release/mintcraft purge-chain --dev
+
+# Check whether the code is compilable
+./scripts/docker_run.sh cargo check
+```
