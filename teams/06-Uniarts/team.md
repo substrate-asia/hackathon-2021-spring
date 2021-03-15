@@ -21,3 +21,9 @@
 * github: @xuxiaohu
 * weixin: xxhxry0228
 
+## Lay Hunt
+
+* Frontend developer
+* github: @tianxiemaochiyu
+* wechat: tianxiemaochiyu
+
