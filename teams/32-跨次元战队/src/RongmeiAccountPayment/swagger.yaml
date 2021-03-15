@@ -1,0 +1,424 @@
+swagger: "2.0"
+info:
+  description: "MasterCoin backend api doc."
+  version: "1.0.0"
+  title: "MasterCoin"
+  contact:
+    email: "surevil0820@gmail.com"
+basePath: "/api"
+tags:
+- name: "account"
+- name: "balance"
+- name: "ethereum"
+- name: "profile"
+- name: "message"
+schemes:
+- "https"
+- "http"
+paths:
+  /account:
+    put:
+      tags:
+      - "account"
+      summary: "user sign up"
+      description: "user sign up"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "signUpParameter"
+        required: true
+        schema:
+          $ref: "#/definitions/SignUpParameter"
+      responses:
+        200:
+          description: "Success"
+        500:
+          description: "Internal Error"
+    post:
+      tags:
+      - "account"
+      summary: "user log in"
+      description: "user log in"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "loginParamter"
+        required: true
+        schema:
+          $ref: "#/definitions/LoginParameter"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: "string"
+        500:
+          description: "Internal Error"
+  /account/inviteCode:
+    get:
+      tags:
+      - "account"
+      summary: "get one user's invite code"
+      description: "get one user's invite code"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "query"
+        name: "inviteCodeGetParamter"
+        required: true
+        schema:
+          $ref: "#/definitions/InviteCodeGetParameter"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: "string"
+        403:
+          description: "Access denied"
+        500:
+          description: "Internal Error"
+  /balance:
+    post:
+      tags:
+      - "balance"
+      summary: "transfer from your account to another account"
+      description: "use default address"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "TransferParameter"
+        required: true
+        schema:
+          $ref: "#/definitions/TransferParameter"
+      responses:
+        200:
+          description: "success"
+        403:
+          description: "fail"
+    get:
+      tags:
+      - "balance"
+      summary: "get the balance of your account"
+      description: "check the account and get the balance"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "query"
+        name: "GetBalanceParameter"
+        required: true
+        schema:
+          $ref: "#/definitions/GetBalanceParameter"
+      responses:
+        200:
+          description: "success and return the balance"
+          schema:
+            $ref: "#/definitions/BalanceGetResponse"
+        404:
+          description: "account not found"
+        405:
+          description: "fail"
+  /balance/from:
+    post:
+      tags:
+      - "balance"
+      summary: "transfer from one account to another account"
+      description: "use given address"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "TransferParameter"
+        required: true
+        schema:
+          $ref: "#/definitions/TransferFromParameter"
+      responses:
+        200:
+          description: "success"
+        405:
+          description: "fail"
+  /ethereum:
+    post:
+      tags:
+      - "ethereum"
+      summary: "add ethereum account"
+      description: "add ethereum account if the user has one"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "AddEthereumAccountParameter"
+        required: true
+        schema:
+          $ref: "#/definitions/AddEthereumAccountParameter"
+      responses:
+        200:
+          description: "success"
+        403:
+          description: "fail"
+
+  /ethereum/phoneNumber:
+    post:
+      tags:
+      - "ethereum"
+      summary: "create ethereum account"
+      description: "create ethereum account by input phoneNumber"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "phoneNumber"
+        required: true
+        schema:
+          $ref: "#/definitions/CreateEthereumAccountParameter"
+      responses:
+        200:
+          description: "success"
+        403:
+          description: "fail"
+  /profile:
+    get:
+      tags:
+      - "profile"
+      summary: "getProfile"
+      description: "get user info by phoneNumber"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "GetProfileParameter"
+        required: true
+        schema:
+          $ref: "#/definitions/GetProfileParameter"
+      responses:
+        200:
+          description: "successfully found"
+          schema:
+            $ref: "#/definitions/ProfileGetResponse"
+        404:
+          description: "Not Found"
+    post:
+      tags:
+      - "profile"
+      summary: "editProfile"
+      description: "edit user info"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "EditProfileParameter"
+        required: true
+        schema:
+          $ref: "#/definitions/EditProfileParameter"
+      responses:
+        200:
+          description: "success"
+        403:
+          description: "fail"
+  /message:
+    put:
+      tags:
+      - "message"
+      summary: "sendVerificationCode"
+      description: "send message code "
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "SendMessageParameter"
+        required: true
+        schema:
+          $ref: "#/definitions/SendMessageParameter"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/SendMessageResponse"
+        404:
+          description: "Fail or Not Found"
+
+
+
+
+
+
+
+
+
+
+definitions:
+  SignUpParameter:
+    type: "object"
+    properties:
+      idNumber:
+        type: "string"
+        format: "string"
+      username:
+        type: "string"
+        format: "string"
+      password:
+        type: "string"
+        format: "string"
+      phoneNumber:
+        type: "string"
+        format: "string"
+      code:
+        type: "string"
+        format: "string"
+  LoginParameter:
+    type: "object"
+    properties:
+      password:
+        type: "string"
+        format: "string"
+      phoneNumber:
+        type: "string"
+        format: "string"
+  InviteCodeGetParameter:
+    type: "object"
+    properties:
+      phoneNumber:
+        type: "string"
+        format: "string"
+    xml:
+      name: "Order"
+  TransferParameter:
+    type: "object"
+    properties:
+      to_address:
+        type: "string"
+        format: "string"
+      phoneNumber:
+        type: "string"
+        format: "string"
+      money:
+        type: "string"
+        format: "string"
+  TransferFromParameter:
+    type: "object"
+    properties:
+      addressFrom:
+        type: "string"
+        format: "string"
+      addressTo:
+        type: "string"
+        format: "string"
+      privateKey:
+        type: "string"
+        format: "string"
+      money:
+        type: "string"
+        format: "string"
+  GetBalanceParameter:
+    type: "object"
+    properties:
+      address:
+        type: "string"
+        format: "string"
+  AddEthereumAccountParameter:
+    type: "object"
+    properties:
+      address:
+        type: "string"
+        format: "string"
+      phoneNumber:
+        type: "string"
+        format: "string"
+      privateKey:
+        type: "string"
+        format: "string"
+  CreateEthereumAccountParameter:
+    type: "object"
+    properties:
+      phoneNumber:
+        type: "string"
+        format: "string"
+  GetProfileParameter:
+    type: "object"
+    properties:
+      phoneNumber:
+        type: "string"
+        format: "string"
+  EditProfileParameter:
+    type: "object"
+    properties:
+      phoneNumber:
+        type: "string"
+        format: "string"
+      userName:
+        type: "string"
+        format: "string"
+      avatarUrl:
+        type: "string"
+        format: "string"
+      password:
+        type: "string"
+        format: "string"
+  SendMessageParameter:
+    type: "object"
+    properties:
+      phoneNumber:
+        type: "string"
+        format: "string"
+
+  ProfileGetResponse:
+    type: "object"
+    properties:
+      userName:
+        type: "string"
+        format: "string"
+      idNumber:
+        type: "string"
+        format: "string"
+      phoneNumber:
+        type: "string"
+        format: "string"
+      password:
+        type: "string"
+        format: "string"
+      avatarUrl:
+        type: "string"
+        format: "string"
+      account:
+        type: "string"
+        format: "string"
+      privateKey:
+        type: "string"
+        format: "string"
+  BalanceGetResponse:
+    type: "object"
+    properties:
+      balance:
+        type: "string"
+        format: "string"
+  SendMessageResponse:
+    type: "object"
+    properties:
+      code:
+        type: "string"
+        format: "string"
