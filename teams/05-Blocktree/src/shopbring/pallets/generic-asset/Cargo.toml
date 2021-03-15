@@ -1,0 +1,36 @@
+[package]
+name = "pallet-generic-asset"
+version = "1.0.0"
+authors = ["blocktree Developers <https://github.com/blocktree/>"]
+edition = "2018"
+license = "Apache-2.0"
+repository = "https://github.com/blocktree/shopbring/"
+description = "A runtime module for managing an ERC-20 like fungible assets"
+
+[dependencies]
+serde = { version = "1.0.119", default-features = false, features = ["derive"], optional = true}
+codec = { package = "parity-scale-codec", version = "1.3.5", default-features = false, features = ["derive"] }
+sp-std = { version = '2.0.1', default-features = false }
+sp-runtime = { version = '2.0.1', default-features = false }
+frame-benchmarking = { version = '2.0.1', default-features = false, optional = true }
+frame-support = { version = '2.0.1', default-features = false }
+frame-system = { version = '2.0.1', default-features = false }
+pallet-support = { path = "../support", default-features = false }
+
+[dev-dependencies]
+sp-io = { version = '2.0.1', default-features = false }
+sp-core = { version = '2.0.1', default-features = false }
+
+[features]
+default = ["std"]
+std =[
+	"codec/std",
+	"serde/std",
+	"sp-std/std",
+	"sp-runtime/std",
+	"frame-benchmarking/std",
+	"frame-support/std",
+	"frame-system/std",
+	"pallet-support/std",
+]
+runtime-benchmarks = ["frame-benchmarking"]

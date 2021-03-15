@@ -1,7 +1,31 @@
 # Blocktree
 
-Shopbring由blocktree团队进行开发，团队github: https://github.com/blocktree
+## Team Info
 
-blocktree萌芽于在2016年12月，初期只是一个松散的区块链兴趣研究小组，成员来自不同领域的开发人员。在研究公链技术过程中，我们发现公链的升级发展，要么硬分叉（有分裂风险），要么重新搞主链独立发展。区块链各自的生态资源无法融合发展，无法实现完全的去中心系统。所以我们提出了blocktree概念，认为区块链最终需要发展成区块树的结构，才能实现完全的去中心化系统。
+Shopbring is developed by the blocktree team, the team github: https://github.com/blocktree/.
 
-2018年，blocktree开始了openwallet框架的研发，重新定义一个兼容多种区块链的钱包体系模型。 2019年，openwallet框架完成开发，基于框架实现了openwallet开发者平台，同时实现多个应用落地，例如：个人去中心化钱包App，企业级数字资产管理系统，多链多签钱包系统。直至今天，openwallet框架已集成了60+的区块链技术，大大降低了开发者和使用者的成本。 2020年，blocktree开始研究Polkadot生态系统，发现Polkadot对区块链的理解和追求目标是和blocktree一致的。
+Blocktree sprouted in December 2016. It was just a loose blockchain interest research group at the beginning, with members from developers in different fields. In the process of researching the blockchain technology, we found that the upgrade and development of the blockchain will either hard fork (risk of splitting) or re-engage the independent development of the main-chain. The respective ecological resources of the blockchain cannot be integrated and developed, and a complete decentralized system cannot be realized. So we put forward the concept of blocktree, we believe that the blockchain will eventually need to be developed into a blocktree structure in order to achieve a complete decentralized system.
+
+In 2018, blocktree started the research and development of the openwallet framework, redefining a wallet system model compatible with multiple blockchains.
+
+In 2019, the development of the openwallet framework was completed, and the openwallet developer platform was implemented based on the framework, and multiple applications were implemented at the same time, such as: personal decentralized wallet App, enterprise-level digital asset management system, multi-chain multi-signature wallet system. Up to today, the openwallet framework has integrated 60+ blockchain technologies, which greatly reduces the cost of developers and users.
+
+In 2020, blocktree began to study the Polkadot ecosystem and found that Polkadot's understanding of the blockchain and pursuit of goals are consistent with blocktree.
+
+## Project Structure
+
+In src folder:
+
+- `shopbring` is the blockchain node based Substrate. You can interact it with [polkadot.js.org/apps](https://polkadot.js.org/apps/).
+- `shopbring-server` is the off-chain order system based NodeJS.
+- `shopbring-app` is the web app based polkadot-js/api, for Polkadot wallet users.
+
+## Demo Video
+
+### Invitation
+
+https://drive.google.com/file/d/1qikJ8gQteAUiZyn0_gnevOl-XT8-goJY/view?usp=sharing
+
+### Commissioned Shopping
+
+https://drive.google.com/file/d/1T4_C9X65kMP2vGwDn2KsVnbEP9ZTlmMn/view
