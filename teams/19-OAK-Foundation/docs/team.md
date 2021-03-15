@@ -26,8 +26,8 @@ The team has been deeply involved in blockchain development since 2017, and crea
 
 ### Team Code Repos
 * [Polkadot.js Extension for Substrate Hackathon](https://github.com/OAK-Foundation/extension)
-* [OAK Substrate Implementation]()
-* [Substrate Quadratic Funding for Web3 Open Grant]()
+* [OAK Substrate Implementation](https://github.com/OAK-Foundation)
+* [Substrate Quadratic Funding for Web3 Open Grant](https://github.com/OAK-Foundation)
 * [rWallet - open source crypto mobile wallet](https://github.com/rsksmart/rwallet) ()
 * [Light-weight web3-alike library for RSK](https://github.com/rsksmart/rsk3.js) ()
 * [RSK node Docker one-line runner](https://github.com/rsksmart/truffle-integration/tree/staging/docker)
