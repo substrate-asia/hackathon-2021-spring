@@ -1,0 +1,596 @@
+{
+  "metadataVersion": "0.1.0",
+  "source": {
+    "hash": "0x70a2504de3ab42da177b6d9388c2d874e4fdaee69c4f4495cc2f9a23645f9549",
+    "language": "ink! 3.0.0-rc3",
+    "compiler": "rustc 1.52.0-nightly"
+  },
+  "contract": {
+    "name": "wbtc",
+    "version": "0.1.0",
+    "authors": [
+      "[your_name] <[your_email]>"
+    ]
+  },
+  "spec": {
+    "constructors": [
+      {
+        "args": [
+          {
+            "name": "_initial_supply",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          },
+          {
+            "name": "_name",
+            "type": {
+              "displayName": [
+                "Option"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "name": "_symbol",
+            "type": {
+              "displayName": [
+                "Option"
+              ],
+              "type": 2
+            }
+          },
+          {
+            "name": "_decimals",
+            "type": {
+              "displayName": [
+                "Option"
+              ],
+              "type": 4
+            }
+          }
+        ],
+        "docs": [
+          "Creates a new ERC-20 contract with the specified initial supply."
+        ],
+        "name": [
+          "new"
+        ],
+        "selector": "0x9bae9d5e"
+      }
+    ],
+    "docs": [],
+    "events": [],
+    "messages": [
+      {
+        "args": [],
+        "docs": [
+          " Returns the token name."
+        ],
+        "mutates": false,
+        "name": [
+          "token_name"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 2
+        },
+        "selector": "0x6b1bb951"
+      },
+      {
+        "args": [],
+        "docs": [
+          " Returns the token symbol."
+        ],
+        "mutates": false,
+        "name": [
+          "token_symbol"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 2
+        },
+        "selector": "0xb42c3368"
+      },
+      {
+        "args": [],
+        "docs": [
+          " Returns the token decimals."
+        ],
+        "mutates": false,
+        "name": [
+          "token_decimals"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 4
+        },
+        "selector": "0xc64b0eb2"
+      },
+      {
+        "args": [],
+        "docs": [
+          " Returns the total token supply."
+        ],
+        "mutates": false,
+        "name": [
+          "total_supply"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Balance"
+          ],
+          "type": 1
+        },
+        "selector": "0x143862ae"
+      },
+      {
+        "args": [
+          {
+            "name": "_owner",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 6
+            }
+          }
+        ],
+        "docs": [
+          " Returns the account balance for the specified `owner`.",
+          "",
+          " Returns `0` if the account is non-existent."
+        ],
+        "mutates": false,
+        "name": [
+          "balance_of"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Balance"
+          ],
+          "type": 1
+        },
+        "selector": "0xb7d968c9"
+      },
+      {
+        "args": [
+          {
+            "name": "_to",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 6
+            }
+          },
+          {
+            "name": "_value",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          " Transfers `value` amount of tokens from the caller's account to account `to`.",
+          "",
+          " On success a `Transfer` event is emitted.",
+          "",
+          " # Errors",
+          "",
+          " Returns `InsufficientBalance` error if there are not enough tokens on",
+          " the caller's account balance."
+        ],
+        "mutates": true,
+        "name": [
+          "transfer"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Result"
+          ],
+          "type": 8
+        },
+        "selector": "0x10d455c2"
+      },
+      {
+        "args": [
+          {
+            "name": "_owner",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 6
+            }
+          },
+          {
+            "name": "_spender",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 6
+            }
+          }
+        ],
+        "docs": [
+          " Returns the amount which `spender` is still allowed to withdraw from `owner`.",
+          "",
+          " Returns `0` if no allowance has been set `0`."
+        ],
+        "mutates": false,
+        "name": [
+          "allowance"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Balance"
+          ],
+          "type": 1
+        },
+        "selector": "0xc04aa300"
+      },
+      {
+        "args": [
+          {
+            "name": "_from",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 6
+            }
+          },
+          {
+            "name": "_to",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 6
+            }
+          },
+          {
+            "name": "_value",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          " Transfers `value` tokens on the behalf of `from` to the account `to`.",
+          "",
+          " This can be used to allow a contract to transfer tokens on ones behalf and/or",
+          " to charge fees in sub-currencies, for example.",
+          "",
+          " On success a `Transfer` event is emitted.",
+          "",
+          " # Errors",
+          "",
+          " Returns `InsufficientAllowance` error if there are not enough tokens allowed",
+          " for the caller to withdraw from `from`.",
+          "",
+          " Returns `InsufficientBalance` error if there are not enough tokens on",
+          " the the account balance of `from`."
+        ],
+        "mutates": true,
+        "name": [
+          "transfer_from"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Result"
+          ],
+          "type": 8
+        },
+        "selector": "0xbb399017"
+      },
+      {
+        "args": [
+          {
+            "name": "_spender",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 6
+            }
+          },
+          {
+            "name": "_value",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          " Allows `spender` to withdraw from the caller's account multiple times, up to",
+          " the `value` amount.",
+          "",
+          " If this function is called again it overwrites the current allowance with `value`.",
+          "",
+          " An `Approval` event is emitted."
+        ],
+        "mutates": true,
+        "name": [
+          "approve"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Result"
+          ],
+          "type": 8
+        },
+        "selector": "0x4ce0e831"
+      },
+      {
+        "args": [
+          {
+            "name": "_user",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 6
+            }
+          },
+          {
+            "name": "_amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          " Issue a new amount of tokens",
+          " these tokens are deposited into the owner address"
+        ],
+        "mutates": true,
+        "name": [
+          "mint"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Result"
+          ],
+          "type": 8
+        },
+        "selector": "0xcfdd9aa2"
+      },
+      {
+        "args": [
+          {
+            "name": "_user",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 6
+            }
+          },
+          {
+            "name": "_amount",
+            "type": {
+              "displayName": [
+                "Balance"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [
+          " Redeem tokens.",
+          " These tokens are withdrawn from the owner address",
+          " if the balance must be enough to cover the redeem",
+          " or the call will fail."
+        ],
+        "mutates": true,
+        "name": [
+          "burn"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Result"
+          ],
+          "type": 8
+        },
+        "selector": "0xb1efc17b"
+      }
+    ]
+  },
+  "storage": {
+    "struct": {
+      "fields": []
+    }
+  },
+  "types": [
+    {
+      "def": {
+        "primitive": "u128"
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 3,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        3
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "primitive": "str"
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 5,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        5
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "primitive": "u8"
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "type": 7,
+              "typeName": "[u8; 32]"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_env",
+        "types",
+        "AccountId"
+      ]
+    },
+    {
+      "def": {
+        "array": {
+          "len": 32,
+          "type": 5
+        }
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "fields": [
+                {
+                  "type": 9,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Ok"
+            },
+            {
+              "fields": [
+                {
+                  "type": 10,
+                  "typeName": "E"
+                }
+              ],
+              "name": "Err"
+            }
+          ]
+        }
+      },
+      "params": [
+        9,
+        10
+      ],
+      "path": [
+        "Result"
+      ]
+    },
+    {
+      "def": {
+        "tuple": []
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "discriminant": 0,
+              "name": "InsufficientBalance"
+            },
+            {
+              "discriminant": 1,
+              "name": "InsufficientSupply"
+            },
+            {
+              "discriminant": 2,
+              "name": "InsufficientAllowance"
+            }
+          ]
+        }
+      },
+      "path": [
+        "wbtc",
+        "wbtc",
+        "Error"
+      ]
+    }
+  ]
+}

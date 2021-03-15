@@ -1,0 +1,21 @@
+.back-area {
+  height: 2.4rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.back-area img{
+  height: 1.4rem;
+  width: 1.8rem;
+  margin-right: 0.8rem;
+}
+.back-holder {
+  cursor: pointer;
+  text-align: right;
+  width: 7rem;
+}
+.back {
+  font-size: 1.6rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+}

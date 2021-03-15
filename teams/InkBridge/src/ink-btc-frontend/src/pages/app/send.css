@@ -1,0 +1,64 @@
+.area {
+  height: 25.6rem;
+}
+.back-area {
+  height: 2.4rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.back-area img{
+  height: 1.4rem;
+  width: 1.8rem;
+  margin-right: 0.8rem;
+}
+.back-holder {
+  cursor: pointer;
+  text-align: right;
+  width: 7rem;
+}
+.back {
+  font-size: 1.6rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+}
+#title {
+  height: 2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #000000;
+  line-height: 2rem;
+  font-weight: normal;
+  margin: 1.6rem 0rem 2rem 0rem;
+}
+
+.send {
+  width: 3rem;
+}
+
+.address {
+  margin: 1.6rem 0rem 2rem 0rem;
+  height: 3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #000000;
+  line-height: 3rem;
+}
+
+.address-button {
+  user-select: none;
+  margin: 0rem auto;
+  cursor: pointer;
+  width: 11.8rem;
+  height: 3.8rem;
+  line-height: 3.8rem;
+  border: 1px solid #F7931A;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: WorkSans-Regular_Bold, WorkSans;
+  color: #F7931A;
+}
+.address-button:active {
+  background-color: #F7931A;
+  color: white;
+}
