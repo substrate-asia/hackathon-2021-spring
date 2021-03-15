@@ -172,7 +172,7 @@ export const useContractTX = ({ contract, method }: ContractTxProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [inTransaction, setInTransaction] = useState<boolean>(false);
   const exec = useCallback(
-    async (fields: any[], value: string) => {
+    async (fields: any[], value: string, onSuccess?:()=>void, onFail?:()=>void) => {
       if (active) {
 
         const gasConsumed = await getGascomsumed(fields, value)
@@ -191,6 +191,7 @@ export const useContractTX = ({ contract, method }: ContractTxProps) => {
             notification.error({
               message: 'Transaction invalid'
             });
+            onFail && onFail()
             setInTransaction(false);
           } else if (status.isReady) {
             console.log('Transaction is ready');
@@ -216,6 +217,7 @@ export const useContractTX = ({ contract, method }: ContractTxProps) => {
                   notification.success({
                     message: 'Transaction succeeded'
                   });
+                  onSuccess && onSuccess()
                 } else if (event.method === 'ExtrinsicFailed') {
                   const data = event.get('data')
                   const [dispatchError] = data as unknown as ITuple<[DispatchError]>;
@@ -235,6 +237,8 @@ export const useContractTX = ({ contract, method }: ContractTxProps) => {
                   }
                   console.log('Transaction failed', message);
 
+                  onFail && onFail()
+
                   notification.error({
                     message: 'Transaction failed',
                     description: message
@@ -247,6 +251,7 @@ export const useContractTX = ({ contract, method }: ContractTxProps) => {
           console.log(status);
 
         }).catch(err => {
+          onFail && onFail()
           const msg: string = err.toString()
           notification.error({
             message: msg
@@ -256,6 +261,7 @@ export const useContractTX = ({ contract, method }: ContractTxProps) => {
         }
         )
       } else {
+        onFail && onFail()
         notification.error({
           message: 'Address not found'
         });

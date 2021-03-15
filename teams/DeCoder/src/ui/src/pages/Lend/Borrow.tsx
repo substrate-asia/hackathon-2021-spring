@@ -154,7 +154,7 @@ export const Borrow: React.FC = () => {
       const borrowBalance = balanceFormatter((res as any).borrow_balance as string, 10)
       setBorrowed(borrowBalance.num)
     })
-  }, [active?.address, read, readReserveData])
+  }, [active?.address, read, readReserveData,lendedState])
 
   // get delegate amount
   useEffect(() => {
@@ -171,16 +171,20 @@ export const Borrow: React.FC = () => {
   const handleBorrow = useCallback(async() => {
     const account = active?.address as string
     const value = new BN(borrowAmount as number).times(10 ** 10)
-    await borrowExec([value.toString(), account], '0')
-    setBorrowAmount(undefined)
-    lendedReducer()
+    await borrowExec([value.toString(), account], '0',
+    ()=>{
+      lendedReducer()
+      setBorrowAmount(undefined)  
+    })
   }, [active?.address, borrowAmount, borrowExec])
 
   const handleRepay = useCallback(async () => {
     const account = active?.address as string
     const value = new BN(repayAmount as number).times(10 ** 10)
-    await repayExec([account], value.toString())
-    setRepayAmount(undefined)
+    await repayExec([account], value.toString(),()=>{
+      setRepayAmount(undefined)
+      lendedReducer()
+    })
   }, [active?.address, repayExec, repayAmount])
 
   return (

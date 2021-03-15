@@ -9,7 +9,7 @@ import { useTranslation, Button, BalanceBox } from '@/components'
 import styled from 'styled-components';
 // import './Deposit.css';
 import { BalanceInput } from '@/components/BalanceInput';
-import { useAccounts, useApi, useBalance, useContractQuery, useContractTX, useLendingPoolContract } from '@/hooks';
+import { useAccounts, useApi, useContractQuery, useContractTX, useLendingPoolContract } from '@/hooks';
 import { balanceFormatter } from '@/utils';
 
 const LinkBorrow = styled.span`
@@ -86,7 +86,7 @@ export const Deposit: React.FC = () => {
       .catch(() => {
         setDotBalance(undefined);
       });
-  }, [active?.address, api, api.query.system])
+  }, [active?.address, api.query.system,depositedState])
 
   // get deposited balance
   useEffect(() => {
@@ -97,7 +97,7 @@ export const Deposit: React.FC = () => {
       const free = balanceFormatter(res as string, 10)
       setDeposited(free.num);
     })
-  }, [active?.address, read, depositedState, dotBalance])
+  }, [active?.address, read, depositedState])
 
   const handleBalanceInputChange = useCallback((e) => {
     setDepositAmount(e.currentTarget.value as number)
@@ -127,23 +127,22 @@ export const Deposit: React.FC = () => {
     const account = active?.address as string
     const value = new BN(depositAmount as number).times(10 ** 10)
 
-    await depositExec([account], value.toString())
-
-    const delegateVal = value.times(0.6)
-    
-    setDelegate(delegateVal.toNumber())
-    setDepositAmount(undefined)
+    depositExec([account], value.toString(),()=>{
+      setDepositAmount(undefined)
+      depositedReducer()
+    })
 
   }, [active?.address, depositAmount, depositExec])
 
   const handleDelegate = useCallback(async () => {
     const account = active?.address as string
 
-    console.log(delegate.toString());
+    const delegateVal = new BN(deposited).times(0.6).times(10 ** 10)
     
-    await delegateExec([account, delegate.toString()], '0')
+    await delegateExec([account, delegateVal.toString()], '0')
+    setDelegate(0)
 
-  }, [active?.address, delegate, delegateExec])
+  }, [active?.address, deposited, delegateExec])
 
   const handleTabChange = useCallback((activeKey) => {
     // if (Number(activeKey) === 2) {
@@ -205,7 +204,7 @@ export const Deposit: React.FC = () => {
             <BalanceInput error={inputError} value={depositAmount} onChange={handleBalanceInputChange} />
             <Space>
             <Button disabled={depositDisabled || !depositAmount} shape="round" type="primary" onClick={handleDeposit}>{t('Deposit')}</Button>
-            <Button disabled={!delegate} shape="round" onClick={handleDelegate}>{t('Delegate')}</Button>
+            <Button shape="round" onClick={handleDelegate}>{t('Delegate')}</Button>
             </Space>
           </InputBox>
         </TabPane>
