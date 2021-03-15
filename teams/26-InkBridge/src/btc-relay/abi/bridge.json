@@ -1,0 +1,1512 @@
+{
+  "metadataVersion": "0.1.0",
+  "source": {
+    "hash": "0xae601ccf72d4f0711dec4bbec8936f7a306a558b059e0d06570efd32c6512bfa",
+    "language": "ink! 3.0.0-rc2",
+    "compiler": "rustc 1.52.0-nightly"
+  },
+  "contract": {
+    "name": "patra-btc",
+    "version": "0.1.0",
+    "authors": [
+      "[your_name] <[your_email]>"
+    ]
+  },
+  "spec": {
+    "constructors": [
+      {
+        "args": [
+          {
+            "name": "genesis_info",
+            "type": {
+              "displayName": [
+                "BtcHeaderInfo"
+              ],
+              "type": 16
+            }
+          },
+          {
+            "name": "confirmation_number",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 4
+            }
+          }
+        ],
+        "docs": [
+          "Constructor that initializes the `bool` value to the given `init_value`."
+        ],
+        "name": [
+          "new"
+        ],
+        "selector": "0x9bae9d5e"
+      }
+    ],
+    "docs": [],
+    "events": [
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [],
+        "name": "HeaderPushed"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "height",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 4
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [],
+        "name": "ConfirmedHeight"
+      }
+    ],
+    "messages": [
+      {
+        "args": [
+          {
+            "name": "header",
+            "type": {
+              "displayName": [
+                "BtcHeader"
+              ],
+              "type": 17
+            }
+          }
+        ],
+        "docs": [
+          " Relayer push btc header to chain storage."
+        ],
+        "mutates": true,
+        "name": [
+          "push_header"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Result"
+          ],
+          "type": 19
+        },
+        "selector": "0xf3763df2"
+      },
+      {
+        "args": [],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "best_index"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "BtcHeaderIndex"
+          ],
+          "type": 22
+        },
+        "selector": "0xdb36c827"
+      },
+      {
+        "args": [],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "confirmed_index"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "BtcHeaderIndex"
+          ],
+          "type": 22
+        },
+        "selector": "0x4d18b82f"
+      },
+      {
+        "args": [
+          {
+            "name": "hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "header"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 23
+        },
+        "selector": "0x32006dd8"
+      },
+      {
+        "args": [
+          {
+            "name": "hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "header_with_relayer"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 24
+        },
+        "selector": "0xd93e49c5"
+      },
+      {
+        "args": [
+          {
+            "name": "hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "header_bytes"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 25
+        },
+        "selector": "0xe18fa236"
+      },
+      {
+        "args": [],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "genesis_info"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "BtcHeaderInfo"
+          ],
+          "type": 16
+        },
+        "selector": "0xf06315ab"
+      },
+      {
+        "args": [
+          {
+            "name": "height",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 4
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "block_hash_for"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 27
+        },
+        "selector": "0xe1297a9d"
+      },
+      {
+        "args": [
+          {
+            "name": "hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "is_main_chain"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "bool"
+          ],
+          "type": 12
+        },
+        "selector": "0x820c79da"
+      },
+      {
+        "args": [
+          {
+            "name": "hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "is_confirmed"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "bool"
+          ],
+          "type": 12
+        },
+        "selector": "0xea9ac78d"
+      },
+      {
+        "args": [
+          {
+            "name": "proof",
+            "type": {
+              "displayName": [
+                "PartialMerkleTree"
+              ],
+              "type": 28
+            }
+          },
+          {
+            "name": "tx_hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 1
+            }
+          },
+          {
+            "name": "block_hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "validate_transaction"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "bool"
+          ],
+          "type": 12
+        },
+        "selector": "0x0988d367"
+      }
+    ]
+  },
+  "storage": {
+    "struct": {
+      "fields": [
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                      "ty": 1
+                    }
+                  },
+                  "name": "hash"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x0100000000000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "height"
+                }
+              ]
+            }
+          },
+          "name": "best_index"
+        },
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x0200000000000000000000000000000000000000000000000000000000000000",
+                      "ty": 1
+                    }
+                  },
+                  "name": "hash"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x0300000000000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "height"
+                }
+              ]
+            }
+          },
+          "name": "confirmed_index"
+        },
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "struct": {
+                      "fields": [
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x0400000000000000000000000000000000000000000000000000000000000000",
+                              "ty": 5
+                            }
+                          },
+                          "name": "header"
+                        },
+                        {
+                          "layout": {
+                            "struct": {
+                              "fields": [
+                                {
+                                  "layout": {
+                                    "cell": {
+                                      "key": "0x0500000000000000000000000000000000000000000000000000000000000000",
+                                      "ty": 4
+                                    }
+                                  },
+                                  "name": "len"
+                                },
+                                {
+                                  "layout": {
+                                    "array": {
+                                      "cellsPerElem": 1,
+                                      "layout": {
+                                        "cell": {
+                                          "key": "0x0500000001000000000000000000000000000000000000000000000000000000",
+                                          "ty": 6
+                                        }
+                                      },
+                                      "len": 4294967295,
+                                      "offset": "0x0600000000000000000000000000000000000000000000000000000000000000"
+                                    }
+                                  },
+                                  "name": "elems"
+                                }
+                              ]
+                            }
+                          },
+                          "name": "entries"
+                        }
+                      ]
+                    }
+                  },
+                  "name": "keys"
+                },
+                {
+                  "layout": {
+                    "hash": {
+                      "layout": {
+                        "cell": {
+                          "key": "0x0600000001000000000000000000000000000000000000000000000000000000",
+                          "ty": 8
+                        }
+                      },
+                      "offset": "0x0500000001000000000000000000000000000000000000000000000000000000",
+                      "strategy": {
+                        "hasher": "Blake2x256",
+                        "postfix": "",
+                        "prefix": "0x696e6b20686173686d6170"
+                      }
+                    }
+                  },
+                  "name": "values"
+                }
+              ]
+            }
+          },
+          "name": "block_hash_for"
+        },
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "struct": {
+                      "fields": [
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x0600000001000000000000000000000000000000000000000000000000000000",
+                              "ty": 5
+                            }
+                          },
+                          "name": "header"
+                        },
+                        {
+                          "layout": {
+                            "struct": {
+                              "fields": [
+                                {
+                                  "layout": {
+                                    "cell": {
+                                      "key": "0x0700000001000000000000000000000000000000000000000000000000000000",
+                                      "ty": 4
+                                    }
+                                  },
+                                  "name": "len"
+                                },
+                                {
+                                  "layout": {
+                                    "array": {
+                                      "cellsPerElem": 1,
+                                      "layout": {
+                                        "cell": {
+                                          "key": "0x0700000002000000000000000000000000000000000000000000000000000000",
+                                          "ty": 10
+                                        }
+                                      },
+                                      "len": 4294967295,
+                                      "offset": "0x0800000001000000000000000000000000000000000000000000000000000000"
+                                    }
+                                  },
+                                  "name": "elems"
+                                }
+                              ]
+                            }
+                          },
+                          "name": "entries"
+                        }
+                      ]
+                    }
+                  },
+                  "name": "keys"
+                },
+                {
+                  "layout": {
+                    "hash": {
+                      "layout": {
+                        "cell": {
+                          "key": "0x0800000002000000000000000000000000000000000000000000000000000000",
+                          "ty": 11
+                        }
+                      },
+                      "offset": "0x0700000002000000000000000000000000000000000000000000000000000000",
+                      "strategy": {
+                        "hasher": "Blake2x256",
+                        "postfix": "",
+                        "prefix": "0x696e6b20686173686d6170"
+                      }
+                    }
+                  },
+                  "name": "values"
+                }
+              ]
+            }
+          },
+          "name": "main_chain"
+        },
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "struct": {
+                      "fields": [
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x0800000002000000000000000000000000000000000000000000000000000000",
+                              "ty": 5
+                            }
+                          },
+                          "name": "header"
+                        },
+                        {
+                          "layout": {
+                            "struct": {
+                              "fields": [
+                                {
+                                  "layout": {
+                                    "cell": {
+                                      "key": "0x0900000002000000000000000000000000000000000000000000000000000000",
+                                      "ty": 4
+                                    }
+                                  },
+                                  "name": "len"
+                                },
+                                {
+                                  "layout": {
+                                    "array": {
+                                      "cellsPerElem": 1,
+                                      "layout": {
+                                        "cell": {
+                                          "key": "0x0900000003000000000000000000000000000000000000000000000000000000",
+                                          "ty": 10
+                                        }
+                                      },
+                                      "len": 4294967295,
+                                      "offset": "0x0a00000002000000000000000000000000000000000000000000000000000000"
+                                    }
+                                  },
+                                  "name": "elems"
+                                }
+                              ]
+                            }
+                          },
+                          "name": "entries"
+                        }
+                      ]
+                    }
+                  },
+                  "name": "keys"
+                },
+                {
+                  "layout": {
+                    "hash": {
+                      "layout": {
+                        "cell": {
+                          "key": "0x0a00000003000000000000000000000000000000000000000000000000000000",
+                          "ty": 13
+                        }
+                      },
+                      "offset": "0x0900000003000000000000000000000000000000000000000000000000000000",
+                      "strategy": {
+                        "hasher": "Blake2x256",
+                        "postfix": "",
+                        "prefix": "0x696e6b20686173686d6170"
+                      }
+                    }
+                  },
+                  "name": "values"
+                }
+              ]
+            }
+          },
+          "name": "headers"
+        },
+        {
+          "layout": {
+            "cell": {
+              "key": "0x0a00000003000000000000000000000000000000000000000000000000000000",
+              "ty": 4
+            }
+          },
+          "name": "confirmation_number"
+        },
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "struct": {
+                      "fields": [
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x0b00000003000000000000000000000000000000000000000000000000000000",
+                              "ty": 4
+                            }
+                          },
+                          "name": "version"
+                        },
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x0c00000003000000000000000000000000000000000000000000000000000000",
+                              "ty": 1
+                            }
+                          },
+                          "name": "previous_header_hash"
+                        },
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x0d00000003000000000000000000000000000000000000000000000000000000",
+                              "ty": 1
+                            }
+                          },
+                          "name": "merkle_root_hash"
+                        },
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x0e00000003000000000000000000000000000000000000000000000000000000",
+                              "ty": 4
+                            }
+                          },
+                          "name": "time"
+                        },
+                        {
+                          "layout": {
+                            "struct": {
+                              "fields": [
+                                {
+                                  "layout": {
+                                    "cell": {
+                                      "key": "0x0f00000003000000000000000000000000000000000000000000000000000000",
+                                      "ty": 4
+                                    }
+                                  },
+                                  "name": null
+                                }
+                              ]
+                            }
+                          },
+                          "name": "bits"
+                        },
+                        {
+                          "layout": {
+                            "cell": {
+                              "key": "0x1000000003000000000000000000000000000000000000000000000000000000",
+                              "ty": 4
+                            }
+                          },
+                          "name": "nonce"
+                        }
+                      ]
+                    }
+                  },
+                  "name": "header"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x1100000003000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "height"
+                }
+              ]
+            }
+          },
+          "name": "genesis_info"
+        },
+        {
+          "layout": {
+            "struct": {
+              "fields": [
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x1200000003000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "max_bits"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x1300000003000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "block_max_future"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x1400000003000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "target_timespan_seconds"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x1500000003000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "target_spacing_seconds"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x1600000003000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "retargeting_factor"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x1700000003000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "retargeting_interval"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x1800000003000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "min_timespan"
+                },
+                {
+                  "layout": {
+                    "cell": {
+                      "key": "0x1900000003000000000000000000000000000000000000000000000000000000",
+                      "ty": 4
+                    }
+                  },
+                  "name": "max_timespan"
+                }
+              ]
+            }
+          },
+          "name": "params_info"
+        }
+      ]
+    }
+  },
+  "types": [
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "type": 2,
+              "typeName": "[u8; 32]"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_env",
+        "types",
+        "Hash"
+      ]
+    },
+    {
+      "def": {
+        "array": {
+          "len": 32,
+          "type": 3
+        }
+      }
+    },
+    {
+      "def": {
+        "primitive": "u8"
+      }
+    },
+    {
+      "def": {
+        "primitive": "u32"
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "last_vacant",
+              "type": 4,
+              "typeName": "Index"
+            },
+            {
+              "name": "len",
+              "type": 4,
+              "typeName": "u32"
+            },
+            {
+              "name": "len_entries",
+              "type": 4,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "Header"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "fields": [
+                {
+                  "type": 7,
+                  "typeName": "VacantEntry"
+                }
+              ],
+              "name": "Vacant"
+            },
+            {
+              "fields": [
+                {
+                  "type": 4,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Occupied"
+            }
+          ]
+        }
+      },
+      "params": [
+        4
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "Entry"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "next",
+              "type": 4,
+              "typeName": "Index"
+            },
+            {
+              "name": "prev",
+              "type": 4,
+              "typeName": "Index"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "VacantEntry"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "value",
+              "type": 9,
+              "typeName": "V"
+            },
+            {
+              "name": "key_index",
+              "type": 4,
+              "typeName": "KeyIndex"
+            }
+          ]
+        }
+      },
+      "params": [
+        9
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "hashmap",
+        "ValueEntry"
+      ]
+    },
+    {
+      "def": {
+        "sequence": {
+          "type": 1
+        }
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "fields": [
+                {
+                  "type": 7,
+                  "typeName": "VacantEntry"
+                }
+              ],
+              "name": "Vacant"
+            },
+            {
+              "fields": [
+                {
+                  "type": 1,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Occupied"
+            }
+          ]
+        }
+      },
+      "params": [
+        1
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "stash",
+        "Entry"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "value",
+              "type": 12,
+              "typeName": "V"
+            },
+            {
+              "name": "key_index",
+              "type": 4,
+              "typeName": "KeyIndex"
+            }
+          ]
+        }
+      },
+      "params": [
+        12
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "hashmap",
+        "ValueEntry"
+      ]
+    },
+    {
+      "def": {
+        "primitive": "bool"
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "value",
+              "type": 14,
+              "typeName": "V"
+            },
+            {
+              "name": "key_index",
+              "type": 4,
+              "typeName": "KeyIndex"
+            }
+          ]
+        }
+      },
+      "params": [
+        14
+      ],
+      "path": [
+        "ink_storage",
+        "collections",
+        "hashmap",
+        "ValueEntry"
+      ]
+    },
+    {
+      "def": {
+        "tuple": [
+          15,
+          16
+        ]
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "type": 2,
+              "typeName": "[u8; 32]"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_env",
+        "types",
+        "AccountId"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "header",
+              "type": 17,
+              "typeName": "BtcHeader"
+            },
+            {
+              "name": "height",
+              "type": 4,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "patra_btc",
+        "types",
+        "BtcHeaderInfo"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "version",
+              "type": 4,
+              "typeName": "u32"
+            },
+            {
+              "name": "previous_header_hash",
+              "type": 1,
+              "typeName": "Hash"
+            },
+            {
+              "name": "merkle_root_hash",
+              "type": 1,
+              "typeName": "Hash"
+            },
+            {
+              "name": "time",
+              "type": 4,
+              "typeName": "u32"
+            },
+            {
+              "name": "bits",
+              "type": 4,
+              "typeName": "u32"
+            },
+            {
+              "name": "nonce",
+              "type": 4,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "patra_btc",
+        "types",
+        "BtcHeader"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "type": 4,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "patra_btc",
+        "types",
+        "compact",
+        "Compact"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "fields": [
+                {
+                  "type": 20,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Ok"
+            },
+            {
+              "fields": [
+                {
+                  "type": 21,
+                  "typeName": "E"
+                }
+              ],
+              "name": "Err"
+            }
+          ]
+        }
+      },
+      "params": [
+        20,
+        21
+      ],
+      "path": [
+        "Result"
+      ]
+    },
+    {
+      "def": {
+        "tuple": []
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "discriminant": 0,
+              "name": "DeserializeErr"
+            },
+            {
+              "discriminant": 1,
+              "name": "ExistingHeader"
+            },
+            {
+              "discriminant": 2,
+              "name": "PrevHeaderNotExisted"
+            },
+            {
+              "discriminant": 3,
+              "name": "InvalidBestIndex"
+            },
+            {
+              "discriminant": 4,
+              "name": "InvalidPoW"
+            },
+            {
+              "discriminant": 5,
+              "name": "HeaderFuturisticTimestamp"
+            },
+            {
+              "discriminant": 6,
+              "name": "HeaderNBitsNotMatch"
+            },
+            {
+              "discriminant": 7,
+              "name": "AncientFork"
+            },
+            {
+              "discriminant": 8,
+              "name": "BadMerkleProof"
+            },
+            {
+              "discriminant": 9,
+              "name": "MerkleRootMismatch"
+            },
+            {
+              "discriminant": 10,
+              "name": "NoTransactions"
+            },
+            {
+              "discriminant": 11,
+              "name": "TooManyTransactions"
+            },
+            {
+              "discriminant": 12,
+              "name": "TooManyHashes"
+            },
+            {
+              "discriminant": 13,
+              "name": "ProofLessHashes"
+            },
+            {
+              "discriminant": 14,
+              "name": "NotAllBitConsumed"
+            },
+            {
+              "discriminant": 15,
+              "name": "NotAllHashesConsumed"
+            },
+            {
+              "discriminant": 16,
+              "name": "OverflowedBitsArray"
+            },
+            {
+              "discriminant": 17,
+              "name": "OverflowedHashArray"
+            },
+            {
+              "discriminant": 18,
+              "name": "FoundIdenticalTxHash"
+            }
+          ]
+        }
+      },
+      "path": [
+        "patra_btc",
+        "patra_btc",
+        "Error"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "hash",
+              "type": 1,
+              "typeName": "Hash"
+            },
+            {
+              "name": "height",
+              "type": 4,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "patra_btc",
+        "types",
+        "BtcHeaderIndex"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 16,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        16
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 14,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        14
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 26,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        26
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "sequence": {
+          "type": 3
+        }
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 9,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        9
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "tx_count",
+              "type": 4,
+              "typeName": "u32"
+            },
+            {
+              "name": "hashes",
+              "type": 9,
+              "typeName": "Vec<Hash>"
+            },
+            {
+              "name": "bits",
+              "type": 29,
+              "typeName": "Vec<bool>"
+            }
+          ]
+        }
+      },
+      "path": [
+        "patra_btc",
+        "merkle",
+        "PartialMerkleTree"
+      ]
+    },
+    {
+      "def": {
+        "sequence": {
+          "type": 12
+        }
+      }
+    }
+  ]
+}

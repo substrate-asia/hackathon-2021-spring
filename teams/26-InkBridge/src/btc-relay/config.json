@@ -1,0 +1,16 @@
+{
+  "btc-url": "https://auth:bitcoin-b2dd077@btc.chainx.org/",
+  "btc-block-interval": 120,
+  "patra-url": "ws://127.0.0.1:9944",
+  "relayer-signer": "bottom drive obey lake curtain smoke basket hold race lonely fit walk//Alice",
+  "only-header": true,
+  "contract-address": "3bajJdP64vJJMm9ZFTNiskh1a6VCwsCYQqqrJJtn78EjxvAB",
+  "contract-metadata": "abi/bridge.json",
+  "app-address": "3g2dAFdKX9KGRDRw2dRsRzsi7WTkoazZyKM8Bu6DUKCT2Spj",
+  "app-metadata": "abi/application.json",
+  "log-path": "log/btc_relay.log",
+  "log-level": "DEBUG",
+  "log-roll-size": 100,
+  "log-roll-count": 5,
+  "rpc-timeout": 60
+}
