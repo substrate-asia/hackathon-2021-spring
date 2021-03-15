@@ -105,3 +105,7 @@ We have not included all popular ones. These are just ones we have actually used
 | Import From Browsers                 | Not Now. Will be Supported after Beta Release | Yes | Yes | Yes | Yes |With plugins|
 | Extensibility                        | Core Feature! | No | No | No | No |Yes!|
 
+
+### Development Works
+
+For details, please refer to Git commit history of `https://github.com/skyekiwi/skyepass-vault/commits/master` and `https://github.com/skyekiwi/skyepass-ux/commits/master`. All code were developed in the last two weeks. UX is not properly wired up to logic yet. For all core functionalities, tests are included. Please refer to READMEs. 

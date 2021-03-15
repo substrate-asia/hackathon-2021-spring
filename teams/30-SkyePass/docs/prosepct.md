@@ -63,3 +63,8 @@ We allow and encourage our community members to build paid extensions on top of 
 
 Treasury is built for those who contributes to the community: those who translate documentations, those who build extensions and those who contribute to the core code base. SkyeKiwi team will permanently hold 29% voting rights in decisions and 3 veto rights per calendar year, partners before the official launch will also be granted 20% voting rights. And we leave the rest to all other treasury contributors proportionally. These numbers or proposals are not final. We still have a lot to figure out. 
 
+
+
+### Resource for Future Development 
+
+We are blockchain and impact investing ethusiathics that have been around since 2015. We have worked with huge funds, early crypto adopters, world class agencies and entreprises, brilliant entrepreneurs and problem solvers in Asia and North America. After the PoC phase, we can fill up a world class advisory and operation team in a few weeks. 
