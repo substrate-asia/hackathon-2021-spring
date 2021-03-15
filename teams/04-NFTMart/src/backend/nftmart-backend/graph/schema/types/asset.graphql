@@ -1,0 +1,18 @@
+type Asset @goModel(model: "nftmart/graph/models.Asset") {
+    id: Int
+    assetId: Int
+    collectionName: String!
+    categoryName: String!
+    metadata: String!
+    price: Int
+    name: String!
+    deposit: String!
+    externalLinks: String
+    description: String
+    status: Int!
+    owner: String!
+    shelveTime: Time
+    tradeTime: Time
+    createdAt: Time!
+    updatedAt: Time
+}

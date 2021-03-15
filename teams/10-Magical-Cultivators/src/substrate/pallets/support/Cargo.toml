@@ -1,0 +1,36 @@
+[package]
+name = 'mc-support'
+version = '0.1.0'
+authors = ['Tang Bo Hao <tech@btang.cn>']
+description = 'Mintcraft package of support'
+edition = '2018'
+license = 'MIT'
+homepage = 'https://substrate.dev'
+repository = 'https://github.com/btspoony/mintcraft'
+
+[package.metadata.docs.rs]
+targets = ['x86_64-unknown-linux-gnu']
+
+# alias "parity-scale-code" to "codec"
+[dependencies.codec]
+default-features = false
+features = ['derive']
+package = 'parity-scale-codec'
+version = '2.0.0'
+
+[dependencies]
+serde = { version = '1.0.119', optional = true, features = ["derive"] }
+sp-std = { version = '3.0.0', default-features = false }
+sp-runtime = { default-features = false, version = '3.0.0' }
+# frame-support = { default-features = false, version = '3.0.0' }
+# frame-system = { default-features = false, version = '3.0.0' }
+
+[features]
+default = ['std']
+std = [
+	'codec/std',
+	'sp-std/std',
+    'sp-runtime/std',
+    # 'frame-support/std',
+    # 'frame-system/std',
+]

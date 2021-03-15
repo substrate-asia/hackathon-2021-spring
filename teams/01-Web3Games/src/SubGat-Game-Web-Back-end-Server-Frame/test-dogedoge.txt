@@ -1,0 +1,62 @@
+
+
+## POST 
+
+# 注册
+
+### 注册用户1
+
+curl -v  -H "Content-Type:application/json" -X POST --data '{"uuid": "239934993493", "phone_number":"17366503261", "password":"123456", "web3_address": "12bzRJfh7arnnfPPUZHeJUaE62QLEwhK48QnH9LXeK2m1iZU"}'  http://localhost:3030/register
+
+### 注册用户2
+
+curl -v  -H "Content-Type:application/json" -X POST --data '{"uuid": "335789990882", "phone_number":"17366503261", "password":"111111", "web3_address": "hdshhshdshdhhbcsbcdbcsdbcskcbsdcbsbcksd"}' http://localhost:3030/register
+
+# 登录
+
+## 登录方式1
+
+curl -v  -H "Content-Type:application/json" -X POST --data '{"uuid":"239934993493", "password":"123456"}'  http://localhost:3030/login1
+
+## 登录方式2
+
+curl -v  -H "Content-Type:application/json" -X POST --data '{"phone_number":"17366503261", "password":"123456"}'  http://localhost:3030/login2
+
+# 更新信息
+
+## 更新手机号
+
+curl -v  -H "Content-Type:application/json" -X PUT --data '{"uuid": "239934993493", "phone_number":"1025185920", "password":"123456", "web3_address": "12bzRJfh7arnnfPPUZHeJUaE62QLEwhK48QnH9LXeK2m1iZU", "sign_time":"2020-1-1", "login_time":"2020-1-2"}' http://localhost:3030/user/phonenumber
+
+## 更新web3 地址
+
+curl -v  -H "Content-Type:application/json" -X PUT --data '{"uuid": "239934993493", "phone_number":"1025185920", "password":"123456", "web3_address": "12bzRJfh7arnnfPPUZHeJUaE62QLEwhK48QnH9LXedavirain", "sign_time":"2020-1-1", "login_time":"2020-1-2"}' http://localhost:3030/user/web3address
+
+## 更新密码
+
+curl -v  -H "Content-Type:application/json" -X PUT --data '{"uuid": "239934993493", "phone_number":"1025185920", "password":"654321", "web3_address": "12bzRJfh7arnnfPPUZHeJUaE62QLEwhK48QnH9LXedavirain", "sign_time":"2020-1-1", "login_time":"2020-1-2"}' http://localhost:3030/user/password
+
+
+
+
+
+## GET 拿到所有账户
+
+curl -v -H "Content-Type:application/json" -X GET http://localhost:3030/users
+
+
+
+----
+
+## DELETE
+
+curl -v  -H "Content-Type:application/json" -H "authorization:Bearer admin"  -X DELETE  http://localhost:3030/user/1
+
+
+## test login game
+
+### by phone number
+curl -v  -H "Content-Type:application/json" -X POST --data '{"username":"17366503261", "password":"123456"}'  http://localhost:3030/login-game
+
+### by uuid
+curl -v  -H "Content-Type:application/json" -X POST --data '{"username":"239934993494", "password":"123456"}'  http://localhost:3030/login-game

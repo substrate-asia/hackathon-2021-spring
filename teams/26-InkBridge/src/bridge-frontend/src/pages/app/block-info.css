@@ -1,0 +1,34 @@
+.block-info {
+  padding-right: 2.2rem;
+}
+.block-info:last-child {
+  padding-right: 0rem;
+}
+
+.block-number {
+  color: white;
+  user-select:none;
+  cursor: pointer;
+  text-align: center;
+  width: 10rem;
+  height: 10rem;
+  background-color: #F7931A;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.block-number:hover {
+  background-color: #f5ac53;
+}
+.block-number:active {
+  background-color: #f5bb74;
+}
+
+.tx-link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.tx-link:hover {
+  color: #008AF3;
+}

@@ -1,0 +1,68 @@
+[package]
+name = "btc-relay"
+version = "2.0.8-1"
+authors = ["[your_name] <[your_email]>"]
+edition = "2018"
+build = "build.rs"
+description = "Relay BTC header and transactions to a inkbridge contract on node via RPC"
+readme = "README.md"
+license = "GPL-3.0"
+
+[[bin]]
+name = "btc-relay"
+path = "src/bin/main.rs"
+
+[features]
+default = ["std"]
+std = [
+    "ink_primitives/std",
+    "ink_metadata/std",
+    "ink_env/std",
+    "ink_storage/std",
+    "primitive-types/std",
+    "scale-info/std",
+]
+
+[dependencies]
+anyhow = "1.0"
+async-jsonrpc-client = { git = "https://github.com/tylerztl/async-jsonrpc.git", branch = "relayer", default-features = false, features = ["http"] }
+async-trait = "0.1"
+bs58 = "0.3"
+base64 = "0.12"
+codec = { package = "parity-scale-codec", version = "2.0", features = ["derive", "full"] }
+futures = "0.3"
+hex = "0.4"
+hex-literal = "0.3.1"
+lazy_static = "1.4"
+log = { version = "0.4", features = ["std", "serde"] }
+log4rs = "0.11"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+structopt = "0.3"
+thiserror = "1.0"
+tokio = { version = "0.2", features = ["macros", "rt-threaded", "time"] }
+url = { version = "2.1", features = ["serde"] }
+
+toml = "0.5.6"
+semver = { version = "0.10.0", features = ["serde"] }
+cargo_metadata = "0.11.1"
+
+# Substrate (v2.0.1)
+parity-util-mem = { version = "0.9.0", default-features = false, features = ["primitive-types"] }
+sp-core = "3.0.0"
+sp-runtime = "3.0.0"
+pallet-indices = "3.0.0"
+sp-rpc = "3.0.0"
+subxt = { package = "substrate-subxt", git = "https://github.com/paritytech/substrate-subxt", branch = "master" }
+
+# light-bitcoin
+light-bitcoin = { git = "https://github.com/chainx-org/light-bitcoin", branch = "master" }
+
+ink_primitives = { version = "3.0.0-rc2", git = "https://github.com/paritytech/ink", default-features = false }
+ink_metadata = { version = "3.0.0-rc2", git = "https://github.com/paritytech/ink", default-features = false, features = ["derive"], optional = true }
+ink_env = { version = "3.0.0-rc2", git = "https://github.com/paritytech/ink", default-features = false }
+ink_storage = { version = "3.0.0-rc2", git = "https://github.com/paritytech/ink", default-features = false }
+primitive-types = { version = "0.9.0", default-features = false }
+scale-info = { git = "https://github.com/paritytech/scale-info", default-features = false, features = ["derive"], optional = true }
+nom = { version = "6.0.0" }
+jsonrpsee = { version = "0.1.0" }

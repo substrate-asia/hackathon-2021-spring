@@ -1,0 +1,15 @@
+{
+	"name": "nft101-cli",
+	"version": "0.1.0",
+	"description": "",
+	"author": "louistru@hotmail.com",
+	"private": true,
+	"scripts": {
+		"dev": "DEV_INLINE=false node node_modules/webpkit/webpack/dev --inline --progress --config node_modules/webpkit/webpack/index.js",
+		"build": "NODE_ENV=prod node node_modules/webpkit/webpack/build.js"
+	},
+	"dependencies": {
+		"webpkit": "file:deps/webpkit",
+		"web3z": "file:deps/web3z"
+	}
+}

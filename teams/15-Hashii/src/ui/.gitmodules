@@ -1,0 +1,7 @@
+[submodule "webpkit"]
+	path = deps/webpkit
+	url = https://github.com/louis-tru/webpkit.git
+
+[submodule "web3z"]
+	path = deps/web3z
+	url = https://github.com/louis-tru/web3z.git

@@ -1,0 +1,21 @@
+[package]
+name = "pallet-staking-rpc"
+version = "0.1.0"
+authors = ["yxf <yxf4559@gmail.com>"]
+edition = "2018"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "1.3.1" }
+jsonrpc-core = "15.0.0"
+jsonrpc-core-client = "15.0.0"
+jsonrpc-derive = "15.0.0"
+sp-core = { version = "2.0.0" }
+sp-rpc = { version = "2.0.0" }
+serde = { version = "1.0.101", features = ["derive"] }
+sp-runtime = { version = "2.0.0" }
+sp-api = { version = "2.0.0" }
+sp-blockchain = { version = "2.0.0" }
+pallet-staking-rpc-runtime-api = { version = "0.1.0", path = "./runtime-api" }
