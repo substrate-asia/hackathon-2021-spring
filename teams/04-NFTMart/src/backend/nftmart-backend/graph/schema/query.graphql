@@ -1,0 +1,26 @@
+type Query {
+    todo(id: Int!): Todo
+    todos(limit: Int, offset: Int): [Todo!]!
+
+    user(id: Int!): User
+    users(limit: Int, offset: Int): [User!]!
+
+    category(id: Int!): Category
+
+    categorys(page: Int, pageSize: Int): [Category]!
+
+    collection(id: Int!): Collection
+
+    collections(page: Int, pageSize: Int): [Collection]!
+
+    asset(id: Int!): Asset
+
+    assets(collectionId: Int,categoryId: Int,status: Int,sort: String,page: Int, pageSize: Int): [Asset]!
+
+    assetsLastCreate(page: Int, pageSize: Int): [Asset]!
+
+    assetsLastTrade(page: Int, pageSize: Int): [Asset]!
+
+    assetsLastShelve(page: Int, pageSize: Int): [Asset]!
+
+}
