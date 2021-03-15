@@ -41,14 +41,14 @@ We want to resolve these problems:
 * Pallets implementation(Phase 1)
   * ~~featured-assets~~
   * nft - 50%
-  * actor - 50%
-  * nature - 50%
+  * actor - 40%
+  * nature - 30%
   * cultivate - 0%
   * implication - 0%
   * dungeons - 0%
 * Demo Game(Phase 1)
-  * GameServer
-  * Frontend
+  * GameServer - 0%
+  * Frontend - 0%
 
 ### Problems and Solutions - Which issues we have met?
 
