@@ -154,20 +154,15 @@ LiquidationOccur(
 )
 ```
 
-#### The process of Liquidation
+#### The Process of Auto Liquidation Algorithm
 
 ---
+![algorithm](../images/process_of_auto_liquidation_algorithm.png)
 
--   Auto trigger in **OCW**
--   Iterate borrowers' account and fetch each Currency Collateral one by one
--   Calculate liquation threshold: liquidate limit = Collateral currency _ current price _ liquation ratio
--   Fetch each currency's debt position, such as DAI\USDC
--   Compare debt position and liquation threshold
--   If debt position > liquidate limit, trigger liquidation
--   Only liquation pool can execute liquidation
--   Every time we can only liquidate 50% of debt position, until debt position < liquidate limit
--   The Collateral token will be liquidated at 90 percent of current market price
--   the 10 percent will be incentive for the liquidator and punishment for the debtor
+-   In early stage, will reserve two ways of liquidation: manually and auto trigger in **OCW**
+-   The way of auto trigger means a liquidation pool contract on chain to execute liquidation
+-   Anyone can deposit to this pool, and there will be no  **impermanent loss**, it's also our way to distribute system governance token
+-   Step by step, we hope that in our system, there is only a liquidation pool that can execute liquidation, this will be progressed by our governance token holder 
 
 #### Interest Rate Model
 
