@@ -1,0 +1,77 @@
+[package]
+name = "sgc"
+version = "0.0.1"
+authors = ["Web3Games Developers"]
+edition = "2018"
+license = 'GPL-3.0'
+build = "build.rs"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[[bin]]
+name = "sgc"
+
+[dependencies]
+futures = "0.3.4"
+log = "0.4.8"
+structopt = "0.3.8"
+jsonrpc-core = "15.0.0"
+jsonrpc-pubsub = "15.0.0"
+serde_json = "1.0.41"
+hex-literal = { version = '0.3.1' }
+
+sp-api = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-blockchain = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-rpc-api = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-rpc = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+substrate-frame-rpc-system = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+pallet-transaction-payment-rpc = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-cli = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-core = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-executor = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-service = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-inherents = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-transaction-pool = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-transaction-pool = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-network = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-consensus-aura = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-consensus-aura = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-consensus = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-consensus = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-timestamp = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-finality-grandpa = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-finality-grandpa = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-client-api = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-runtime = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-basic-authorship = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sp-block-builder = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-keystore = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+sc-telemetry = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+pallet-contracts = { git = "https://github.com/paritytech/substrate.git",  branch = "master" }
+pallet-contracts-rpc = { git = "https://github.com/paritytech/substrate.git",  branch = "master" }
+
+pallet-evm = { git = "https://github.com/Web3-Substrate-Game-World/frontier", branch = "sgc_v0.1" }
+pallet-ethereum = { git = "https://github.com/Web3-Substrate-Game-World/frontier", branch = "sgc_v0.1" }
+
+fc-consensus = { git = "https://github.com/Web3-Substrate-Game-World/frontier", branch = "sgc_v0.1" }
+fp-consensus = { git = "https://github.com/Web3-Substrate-Game-World/frontier", branch = "sgc_v0.1" }
+fc-rpc = { git = "https://github.com/Web3-Substrate-Game-World/frontier", branch = "sgc_v0.1" }
+fp-rpc = { git = "https://github.com/Web3-Substrate-Game-World/frontier", branch = "sgc_v0.1" }
+fc-rpc-core = { git = "https://github.com/Web3-Substrate-Game-World/frontier", branch = "sgc_v0.1" }
+
+# These dependencies are used for runtime benchmarking
+# frame-benchmarking = { version = "3.0.0", git = "https://github.com/paritytech/substrate.git", branch = "master" }
+# frame-benchmarking-cli = { version = "3.0.0", git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+sgc-runtime = { version = "0.0.1", path = "../runtime" }
+
+[build-dependencies]
+substrate-build-script-utils = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+# [features]
+# default = []
+# runtime-benchmarks = [
+# 	"sgc-runtime/runtime-benchmarks",
+# ]

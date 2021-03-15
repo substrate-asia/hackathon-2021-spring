@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp",
+    "gulp-watch": "gulp watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^11.13.5"
+  },
+  "description": "",
+  "devDependencies": {
+    "gulp": "^4.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-typescript": "^5.0.1",
+    "gulp-watch": "^5.0.1",
+    "gulp-zip": "^4.2.0",
+    "typescript": "^3.9.7"
+  }
+}

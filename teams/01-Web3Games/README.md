@@ -1,17 +1,41 @@
- **Web3-Games 战队**
 
-1.团队成员：
 
-刘红祺、马琼、苏胤溶、张宇、陈嘉杰、王雪山
+# Welcome to Web3 Game World
 
-2.项目名称：
+<img src="http://qpjf9b6ys.hn-bkt.clouddn.com/logo.png"/>
 
-**Web3-Games**
 
-3.项目简介：
 
-Web3Games 是**基于 Polkadot Substrate 开发的去中心化数字游戏集成平台**，致力于为区块链 WEB3 游戏生态提供各种解决方案。为区块链游戏开发者提供了**免费的开发工具和服务**，并**支持波卡公有链网络内的游戏平行链**，以及**基于****波卡技术的企业级游戏联盟链**等。
+English / [中文](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/README-CN.md)
 
-4.所属参赛类别：
+## Navigation
 
-平行链,联盟链，智能合约,区块链工具，游戏。
+- [Project Introduction](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/docs/project.md)
+- [Team Members](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/docs/team.md)
+- [Source Codes](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/src/README.md)
+- [Presentation](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/presentation.pdf)
+
+
+
+## DEMO VIDEO
+
+
+
+YOUTUBE https://www.youtube.com/watch?v=3PIXF1Sa5L0
+
+
+
+OR Google drive  https://drive.google.com/file/d/167bwKm7SyP95FR5SMhNZGQ-R5Tv39NTZ/view?usp=sharing
+
+
+
+<img src="http://qpjf9b6ys.hn-bkt.clouddn.com/11.png"/>
+
+
+
+## License
+
+[![img](https://camo.githubusercontent.com/98afb41cdd0f78fb62d19134df53d940bc055fc62e37da7bab8bca12a8ab5f75/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f464953434f2d42434f532f464953434f2d42434f532e737667)](https://github.com/ParityAsia/hackathon-2021-spring/blob/main/teams/18-微芒区块链小队/LICENSE)
+
+All contributions are made under the [GNU General Public License v3](https://www.gnu.org/licenses/gpl-3.0.en.html). See [LICENSE](https://github.com/ParityAsia/hackathon-2021-spring/blob/main/teams/18-微芒区块链小队/LICENSE).
+
