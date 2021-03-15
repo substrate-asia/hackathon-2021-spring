@@ -39,14 +39,6 @@ Related APIS/blockchain APIs are: TBD
 
 ![HLD](nft-marketplace-HLD.png)
 
-## Technology stack
-
-This application is based on [Create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) with typescript.
-
-A `backend` based on ([express](https://www.npmjs.com/package/express)) is included into the application (`server/server.ts`) and act as 'super-proxy' for calling external API/blockchain.
-
-The external APIS are mocked with `mockserver`.
-
 ## Install
 
 Install all requiered packages with
@@ -54,6 +46,18 @@ Install all requiered packages with
 ```
 npm install
 ```
+
+
+
+Install the chainlink-polkadot
+
+```
+git clone https://github.com/smartcontractkit/chainlink-polkadot.git
+cd chainlink-polkadot
+make run-chain
+```
+
+Using the usual substrate is the same.
 
 ## How to run locally
 
