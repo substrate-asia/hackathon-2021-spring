@@ -89,4 +89,4 @@ May be posting our dev progress at some video sharing or live broadcasting websi
 [logo]: logos/logo_en_small.png "logo"
 [diagram-activities]: imgs/activities.png "Activities Diagram"
 [diagram-resources]: imgs/resourceloop.jpg "Resources Loop"
-[diagram-pallets]: logos/logo_en.png "Pallets Diagram"
+[diagram-pallets]: imgs/pallets.jpg "Pallets Diagram"
