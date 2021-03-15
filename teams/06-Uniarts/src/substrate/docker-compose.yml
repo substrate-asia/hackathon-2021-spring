@@ -1,0 +1,53 @@
+version: "3.5"
+
+services:
+  node_1:
+    image: uniart/uni-arts-network
+    ports:
+      - 9944:9944
+      - 9933:9933
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./chain-data-1:/chain-data
+    networks:
+      - uniarts_network
+    restart: always
+    command: ['uart', '--chain', 'pangu', '--base-path', '/chain-data', '--port', '30333', '--ws-port', '9944', '--rpc-port', '9933', '--validator', '--rpc-cors=all', '--ws-external', '--rpc-external', '--rpc-methods=Unsafe', '--telemetry-url', "wss://telemetry.polkadot.io/submit/ 0", '--name', 'pangu001']
+
+  node_2:
+    image: uniart/uni-arts-network
+    ports:
+      - 9945:9944
+      - 9935:9933
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./chain-data-2:/chain-data
+    networks:
+      - uniarts_network
+    restart: always
+    command: ['uart', '--chain', 'pangu', '--base-path', '/chain-data', '--port', '30333', '--ws-port', '9944', '--rpc-port', '9933', '--validator', '--rpc-cors=all', '--ws-external', '--rpc-external', '--rpc-methods=Unsafe', '--telemetry-url', "wss://telemetry.polkadot.io/submit/ 0", '--name', 'pangu002']
+
+  node_3:
+    image: uniart/uni-arts-network
+    ports:
+      - 9946:9944
+      - 9936:9933
+      - 30333:30333
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./chain-data-3:/chain-data
+    networks:
+      - uniarts_network
+    restart: always
+    command: ['uart', '--chain', 'pangu', '--base-path', '/chain-data', '--port', '30333', '--ws-port', '9944', '--rpc-port', '9933', '--rpc-cors=all', '--ws-external', '--rpc-external', '--rpc-methods=Unsafe', '--telemetry-url', "wss://telemetry.polkadot.io/submit/ 0", '--name', 'pangu003']
+
+networks:
+  uniarts_network:
+    driver: bridge
+    name: uniarts_network

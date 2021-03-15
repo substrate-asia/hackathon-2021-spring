@@ -1,0 +1,47 @@
+{
+  "repository": "https://github.com/polkadot-js/ui",
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "license": "Apache-2",
+  "private": true,
+  "homepage": ".",
+  "workspaces": [
+    "packages/*"
+  ],
+  "resolutions": {
+    "typescript": "^4.2.3"
+  },
+  "scripts": {
+    "build": "polkadot-dev-build-ts",
+    "build:release": "polkadot-ci-ghact-build",
+    "lint": "polkadot-dev-run-lint",
+    "clean": "polkadot-dev-clean-build",
+    "demo:identicon:react": "yarn build && webpack-serve --config packages/react-identicon/webpack.config.js --content packages/react-identicon --port 8080",
+    "demo:identicon:vue": "yarn build && webpack-serve --config packages/vue-identicon/webpack.config.js --content packages/vue-identicon --port 8080",
+    "example:rn:packager": "yarn build && cd packages/exampleReactNative && yarn copy-workspace-packages && yarn start",
+    "example:rn:ios": "cd packages/exampleReactNative && cd ios && pod install && cd .. && yarn ios",
+    "example:rn:android": "cd packages/exampleReactNative && yarn android",
+    "example:react": "yarn build && cd packages/example-react && webpack --config webpack.config.js",
+    "example:vue": "yarn build && cd packages/example-vue && webpack --config webpack.config.js",
+    "postinstall": "polkadot-dev-yarn-only",
+    "test": "polkadot-dev-run-test --coverage --runInBand",
+    "test:one": "polkadot-dev-run-test"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/runtime": "^7.13.10",
+    "@polkadot/dev": "^0.62.5",
+    "@polkadot/ts": "^0.3.62",
+    "@types/jest": "^26.0.20",
+    "babel-plugin-transform-vue-template": "^0.4.2",
+    "empty": "^0.10.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "react-native": "^0.63.4",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-serve": "^3.2.0"
+  },
+  "version": "0.71.4-1"
+}
