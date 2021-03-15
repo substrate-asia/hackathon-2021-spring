@@ -62,6 +62,18 @@ InkBTC是我们提供的示例demo，为项目方和开发者演示了如何通�
 
 
 # 技术难点与解决方案
+1. btc-relayer 上传区块头到 ink! 合约
+向节点获取区块信息后分离出关键的区块头信息，直接在relayer代码中调用bridge合约
+
+2. ink! 合约对btc 区块头进行校验，并确认区块和最长链
+将比特币客户端的校验和分叉处理的功能通过ink来实现，判断最长链后存储。每次收到区块校验后都检查最长链是否更新。
+
+3. ink! 合约实现SPV功能，对用户上传的交易和merkle proof 进行验证
+将merkle proof验证功能分离出来，通过ink实现。由于将merkle proof获取的过程分解至线下，大大简化了合约编写的难度和压力。
+
+4. ink! 合约实现了对 btc 交易脚本解析，可得到交易的详细信息
+在原有库的基础上，修改了部分字段的偏移，使得能否解析btc交易。
+
 
 
 # 项目规划
@@ -170,6 +182,18 @@ The current project has been basically completed, mainly including the following
 
 
 # Technical difficulties and solutions
+1. btc-relayer uploads the block header to the ink! contract
+After obtaining the block information from the node, separate the key block header information, and directly call the bridge contract in the relayer codes
+
+2. The ink! contract verifies the btc block header and confirms the block and the longest chain
+The checksum and fork processing function of the Bitcoin client is implemented through ink, and the longest chain is judged and stored. Every time a block check is received, the longest chain will be updated.
+
+3. The ink! contract implements the SPV function to verify the transaction and merkle proof uploaded by the user
+Separate the merkle proof verification function and implement it through ink. Since the process of obtaining merkle proof is decomposed offline, the difficulty and pressure of contract are greatly simplified.
+
+4. The ink! contract has to analyze of the btc transaction script
+On the basis of the original library, the offset of some fields was modified to make it possible to parse btc transactions.
+
 
 
 # Project Plan
