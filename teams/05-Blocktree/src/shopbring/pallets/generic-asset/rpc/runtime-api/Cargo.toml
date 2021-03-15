@@ -1,0 +1,21 @@
+[package]
+name = "pallet-generic-asset-rpc-runtime-api"
+version = "1.0.0"
+authors = ["blocktree Developers <https://github.com/blocktree/>"]
+edition = "2018"
+license = "Apache-2.0"
+repository = "https://github.com/blocktree/shopbring/"
+description = "Runtime API definition required by Generic Asset RPC extensions."
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "1.3.5", default-features = false }
+pallet-generic-asset = { default-features = false, path = "../../" }
+sp-api = { default-features = false, version = '2.0.1' }
+sp-std = { default-features = false, version = '2.0.1' }
+
+[features]
+default = ["std"]
+std = [
+	"sp-api/std",
+	"codec/std",
+]

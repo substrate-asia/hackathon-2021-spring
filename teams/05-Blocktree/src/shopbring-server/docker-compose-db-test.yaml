@@ -1,0 +1,32 @@
+version: "3.6"
+services:
+  redis-test:
+    image: redis
+    container_name: redis
+    restart: always
+    hostname: redis-test
+    command: redis-server --requirepass redis --port 6379
+    ports:
+      - "${REDIS_PORT}:6379"
+    volumes:
+      - "${REDIS_DIR}/conf:/usr/local/etc/redis"
+      - "${REDIS_DIR}/data:/data"
+    privileged: true
+    environment:
+      - TZ=Asia/Shanghai
+  mysql-test:
+    image: mysql
+    container_name: mysql-test
+    restart: always
+    hostname: mysql-test
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci # 设置utf8字符集
+    ports:
+      - "${MYSQL_PORT}:3306"
+    privileged: true
+    volumes:
+      - "${MYSQL_DIR}/data:/var/lib/mysql"
+      - "${MYSQL_DIR}/conf.d:/etc/mysql/conf.d"
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=shopbring-server

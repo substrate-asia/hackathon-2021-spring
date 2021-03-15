@@ -1,0 +1,22 @@
+[package]
+name = "pallet-generic-asset-rpc"
+version = "1.0.0"
+authors = ["blocktree Developers <https://github.com/blocktree/>"]
+edition = "2018"
+license = "Apache-2.0"
+repository = "https://github.com/blocktree/shopbring/"
+description = "RPC interface for the generic asset module."
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "1.3.5" }
+jsonrpc-core = "15.0.0"
+jsonrpc-core-client = "15.0.0"
+jsonrpc-derive = "15.0.0"
+serde = { version = "1.0.119", features = ["derive"] }
+sp-api = { version = '2.0.1' }
+sp-blockchain = { version = '2.0.1' }
+sp-core = { version = '2.0.1' }
+sp-rpc = { version = '2.0.1' }
+sp-runtime = { version = '2.0.1' }
+pallet-generic-asset = { path = "../" }
+pallet-generic-asset-rpc-runtime-api = { path = "runtime-api" }
