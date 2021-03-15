@@ -68,29 +68,67 @@ ExchangeRate = StorageMap<CurrencyId, u128>
 ---
 
 ```rust
-// Sender supplies assets into the market and receives cTokens in exchange
-mint(who: &T::AccountId, currency_id: &CurrencyId, mint_amount: Balance)
+// User supplies assets into the market and receives cTokens in exchange
+mint(origin: OriginFor<T>, currency_id: CurrencyId, mint_amount: Balance)
 
-// Sender redeems cTokens in exchange for the underlying asset
-redeem(who: &T::AccountId, currency_id: &CurrencyId, redeem_amount: Balance)
+// User redeems cTokens in exchange for the underlying asset
+redeem(origin: OriginFor<T>, currency_id: CurrencyId)
 
-// Sender borrows assets from the protocol to their own address
-borrow(borrower: &T::AccountId, currency_id: &CurrencyId, borrow_amount: Balance)
+// User borrows assets from the protocol to their own address
+borrow(origin: OriginFor<T>, currency_id: CurrencyId, borrow_amount: Balance)
 
-// Sender put supplies assets in collateral mode so that he/she can borrow other currencies
-collateral_asset(borrower: &T::AccountId, currency_id: &CurrencyId, enable: bool)
+// User puts supplies assets in collateral mode so that he/she can borrow other currencies
+collateral_asset(origin: OriginFor<T>, currency_id: CurrencyId, enable: bool)
 
-// Sender repays their own borrow
-repay_borrow(borrower: &T::AccountId, currency_id: &CurrencyId, repay_amount: Balance)
+// User repays their own borrow
+repay_borrow(origin: OriginFor<T>, currency_id: CurrencyId, repay_amount: Balance)
 
-// The sender liquidates the borrowers collateral and the collateral seized is transferred to the liquidator
+// User liquidates the borrowers collateral and the collateral seized is transferred to the liquidator
 liquidate_borrow_internal(liquidator: T::AccountId, borrower: T::AccountId, liquidate_token: CurrencyId, repay_amount: Balance, collateral_token: CurrencyId)
 
-// Sender stakes DOTs to the validator and receives xDOTs in exchange
-stake_internal(who: &T::AccountId, amount: Balance)
+// User stakes DOTs to the validator and receives xDOTs in exchange
+stake(origin: OriginFor<T>, amount: Balance)
 
-// Sender redeems DOTs from staking using the xDOTs
-unstake_internal(who: &T::AccountId, amount: Balance)
+// User redeems DOTs from staking using the xDOTs
+unstake(origin: OriginFor<T>, amount: Balance)
+```
+
+#### Events
+
+---
+
+```rust
+/// Position updated. [owner, collateral_type, collateral_adjustment, debit_adjustment]
+PositionUpdated(T::AccountId, CurrencyId, Amount, Amount),
+/// Confiscate CDP's collateral assets and eliminate its debit. [owner, collateral_type, confiscated_collateral_amount,
+/// deduct_debit_amount]
+ConfiscateCollateralAndDebit(T::AccountId, CurrencyId, Balance, Balance),
+/// Transfer loan. [from, to, currency_id]
+TransferLoan(T::AccountId, T::AccountId, CurrencyId),
+
+AccrueInterest(CurrencyId),
+
+NewInterestParams2(T::AccountId, u128, u128, u128, u128),
+NewInterestParams(u128, u128, u128, u128),
+BorrowRateUpdated(CurrencyId, u128),
+SupplyRateUpdated(CurrencyId, u128),
+UtilityRateUpdated(CurrencyId, u128),
+
+/// Enable/Disable collateral for certain asset
+CollateralAssetAdded(T::AccountId, CurrencyId),
+CollateralAssetRemoved(T::AccountId, CurrencyId),
+
+/// a collateral has been liquidatied
+/// liquidator, borrower,liquidate_token,collateral_token,
+/// liquidate_token_repay_amount,collateral_token_amount
+LiquidationOccur(
+    T::AccountId,
+    T::AccountId,
+    CurrencyId,
+    CurrencyId,
+    Balance,
+    Balance,
+)
 ```
 
 #### The process of Liquidation
@@ -171,6 +209,7 @@ Parallel finance comes out a solution to unlock the liquidity of staked DOT with
 ##### Staking
 
 ---
+
 When the user deposit DOT to the staking pool, he will receive xDOT based on the exchange rate. The staking pool compounds the reward automatically which incentivizes the user to stake early and longer.
 
 ```
@@ -191,7 +230,6 @@ Parallel finance uses auto-selected validators recommanded by polkadot network f
 ---
 
 There is a 28 days cool down period for xDOT holders who want to redeem DOT. We will improve features to reduce the cool down period and create a xDOT/DOT market for users who need early redemption.
-
 
 If a nominated validator is slashed during the staking period, Parallel finance will use its reserve fund to cover the lose.
 
