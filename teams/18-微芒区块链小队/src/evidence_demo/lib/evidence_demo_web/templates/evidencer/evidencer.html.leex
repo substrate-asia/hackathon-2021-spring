@@ -1,0 +1,18 @@
+
+<div style="width:30%;margin: 0 auto;">
+    <p><%= live_flash(@flash, :info_A) %></p>
+    <p><%= live_flash(@flash, :info_B) %></p>
+    <%= f = form_for @form, "#", [phx_change: :change, phx_submit: :up_to_chain] , fn f ->%>
+        <%= if not is_nil(@contracts) do %>
+            <%= select f, :contract, @contracts %>
+        <% end %>
+        <br>
+        <%= if not is_nil(@signers) do %>
+            <%= select f, :signer, @signers %>
+        <% end %>
+        <%= label f, :data_load_to_chain %>
+        <%= text_input f, :data_load_to_chain%>
+
+        <%= submit "To Chain",phx_disable_with: "To Chain.." %>
+    <% end %>
+</div>

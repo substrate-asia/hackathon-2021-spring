@@ -1,0 +1,126 @@
+@import '~antd/es/style/themes/default.less';
+
+.footerPlaceHolder {
+  height: 300px;
+}
+
+.footerContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 300px;
+  width: 100%;
+  background-color: #000;
+  display: inline-block;
+  padding-top: 30px;
+}
+
+.footerItemTitleLarge {
+  font-size: 24px;
+  font-weight: 400;
+  color: #FFF;
+}
+
+.footerItemTitleSmall {
+  font-size: 14px;
+  font-weight: 400;
+  color: #DDDDDD;
+}
+
+
+.footerItemContent {
+  font-size: 14px;
+  font-weight: 400;
+  color: #FFF;
+}
+
+.footerContact {
+  width: 128px;
+  height: 128px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url('../assets/weixin.jpeg');
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  width: 350px;
+  height: 110px;
+
+  .mediaRow {}
+
+  .mediaItem {
+    position: relative;
+
+    span {
+      height: 60px;
+      width: 60px;
+      border: 1px solid white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      :hover .qrcode {
+        display: block;
+      }
+
+      .qrcode {
+        display: none;
+        position: absolute;
+        top: -125px;
+        left: -25px;
+        width: 117px;
+        height: 117px;
+        background: #fff;
+        border: 1px solid #eee;
+        padding: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    .mediaIcon svg {
+      height: 40px;
+      width: 40px;
+      color: white;
+    }
+  }
+}
+
+.mediaItem .qrcode {
+  display: none;
+  position: absolute;
+  top: -125px;
+  left: -25px;
+  width: 117px;
+  height: 117px;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.mediaItem :hover .qrcode {
+  display: block;
+}
+
+.qq .qrcode {
+  background-image: url('../assets/qq.jpg');
+}
+
+.weibo .qrcode {
+  background-image: url('../assets/weibo.png');
+}
+
+.weixin .qrcode {
+  background-image: url('../assets/weixin.jpeg');
+}
+
+.twitter .qrcode {
+  background-image: url('../assets/twitter.png');
+}

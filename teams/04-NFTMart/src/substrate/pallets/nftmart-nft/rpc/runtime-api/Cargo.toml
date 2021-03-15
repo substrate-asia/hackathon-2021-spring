@@ -1,0 +1,23 @@
+[package]
+name = "nftmart-rpc-runtime-api"
+version = "3.0.0"
+authors = ["NFTMart Developers"]
+edition = "2018"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+sp-api = { version = "3.0.0", default-features = false, path = "../../../../primitives/api" }
+sp-std = { version = "3.0.0", default-features = false, path = "../../../../primitives/std" }
+sp-core = { version = "3.0.0", default-features = false, path = "../../../../primitives/core" }
+nftmart-nft = { version = "3.0.0", default-features = false, path = "../../../nftmart-nft" }
+
+[features]
+default = ["std"]
+std = [
+	"sp-api/std",
+	"sp-std/std",
+	"sp-core/std",
+	"nftmart-nft/std",
+]

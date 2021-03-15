@@ -1,0 +1,9 @@
+[submodule "teams/09-Apron-Network/src/substrate/apron-contract"]
+	path = teams/09-Apron-Network/src/substrate/apron-contract
+	url = https://github.com/Apron-Network/apron-contracts.git
+[submodule "teams/09-Apron-Network/src/substrate/apron-node"]
+	path = teams/09-Apron-Network/src/substrate/apron-node
+	url = https://github.com/Apron-Network/apron-node.git
+[submodule "teams/09-Apron-Network/src/substrate/apron-gateway"]
+	path = teams/09-Apron-Network/src/substrate/apron-gateway
+	url = https://github.com/Apron-Network/apron_gateway.git

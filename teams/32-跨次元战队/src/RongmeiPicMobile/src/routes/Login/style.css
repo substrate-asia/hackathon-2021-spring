@@ -1,0 +1,29 @@
+#login-page {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /* background: #000000; */
+    background: #000000 url('../../assets/loginBg.webp');
+    background-size: 100% 100%;
+    color: white;
+    /* mix-blend-mode: soft-light; */
+    /* opacity: 0.8; */
+    /* background-color: rgba(0, 0, 0,  0.3); */
+}
+
+.am-list-item {
+    border-radius: 5px;
+    min-height: 35px;
+}
+.am-list-item.am-input-item{
+    height: 35px;
+}
+.am-list-item .am-input-control input{
+    font-size: 15px;
+}
+html:not([data-scale]) .am-button::before{
+    border: 0;
+}
+.am-button.am-button-disabled{
+    opacity: 0.8;
+}

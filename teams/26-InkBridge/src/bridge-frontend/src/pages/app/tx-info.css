@@ -1,0 +1,8 @@
+.tx-info {
+  margin-bottom: 1.8rem;
+  background-color: #FFF7F7;
+  border-radius: 1.5rem;
+}
+.tx-info:last-child {
+  margin-bottom: 0rem;
+}

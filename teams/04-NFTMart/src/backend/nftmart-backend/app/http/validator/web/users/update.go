@@ -1,0 +1,47 @@
+package users
+
+import (
+	"github.com/gin-gonic/gin"
+	"nftmart/app/global/consts"
+	"nftmart/app/http/controller/web"
+	"nftmart/app/http/validator/core/data_transfer"
+	"nftmart/app/utils/response"
+)
+
+//type Update struct {
+//	Base
+//	Id       float64 `form:"id" json:"id" binding:"required,min=1"` // 注意：gin框架数字的存储形式都是 float64
+//	Pass     string  `form:"pass" json:"pass" binding:"required,min=6"`
+//	RealName string  `form:"real_name" json:"real_name" binding:"required,min=2"`
+//	Phone    string  `form:"phone" json:"phone" binding:"required,len=11"`
+//	Remark   string  `form:"remark" json:"remark"`
+//}
+type Update struct {
+	Id       float64 `form:"id" json:"id" ` // 注意：gin框架数字的存储形式都是 float64
+	NickName     string  `form:"nick_name" json:"nick_name" binding:"required,min=2"`
+	ProfilePhoto string  `form:"profile_photo" json:"profile_photo"`
+	Email    string  `form:"email" json:"email"`
+	Twitter   string  `form:"twitter" json:"twitter"`
+}
+// 验证器语法，参见 Register.go文件，有详细说明
+
+func (u Update) CheckParams(context *gin.Context) {
+	//1.基本的验证规则没有通过
+	if err := context.ShouldBind(&u); err != nil {
+		errs := gin.H{
+			"tips": "UserUpdate，参数校验失败，请检查nick_name(>=2)",
+			"err":  err.Error(),
+		}
+		response.ErrorParam(context, errs)
+		return
+	}
+
+	//  该函数主要是将本结构体的字段（成员）按照 consts.ValidatorPrefix+ json标签对应的 键 => 值 形式绑定在上下文，便于下一步（控制器）可以直接通过 context.Get(键) 获取相关值
+	extraAddBindDataContext := data_transfer.DataAddContext(u, consts.ValidatorPrefix, context)
+	if extraAddBindDataContext == nil {
+		response.ErrorSystem(context, "UserUpdate表单验证器json化失败", "")
+	} else {
+		// 验证完成，调用控制器,并将验证器成员(字段)递给控制器，保持上下文数据一致性
+		(&web.Users{}).Update(extraAddBindDataContext)
+	}
+}
