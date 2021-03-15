@@ -41,35 +41,37 @@ export const useContractTx = ({ contract, method }: ContractTxProps) => {
           ...fields
         );
         const injector = await web3FromSource(currentAccount.meta.source as any);
-        // await tx.signAsync(currentAccount, { signer: injector.signer });
-        // return new Promise(async (resolve, reject) => {
-        //   try {
-        //     const unsubscribe = await tx.send(
-        //       handleTxResults(
-        //         'send',
-        //         {
-        //           txFailedCb: (r) => {
-        //             setIsLoading(false);
-        //             reject(r);
-        //           },
-        //           txSuccessCb: (r) => {
-        //             setIsLoading(false);
-        //             resolve(undefined);
-        //           }
-        //         },
-        //         (): void => {
-        //           setIsLoading(false);
-        //           unsubscribe();
-        //         }
-        //       )
-        //     );
-        //   } catch (error) {
-        //     setIsLoading(false);
-        //     reject(error);
-        //   }
-        // });
-        await tx.signAndSend(currentAccount.address, { signer: injector.signer });
-        // setIsLoading(false);
+        // await tx.signAndSend(currentAccount.address, { signer: injector.signer });
+        await new Promise((resolve, reject) => {
+          tx.signAndSend(currentAccount.address, { signer: injector.signer }, (result) => {
+            console.log('exec result', result);
+            if (!result || !result.status) {
+              return;
+            }
+            // txUpdateCb(extractEvents(result));
+        
+            if (result.status.isFinalized || result.status.isInBlock) {
+              result.events
+                .filter(({ event: { section } }) => section === 'system')
+                .forEach(({ event }): void => {
+                  if (event.method === 'ExtrinsicFailed') {
+                    console.log('ExtrinsicFailed', event)
+                    reject(result);
+                  } else if (event.method === 'ExtrinsicSuccess') {
+                    resolve(result);
+                  }
+                });
+            } else if (result.isError) {
+              reject(result);
+            }
+        
+            if (result.isCompleted) {
+              // unsubscribe();
+            }
+          });
+        });
+        // await tx.signAndSend(currentAccount.address, { signer: injector.signer });
+        setIsLoading(false);
       } catch (error) {
         console.error(error);
         setIsLoading(false);

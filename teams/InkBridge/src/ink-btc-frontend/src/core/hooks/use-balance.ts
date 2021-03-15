@@ -7,14 +7,14 @@ export const useBalance = (signal: number): { balance: number } => {
   const [ balance, setBalance ] = useState<number>(0);
   const { contract } = useWBTCContract();
   const { currentAccount } = useAccount();
-  const { read } = useContractQuery({ contract, method: 'balanceOf' });
+  const { read } = useContractQuery({ contract, method: 'iErc20,balanceOf' });
 
   useEffect(() => {
     console.log('read balance')
     read(currentAccount?.address).then(b => {
       setBalance((b as any) || 0);
     });
-  }, [signal, currentAccount]);
+  }, [signal, currentAccount, read]);
 
   return { balance };
 };

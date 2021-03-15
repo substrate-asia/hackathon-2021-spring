@@ -1,5 +1,4 @@
 import React from 'react';
-import { FC, ReactElement, useEffect, useState } from 'react';
 
 interface IProps {
   width: number;
@@ -49,39 +48,4 @@ export class Progress extends React.Component<IProps> {
       </div>
     );
   }
-}
-const ProgressR: FC<IProps> = ({ width, delay = 400 }): ReactElement => {
-  const brickWidth = 6;
-  const brickHeight = 4;
-  const counts = Math.floor(width / (brickWidth * 2));
-  const arr = (new Array(counts)).fill(true);
-  // const active = useActiveFactory()(counts, delay);
-  const [ active, setActive ] = useState<number>(0);
-
-  useEffect(() => {
-    console.log('set timer')
-    const timer = setInterval(() => {
-      let nextActive = active + 1;
-      if (nextActive >= counts) {
-        nextActive = 0;
-      }
-      console.log('active', active, 'next', nextActive, 'counts', counts)
-      setActive(nextActive);
-    }, delay);
-    return () => {
-      console.log('clear timer')
-      clearInterval(timer);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setActive, counts, delay]);
-
-  return (
-    <div style={{ textAlign: 'left' }}>
-      {
-        arr.map((t, index) =>
-          <div key={index} style={{ backgroundColor: active === index ? 'rgb(247, 147, 26)' : 'rgb(231, 213, 192)', display: 'inline-block', marginRight: brickWidth, width: brickWidth, height: brickHeight }}></div>
-        )
-      }
-    </div>
-  )
 }

@@ -75,7 +75,7 @@ export const useCheckedHeightAndTxs = (): {
       });
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [api]);
+  }, [api, readBlockList, readConfirmedIndex, readTxs]);
 
   return {
     checkedHeight,

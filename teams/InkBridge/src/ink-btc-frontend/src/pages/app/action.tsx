@@ -19,7 +19,7 @@ export const Action: FC = (): ReactElement => {
   const { balance } = useBalance(signal);
   const { contract } = useWBTCContract();
   const [ decimals, setDecimals ] = useState<number>(8);
-  const { read: readDecimals } = useContractQuery({ contract, method: 'tokenDecimals' });
+  const { read: readDecimals } = useContractQuery({ contract, method: 'iErc20,tokenDecimals' });
 
   const handleVerified = () => {
     setSignal(signal + 1);

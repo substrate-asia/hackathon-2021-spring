@@ -36,6 +36,7 @@ const Main: FC = (): ReactElement => {
     } else {
       setNextAvailable(true);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [blockList]);
 
   const handleNext = () => {

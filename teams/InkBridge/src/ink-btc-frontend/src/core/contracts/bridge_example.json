@@ -1,7 +1,7 @@
 {
   "metadataVersion": "0.1.0",
   "source": {
-    "hash": "0x7124dc5fea35ce235199b1f2f63287cc9e4fee33361450fe89f7938f54ea673e",
+    "hash": "0x1fceda05ecae12dec8472c66df8ff1cf1e005d46a109ef8a49237cb257f01f30",
     "language": "ink! 3.0.0-rc3",
     "compiler": "rustc 1.52.0-nightly"
   },
@@ -260,6 +260,22 @@
       {
         "args": [],
         "docs": [],
+        "mutates": false,
+        "name": [
+          "verified_transactions"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Vec"
+          ],
+          "type": 27
+        },
+        "selector": "0x048b9fd6"
+      },
+      {
+        "args": [],
+        "docs": [],
         "mutates": true,
         "name": [
           "request_btc_deposit_address"
@@ -281,7 +297,7 @@
               "displayName": [
                 "Vec"
               ],
-              "type": 27
+              "type": 28
             }
           },
           {
@@ -290,7 +306,7 @@
               "displayName": [
                 "Vec"
               ],
-              "type": 27
+              "type": 28
             }
           },
           {
@@ -299,7 +315,7 @@
               "displayName": [
                 "Option"
               ],
-              "type": 28
+              "type": 29
             }
           }
         ],
@@ -313,7 +329,7 @@
           "displayName": [
             "Result"
           ],
-          "type": 29
+          "type": 30
         },
         "selector": "0x820c3c33"
       }
@@ -1117,6 +1133,13 @@
     {
       "def": {
         "sequence": {
+          "type": 6
+        }
+      }
+    },
+    {
+      "def": {
+        "sequence": {
           "type": 3
         }
       }
@@ -1131,7 +1154,7 @@
             {
               "fields": [
                 {
-                  "type": 27,
+                  "type": 28,
                   "typeName": "T"
                 }
               ],
@@ -1141,7 +1164,7 @@
         }
       },
       "params": [
-        27
+        28
       ],
       "path": [
         "Option"
@@ -1154,7 +1177,7 @@
             {
               "fields": [
                 {
-                  "type": 30,
+                  "type": 31,
                   "typeName": "T"
                 }
               ],
@@ -1163,7 +1186,7 @@
             {
               "fields": [
                 {
-                  "type": 31,
+                  "type": 32,
                   "typeName": "E"
                 }
               ],
@@ -1173,8 +1196,8 @@
         }
       },
       "params": [
-        30,
-        31
+        31,
+        32
       ],
       "path": [
         "Result"

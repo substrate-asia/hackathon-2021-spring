@@ -26,6 +26,7 @@ export const Request: FC = (): ReactElement => {
   useMemo(() => {
     setPhase(Phase.initial);
     setBtcAddress('');
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentAccount]);
   const handleEnter = async () => {
     setPhase(Phase.loading);

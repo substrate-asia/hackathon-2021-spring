@@ -1,5 +1,5 @@
 # inkbridge
-the contract codes for inkbridge contract
+the contract codes for InkBridge contract
 
 # btc-relay
 the codes for relayer
