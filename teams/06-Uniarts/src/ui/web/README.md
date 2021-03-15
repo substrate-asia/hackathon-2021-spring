@@ -8,7 +8,7 @@ The browser wallet uses Polkadot{.js} Extension, Chrome Store: [https://chrome.g
 
 Polkadot explorer is used to query information on the substrate chain, URL: [https://polkadot.js.org/apps/#/explorerhttps://polkadot.js.org/apps/#/explorer](https://polkadot.js.org/apps/#/explorerhttps://polkadot.js.org/apps/#/explorer)
 
-The framework used for front-end is Vue2.0
+This project is developed based on Vue 2.0
 
 ## Project setup
 ```
