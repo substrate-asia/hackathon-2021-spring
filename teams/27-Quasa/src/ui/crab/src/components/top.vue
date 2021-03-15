@@ -169,6 +169,8 @@ export default {
         this.$router.push({ name: "home" });
       } else if (key == "1") {
         this.$router.push({ name: "deal" });
+      } else if (key == "2") {
+        this.$router.push({ name: "broker" });
       } else {
         return this.$message("敬请期待");
       }

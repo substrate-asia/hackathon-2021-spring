@@ -13,6 +13,11 @@ const routes = [
     path: '/deal',
     name: 'deal',
     component: ()=>import("../views/deal.vue")
+  },
+  {
+    path: '/broker',
+    name: 'broker',
+    component: ()=>import("../views/broker.vue")
   }
 ]
 
