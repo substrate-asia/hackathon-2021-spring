@@ -7,5 +7,10 @@
 * github: @tuminfei
 * weixin: 15110605
 
+## Faber Yang
+
+* Substrate and solidity developer
+* github: @yxf
+* weixin: yxf4559
 
 
