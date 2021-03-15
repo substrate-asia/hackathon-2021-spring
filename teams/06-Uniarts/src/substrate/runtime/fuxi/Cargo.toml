@@ -78,7 +78,6 @@ pallet-validator-set = { path = "../../pallets/validator-set", default-features 
 pallet-token = { path = "../../pallets/token", default-features = false }
 pallet-trade = { path = "../../pallets/trade", default-features = false }
 pallet-bridge = { path = "../../pallets/bridge", default-features = false }
-# pallet-lotteries = { path = "../../pallets/lotteries", default-features = false }
 primitives = { package = "uniarts-primitives", path = "../../primitives", default-features = false }
 
 # Used for runtime benchmarking
