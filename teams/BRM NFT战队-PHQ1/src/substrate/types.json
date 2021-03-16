@@ -1,0 +1,16 @@
+{
+    "CurrencyId": {
+        "_enum": [
+            "Native",
+            "DOT",
+            "KSM",
+            "BTC",
+            "MAAR"
+        ]
+    },
+    "CurrencyIdOf": "CurrencyId",
+    "Amount": "i128",
+    "AmountOf": "Amount",
+    "ClassId": "u64",
+    "TokenId": "u64"
+}
