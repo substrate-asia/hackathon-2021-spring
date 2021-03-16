@@ -179,7 +179,7 @@ Shopbring为验证购物过程是否真实发生，引入了验票人角色。�
 
 ## 5. 生态系统架构
 
-![生态系统架构图](../resources/Shopbring-architecture.jpg)
+![生态系统架构图](https://wiki.shopbring.network/resources/Shopbring-architecture.jpg)
 
 整个生态系统划分为3块：**业务参与者**，**Shopbring**，**Polkadot生态**。
 
@@ -192,7 +192,7 @@ Shopbring为验证购物过程是否真实发生，引入了验票人角色。�
 目前我们还没发现有使用加密货币做支付的区块链电商平台。由于传统电商平台技术已经非常成熟，服务体验也非常好，要让商家花成本迁移到区块链的电商平台是十分困难的。
 得益于Polkadot生态系统拥有众多DeFi平行链，我们可以透过DeFi所产生的较高的收益回报来吸引传统的电商用户来为加密货币用户提供购物渠道。如图所示的商业模式：
 
-![商业模式图](../resources/Shopbring-business.jpg)
+![商业模式图](https://wiki.shopbring.network/resources/Shopbring-business.jpg)
 
 1. 消费者转账DOT到Acala账户，并兑换成L-DOT。L-DOT是Acala发行的一种不但能获得DOT Staking收益，同时能自由流动的资产。Polkadot的Staking年化利率平均14%，比较收益率来看，DOT < L-DOT < Staked-DOT。
 2. 消费者得Acala账户抵押L-DOT借入aUSD。aUSD是Acala发行的一种锚定(1:1)USD的加密代币，因此aUSD适合用作支付货币。消费者要赎回L-DOT，还需要支付稳定费，参考MakerDAO最大的DAI池借贷为年利息2%。
