@@ -1,0 +1,12 @@
+/target/
+*.class
+
+/node_modules/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+/target
+/.settings
+/.classpath
