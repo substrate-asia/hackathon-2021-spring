@@ -13,9 +13,24 @@ RUST_LOG=sqlx_todo=info,actix=info
 ```   
 ## 2. add database user  "pguser" with password "pgpassword"
 
+``` bash   
+createdb
+psql
+CREATE USER pguser WITH PASSWORD 'pgpassword';
+DROP DATABASE postgres;
+CREATE DATABASE mydb OWNER pguser;
+GRANT ALL PRIVILEGES ON DATABASE mydb to pguser;
+ALTER ROLE pguser CREATEDB;
+```  
 ## 3. run schema-cargo.sql & schema-hash.sql
-
-## 4. cargo build
+``` bash   
+psql -h localhost -U pguser -d mydb -a -f schema-cargo.sql
+psql -h localhost -U pguser -d mydb -a -f schema-hash.sql
+```  
+## 4. run cargo build
+``` bash   
+$ cargo build
+```  
 
 ## 5. start server with command:
 ``` bash   
