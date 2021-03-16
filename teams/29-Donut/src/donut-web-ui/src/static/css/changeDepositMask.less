@@ -1,0 +1,112 @@
+.change-box {
+    width: 492px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 28px;
+    padding: 24px;
+    margin-top: -20%;
+
+    .title {
+        text-align: left;
+    }
+
+    .input-box {
+        margin-top: 48px;
+        width: 444px;
+        height: 92px;
+        background: var(--background);
+        border-radius: 16px;
+
+        .box-title-container {
+            display: flex;
+            align-content: center;
+            justify-content: space-between;
+
+            span {
+                margin: 16px;
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--secondary-text);
+                line-height: 14px;
+            }
+        }
+    }
+
+
+    .box-content-container {
+        display: flex;
+        margin: 0 16px 16px 16px;
+        align-items: center;
+
+        .input {
+            border: 0;
+            background-color: rgba(0, 0, 0, 0);
+            outline: none;
+            height: 24px;
+            flex: 1;
+            font-size: 24px;
+            font-family: DINAlternate-Bold, DINAlternate;
+            font-weight: bold;
+            color: var(--primary-text);
+            line-height: 24px;
+            ;
+        }
+
+        .maxBtn {
+            box-sizing: border-box;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 14px;
+            padding: 5px 12px;
+            border: none;
+            font-size: 14px;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 600;
+            color: var(--primary-text);
+            line-height: 14px;
+        }
+    }
+
+    .bottom {
+        margin-top: 28px;
+        display: flex;
+        justify-content: space-between;
+
+        .cancel {
+            margin-right: 12px;
+            width: 50%;
+            border: 1px solid var(--primary);
+            box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+            border-radius: 28px;
+        }
+
+        .cancel:hover {
+            background: var(--background);
+        }
+
+        .confirm {
+            width: 50%;
+            border-radius: 28px !important;
+        }
+    }
+
+    .getToken {
+        margin-top: 28px;
+        margin-bottom: 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--primary-text);
+        line-height: 16px;
+    }
+
+    .getToken:hover {
+        cursor: pointer;
+        color: var(--link);
+    }
+
+    .fee{
+        margin: 8px 0 0 0 ;
+        font-size: 14px;
+        color:var(--disable);
+    }
+}

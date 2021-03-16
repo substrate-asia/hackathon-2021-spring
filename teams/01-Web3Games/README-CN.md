@@ -9,7 +9,7 @@
 ## 导航
 
 - [项目介绍](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/docs/project-CN.md)
-- [团队成员](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/team-CN.md)
+- [团队成员](https://github.com/ParityAsia/hackathon-2021-spring/blob/main/teams/01-Web3Games/docs/team-CN.md)
 - [代码资源](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/src/README-CN.md)
 - [演示稿](https://github.com/ParityAsia/hackathon-2021-spring/tree/main/teams/01-Web3Games/docs/presentation-CN.pdf)
 

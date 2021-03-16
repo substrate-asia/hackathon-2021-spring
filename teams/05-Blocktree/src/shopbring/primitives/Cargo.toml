@@ -1,0 +1,25 @@
+[package]
+name = "shopbring-primitives"
+version = "0.7.0"
+authors = ["Shopbring Developers"]
+edition = "2018"
+
+[dependencies]
+serde = { version = "1.0.119", optional = true }
+codec = { package = "parity-scale-codec", version = "1.3.4", default-features = false }
+sp-core = { version = "2.0.1", default-features = false }
+sp-runtime = { version = "2.0.1", default-features = false }
+sp-std = { version = "2.0.1", default-features = false }
+
+[dev-dependencies]
+frame-support = { version = "2.0.1" }
+
+[features]
+default = ["std"]
+std = [
+	"serde",
+	"codec/std",
+	"sp-runtime/std",
+	"sp-core/std",
+	"sp-std/std",
+]
