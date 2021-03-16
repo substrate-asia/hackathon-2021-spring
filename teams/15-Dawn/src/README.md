@@ -8,25 +8,7 @@
 丁辉 | 前端开发工程师，目前就职于携程，曾参与过星云链dapp开发并获奖 | https://github.com/cleartime
 林嘉锵 | 八年后台开发经验，做过百万级用户社交软件，K8s云原生和运维平台 | https://github.com/lamkacheong
 
-## 参赛类别
-构建可KYC的去中心化交易所(DEFI类别)
 
-## 解决问题
-1. DEX用户无分级
-2. DEX交易监管难
-3. 传统KYC不能保护用户隐私
-4. 波卡缺乏组合使用基础设施的应用
-
-## 解决方案
-1. 结合数字证书方案实现用户认证
-2. 结合去中心化身份对用户KYC分级交易
-3. DAO的形式构建认证联盟，可引入传统中心化交易所
-4. 开放的预言机数据报价方案，可以和认证联盟结合
-
-## 应用场景
-1. 构建可KYC的去中心化交易所行业标准和解决方案，为传统中心化交易所过渡提供服务
-2. 引入多方机构构建DAO认证联盟，结合去中心化身份系统，实现KYC分级和用户认证
-3. 项目中使用的DEX，DAO，DID，Oracle等技术均可结合已有的波卡生态下基础设施
 
 
 # Getting started
@@ -49,16 +31,6 @@ npm install
 
 
 
-Install the chainlink-polkadot
-
-```
-git clone https://github.com/smartcontractkit/chainlink-polkadot.git
-cd chainlink-polkadot
-make run-chain
-```
-
-Using the usual substrate is the same.
-
 ## How to run locally
 
 ```
@@ -69,6 +41,17 @@ npm run dev
 
 - `start-backend`, for starting the backend (_port 8181_)
 - `start`, for starting the application through `dev react server` (_port 3000_)
+
+
+
+Pick up another terminal
+
+```
+cd chainlink-polkadot
+make run-chain
+```
+
+
 
 # How to run the tests
 
