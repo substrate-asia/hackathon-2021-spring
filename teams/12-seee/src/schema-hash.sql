@@ -2,10 +2,10 @@ CREATE TABLE IF NOT EXISTS hashs (
     id          serial PRIMARY KEY,        
     cid         text NOT NULL REFERENCES cargo(cid) ON DELETE CASCADE,       
     account     text NOT NULL,
-    mkroot      text NOT NULL,    -- should be u64 in rust type
+    mkroot      text NOT NULL,   
     hashcode    text NOT NULL,
-    hashcodeu64  text  NOT NULL,    -- should be u64 in rust type
-    proofarr     text[]   NOT NULL ,   -- should be u64[] in rust type
+    hashcodeu64  text  NOT NULL,   
+    proofarr     text[]   NOT NULL , 
     proofindex   INT[]  NOT NULL             
 );
 
