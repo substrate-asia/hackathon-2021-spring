@@ -1,0 +1,31 @@
+$primaryColor: #f2a039;
+$regularColor: #666666;
+$primaryColorLight: #cdd8e5;
+$moneyColor: #d95140;
+$--color-text-primary: #1f1f1f;
+.text-primary-color {
+  color: $primaryColor;
+}
+
+.el-button--primary {
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+  font-weight: normal;
+}
+
+$--color-primary: #f2a039;
+
+/* 改变 icon 字体路径变量，必需 */
+// $--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+// @import '~element-ui/packages/theme-chalk/src/button';
+// @import '~element-ui/packages/theme-chalk/src/loading';
+// @import '~element-ui/packages/theme-chalk/src/select';
+// @import '~element-ui/packages/theme-chalk/src/option';
+// @import '~element-ui/packages/theme-chalk/src/input';
+// @import '~element-ui/packages/theme-chalk/src/card';
+// @import '~element-ui/packages/theme-chalk/src/image';
+// @import '~element-ui/packages/theme-chalk/src/tag';
+// @import '~element-ui/packages/theme-chalk/src/table';
+// @import '~element-ui/packages/theme-chalk/src/table-column';
+// @import '~element-ui/packages/theme-chalk/src/dialog';
