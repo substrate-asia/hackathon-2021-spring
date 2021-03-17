@@ -1,3 +1,25 @@
+## 出线至 Demo Day 团队 (2021-03-17 更新)
+
+1. 01-Web3Games
+2. 04-NFTMart
+3. 05-Blocktree
+4. 06-Uniarts
+5. 07-PolkaName
+6. 08-subdao-network
+7. 10-Magical-Cultivators
+8. 11-五条人战队
+9. 14-DeeperNetwork
+10. 15-Hashii
+11. 17-Dodo-dex
+12. 19-OAK-Foundation
+13. 22-Parallel
+14. 24-Ares-Enthusiasts
+15. 26-InkBridge
+16. 30-SkyePass
+17. 33-Manta
+
+---
+
 - 截止报名时间点： **2 月 11 日 23:59**
 - 截止提交参赛项目时间点： **3 月 15 日 23:59**
 
