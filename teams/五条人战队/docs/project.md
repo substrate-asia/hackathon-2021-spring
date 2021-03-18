@@ -1,6 +1,6 @@
 # Project Report
 ## Project background
-X predict Market is a decentralized prediction market. The objective of X predict Market is to enable users to participate in the prediction process in various ways by creating topics, discussing, predicting and approving the results. Users are also incentivized by these engaging activities. Beyond the prediction, users can actively interact and socialize with each other within the social system. It is a way to gather people's wisdom to conduct historical analysis and future exploration. It can also benefit current decision-making. Therefore, our team wants to contribute to such a way to condense the wisdom of the people.It will be developed based on Polkadot's substrate framework.
+P Market is a decentralized prediction market. The objective of P Market is to enable users to participate in the prediction process in various ways by creating topics, discussing, predicting and approving the results. Users are also incentivized by these engaging activities. Beyond the prediction, users can actively interact and socialize with each other within the social system. It is a way to gather people's wisdom to conduct historical analysis and future exploration. It can also benefit current decision-making. Therefore, our team wants to contribute to such a way to condense the wisdom of the people.It will be developed based on Polkadot's substrate framework.
 
 ## Project technical design
 #### Proposal management
@@ -79,7 +79,7 @@ In the final asset module, we use (from to amount) to manage multiple assets.
 
 #### Key Functions
 ##### 1. Creation of The Prediction Market
-Everyone can initiate a prediction proposal in the initial proposal pool through X predict Market. When creating the topic, users should set up the prediction type, topic, optional results, settlement currency, transaction fee ratio, prediction period, and the actual date when the result is revealed. Besides, any number of settlement tokens are required to add for initial liquidity, as well as a text describing the key points and merits of the proposal, the source of information, how the results will be validated and secured accurately and etc. It is to win the support and attract other users to join the prediction.
+Everyone can initiate a prediction proposal in the initial proposal pool through P Market. When creating the topic, users should set up the prediction type, topic, optional results, settlement currency, transaction fee ratio, prediction period, and the actual date when the result is revealed. Besides, any number of settlement tokens are required to add for initial liquidity, as well as a text describing the key points and merits of the proposal, the source of information, how the results will be validated and secured accurately and etc. It is to win the support and attract other users to join the prediction.
 
 ##### 2. Voting in Initial Proposal Pool
 In the initial proposal pool, all users can browse and vote for any prediction proposals created by other users, which draw their interests. During the vote, users will need to verify the connected wallet addresses and hold a certain amount of governance tokens. If the number of ‘support’ votes exceeds a certain basic amount, and the support rate surpass 50%, the proposal is passed. If the proposal is finally passed, the users who voted in favor will get the governance tokens of the initial proposal vote as rewards. If it does not pass, the users who vote against it are getting rewards instead.
@@ -117,7 +117,7 @@ Achieved the creation of topics, topic data on the chain, topic results upload, 
 
 # 项目报告
 ## 项目背景
-X predict Market是一个去中心化的预测市场。 X predict Market的目标是通过创建主题，讨论，预测和批准结果，使用户能够以各种方式参与预测过程。 这些吸引人的活动也激励了用户。 除了预测之外，用户还可以在社交系统内彼此进行积极的交互和社交。 这是一种通过收集人们的智慧来进行历史分析和探索未来的方法。 它还可以使当前的结果贡献者受益。 因此，我们的团队希望通过聚集人民智慧的方式做出贡献。它将基于Polkadot的基础框架进行开发。 
+P Market是一个去中心化的预测市场。 P Market的目标是通过创建主题，讨论，预测和批准结果，使用户能够以各种方式参与预测过程。 这些吸引人的活动也激励了用户。 除了预测之外，用户还可以在社交系统内彼此进行积极的交互和社交。 这是一种通过收集人们的智慧来进行历史分析和探索未来的方法。 它还可以使当前的结果贡献者受益。 因此，我们的团队希望通过聚集人民智慧的方式做出贡献。它将基于Polkadot的基础框架进行开发。 
 
 ## 项目技术设计
 ### 提案管理
@@ -192,7 +192,7 @@ proposalDescription: vec< u8 >,
 在最终资产模块中，我们使用（从到金额）来管理多个资产。
 ### 关键功能
 #### 1.建立预测市场
-每个人都可以通过X predict Market在初始投标池中发起预测投标。 创建主题时，用户应设置预测类型，主题，可选结果，结算货币，交易费用比率，预测期限以及显示结果的实际日期。 此外，还需要增加任意数量的结算代币以增加初始流动性，以及描述提案要点和优点，信息来源，如何正确验证和确保结果等。 赢得支持并吸引其他用户加入预测。
+每个人都可以通过P Market在初始投标池中发起预测投标。 创建主题时，用户应设置预测类型，主题，可选结果，结算货币，交易费用比率，预测期限以及显示结果的实际日期。 此外，还需要增加任意数量的结算代币以增加初始流动性，以及描述提案要点和优点，信息来源，如何正确验证和确保结果等。 赢得支持并吸引其他用户加入预测。
 
 #### 2.在初始提案池中投票
 在初始提案池中，所有用户都可以浏览其他用户创建的任何预测提案并对其进行投票，从而吸引他们的兴趣。 投票期间，用户将需要验证连接的钱包地址并持有一定数量的管理令牌。 如果“支持”票数超过某个基本数量，并且支持率超过50％，则提案通过。 如果最终通过提案，则投票的用户将获得初始提案投票的管理令牌作为奖励。 如果未通过，则对它投反对票的用户将获得奖励。
