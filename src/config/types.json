@@ -1,0 +1,132 @@
+{
+  "ActorInfo": {
+    "name": "Vec<u8>",
+    "equipments": "Vec<Hash>",
+    "born_at": "BlockNumber",
+    "born_age": "BlockNumber",
+    "live_until": "BlockNumber",
+    "level": "u8",
+    "level_progress": "Percent"
+  },
+  "AssetBalance": {
+    "balance": "u32",
+    "isFrozen": "bool",
+    "isSufficient": "bool"
+  },
+  "DungeonId": "u32",
+  "AssetId": "u32",
+  "FeatureDestinyRank": {
+    "_enum": [
+      "Tian",
+      "Di",
+      "Xuan",
+      "Huang"
+    ]
+  },
+  "FeatureHue": {
+    "_enum": [
+      "Green",
+      "Yellow",
+      "White",
+      "Black",
+      "Blue",
+      "Red",
+      "Orange",
+      "Pink",
+      "Purple"
+    ]
+  },
+  "FeatureElements": {
+    "_enum": {
+      "One": "FeatureHue",
+      "Two": "(FeatureHue, FeatureHue)",
+      "Three": "(FeatureHue, FeatureHue, FeatureHue)",
+      "Four": "(FeatureHue, FeatureHue, FeatureHue, FeatureHue)"
+    }
+  },
+  "FeatureLevel": {
+    "_enum": [
+      "Lv0",
+      "Lv1",
+      "Lv2",
+      "Lv3",
+      "Lv4",
+      "Lv5"
+    ]
+  },
+  "FeatureRankedLevel": {
+    "_enum": {
+      "Low": "FeatureLevel",
+      "Middle": "FeatureLevel",
+      "High": "FeatureLevel"
+    }
+  },
+  "AssetFeature": {
+    "destiny": "FeatureDestinyRank",
+    "elements": "FeatureElements",
+    "saturation": "FeatureRankedLevel",
+    "lightness": "FeatureLevel"
+  },
+  "ManagerInfo": {
+    "deposit": "Balance",
+    "is_admin": "bool",
+    "is_issuer": "bool",
+    "is_freezer": "bool"
+  },
+  "AssetAmountPair": {
+    "asset_id": "AssetId",
+    "amount": "Balance"
+  },
+  "DungeonReportState": {
+    "_enum": {
+      "Lose": null,
+      "PerfectWin": null,
+      "ScoredWin": "Percent"
+    }
+  },
+  "DungeonInfo": {
+    "ticket_price": "Balance",
+    "provide_assets": "Vec<AssetAmountPair>",
+    "report_ranks": "Vec<(DungeonReportState, Percent)>"
+  },
+  "DungeonInstanceStatus": {
+    "_enum": {
+      "Closed": null,
+      "Booked": {
+        "close_due": "BlockNumber"
+      },
+      "Started": {
+        "server": "AccountId",
+        "close_due": "BlockNumber"
+      },
+      "Ended": {
+        "server": "AccountId",
+        "report_at": "BlockNumber",
+        "report_state": "DungeonReportState"
+      }
+    }
+  },
+  "DungeonInstance": {
+    "id": "DungeonId",
+    "player": "AccountId",
+    "created_at": "BlockNumber",
+    "status": "DungeonInstanceStatus<AccountId, BlockNumber>"
+  },
+  "FormulaId": "u32",
+  "Formula": {
+    "id": "FormulaId"
+  },
+  "CommodityId": "Hash",
+  "UniqueAssetInfo": {
+    "name": "Vec<u8>",
+    "version": "Vec<u8>"
+  },
+  "Commodity": {
+    "id": "CommodityId",
+    "info": "UniqueAssetInfo"
+  },
+  "MetaKeyValue": {
+    "key": "Vec<u8>",
+    "value": "bool"
+  }
+}

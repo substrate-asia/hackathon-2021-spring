@@ -1,0 +1,53 @@
+.custom-filter-common {
+  position: relative;
+}
+.custom-filter-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 67px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(200, 211, 247, 1);
+  font-size: 12px;
+  font-family: Roboto-Regular;
+  font-weight: 400;
+  color: rgba(70, 72, 85, 1);
+  line-height: 14px;
+}
+.custom-filter-num {
+  width: 16px;
+  height: 16px;
+  background: rgba(137, 142, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 10px;
+  font-family: Roboto-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 14px;
+}
+.custom-filter-panel {
+  z-index: 100;
+  position: absolute;
+  top: 36px;
+  right: 0px;
+  width: 228px;
+  height: 336px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+}
+.custom-filter-name {
+  height: 16px;
+  font-size: 14px;
+  font-family: Roboto-Regular;
+  font-weight: 400;
+  color: rgba(167, 171, 190, 1);
+  line-height: 16px;
+  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.16);
+  margin-bottom: 8px;
+}

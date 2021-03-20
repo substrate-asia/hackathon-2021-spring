@@ -1,0 +1,42 @@
+.panel-root {
+  min-width: 0;
+  height: 156px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 6px 10px 0px rgba(69, 73, 91, 0.08);
+  border-radius: 8px;
+  &:hover {
+    box-shadow: 0px 2px 10px 2px rgba(69, 73, 91, 0.16);
+  }
+}
+.panel-top {
+  display: flex;
+  flex-direction: row;
+}
+.panel-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.panel-title-root {
+  display: flex;
+  flex-direction: column;
+}
+.panel-title {
+  width: 146px;
+  height: 14px;
+  font-size: 14px;
+  font-family: Roboto-Regular;
+  font-weight: 400;
+  color: rgba(107, 111, 130, 1);
+  line-height: 14px;
+}
+.panel-title-value {
+  height: 22px;
+  font-size: 22px;
+  font-family: Roboto-Bold;
+  font-weight: bold;
+  line-height: 22px;
+}
