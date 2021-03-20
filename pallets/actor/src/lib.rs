@@ -17,10 +17,12 @@ use sp_runtime::{
 // };
 use codec::{Encode, Decode};
 use mc_support::{
-	traits::{ LifeTime }
+	traits::{ LifeTime, UniqueAssets }
 };
 
 pub use pallet::*;
+
+pub type AssetIdOf<T> = <<T as Config>::UniqueAssets as UniqueAssets<<T as frame_system::Config>::AccountId>>::AssetId;
 
 #[frame_support::pallet]
 pub mod pallet {
@@ -44,6 +46,9 @@ pub mod pallet {
 
 		/// LifeTime calclator
 		type ActorLifeTime: LifeTime<Self::BlockNumber>;
+
+		/// NFT Assets
+		type UniqueAssets: UniqueAssets<Self::AccountId>;
 	}
 
 	#[pallet::hooks]
@@ -56,7 +61,8 @@ pub mod pallet {
 		/// generate an actor of the account
 		#[pallet::weight((10_000 + T::DbWeight::get().writes(1), DispatchClass::Normal, Pays::No))]
 		pub fn generate(
-			origin: OriginFor<T>
+			origin: OriginFor<T>,
+			name: Vec<u8>,
 		) -> DispatchResultWithPostInfo {
 			let one = ensure_signed(origin)?;
 
@@ -65,6 +71,8 @@ pub mod pallet {
 			let current_block = frame_system::Module::<T>::block_number();
 			// add actor
 			Actors::<T>::insert(one.clone(), ActorInfo {
+				name: name,
+				equipments: Vec::new(),
 				born_at: current_block,
 				born_age: One::one(),
 				live_until: current_block + T::ActorLifeTime::base_age(1),
@@ -76,6 +84,30 @@ pub mod pallet {
 			Self::deposit_event(Event::ActorBorn(one));
 			Ok(().into())
 		}
+
+		/// equip some item to an actor
+		#[pallet::weight((10_000 + T::DbWeight::get().writes(1), DispatchClass::Normal, Pays::No))]
+		pub fn equip(
+			origin: OriginFor<T>,
+			item_id: AssetIdOf<T>,
+		) -> DispatchResultWithPostInfo {
+			let who = ensure_signed(origin)?;
+
+			Actors::<T>::try_mutate(&who, |maybe_actor| {
+				let actor = maybe_actor.as_mut().ok_or(Error::<T>::NotExist)?;
+
+				let item_owner = T::UniqueAssets::owner_of(&item_id);
+				ensure!(item_owner == who, Error::<T>::NotOwner);
+
+				match actor.equipments.binary_search(&item_id) {
+					Ok(_pos) => {} // should never happen
+					Err(pos) => actor.equipments.insert(pos, item_id.clone()),
+				};
+
+				Self::deposit_event(Event::ActorEquipItem(who.clone(), item_id));
+				Ok(().into())
+			})
+		}
 	}
 
 	#[pallet::storage]
@@ -84,17 +116,19 @@ pub mod pallet {
 		_,
 		Blake2_128Concat,
 		T::AccountId,
-		ActorInfo<T::BlockNumber>
+		ActorInfo<T::BlockNumber, AssetIdOf<T>>
 	>;
 
 	#[pallet::event]
-	#[pallet::metadata(T::AccountId = "AccountId")]
+	#[pallet::metadata(T::AccountId = "AccountId", AssetIdOf<T> = "Hash")]
 	#[pallet::generate_deposit(pub(super) fn deposit_event)]
 	pub enum Event<T: Config> {
 		/// An actor borned
 		ActorBorn(T::AccountId),
 		/// An actor dead
 		ActorDead(T::AccountId),
+		/// An actor equip some item
+		ActorEquipItem(T::AccountId, AssetIdOf<T>),
 	}
 
 	#[pallet::error]
@@ -105,11 +139,17 @@ pub mod pallet {
 		NotExist,
 		/// Actor was dead.
 		Dead,
+		/// Actor doesn't own item
+		NotOwner,
 	}
 }
 
 #[derive(Clone, Encode, Decode, Eq, PartialEq, RuntimeDebug, Default)]
-pub struct ActorInfo<BlockNumber> {
+pub struct ActorInfo<BlockNumber, Hash> {
+	/// Actor name
+	name: Vec<u8>,
+	/// NFT hashs
+	equipments: Vec<Hash>,
 	/// The born time
 	born_at: BlockNumber,
 	/// The born age

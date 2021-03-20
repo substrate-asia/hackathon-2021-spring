@@ -47,7 +47,7 @@ pub use pallet_timestamp::Call as TimestampCall;
 use pallet_transaction_payment::CurrencyAdapter;
 #[cfg(any(feature = "std", test))]
 pub use sp_runtime::BuildStorage;
-pub use sp_runtime::{Perbill, Permill};
+pub use sp_runtime::{Perbill, Permill, Percent};
 
 /// Import local pallets.
 pub use mc_featured_assets;
@@ -57,6 +57,7 @@ pub use mc_cultivate;
 pub use mc_implication;
 pub use mc_nature;
 pub use mc_dungeons;
+pub use mc_support;
 
 /// Opaque types. These are used by the CLI to instantiate machinery that don't need to know
 /// the specifics of the runtime. They can then be made to be agnostic over specific formats
@@ -265,7 +266,7 @@ parameter_types! {
 impl mc_nft::Config for Runtime {
 	type Event = Event;
 	type CommodityAdmin = frame_system::EnsureRoot<AccountId>;
-	type CommodityInfo = mc_nft::CommodityInfo;
+	type CommodityInfo = mc_support::primitives::UniqueAssetInfo<u32, BlockNumber>;
 	type CommodityLimit = MaxNfts;
 	type UserCommodityLimit = MaxNftsPerUser;
 	type LifeTime = DemoItem;
@@ -274,11 +275,10 @@ impl mc_nft::Config for Runtime {
 impl mc_actor::Config for Runtime {
 	type Event = Event;
 	type ActorLifeTime = DemoActor;
+	type UniqueAssets = Commodity;
 }
+
 impl mc_implication::Config for Runtime {
-	type Event = Event;
-}
-impl mc_cultivate::Config for Runtime {
 	type Event = Event;
 }
 
@@ -292,13 +292,41 @@ impl mc_nature::Config for Runtime {
 	type ModuleId = NatureModuleId;
 	type Balance = Balance;
 	type Currency = Balances;
-	type Randomness = RandomnessCollectiveFlip;
 	type ManagerOrigin = frame_system::EnsureRoot<AccountId>;
+	type Randomness = RandomnessCollectiveFlip;
 	type MaxGenerateRandom = MaxGenerateRandom;
+}
+
+
+impl mc_cultivate::Config for Runtime {
+	type Event = Event;
+	type FormulaId = u32;
+	type ManagerOrigin = frame_system::EnsureRoot<AccountId>;
+	type RandomNumber = Nature;
+	type FormulaManager = Nature;
+	type FeaturedAssets = FeaturedAssets;
+	type UniqueAssets = Commodity;
+}
+
+parameter_types! {
+	pub const TicketClosingGap: u32 = 1_000;
+	pub const TicketPlayingGap: u32 = 1_000;
+	pub const AssetDistributionPercent: Percent = Percent::from_percent(90);
 }
 
 impl mc_dungeons::Config for Runtime {
 	type Event = Event;
+	type DungeonId = u32;
+	type Balance = Balance;
+	type Currency = Balances;
+	type ManagerOrigin = frame_system::EnsureRoot<AccountId>;
+	type AssetAdmin = Nature;
+	type RandomNumber = Nature;
+	type RandomHash = Nature;
+	type FeaturedAssets = FeaturedAssets;
+	type TicketClosingGap = TicketClosingGap;
+	type TicketPlayingGap = TicketPlayingGap;
+	type AssetDistributionPercent = AssetDistributionPercent;
 }
 
 // Create the runtime by composing the FRAME pallets that were previously configured.

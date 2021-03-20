@@ -1,10 +1,10 @@
 // Tests to be written here
 
 use crate::mock::*;
-use crate::nft::UniqueAssets;
 use crate::*;
-use frame_support::{assert_err, assert_ok, Hashable};
 use sp_core::H256;
+use frame_support::{assert_err, assert_ok, Hashable};
+use mc_support::traits::{UniqueAssets};
 
 #[test]
 fn mint() {
@@ -57,7 +57,7 @@ fn mint_err_dupe() {
 
     assert_err!(
       SUT::mint(Origin::root(), 2, Vec::<u8>::default()),
-      Error::<Test, DefaultInstance>::CommodityExists
+      Error::<Test>::CommodityExists
     );
   });
 }
@@ -70,7 +70,7 @@ fn mint_err_max_user() {
 
     assert_err!(
       SUT::mint(Origin::root(), 1, vec![1]),
-      Error::<Test, DefaultInstance>::TooManyCommoditiesForAccount
+      Error::<Test>::TooManyCommoditiesForAccount
     );
   });
 }
@@ -86,7 +86,7 @@ fn mint_err_max() {
 
     assert_err!(
       SUT::mint(Origin::root(), 6, vec![4]),
-      Error::<Test, DefaultInstance>::TooManyCommodities
+      Error::<Test>::TooManyCommodities
     );
   });
 }
@@ -118,7 +118,7 @@ fn burn_err_not_owner() {
 
     assert_err!(
       SUT::burn(Origin::signed(2), Vec::<u8>::default().blake2_256().into()),
-      Error::<Test, DefaultInstance>::NotCommodityOwner
+      Error::<Test>::NotCommodityOwner
     );
   });
 }
@@ -128,7 +128,7 @@ fn burn_err_not_exist() {
   new_test_ext().execute_with(|| {
     assert_err!(
       SUT::burn(Origin::signed(1), Vec::<u8>::default().blake2_256().into()),
-      Error::<Test, DefaultInstance>::NotCommodityOwner
+      Error::<Test>::NotCommodityOwner
     );
   });
 }
@@ -173,7 +173,7 @@ fn transfer_err_not_owner() {
         2,
         Vec::<u8>::default().blake2_256().into()
       ),
-      Error::<Test, DefaultInstance>::NotCommodityOwner
+      Error::<Test>::NotCommodityOwner
     );
   });
 }
@@ -187,7 +187,7 @@ fn transfer_err_not_exist() {
         2,
         Vec::<u8>::default().blake2_256().into()
       ),
-      Error::<Test, DefaultInstance>::NotCommodityOwner
+      Error::<Test>::NotCommodityOwner
     );
   });
 }
@@ -209,7 +209,7 @@ fn transfer_err_max_user() {
         1,
         Vec::<u8>::default().blake2_256().into()
       ),
-      Error::<Test, DefaultInstance>::TooManyCommoditiesForAccount
+      Error::<Test>::TooManyCommoditiesForAccount
     );
   });
 }

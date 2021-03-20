@@ -18,7 +18,7 @@ use frame_support::{
 };
 use codec::{Encode, Decode};
 use mc_support::traits::{
-	ManagerAccessor, RandomNumber
+	ManagerAccessor, RandomNumber, RandomHash
 };
 
 pub use pallet::*;
@@ -55,11 +55,11 @@ pub mod pallet {
 		/// The currency mechanism.
 		type Currency: ReservableCurrency<Self::AccountId>;
 
-		/// Something that provides randomness in the runtime.
-		type Randomness: Randomness<Self::Hash>;
-
 		/// The manager origin.
 		type ManagerOrigin: EnsureOrigin<Self::Origin>;
+
+		/// Something that provides randomness in the runtime.
+		type Randomness: Randomness<Self::Hash>;
 
 		/// Number of time we should try to generate a random number that has no modulo bias.
 		/// The larger this number, the more potential computation is used for picking the winner,
@@ -150,13 +150,15 @@ pub mod pallet {
 	// Pallets use events to inform users when important changes are made.
 	// https://substrate.dev/docs/en/knowledgebase/runtime/events
 	#[pallet::event]
-	#[pallet::metadata(T::AccountId = "AccountId")]
+	#[pallet::metadata(T::AccountId = "AccountId", T::Balance = "Balance")]
 	#[pallet::generate_deposit(pub(super) fn deposit_event)]
 	pub enum Event<T: Config> {
 		/// Manager was added. \[who\]
 		ManagerAdded(T::AccountId),
 		/// Manager was removed. \[who\]
 		ManagerRemoved(T::AccountId),
+		/// Deposit Balance. \[amount\]
+		Deposit(T::Balance),
 	}
 
 	#[deprecated(note = "use `Event` instead")]
@@ -220,26 +222,33 @@ impl<T: Config> ManagerAccessor<T::AccountId> for Pallet<T> {
 	}
 }
 
+/// Generate a random hash
+impl<T: Config> RandomHash<T::Hash> for Pallet<T> {
+	fn generate() -> T::Hash {
+		T::Randomness::random(&(T::ModuleId::get(), 0).encode())
+	}
+}
+
+/// Generate a random number from a given seed.
 impl<T: Config> RandomNumber<u32> for Pallet<T> {
-	// Generate a random number from a given seed.
 	// Note that there is potential bias introduced by using modulus operator.
 	// You should call this function with different seed values until the random
 	// number lies within `u32::MAX - u32::MAX % n`.
-	fn generate_random(seed: u32) -> u32 {
+	fn generate_by_seed(seed: u32) -> u32 {
 		let random_seed = T::Randomness::random(&(T::ModuleId::get(), seed).encode());
 		let random_number = <u32>::decode(&mut random_seed.as_ref())
 			.expect("secure hashes should always be bigger than u32; qed");
 		random_number
 	}
-	fn generate_random_in_range(total: u32) -> u32 {
-		let mut random_number = Self::generate_random(0);
+	fn generate_in_range(total: u32) -> u32 {
+		let mut random_number = Self::generate_by_seed(0);
 
 		// Best effort attempt to remove bias from modulus operator.
 		for i in 1 .. T::MaxGenerateRandom::get() {
 			if random_number < u32::MAX - u32::MAX % total {
 				break;
 			}
-			random_number = Self::generate_random(i);
+			random_number = Self::generate_by_seed(i);
 		}
 		random_number % total
 	}
