@@ -1,0 +1,29 @@
+.custom-textarea {
+  padding: 12px;
+  min-height: 40px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: rgba(249, 250, 253, 1);
+  width: 100%;
+  max-width: 100%;
+  font-size: 14px;
+  font-family: Roboto-Medium;
+  font-weight: 500;
+  color: rgba(70, 72, 85, 1);
+  line-height: 16px;
+  border: none;
+  &:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: -1px 1px 8px 0px rgba(126, 114, 242, 0.3);
+    border: 1px solid rgba(137, 142, 255, 1);
+  }
+  &::placeholder {
+    height: 16px;
+    font-size: 14px;
+    font-family: Roboto-Medium;
+    font-weight: 500;
+    color: rgba(192, 196, 210, 1);
+    line-height: 16px;
+  }
+}

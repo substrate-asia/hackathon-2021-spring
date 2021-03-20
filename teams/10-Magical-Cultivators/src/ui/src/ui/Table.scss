@@ -1,0 +1,55 @@
+tbody:before {
+  /* This doesn't work because of border-collapse */
+  line-height: 1px;
+  content: '_';
+  color: white;
+  display: block;
+}
+.custom-table-message-panel {
+  position: absolute;
+  display: flex;
+  margin-top: -80px;
+  margin-left: 80px;
+  align-items: center;
+  justify-content: center;
+  width: 630px;
+  height: 400px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 6px 10px 0px rgba(69, 73, 91, 0.08);
+  border-radius: 8px;
+}
+.custom-table-message-panel-general-title {
+  font-size: 20px;
+  font-family: Roboto-Medium;
+  font-weight: 500;
+  color: rgba(70, 72, 85, 1);
+  line-height: 16px;
+}
+.custom-table-message-panel-title {
+  width: 630px;
+  min-height: 56px;
+  background: rgba(249, 250, 253, 1);
+}
+.custom-table-message-panel-body {
+  width: 630px;
+  min-height: 300px;
+  overflow-y: auto;
+}
+.custom-table-message-panel-body-title {
+  font-size: 16px;
+  font-family: Roboto-Medium;
+  font-weight: 500;
+  color: rgba(70, 72, 85, 1);
+  line-height: 22px;
+}
+.custom-table-message-panel-body-sub-title {
+  font-size: 14px;
+  font-family: Roboto-Regular;
+  font-weight: 400;
+  color: rgba(107, 111, 130, 1);
+  line-height: 16px;
+}
+.custom-table-message-panel-footer {
+  width: 630px;
+  min-height: 56px;
+}

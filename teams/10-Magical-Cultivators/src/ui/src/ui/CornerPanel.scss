@@ -1,0 +1,42 @@
+@import '../scss/global.scss';
+
+.common {
+  position: fixed;
+  top: 60px;
+  right: 30px;
+  width: 134px;
+  min-height: 56px;
+  background: rgba(255, 255, 255, 1);
+  // box-shadow: inset 0px -1px 0px 0px rgba(244, 245, 250, 1);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+}
+
+.common:before,
+.common:after {
+  width: 0px;
+  height: 0px;
+  border: transparent solid;
+  position: absolute;
+  left: 100%;
+  content: '';
+  box-shadow: inset 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+}
+// .common:before {
+//   border-width: 10px;
+//   border-bottom-color: #000;
+//   top: -12px;
+// }
+.common:after {
+  border-width: 8px;
+  border-bottom-color: white;
+  top: -16px;
+  left: 100px;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  margin: 16px 5px 10px 16px;
+  align-content: center;
+  align-items: center;
+}
