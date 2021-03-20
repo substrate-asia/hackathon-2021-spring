@@ -39,18 +39,129 @@ Setup in 'Developers' when using [https://polkadot.js.org](https://polkadot.js.o
 
 ```json
 {
-  "CommodityId": "Hash",
-  "CommodityInfo": {
+  "ActorInfo": {
     "name": "Vec<u8>",
-    "version": "Vec<u8>"
+    "equipments": "Vec<Hash>",
+    "born_at": "BlockNumber",
+    "born_age": "BlockNumber",
+    "live_until": "BlockNumber",
+    "level": "u8",
+    "level_progress": "Percent"
   },
-  "MetaKeyValue": {
-   "key": "Vec<u8>",
-   "value": "bool"
+  "DungeonId": "u32",
+  "AssetId": "u32",
+  "FeatureDestinyRank": {
+      "_enum": ["Tian", "Di", "Xuan", "Huang"]
+  },
+  "FeatureHue": {
+      "_enum": ["Green", "Yellow", "White", "Black", "Blue", "Red", "Orange", "Pink", "Purple"]
+  },
+  "FeatureElements": {
+      "_enum": {
+        "One": "FeatureHue",
+        "Two": "(FeatureHue, FeatureHue)",
+        "Three": "(FeatureHue, FeatureHue, FeatureHue)",
+        "Four": "(FeatureHue, FeatureHue, FeatureHue, FeatureHue)"
+      }
+  },
+  "FeatureLevel": {
+      "_enum": ["Lv0", "Lv1", "Lv2", "Lv3", "Lv4", "Lv5"]
+  },
+  "FeatureRankedLevel": {
+      "_enum": {
+        "Low": "FeatureLevel",
+        "Middle": "FeatureLevel",
+        "High": "FeatureLevel"
+      }
+  },
+  "AssetFeature": {
+    "destiny": "FeatureDestinyRank",
+    "elements": "FeatureElements",
+    "saturation": "FeatureRankedLevel",
+    "lightness": "FeatureLevel"
+  },
+  "AssetDetails": {
+      "owner": "AccountId",
+      "supply": "Balance",
+      "deposit": "Balance",
+      "max_zombies": "u32",
+      "min_balance": "Balance",
+      "zombies": "u32",
+      "accounts": "u32",
+      "is_frozen": "bool",
+      "is_featured": "bool"
+  },
+  "ManagerInfo": {
+      "deposit": "Balance",
+      "is_admin": "bool",
+      "is_issuer": "bool",
+      "is_freezer": "bool"
+  },
+  "AssetAmountPair": {
+      "asset_id": "AssetId",
+      "amount": "Balance"
+  },
+  "DungeonReportState": {
+      "_enum": {
+          "Lose": null,
+          "PerfectWin": null,
+          "ScoredWin": "Percent"
+      }
+  },
+  "DungeonInfo": {
+    "ticket_price": "Balance",
+    "provide_assets": "Vec<AssetAmountPair>",
+    "report_ranks": "Vec<(DungeonReportState, Percent)>"
+  },
+  "DungeonInstanceStatusBooked": {
+    "close_due": "BlockNumber"
+  },
+  "DungeonInstanceStatusStarted": {
+    "server": "AccountId",
+    "close_due": "BlockNumber"
+  },
+  "DungeonInstanceStatusEnded": {
+      "server": "AccountId",
+      "report_at": "BlockNumber",
+      "report_state": "DungeonReportState"
+  },
+  "DungeonInstanceStatus": {
+      "_enum": {
+          "Booked": "DungeonInstanceStatusBooked",
+          "Started": "DungeonInstanceStatusStarted",
+          "Ended": "DungeonInstanceStatusEnded",
+          "Closed": null
+      }
+  },
+  "DungeonInstance": {
+      "id": "DungeonId",
+      "player": "AccountId",
+      "created_at": "BlockNumber",
+      "status": "DungeonInstanceStatus"
+  },
+  "FormulaId": "u32",
+  "Formula": {
+    "id": "FormulaId",
+    "name": "Vec<u8>",
+    "category": "UniqueAssetCategory",
+    "required_rank": "FeatureDestinyRank",
+    "minimum_elements": "Vec<(FeatureHue, Balance)>",
+    "maximum_elements": "Vec<(FeatureHue, Balance)>",
+    "rate_of_success": "Percent"
+  },
+  "CommodityId": "Hash",
+  "UniqueAssetInfo": {
+    "name": "Vec<u8>",
+    "formula_id": "FormulaId",
+    "mint_at": "BlockNumber"
   },
   "Commodity": {
-   "id": "CommodityId",
-   "info": "CommodityInfo"
+    "id": "CommodityId",
+    "info": "UniqueAssetInfo"
+  },
+  "MetaKeyValue": {
+    "key": "Vec<u8>",
+    "value": "bool"
   }
 }
 ```

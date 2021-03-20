@@ -1,10 +1,11 @@
 use sp_runtime::{
-	RuntimeDebug,
-	// traits::{
-	// 	AtLeast32BitUnsigned, Zero, StaticLookup, Saturating, CheckedSub, CheckedAdd,
-	// }
+	Percent, RuntimeDebug,
+	traits::{
+		AtLeast32BitUnsigned, // Zero, StaticLookup, Saturating, CheckedSub, CheckedAdd,
+	}
 };
 use sp_std::prelude::*;
+
 use codec::{Encode, Decode};
 
 // Asset 的组合特性
@@ -181,4 +182,84 @@ impl Into<u8> for FeatureDestinyRank {
 }
 impl Default for FeatureDestinyRank {
 	fn default() -> Self { Self::Huang }
+}
+
+#[derive(Clone, Encode, Decode, Eq, PartialEq, RuntimeDebug)]
+pub enum DungeonReportState {
+	Lose,
+	PerfectWin,
+	ScoredWin(Percent),
+}
+
+impl Default for DungeonReportState {
+	fn default() -> Self { Self::Lose }
+}
+
+// Featured Part for asset
+#[derive(Clone, Encode, Decode, Eq, PartialEq, RuntimeDebug, Default)]
+pub struct AssetFeature {
+	/// The level of this asset
+	pub destiny: FeatureDestinyRank,
+	/// The elements info of this asset
+	pub elements: FeatureElements,
+	/// The 'saturation' of this asset
+	pub saturation: FeatureRankedLevel,
+	/// The 'lightness' of this asset
+	pub lightness: FeatureLevel
+}
+
+impl AssetFeature {
+	/// create new Feature
+	pub fn create (
+		destiny: FeatureDestinyRank,
+		elements: FeatureElements,
+		saturation: FeatureRankedLevel,
+		lightness: FeatureLevel
+	) -> Self {
+		AssetFeature {
+			destiny,
+			elements,
+			saturation,
+			lightness,
+		}
+	}
+}
+
+#[derive(Clone, Encode, Decode, Eq, PartialEq, RuntimeDebug)]
+pub enum UniqueAssetCategory {
+	Equipment,
+}
+impl Default for UniqueAssetCategory {
+	fn default() -> Self { Self::Equipment }
+}
+
+#[derive(Clone, Encode, Decode, Eq, PartialEq, RuntimeDebug, Default, Ord, PartialOrd)]
+pub struct UniqueAssetInfo<
+	FormulaId: Encode + Decode + Clone + Default + Eq + PartialEq,
+	BlockNumber: Encode + Decode + Default + Eq + PartialEq,
+> {
+    pub name: Vec<u8>,
+    pub formula_id: FormulaId,
+	pub mint_at: BlockNumber,
+}
+
+#[derive(Clone, Encode, Decode, Eq, PartialEq, RuntimeDebug, Default)]
+pub struct Formula<
+	FormulaId: Encode + Decode + Clone + Eq + PartialEq,
+	Balance: Encode + Decode + AtLeast32BitUnsigned + Default + Copy,
+> {
+	/// the id of formula
+	pub id: FormulaId,
+	/// the name of formula
+	pub name: Vec<u8>,
+	/// the category of formula
+	pub category: UniqueAssetCategory,
+	/// required rank
+	pub required_rank: FeatureDestinyRank,
+	/// required minimum elements
+	pub minimum_elements: Vec<(FeatureHue, Balance)>,
+	/// required maximum elements
+	pub maximum_elements: Vec<(FeatureHue, Balance)>,
+	/// success rate
+	pub rate_of_success: Percent,
 }
