@@ -40,15 +40,15 @@ We want to resolve these problems:
 * ~~Framework design(Substrate, Phase 1)~~
 * Pallets implementation(Phase 1)
   * ~~featured-assets~~
-  * nft - 50%
-  * actor - 40%
-  * nature - 30%
-  * cultivate - 0%
+  * nft - 80%
+  * actor - 70%
+  * nature - 50%
+  * cultivate - 30%
   * implication - 0%
-  * dungeons - 0%
+  * dungeons - 80%
 * Demo Game(Phase 1)
   * GameServer - 0%
-  * Frontend - 0%
+  * Frontend - 20%
 
 ### Problems and Solutions - Which issues we have met?
 

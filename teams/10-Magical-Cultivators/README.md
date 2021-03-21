@@ -4,8 +4,7 @@
 
 - [Project Intro](./docs/project.md) [项目简介](./docs/project_zh.md)
 - [Team Members](./docs/team.md) [团队介绍](./docs/team_zh.md)
-- [Demo(Intro Video)](https://boydtang.feishu.cn/file/boxcn2kvggLTXwV4M2OgfOtHimc)
-- [Presentation](./docs/presentation.pdf)
+- [Intro Video](https://boydtang.feishu.cn/file/boxcn2kvggLTXwV4M2OgfOtHimc)
 
 ## 目录结构 Directory Structure
 

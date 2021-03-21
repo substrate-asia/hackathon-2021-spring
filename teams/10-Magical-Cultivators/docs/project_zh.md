@@ -39,15 +39,15 @@
 * ~~产品框架设计(Substrate, 阶段1)~~
 * Substrate模块实现(阶段1)
   * ~~featured-assets~~
-  * nft - 50%
-  * actor - 40%
-  * nature - 30%
-  * cultivate - 0%
+  * nft - 80%
+  * actor - 70%
+  * nature - 50%
+  * cultivate - 30%
   * implication - 0%
-  * dungeons - 0%
+  * dungeons - 80%
 * 游戏 Demo(阶段1)
   * 游戏服务端 - 0%
-  * 游戏前端 - 0%
+  * 游戏前端 - 20%
 
 ### 技术难点及解决方案 - Which issues we have met?
 
