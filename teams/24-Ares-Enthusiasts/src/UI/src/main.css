@@ -1,0 +1,15 @@
+.withd80{
+    width: 80%;
+}
+
+
+.ui.basic.blue.button, .ui.basic.blue.buttons .button {
+    box-shadow: 0 0 0 1px hsl(0, 1%, 73%) inset!important; 
+    border: 1px solid transparent;
+    background-color: #b4b1b1;
+    color: #2185d0!important;
+}
+
+.ui.button {
+    line-height: 0.74rem;
+}

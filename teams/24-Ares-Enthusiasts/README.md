@@ -33,3 +33,15 @@ Discord: https://discord.com/invite/gWGG63zJVk
 Github: https://github.com/aresprotocols
 
 Twitter: @AresProtocol
+
+### Query data warehouse
+`curl http://api.aresprotocol.com/api/getprice/dotusdt/binance`
+```angular2html
+{"msg":"success","code":0,"data":{"market":"binance","symbol":"dotusdt","systs":1615746057000,"price":36.859,"ts":1615904416693}}
+```
+
+`curl http://api.aresprotocol.com/api/getprice/dotusdt/huobi`
+
+```angular2html
+{"msg":"success","code":0,"data":{"market":"huobi","symbol":"dotusdt","systs":1615746062000,"price":36.8878,"ts":1615904440593}}
+```
