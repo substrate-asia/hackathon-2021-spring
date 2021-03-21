@@ -2,7 +2,29 @@
 ###### 2021-02-18 by maxatbj
 ###### Hackson project-- SEEE.io
 
-##### run a browser on  http://localhost:5000 ,you will see below text, and play on it
+
+## 1. install postgreSql database
+$vim .env file
+``` bash   
+HOST=127.0.0.1
+PORT=5000
+DATABASE_URL="postgres://pguser:pgpassword@127.0.0.1/mydb"
+RUST_LOG=sqlx_todo=info,actix=info
+```   
+## 2. add database user  "pguser" with password "pgpassword"
+
+## 3. run schema-cargo.sql & schema-hash.sql
+
+## 4. cargo build
+
+## 5. start server with command:
+``` bash   
+ $./target/debug/actix  
+```   
+
+## 6.  run a browser on  http://localhost:5000 ,you will see below text, and play on it
+
+## 7. play with follow curl command
 
 
 ### 欢迎来到能源联盟链 SEEE

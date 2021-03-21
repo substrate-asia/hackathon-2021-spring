@@ -1,3 +1,46 @@
+## Demo Day 演示队伍注意事项
+
+每一队伍演示时间为 6 分钟，然后会有 2 分钟评委们提问及点评。评委们根据以下维度打分：
+
+1. 产品完成度
+2. 技术难题
+3. 商业价值
+4. 创新性
+5. 用户体验
+
+演示时讲个好故事，所以尽量演示：
+
+1. 项目源起，背后的市场应用，现在做到什么程度，未来半年到一年有什么发展计划。
+2. 在黑客松期间完成的功能流程，因为你们都已录制了演示视频，可把视频关键部份放在演示档案里。在台上作产品视频演示 + 你们讲解
+
+我看到很多团队从他们的 `project.md` 及 `presentation.pdf` 都已经有很好基础去作演示了。最后祝大家好运。
+
+## 出线至 Demo Day 团队 (2021-03-18 更新)
+
+1. 01-Web3Games
+2. 02-Decoder
+3. 03-VoneWin
+4. 04-NFTMart
+5. 05-Blocktree
+6. 06-Uniarts
+7. 07-PolkaName
+8. 08-subdao-network
+9. 09-Apron-Network
+10. 10-Magical-Cultivators
+11. 11-五条人战队
+12. 13-二次方工场
+13. 14-DeeperNetwork
+14. 15-Hashii
+15. 17-Dodo-dex
+16. 19-OAK-Foundation
+17. 22-Parallel
+18. 24-Ares-Enthusiasts
+19. 26-InkBridge
+20. 30-SkyePass
+21. 33-Manta
+
+---
+
 - 截止报名时间点： **2 月 11 日 23:59**
 - 截止提交参赛项目时间点： **3 月 15 日 23:59**
 
