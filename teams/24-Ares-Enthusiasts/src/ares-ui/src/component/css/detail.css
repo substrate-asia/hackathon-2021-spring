@@ -1,0 +1,32 @@
+.flex_{
+	width: 100%;
+	display: flex;
+}
+
+.wd_50{
+	width: 60%;
+	display: flex;
+	justify-content: center;
+}
+
+.aggregation-box {
+    background: rgb(247, 252, 255);
+    width: 40%;
+    padding: 0.3rem;
+	line-height: 40px;
+}
+
+.mian24{
+	width: 100%;
+	height: 400px;
+	
+}
+.title{
+	height: 60px;
+	display: flex;
+	align-items: center;
+}
+
+.bottom{
+	margin-bottom: 100px;
+}

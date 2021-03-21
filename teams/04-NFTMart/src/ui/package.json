@@ -1,0 +1,138 @@
+{
+  "name": "nftmart-fe",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.3.11",
+    "@chakra-ui/react": "^1.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@polkadot/api": "^4.0.1-9",
+    "@polkadot/api-contract": "^3.10.3-8",
+    "@polkadot/extension-dapp": "^0.37.1",
+    "@polkadot/hw-ledger": "^5.7.2-6",
+    "@polkadot/keyring": "^5.7.2-6",
+    "@polkadot/networks": "^5.7.2-6",
+    "@polkadot/phishing": "^0.5.38",
+    "@polkadot/types": "^3.10.3-8",
+    "@polkadot/util": "^6.0.1-9",
+    "@polkadot/util-crypto": "^6.0.4",
+    "@testing-library/jest-dom": "^5.9.0",
+    "@testing-library/react": "^10.2.1",
+    "@testing-library/user-event": "^12.0.2",
+    "@types/jest": "^25.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-helmet": "^6.1.0",
+    "@types/react-router-dom": "^5.1.7",
+    "bignumber.js": "^9.0.1",
+    "formik": "^2.2.6",
+    "formik-chakra-ui": "^1.4.3",
+    "framer-motion": ">=3.0.0",
+    "graphql": "^15.5.0",
+    "i18next": "^19.9.0",
+    "i18next-browser-languagedetector": "^6.0.1",
+    "i18next-xhr-backend": "^3.2.2",
+    "ipfs-http-client": "^49.0.2",
+    "ramda": "^0.27.1",
+    "rc-util": "^5.8.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^11.8.8",
+    "react-icons": "^3.0.0",
+    "react-json-view": "^1.21.3",
+    "react-query": "^3.12.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-shimmer": "^3.1.1",
+    "recharts": "^2.0.8",
+    "rekv": "^1.2.2",
+    "rpc-websockets": "^7.4.9",
+    "web-vitals": "^0.2.2",
+    "yup": "^0.32.9"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "lint": "npm run lint:js && npm run lint:style && npm run lint:prettier",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty && npm run lint:style",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty",
+    "lint:prettier": "prettier --check --end-of-line auto",
+    "lint:style": "stylelint --fix --syntax less"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ],
+    "**/*.less": "npm run lint:style"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-angular": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/ramda": "^0.27.38",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-compat": "^3.1.1",
+    "eslint-plugin-eslint-comments": "^3.1.1",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jest": "^24.0.1",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-markdown": "^1.0.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "eslint-plugin-unicorn": "^20.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.1",
+    "react-app-rewired": "^2.1.8",
+    "stylelint": "^13.7.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.1.0",
+    "stylelint-no-unsupported-browser-features": "^4.1.4",
+    "stylelint-order": "^4.0.0",
+    "typescript": "^3.9.5"
+  }
+}

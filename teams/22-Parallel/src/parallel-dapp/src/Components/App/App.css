@@ -1,0 +1,287 @@
+p.lead {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  color: #333333;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.market-card {
+  background-color: #d6f1fe;
+  box-shadow: none;
+  min-height: 150px;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.amount {
+  margin-bottom: 0px;
+}
+
+#wallet-dropdown {
+  cursor: pointer;
+  background-color: #0a0b27;
+  border-radius: 20px;
+  border: solid 2px #00e5ff;
+  box-shadow: 0px 0px 4px 3px rgba(0, 229, 255, 0.32);
+}
+
+.table-body {
+  background-color: #242535 !important;
+}
+
+.table-row {
+  background-color: #252525 !important;
+}
+
+.ui.segment {
+  background: #131c32;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.ui.attached.segment {
+  border: 0px #131c32;
+}
+
+.ui.blue.inverted.progress .bar {
+  background-color: #7afab8;
+  box-shadow: 0px 0px 12px #7afab8;
+}
+
+/* Donut chart CSS */
+.donut-chart {
+  height: 100px !important;
+  width: 100px !important;
+}
+
+.responsiveTable {
+  background-color: #242535;
+  border-collapse: separate;
+  border-spacing: 0 0.4em;
+}
+
+.responsiveTable-head {
+  background-color: #242535;
+}
+
+.responsiveTable-header {
+}
+
+.responsiveTable-header-label {
+  color: #7e7e7e;
+  padding: 10px;
+}
+
+.responsiveTable-row {
+  background-color: #2d3338;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.responsiveTable-value {
+  text-align: center;
+  background-color: #2d3338;
+  padding: 10px;
+  color: white;
+}
+
+table {
+  border-collapse: separate;
+}
+td {
+  text-align: center;
+}
+tr:first-child td:first-child {
+  border-top-left-radius: 10px;
+}
+tr:first-child td:last-child {
+  border-top-right-radius: 10px;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+.ui.menu > .container,
+.ui.menu > .grid {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#Deposit-button {
+  color: white;
+  background-color: #2d3338;
+  border: solid 1px #7afab8;
+}
+
+#Deposit-button:hover {
+  background-color: #7afab8;
+  border: solid 1px #7afab8;
+  color: #1a233b;
+}
+
+#Borrow-button {
+  color: white;
+  background-color: #2d3338;
+  border: solid 1px #d22f79;
+}
+
+#Borrow-button:hover {
+  background-color: #d22f79;
+  border: solid 1px #d22f79;
+  color: #1a233b;
+}
+
+#Withdraw-button {
+  border: solid 1px #7afab8;
+  background-color: #7afab8;
+  color: #1a233b;
+}
+
+#Withdraw-button:hover {
+  color: white;
+  background-color: #2d3338;
+  border: solid 1px #7afab8;
+}
+
+#Repay-button {
+  background-color: #d22f79;
+  border: solid 1px #d22f79;
+  color: #1a233b;
+}
+
+#Repay-button:hover {
+  color: white;
+  background-color: #2d3338;
+  border: solid 1px #d22f79;
+}
+
+.checkbox-slider {
+  color: #7afab8;
+}
+
+/* .ui.fluid.container {
+  width: 900px;
+} */
+
+/* .ui.slider.checkbox input:checked ~ .box:after,
+.ui.slider.checkbox input:checked ~ label:after {
+  background: #d135cd;
+}
+
+.ui.slider.checkbox .box:before,
+.ui.slider.checkbox label:before {
+  background: #d135cd;
+}
+
+.ui.slider.checkbox .box:after,
+.ui.slider.checkbox label:after {
+  background: #00e5ff;
+} */
+
+/* Blob related css */
+div.Blob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* this can change */
+  width: 100%;
+  height: 300px;
+  /* this should stay */
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+div.Blob canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.ui.large.modal {
+  border-radius: 20px;
+}
+
+.ui.dimmer {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.ui.modal {
+  background: #242535;
+  border: solid 10px #242535;
+  border-radius: 20px;
+}
+
+.ui.modal > .header {
+  background: #242535;
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  /* border: solid 7px #242535; */
+  border-radius: 20px;
+}
+
+.ui.modal > .content {
+  /* background: radial-gradient(
+    52.49% 88.67% at 53.54% 53.67%,
+    #473964 0%,
+    #1d2c3b 100%
+  ); */
+  background: #242535;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1rem;
+}
+
+.ui.modal > .actions {
+  background: #242535;
+  display: none;
+}
+
+.ui.grid > .column:not(.row),
+.ui.grid > .row > .column {
+  padding: 0px;
+}
+
+/* Wallet */
+.ui.search.dropdown > input.search {
+  background: #333333 !important;
+  color: white !important;
+}
+
+.ui.selection.dropdown {
+  background: #333333 !important;
+  color: #7afab8 !important;
+}
+
+.ui.selection.dropdown .menu > .item {
+  border-top: #7e7e7e 1px solid !important;
+  background: #333333 !important;
+  color: white !important;
+}
+
+.ui.selection.dropdown .menu :hover {
+  background: #242535 !important;
+  color: #7afab8 !important;
+}
+
+.ui.dropdown .menu {
+  border: #7e7e7e 1px solid !important;
+}
+
+.ui.selection.active.dropdown {
+  border: #7e7e7e 1px solid !important;
+}
+
+.ui.input.focus > input,
+.ui.input > input:focus {
+  border-color: #2d3338;
+}

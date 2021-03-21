@@ -1,4 +1,3 @@
-
 //! # Interface
 //!
 //! ## Overview
@@ -19,7 +18,6 @@ use frame_support::pallet_prelude::*;
 
 use sp_std::vec::Vec;
 use super::primitives::{ AssetFeature };
-
 
 pub trait ManagerAccessor<AccountId>: Sized {
 	fn get_owner_id() -> AccountId;

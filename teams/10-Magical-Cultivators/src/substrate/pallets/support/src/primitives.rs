@@ -5,7 +5,6 @@ use sp_runtime::{
 	}
 };
 use sp_std::prelude::*;
-
 use codec::{Encode, Decode};
 
 // Asset 的组合特性

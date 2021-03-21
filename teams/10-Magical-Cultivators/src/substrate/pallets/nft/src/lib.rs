@@ -365,6 +365,7 @@ impl<T: Config> UniqueAssets<T::AccountId> for Pallet<T> {
                 Err(pos) => commodities.insert(pos, new_commodity),
             }
         });
+
         AccountForCommodity::<T>::insert(commodity_id, &owner_account);
 
 		// add exist info

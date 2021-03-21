@@ -1,0 +1,74 @@
+.background{
+    width: 100%;
+    height: 1100px;
+    background-image: url('../../images/bg.jpg');
+    background-repeat:no-repeat;
+}
+.StartGame{
+    width:236px;
+    height:150px;
+    margin: 400px 0 0 358px;
+}
+.DownloadGame{
+    width:236px;
+    height:150px;
+    margin-left: 358px;
+}
+h3{
+    margin-left: 669px;
+    width:600px;
+    height: 300px;
+}
+.images1{
+    background-image: url("../../images/1.jpeg");
+}
+.images2{
+    background-image: url("../../images/2.jpeg");
+}
+.images3{
+    background-image: url("../../images/3.jpeg");
+}
+.images4{
+    background-image: url("../../images/4.jpeg");
+}
+
+
+.config{
+    width:343px;
+    height:300px;
+    margin:-308px 0 0 1194px;
+    background-color: rgb(39,38,49);
+    border: none;
+    color: #b8b9c5;
+}
+.size{
+    width: 52px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+}
+.ChartArea{
+    width: 100%;
+    height: 1040px;
+    border: 1px solid rgb(18,18,23);
+    background-color: rgb(18,18,23);
+}
+.TextTitle{
+    margin-top: 300px;
+    margin-left: 900px;
+    width: 140px;
+    height: 30px;
+    font-size: 30px;
+    color: aliceblue;
+}
+.TextContent{
+    margin-top: 80px;
+    margin-left: 760px;
+    width: 500px;
+    height: 20px;
+    font-size: 16px;
+    color: aliceblue;
+}
+
+
+

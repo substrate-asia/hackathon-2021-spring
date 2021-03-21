@@ -1,0 +1,855 @@
+{
+  "metadataVersion": "0.1.0",
+  "source": {
+    "hash": "0xdc55df6a9e64cd61878917d9eb58d4f745a6c231a9462093831f588441f0554a",
+    "language": "ink! 3.0.0-rc3",
+    "compiler": "rustc 1.52.0-nightly"
+  },
+  "contract": {
+    "name": "bridge_stub",
+    "version": "0.1.0",
+    "authors": [
+      "[your_name] <[your_email]>"
+    ]
+  },
+  "spec": {
+    "constructors": [
+      {
+        "args": [
+          {
+            "name": "_genesis_info",
+            "type": {
+              "displayName": [
+                "BtcHeaderInfo"
+              ],
+              "type": 1
+            }
+          },
+          {
+            "name": "_confirmation_number",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 3
+            }
+          }
+        ],
+        "docs": [
+          "Constructor that initializes the `bool` value to the given `init_value`."
+        ],
+        "name": [
+          "new"
+        ],
+        "selector": "0x9bae9d5e"
+      }
+    ],
+    "docs": [],
+    "events": [
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 12
+            }
+          }
+        ],
+        "docs": [],
+        "name": "HeaderPushed"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "height",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 3
+            }
+          },
+          {
+            "docs": [],
+            "indexed": true,
+            "name": "hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 12
+            }
+          }
+        ],
+        "docs": [],
+        "name": "ConfirmedHeight"
+      }
+    ],
+    "messages": [
+      {
+        "args": [
+          {
+            "name": "_header",
+            "type": {
+              "displayName": [
+                "BtcHeader"
+              ],
+              "type": 2
+            }
+          }
+        ],
+        "docs": [
+          " Relayer push btc header to chain storage."
+        ],
+        "mutates": true,
+        "name": [
+          "push_header"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Result"
+          ],
+          "type": 8
+        },
+        "selector": "0xf3763df2"
+      },
+      {
+        "args": [],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "best_index"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "BtcHeaderIndex"
+          ],
+          "type": 11
+        },
+        "selector": "0xdb36c827"
+      },
+      {
+        "args": [],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "confirmed_index"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "BtcHeaderIndex"
+          ],
+          "type": 11
+        },
+        "selector": "0x4d18b82f"
+      },
+      {
+        "args": [
+          {
+            "name": "_hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 12
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "header"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 13
+        },
+        "selector": "0x32006dd8"
+      },
+      {
+        "args": [
+          {
+            "name": "_hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 12
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "header_with_relayer"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 14
+        },
+        "selector": "0xd93e49c5"
+      },
+      {
+        "args": [
+          {
+            "name": "_hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 12
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "header_bytes"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 17
+        },
+        "selector": "0xe18fa236"
+      },
+      {
+        "args": [],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "genesis_info"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "BtcHeaderInfo"
+          ],
+          "type": 1
+        },
+        "selector": "0xf06315ab"
+      },
+      {
+        "args": [
+          {
+            "name": "_height",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 3
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "block_hash_for"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "Option"
+          ],
+          "type": 19
+        },
+        "selector": "0xe1297a9d"
+      },
+      {
+        "args": [
+          {
+            "name": "_hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 12
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "is_main_chain"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "bool"
+          ],
+          "type": 21
+        },
+        "selector": "0x820c79da"
+      },
+      {
+        "args": [
+          {
+            "name": "_hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 12
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "is_confirmed"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "bool"
+          ],
+          "type": 21
+        },
+        "selector": "0xea9ac78d"
+      },
+      {
+        "args": [
+          {
+            "name": "_proof",
+            "type": {
+              "displayName": [
+                "PartialMerkleTree"
+              ],
+              "type": 22
+            }
+          },
+          {
+            "name": "_tx_hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 12
+            }
+          },
+          {
+            "name": "_block_hash",
+            "type": {
+              "displayName": [
+                "Hash"
+              ],
+              "type": 12
+            }
+          }
+        ],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "validate_transaction"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "bool"
+          ],
+          "type": 21
+        },
+        "selector": "0x0988d367"
+      }
+    ]
+  },
+  "storage": {
+    "struct": {
+      "fields": []
+    }
+  },
+  "types": [
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "header",
+              "type": 2,
+              "typeName": "BtcHeader"
+            },
+            {
+              "name": "height",
+              "type": 3,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "bridge_stub",
+        "types",
+        "BtcHeaderInfo"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "version",
+              "type": 3,
+              "typeName": "u32"
+            },
+            {
+              "name": "previous_header_hash",
+              "type": 4,
+              "typeName": "H256"
+            },
+            {
+              "name": "merkle_root_hash",
+              "type": 4,
+              "typeName": "H256"
+            },
+            {
+              "name": "time",
+              "type": 3,
+              "typeName": "u32"
+            },
+            {
+              "name": "bits",
+              "type": 7,
+              "typeName": "Compact"
+            },
+            {
+              "name": "nonce",
+              "type": 3,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "light_bitcoin_chain",
+        "block_header",
+        "BlockHeader"
+      ]
+    },
+    {
+      "def": {
+        "primitive": "u32"
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "type": 5,
+              "typeName": "[u8; 32]"
+            }
+          ]
+        }
+      },
+      "path": [
+        "light_bitcoin_primitives",
+        "hash",
+        "H256"
+      ]
+    },
+    {
+      "def": {
+        "array": {
+          "len": 32,
+          "type": 6
+        }
+      }
+    },
+    {
+      "def": {
+        "primitive": "u8"
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "type": 3,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "light_bitcoin_primitives",
+        "compact",
+        "Compact"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "fields": [
+                {
+                  "type": 9,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Ok"
+            },
+            {
+              "fields": [
+                {
+                  "type": 10,
+                  "typeName": "E"
+                }
+              ],
+              "name": "Err"
+            }
+          ]
+        }
+      },
+      "params": [
+        9,
+        10
+      ],
+      "path": [
+        "Result"
+      ]
+    },
+    {
+      "def": {
+        "tuple": []
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "discriminant": 0,
+              "name": "DeserializeErr"
+            },
+            {
+              "discriminant": 1,
+              "name": "ExistingHeader"
+            },
+            {
+              "discriminant": 2,
+              "name": "PrevHeaderNotExisted"
+            },
+            {
+              "discriminant": 3,
+              "name": "InvalidBestIndex"
+            },
+            {
+              "discriminant": 4,
+              "name": "InvalidPoW"
+            },
+            {
+              "discriminant": 5,
+              "name": "HeaderFuturisticTimestamp"
+            },
+            {
+              "discriminant": 6,
+              "name": "HeaderNBitsNotMatch"
+            },
+            {
+              "discriminant": 7,
+              "name": "AncientFork"
+            },
+            {
+              "discriminant": 8,
+              "name": "BadMerkleProof"
+            },
+            {
+              "discriminant": 9,
+              "name": "MerkleRootMismatch"
+            },
+            {
+              "discriminant": 10,
+              "name": "NoTransactions"
+            },
+            {
+              "discriminant": 11,
+              "name": "TooManyTransactions"
+            },
+            {
+              "discriminant": 12,
+              "name": "TooManyHashes"
+            },
+            {
+              "discriminant": 13,
+              "name": "ProofLessHashes"
+            },
+            {
+              "discriminant": 14,
+              "name": "NotAllBitConsumed"
+            },
+            {
+              "discriminant": 15,
+              "name": "NotAllHashesConsumed"
+            },
+            {
+              "discriminant": 16,
+              "name": "OverflowedBitsArray"
+            },
+            {
+              "discriminant": 17,
+              "name": "OverflowedHashArray"
+            },
+            {
+              "discriminant": 18,
+              "name": "FoundIdenticalTxHash"
+            }
+          ]
+        }
+      },
+      "path": [
+        "bridge_stub",
+        "bridge_stub",
+        "Error"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "hash",
+              "type": 12,
+              "typeName": "Hash"
+            },
+            {
+              "name": "height",
+              "type": 3,
+              "typeName": "u32"
+            }
+          ]
+        }
+      },
+      "path": [
+        "bridge_stub",
+        "types",
+        "BtcHeaderIndex"
+      ]
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "type": 5,
+              "typeName": "[u8; 32]"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_env",
+        "types",
+        "Hash"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 1,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        1
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 15,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        15
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "tuple": [
+          16,
+          1
+        ]
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "type": 5,
+              "typeName": "[u8; 32]"
+            }
+          ]
+        }
+      },
+      "path": [
+        "ink_env",
+        "types",
+        "AccountId"
+      ]
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 18,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        18
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "sequence": {
+          "type": 6
+        }
+      }
+    },
+    {
+      "def": {
+        "variant": {
+          "variants": [
+            {
+              "name": "None"
+            },
+            {
+              "fields": [
+                {
+                  "type": 20,
+                  "typeName": "T"
+                }
+              ],
+              "name": "Some"
+            }
+          ]
+        }
+      },
+      "params": [
+        20
+      ],
+      "path": [
+        "Option"
+      ]
+    },
+    {
+      "def": {
+        "sequence": {
+          "type": 12
+        }
+      }
+    },
+    {
+      "def": {
+        "primitive": "bool"
+      }
+    },
+    {
+      "def": {
+        "composite": {
+          "fields": [
+            {
+              "name": "tx_count",
+              "type": 3,
+              "typeName": "u32"
+            },
+            {
+              "name": "hashes",
+              "type": 23,
+              "typeName": "Vec<H256>"
+            },
+            {
+              "name": "bits",
+              "type": 24,
+              "typeName": "Vec<bool>"
+            }
+          ]
+        }
+      },
+      "path": [
+        "light_bitcoin_merkle",
+        "PartialMerkleTree"
+      ]
+    },
+    {
+      "def": {
+        "sequence": {
+          "type": 4
+        }
+      }
+    },
+    {
+      "def": {
+        "sequence": {
+          "type": 21
+        }
+      }
+    }
+  ]
+}

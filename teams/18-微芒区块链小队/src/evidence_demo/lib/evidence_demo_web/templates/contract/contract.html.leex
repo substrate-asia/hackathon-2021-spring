@@ -1,0 +1,46 @@
+
+<div style="width:30%;margin: 0 auto;">
+<p><%= live_flash(@flash, :info) %></p>
+<p><%= live_flash(@flash, :error) %></p>
+<%= f = form_for @changeset, "#", [phx_change: :validate, phx_submit: :save] %>
+
+    <%= label f, :addr %>
+    <%= text_input f, :addr%>
+    <%= error_tag f, :addr %>
+
+    <%= label f, :type %>
+    <%= text_input f, :type %>
+    <%= error_tag f, :type %>
+
+    <%= label f, :description %>
+    <%= text_input f, :description %>
+    <%= error_tag f, :description %>
+
+    <%= label f, :init_params %>
+    <%= text_input f, :init_params %>
+    <%= error_tag f, :init_params %>
+
+    <%= label f, :creater %>
+    <%= text_input f, :creater %>
+    <%= error_tag f, :creater %>
+
+    <%= label f, :abi %>
+    <%= textarea f, :abi %>
+    <%= error_tag f, :abi %>
+
+    <%= label f, :chain_id %>
+    <%= text_input f, :chain_id %>
+    <%= error_tag f, :chain_id %>
+    <div>
+        <%= submit "Save", phx_disable_with: "Saving..." %>
+    </div>
+</form>
+    <%= for contract <- @contracts do %>
+        <b>Addr：</b><%= contract.addr%>
+        <br>
+        <b>Init Params：</b><%= contract.init_params%>
+        <br>
+        <b>Creator：</b><%= contract.creater%>
+        <hr>
+    <% end %>
+</div>

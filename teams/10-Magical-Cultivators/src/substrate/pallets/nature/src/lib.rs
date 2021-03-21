@@ -61,7 +61,7 @@ pub mod pallet {
 		/// Something that provides randomness in the runtime.
 		type Randomness: Randomness<Self::Hash>;
 
-		/// Number of time we should try to generate a random number that has no modulo bias.
+    /// Number of time we should try to generate a random number that has no modulo bias.
 		/// The larger this number, the more potential computation is used for picking the winner,
 		/// but also the more likely that the chosen winner is done fairly.
 		type MaxGenerateRandom: Get<u32>;

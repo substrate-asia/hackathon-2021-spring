@@ -1,0 +1,48 @@
+/* 改变主题色变量 */
+$--color-primary: black;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+.el-notification{
+    .el-notification__content{
+        text-align: inherit;
+    }
+}
+
+.el-loading-mask{
+    .el-loading-spinner{
+        margin-top: -15px;
+        .circular .path{
+            stroke: black;
+        }
+        .el-icon-loading{
+            color:  white;
+        }
+    }
+}
+
+.el-tooltip__popper.balance{
+    background-color: #020202;
+    font-size: 16px;
+}
+
+.uniarts-toast {
+    &.Vue-Toastification__toast {
+        background-color: white;
+        font-size: 20px;
+        color: black;
+    }
+    &.Vue-Toastification__toast--error .Vue-Toastification__icon{
+        color: red;
+    }
+    & .Vue-Toastification__close-button {
+        color: black;
+    }
+    & .Vue-Toastification__progress-bar {
+        background-color: black;
+    }
+}
+    

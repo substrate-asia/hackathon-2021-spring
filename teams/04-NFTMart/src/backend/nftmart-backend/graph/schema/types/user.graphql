@@ -1,0 +1,16 @@
+type User @goModel(model: "nftmart/graph/models.User") {
+    id: Int!
+    email: String!
+
+    firstName: String!
+    lastName: String!
+
+    createdAt: Time!
+    updatedAt: Time!
+}
+
+input UserInput @goModel(model: "nftmart/graph/models.UserInput") {
+    email: String!
+    firstName: String!
+    lastName: String!
+}

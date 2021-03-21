@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="151" height="35" viewBox="0 0 151 35">
+  <g id="nav-logo" transform="translate(-154 -219)">
+    <text id="Sub" transform="translate(154 246)" fill="#333" font-size="35" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">Sub</tspan></text>
+    <text id="Lend" transform="translate(221 246)" fill="#2bc2db" font-size="35" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">Lend</tspan></text>
+  </g>
+</svg>

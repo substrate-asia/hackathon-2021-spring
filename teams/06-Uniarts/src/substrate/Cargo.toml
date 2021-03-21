@@ -1,0 +1,21 @@
+
+[profile.release]
+panic = 'unwind'
+
+[workspace]
+members = [
+    'bin',
+    'primitives',
+    'runtime/pangu',
+    'runtime/fuxi',
+    'pallets/common',
+    'pallets/assets',
+    'pallets/names',
+    'pallets/nft',
+    'pallets/token',
+    'pallets/trade',
+    'pallets/validator-set',
+    'pallets/staking',
+    'pallets/rewards',
+    'pallets/bridge',
+]

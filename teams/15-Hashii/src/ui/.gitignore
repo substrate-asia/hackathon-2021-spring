@@ -1,0 +1,11 @@
+out
+.DS_Store
+**.DS_Store
+node_modules*
+config.js
+.config.js
+package-lock.json
+nohup.out
+var
+test/tmp
+deploy.log

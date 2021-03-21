@@ -1,0 +1,8 @@
+.tab-bg-black {
+  width: 19.6rem;
+  height: 4.8rem;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/shape-black.svg");
+  position: absolute;
+  z-index: 0;
+}

@@ -1,5 +1,6 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 
+
 use sp_std::{fmt::Debug, prelude::*};
 use sp_runtime::{
 	RuntimeDebug, Percent,

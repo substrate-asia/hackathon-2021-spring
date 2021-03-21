@@ -1,0 +1,119 @@
+.page {
+    background-color: #111111;
+    /* width: 100% */
+    color: white;
+    
+}
+
+/* 对话框样式修改 */
+.am-modal-title{
+    padding: 5px 0;
+    font-weight: 600;
+    color: white;
+}
+.am-modal-content{
+    color: white;
+    background-color: #222222;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.coinsItem{
+    width: 31%;
+    height: 45px;
+    background-color: #333333;
+    color: white;
+    font-size: 13x;
+    text-align: center;
+    line-height: 27px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.coinsItem>.childText{
+    text-align: center;
+    font-size: 12px;
+    color: #AAAAAA;
+    line-height: 10px;
+}
+
+.coinsItem:hover{
+    background-color: #AAAAAA;
+    box-sizing: border-box;
+    border: 1px solid #FE2341;
+}
+
+.coinsItem:hover>.childText{
+    color: #333333;
+}
+
+/* 输入框样式修改 */
+.am-list-item{
+    min-height: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+.am-list-item.am-input-item{
+    height: 23px;
+    /* margin-top: 5px; */
+    font-weight: 600;
+    /* padding-bottom: 5px; */
+    /* padding-top: 2px; */
+}
+.am-list-item .am-input-control input{
+    color: black;
+    /* margin-top: 5px; */
+}
+
+/* 立即充值按钮样式修改 */
+.rechargeBtn{
+    height: 40px;
+    line-height: 40px;
+    background-color: #FE2341;
+    color: white;
+    font-weight: 600;
+}
+.am-button-active{
+    background-color: rgba(254, 35, 65, 0.8) !important;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 对话框关闭按钮样式修改 */
+.am-modal-close{
+    padding:10px 0 0 10px;
+}
+
+/* 微信图标 */
+.wechatIcon{
+    width: 26px;
+    height: 23px;
+    background-image: url('../../assets/wechat.png');
+    background-size: 100% 100%;
+    align-self: center;
+}
+
+/* 支付宝图标 */
+.alipayIcon{
+    width: 26px;
+    height: 23px;
+    background-image: url('../../assets/alipay2.png');
+    background-size: 100% 100%;
+    align-self: center;
+}
+
+/* 复选框样式修改 */
+.am-checkbox.am-checkbox-checked .am-checkbox-inner {
+    border-color: #FE2341;
+    background: #FE2341
+}
+
+.am-checkbox-inner {
+    width: 20px;
+    height: 20px;
+}
+
+.am-checkbox-inner:after {
+    top: 2px;
+    right: 6.5px;
+    z-index: 999;
+    width: 5px;
+    height: 10px;
+}

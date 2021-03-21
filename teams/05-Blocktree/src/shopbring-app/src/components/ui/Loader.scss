@@ -1,0 +1,11 @@
+.loader {
+    background-color: inherit!important;
+
+	&.ui.inverted.dimmer {
+		border-radius: 3px;
+	}
+
+	.error-text {
+		color: red_secondary;
+	}
+}

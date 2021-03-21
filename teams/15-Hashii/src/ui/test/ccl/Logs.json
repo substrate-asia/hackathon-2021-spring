@@ -1,0 +1,152 @@
+{
+  "contractName": "Logs",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "onLog",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "destroy",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isRunning",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "sigR",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "sigS",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint8",
+          "name": "sigV",
+          "type": "uint8"
+        }
+      ],
+      "name": "setHash",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "setOwner",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "bin": "0x608060405234801561001057600080fd5b506000805460ff60a01b196001600160a01b0319909116331716600160a01b1790556103b1806100416000396000f3fe6080604052600436106100555760003560e01c806313af40351461005a5780632014e5d11461009457806383197ef0146100a95780638da5cb5b146100b15780638eaa6ac0146100e2578063a1da63c91461012f575b600080fd5b6100806004803603602081101561007057600080fd5b50356001600160a01b0316610161565b604080519115158252519081900360200190f35b3480156100a057600080fd5b506100806101a3565b6100806101b3565b3480156100bd57600080fd5b506100c66101d0565b604080516001600160a01b039092168252519081900360200190f35b3480156100ee57600080fd5b5061010c6004803603602081101561010557600080fd5b50356101df565b604080516001600160a01b03909316835260208301919091528051918290030190f35b61010c6004803603608081101561014557600080fd5b508035906020810135906040810135906060013560ff16610203565b600061016b610328565b6001600160a01b03821661017e57600080fd5b50600080546001600160a01b0383166001600160a01b03199091161790556001919050565b600054600160a01b900460ff1681565b60006101bd610328565b506000805460ff60a01b19169055600190565b6000546001600160a01b031681565b600090815260016020819052604090912080549101546001600160a01b0390911691565b60008061020e610349565b600086815260016020819052604090912001541561022b57600080fd5b600060018785888860405160008152602001604052604051808581526020018460ff1681526020018381526020018281526020019450505050506020604051602081039080840390855afa158015610287573d6000803e3d6000fd5b50505060206040510351905061029b610364565b6001600160a01b0382811680835242602080850182815260008d81526001808452604091829020885181546001600160a01b03191698169790971787559151959091019490945583518c815290810191909152825191927f657e9910c0374d94aad76aa8d4cfe079d76ba362c5f0f102470cf9fdd02a17b392918290030190a25096429650945050505050565b610330610349565b6000546001600160a01b0316331461034757600080fd5b565b600054600160a01b900460ff16151560011461034757600080fd5b60408051808201909152600080825260208201529056fea2646970667358221220b8abac63ea1d2c33bd7c997ad995d0b90f407c38c9b2a79f74e2a84b64e7ca3164736f6c63430007050033"
+}
