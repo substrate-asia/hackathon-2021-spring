@@ -219,9 +219,6 @@ function AddContact ({ className = '' }: Props): React.ReactElement<Props> {
         setError('');
         setTips('Getting identity info from the chain state...');
         Promise.race([getIdentity(endpoint, address), promiseTimeout()]).then((res: Identity | string) => {
-          console.log('res: ', res)
-          ;
-
           if (res === 'Time out') {
             setIdentity(emptyIdentity);
             setTips('Time out');
