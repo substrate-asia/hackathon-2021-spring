@@ -1,0 +1,8 @@
+type Category @goModel(model: "nftmart/graph/models.Category") {
+    id: Int
+    name: String!
+    remark: String
+    sort: Int
+    createdAt: Time!
+    updatedAt: Time
+}

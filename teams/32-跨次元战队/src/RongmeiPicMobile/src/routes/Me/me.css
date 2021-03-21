@@ -1,0 +1,116 @@
+:global .me-top {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #5d05b4;
+}
+
+/* :global .mecard {
+    background:rgba(0, 0, 0, 0);
+    margin:-10px 0px 239px 0;
+    border: '0px solid #e8e8e8';
+} */
+
+:global(.am-card::before) {
+    border: 0px !important;
+}
+
+:global(html:not([data-scale]) .am-card-body::before) {
+    height: 0px;
+}
+
+:global .cardTitle {
+    margin: 0px 0px 6px 30px;
+    font-size: 16pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+}
+
+:global .cardDirLeft {
+    margin: 13px 0px 0px 0px;
+    font-size: 6pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+}
+
+:global .cardDirRight {
+    margin: 13px 0px 0px 0px;
+    font-size: 6pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #DDDDDD;
+
+}
+
+:global .cardIntro {
+    font-size: 6pt;
+    margin: -10px 0 0 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #FFFFFF;
+}
+
+:global .cardCoin {
+    margin: 20px 0px 0px 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #060706;
+    font-weight: 600;
+    text-align: center;
+}
+
+:global .cardCoins {
+    font-size: 30px;
+    margin: 0 0px 0 5px;
+    color: #fff;
+}
+
+:global .button-tras {
+    font-size: 14px;
+    margin: 10pt 10px 0 45px;
+    border-width: 0;
+    background-color: crimson;
+    width: 75pt;
+    height: 25pt;
+    border-radius: 5pt;
+    color: white;
+}
+
+:global .button-rech {
+    font-size: 14px;
+    margin: 10pt 45px 0 10px;
+    border-width: 0;
+    background-color: crimson;
+    width: 75pt;
+    height: 25pt;
+    border-radius: 5pt;
+    color: white;
+
+}
+
+:global .footSection {
+    width: 100%;
+    height: 100%;
+    margin-top: -5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 0;
+    border-top-style: none;
+    background: #000;
+}
+
+:global .am-modal-content{
+    background-color: #C79F62;
+}
+.am-modal-body{
+    color: white;
+}
+
+/* 前往答题按钮样式修改 */
+.answerBtn{
+    height: 30px;
+    line-height: 30px;
+    background-color: #FE2341;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    width: 80%;
+}
+

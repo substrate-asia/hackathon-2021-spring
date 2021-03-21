@@ -1,0 +1,17 @@
+.account-selection-form {
+    .ui.selection.dropdown {
+		border-radius: 0rem;
+	}
+
+	.ui.dropdown .menu .active.item {
+		font-weight: 500;
+	}
+
+	.ui.dropdown .menu>.item:hover {
+		background-color: grey_light;
+	}
+
+	.ui.selection.dropdown:focus, .ui.selection.active.dropdown, .ui.selection.active.dropdown:hover, .ui.selection.active.dropdown .menu {
+		border-color: grey_light;
+	}
+}

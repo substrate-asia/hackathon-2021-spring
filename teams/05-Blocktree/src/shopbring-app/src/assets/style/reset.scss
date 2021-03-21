@@ -1,0 +1,27 @@
+// @charset"UTF-8"
+body, html {
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@font-face {
+  font-family: 'Lobster';
+  src:url('../font/Lobster/Lobster-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src:url('../font/Oswald/Oswald-Regular.ttf');
+}

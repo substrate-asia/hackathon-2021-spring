@@ -1,0 +1,34 @@
+[package]
+name = "orml-utilities"
+description = "Various utilities including `FixedU128` and `LinkedList`."
+repository = "https://github.com/open-web3-stack/open-runtime-module-library/tree/master/utilities"
+license = "Apache-2.0"
+version = "0.4.1-dev"
+authors = ["Laminar Developers <hello@laminar.one>"]
+edition = "2018"
+
+[dependencies]
+serde = { version = "1.0.111", optional = true }
+codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false }
+
+frame-support = { version = "3.0.0", default-features = false, path = "../../frame/support" }
+sp-runtime = { version = "3.0.0", default-features = false, path = "../../primitives/runtime" }
+sp-std = { version = "3.0.0", default-features = false, path = "../../primitives/std" }
+sp-io = { version = "3.0.0", default-features = false, path = "../../primitives/io" }
+
+funty = { version = "=1.1.0", default-features = false } # https://github.com/bitvecto-rs/bitvec/issues/105
+
+[dev-dependencies]
+serde_json = "1.0.53"
+frame-system = { version = "3.0.0", path = "../../frame/system" }
+
+[features]
+default = ["std"]
+std = [
+	"serde",
+	"codec/std",
+	"frame-support/std",
+	"sp-runtime/std",
+	"sp-std/std",
+	"sp-io/std",
+]

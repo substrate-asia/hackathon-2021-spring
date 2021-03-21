@@ -1,0 +1,204 @@
+swagger: "2.0"
+info:
+  title: Assets Trust API
+  description: Assets Trust Apis
+  version: 2.0.0
+  contact:
+    email: xinmin.yang@vonechain.com
+basePath: /v2
+paths: {}
+definitions:
+  '*vo.AssetDetailsVo':
+    title: AssetDetailsVo
+    type: object
+  5414.0xc0003dddd0.false:
+    title: "false"
+    type: object
+  DataResponse:
+    title: DataResponse
+    type: object
+  models.Category:
+    title: Category
+    type: object
+    properties:
+      CategoryName:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      ParentId:
+        type: integer
+        format: int64
+      Sort:
+        type: integer
+        format: int64
+  models.ReqAssetList:
+    title: ReqAssetList
+    type: object
+    properties:
+      category_id:
+        type: string
+      keyword:
+        type: string
+      limit:
+        type: integer
+        format: int64
+      offset:
+        type: integer
+        format: int64
+  models.ReqAssetSubmit:
+    title: ReqAssetSubmit
+    type: object
+    properties:
+      asset_name:
+        type: string
+      asset_type:
+        type: integer
+        format: int64
+      category_id:
+        type: integer
+        format: int64
+      cover:
+        type: string
+      describe:
+        type: string
+      owner:
+        type: integer
+        format: int64
+      price:
+        type: string
+      sub_category_id:
+        type: integer
+        format: int64
+      tag:
+        type: string
+      upload_file:
+        type: array
+        items:
+          type: integer
+          format: int64
+      user_id:
+        type: integer
+        format: int64
+  models.ReqAssetTrading:
+    title: ReqAssetTrading
+    type: object
+    properties:
+      assets_id:
+        type: integer
+        format: int64
+      buyer_address:
+        type: string
+      multisig:
+        type: string
+      seller_address:
+        type: string
+      status:
+        type: integer
+        format: int64
+      tx_hash:
+        type: string
+      tx_status:
+        type: integer
+        format: int64
+      tx_time:
+        type: integer
+        format: int64
+      user_id:
+        type: integer
+        format: int64
+  models.ReqCategoryAdd:
+    title: ReqCategoryAdd
+    type: object
+    properties:
+      category_name:
+        type: string
+      parent_id:
+        type: string
+      sort:
+        type: integer
+        format: int64
+  models.ReqCategoryUpdate:
+    title: ReqCategoryUpdate
+    type: object
+    properties:
+      category_name:
+        type: string
+      id:
+        type: string
+  models.ResCategoryAdd:
+    title: ResCategoryAdd
+    type: object
+    properties:
+      id:
+        type: string
+  models.ResCategoryBatchAdd:
+    title: ResCategoryBatchAdd
+    type: object
+    properties:
+      lines:
+        type: integer
+        format: int64
+  models.ResCategoryList:
+    title: ResCategoryList
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+      list:
+        $ref: '#/definitions/5414.0xc0003dddd0.false'
+  vo.AssetResList:
+    title: AssetResList
+    type: array
+    items:
+      $ref: '#/definitions/vo.AssetVo'
+  vo.AssetVo:
+    title: AssetVo
+    type: object
+    properties:
+      asset_name:
+        type: string
+      asset_type:
+        type: integer
+        format: int64
+      category_id:
+        type: integer
+        format: int64
+      category_name:
+        type: string
+      cover:
+        type: string
+      describe:
+        type: string
+      id:
+        type: string
+      is_proof:
+        type: integer
+        format: int64
+      is_register:
+        type: integer
+        format: int64
+      is_sold:
+        type: integer
+        format: int64
+      is_verify:
+        type: integer
+        format: int64
+      nick_name:
+        type: string
+      owner:
+        type: integer
+        format: int64
+      price:
+        type: string
+      sub_category_id:
+        type: integer
+        format: int64
+      tag:
+        type: string
+      user_id:
+        type: integer
+        format: int64
+      username:
+        type: string

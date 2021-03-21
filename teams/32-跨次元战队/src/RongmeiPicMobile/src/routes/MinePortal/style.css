@@ -1,0 +1,92 @@
+.page {
+    background-color: #111111;
+    /* 50PX 为底部tabbar高度 */
+    height: calc(100VH - 50px);
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 15px;
+}
+
+html:not([data-scale]) .am-button{
+    border: 1px solid #AAAAAA;
+}
+
+.tabBtn {
+    color: #AAAAAA;
+    background-color: #111111;
+    box-sizing: border-box;
+    height: 30px;
+    line-height: 28px;
+    font-size: 15px;
+    min-width: 84px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 600;
+}
+.tabBtn-click{
+    background-color: #FE2341;
+    color: #FFFFFF;
+    border: 0;
+}
+
+.icon{
+    background-image: url('../../assets/portalIcon.png');
+    width: 106px;
+    height: 109px;
+    background-size: 100% 100%;
+
+}
+
+/* 选择器文字样式修改 */
+.am-list-item{
+    background-color: #222222;
+    color: #FFFFFF;
+    min-height: 20px;
+    min-width: 200px;
+    
+}
+.am-list-item .am-list-line .am-list-content{
+    color: #FFFFFF;
+}
+.am-list-item .am-list-line .am-list-extra{
+    color: #FFFFFF;
+    font-size: 12px;
+    /* margin */
+    flex-basis:100%;
+    /* padding-left: 5px; */
+    text-align: left;
+}
+
+
+/* 立即充值按钮样式修改 */
+.rechargeBtn{
+    height: 30px;
+    line-height: 28px;
+    background-color: #FE2341;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+.am-button-active{
+    background-color: rgba(254, 35, 65, 0.8) !important;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 用于手机号码显示的input样式修改 */
+.am-list-item .am-input-control input{
+    color: white;
+    font-size: 12px;
+}
+.am-list-item .am-input-control input:disabled{
+    color: white;
+    background-color: #222222;
+
+}
+
+
+/* 接收中 卖家与藏品的链接样式 */
+.receiveSpan{
+    border-bottom: 1px solid #FE2341;
+    color: #FE2341;
+}

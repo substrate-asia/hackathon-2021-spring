@@ -1,0 +1,15 @@
+input {
+    text-align: left;
+    font-size: 17px;
+    padding: 13px 0 10px 15px;
+    line-height: 1;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 0.1px #faf7f7;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+input::placeholder {
+    color: #BBBBBB;
+}

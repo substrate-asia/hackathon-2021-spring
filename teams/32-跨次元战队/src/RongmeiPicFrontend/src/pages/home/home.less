@@ -1,0 +1,1041 @@
+@import '~antd/es/style/themes/default.less';
+
+:global {
+  .ant-pro-basicLayout-content {
+    margin: 0
+  }
+}
+
+.auctionContainer {
+  display: felx;
+  flex-direction: column;
+  align-items: center;
+
+  .banner {
+    // overflow: hidden;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    height: auto;
+
+    .bannerItem {
+      width: 100%;
+
+      .bannerImg {
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+/*
+  Auction Hero
+*/
+.auctionHero {
+  margin-top: -4.4em;
+  height: 600px;
+  background-color: #fef9f9;
+  padding: 150px 0 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background: url('../../assets/banner_bg.png') no-repeat center;
+
+}
+
+@media (min-width: 599px) {
+  .auctionHero {
+    height: 700px;
+    padding-top: 200px;
+    
+  }
+}
+
+@media (min-width: 599px) {
+  .heroTextContainer {
+    max-width: 624px;
+    margin: 0 auto;
+    display: flex;
+  }
+}
+
+.heroText {
+  font-family: "Eksell Display Large";
+  font-size: 38px;
+  color: #000;
+}
+
+@media (min-width: 599px) {
+  .heroText {
+    font-size: 58px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .heroText {
+    font-size: 78px;
+  }
+}
+
+.heroText.left,
+.heroText.right {
+  display: inline;
+}
+
+@media (min-width: 599px) {
+
+  .heroText.left,
+  .heroText.right {
+    display: block;
+  }
+}
+
+.heroText.left {
+  padding-right: 8px;
+}
+
+@media (min-width: 599px) {
+  .heroText.left {
+    padding-right: 20px;
+  }
+}
+
+.heroHighlightText {
+  color: #002ef1;
+}
+
+@media (min-width: 599px) {
+  .heroHighlightText {
+    display: block;
+  }
+}
+
+.heroTextSecondLine {
+  display: block;
+}
+
+@media (min-width: 599px) {
+  .heroTextSecondLine {
+    display: inline;
+  }
+}
+
+.heroLinks {
+  padding-top: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 599px) {
+  .heroLinks {
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 60px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .heroLinks {
+    padding: 30px 0 0 0;
+  }
+}
+
+.homeHeroCta {
+  background-color: #000;
+  font-family: 'Founders Grotesk Bold';
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 15px 20px;
+  margin: 0 15px 0 0;
+  border-radius: 6px;
+}
+
+@media screen and (min-width: 1025px) {
+  .homeHeroCta {
+    padding: 15px 50px;
+  }
+}
+
+.homeHeroCta:hover {
+  color: #fff;
+}
+
+.heroSecondaryLink {
+  color: #000;
+  border-bottom: 1px solid #000;
+  font-family: "Founders Grotesk Medium";
+  font-size: 12px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.heroSecondaryLink:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+/*
+  Home Stats Section
+*/
+.auctionState {
+  margin: 10px 20px 25px 20px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 35px;
+}
+
+@media (min-width: 768px) {
+  .auctionState {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30px;
+    padding: 100px 0;
+    max-width: 1200px;
+    min-height: 200px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .auctionState {
+    margin: 0 auto;
+    padding: 100px 80px;
+  }
+}
+
+.auctionStateItem {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .auctionStateItem {
+    padding-top: 0;
+    text-align: center;
+  }
+}
+
+.auctionStateItemNumber {
+  font-family: 'Founders Grotesk Bold';
+  line-height: 1;
+  font-size: 40px;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+.auctionStateItemText {
+  display: block;
+  font-family: 'Founders Grotesk Bold';
+  line-height: 1;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+/*
+  Home Info Section
+*/
+@media (min-width: 768px) {
+  .auctionInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.auctionInfoContainer {
+  margin: 75px 20px 25px 20px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .auctionInfoContainer {
+    margin: 75px 30px;
+    max-width: 1200px;
+    min-height: 200px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .auctionInfoContainer {
+    margin: 125px auto 100px;
+    padding: 0 20px 100px;
+  }
+}
+
+@media (min-width: 768px) {
+  .infoTitleContainer {
+    width: 24%;
+    min-width: 185px;
+  }
+}
+
+.infoTitle {
+  font-family: "Eksell Display Large";
+  font-size: 32px;
+  text-align: center;
+  padding: 0 0 20px;
+}
+
+@media (min-width: 768px) {
+  .infoTitle {
+    font-size: 45px;
+    text-align: left;
+    line-height: 1em;
+  }
+}
+
+.infoSection {
+  padding-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .infoSection {
+    width: 24%;
+    max-width: 250px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.infoSectionTitle {
+  font-family: 'Founders Grotesk Bold';
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+}
+
+.infoSection p {
+  font-family: "Founders Grotesk Regular";
+  font-size: 16px;
+}
+
+.notification-toast {
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .notification-toast {
+    margin-bottom: 0;
+  }
+}
+
+.notification-toast .md-text--theme-secondary {
+  color: #fff;
+}
+
+.notification-toast p {
+  font-family: "Founders Grotesk Mono";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.8;
+}
+
+.notification-toast button {
+  font-family: 'Founders Grotesk Bold';
+  letter-spacing: 0.8px;
+}
+
+/*
+  Recent Activity Page
+*/
+.recentActivitySection {
+  max-width: 940px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (min-width: 599px) {
+  .recentActivitySection {
+    width: auto;
+  }
+}
+
+.recent-activity-trending-artists > div {
+  padding-bottom: 30px;
+}
+
+.recent-activity-trending-artists h2 {
+  font-family: "Founders Grotesk Regular";
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  margin-bottom: 12px;
+}
+
+.recent-activity-trending-artists h2:hover {
+  border-bottom: 2px solid black;
+}
+
+.recent-activity-default-avatar svg {
+  width: 40px !important;
+  height: 40px !important;
+  color: black;
+}
+
+.recent-activity-trending-artists span {
+  font-family: "Founders Grotesk Mono";
+}
+
+.recentActivityTitle {
+  color: #000;
+  text-align: center;
+  font-family: "Eksell Display Large";
+  margin: 0.5em 0;
+  font-size: 30px;
+  text-transform: none;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 599px) {
+  .recentActivityTitle {
+    margin: 2em 0;
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 599px) {
+  .recentActivityTitle {
+    font-size: 46px;
+  }
+}
+
+.recent-activity-trending-artists .md-avatar {
+  border: none;
+  flex-shrink: 0;
+}
+
+.recent-activity-trending-artists a {
+  text-decoration: none;
+}
+
+.recent-activity-trending-artists a:hover {
+  text-decoration: none;
+}
+
+.recent-activity-trending-artists .md-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 150px;
+}
+
+.recentActivityItem {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 3em auto;
+  padding-bottom: 3em;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+@media (min-width: 599px) {
+  .recentActivityItem {
+    align-items: center;
+    border-bottom: 1px solid #cfcfcf;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .recentActivityItem {
+    max-width: none;
+  }
+}
+
+.recentActivityItem .recent-activity-default-avatar svg {
+  vertical-align: top;
+  margin-right: 15px;
+}
+
+.recent-activity-action {
+  font-family: "Founders Grotesk Regular";
+  font-size: 16px;
+  width: 85%;
+}
+
+.recent-activity-item-art-link {
+  word-wrap: break-word;
+  display: inline;
+}
+
+.recent-activity-item-art-link:hover {
+  text-decoration: none;
+}
+
+.recent-activity-item-user-link {
+  word-wrap: break-word;
+  display: inline;
+}
+
+.recent-activity-item-user-link:hover {
+  text-decoration: none;
+}
+
+.recent-activity-item-timestamp {
+  font-family: "Founders Grotesk Medium";
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #808080;
+}
+
+.recent-activity-item-tx-link {
+  font-family: "Founders Grotesk Regular";
+  text-transform: lowercase;
+  padding-left: 5px;
+}
+
+.recent-activity-item-tx-link:hover {
+  text-decoration: none;
+}
+
+.recent-activity-item-img {
+  height: 80vw !important;
+  width: 100% !important;
+  max-width: 100%;
+  margin-top: 2em;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 13px 23px 0 rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 599px) {
+  .recent-activity-item-img {
+    height: 420px !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .recent-activity-item-img {
+    height: 550px !important;
+    width: 100% !important;
+    max-width: 600px;
+  }
+}
+
+.recent-activity-item-img video {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 599px) {
+  .recent-activity-item-img video {
+    height: 420px !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .recent-activity-item-img video {
+    height: 550px !important;
+    width: 100% !important;
+    max-width: 600px;
+  }
+}
+
+/*
+  Buttons
+*/
+.homeHeroCtaBtn {
+  font-family: 'Founders Grotesk Bold';
+  padding: 15px 20px;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 20px;
+  height: auto;
+  margin-bottom: 0; // For input.btn
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-color: #fe2341;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  border-radius: 25px;
+  margin-right: 20px;
+  // .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @btn-border-radius-base);
+  // .user-select(none);
+
+  // &,
+  // &:active,
+  // &.active {
+  //   &:focus,
+  //   &.focus {
+  //     .tab-focus();
+  //   }
+  // }
+
+  // &:hover,
+  // &:focus,
+  // &.focus {
+  //   color: @btn-default-color;
+  //   text-decoration: none;
+  // }
+
+  // &:active,
+  // &.active {
+  //   outline: 0;
+  //   background-image: none;
+  //   .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  // }
+
+  // &.disabled,
+  // &[disabled],
+  // fieldset[disabled] & {
+  //   cursor: @cursor-disabled;
+  //   .opacity(.65);
+  //   .box-shadow(none);
+  // }
+
+  // a& {
+  //   &.disabled,
+  //   fieldset[disabled] & {
+  //     pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+  //   }
+  // }
+}
+
+@media screen and (min-width: 1025px) {
+  .homeHeroCtaBtn {
+    padding: 15px 50px;
+  }
+}
+
+.homeHeroCtaBtn:hover {
+  color: #fe2341;
+}
+
+/*
+* Auction Charts
+*/
+.auctionFeatureSection {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 200px;
+}
+
+.auctionChartsSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.auctionChartsSection h2 {
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
+  font-family: "Eksell Display Large";
+  margin: 0.5em 0;
+  font-size: 30px;
+  width: 100%;
+  text-transform: none;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 599px) {
+  .auctionChartsSection h2 {
+    margin: 2em 0;
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 599px) {
+  .auctionChartsSection h2 {
+    font-size: 46px;
+  }
+}
+
+.auctionChartsSection .cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 599px) {
+  .auctionChartsSection .cta {
+    margin-top: 5em;
+  }
+}
+
+.auctionChartsCard {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+  min-width: 80%;
+}
+
+.auctionChartsCard .titleSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auctionChartsCard .title {
+  font-family: "Founders Grotesk Regular";
+  font-size: 2rem;
+  width: 80%;
+  color: #000;
+  text-decoration: none;
+}
+
+.auctionChartsCard .subtitle {
+  font-family: "Founders Grotesk Regular";
+  color: #808080;
+  font-size: 12px;
+  text-align: right;
+}
+
+.auctionChartsCard .title-divider {
+  border: 1px solid #000;
+  margin: 0;
+}
+
+.auctionChartsCard .entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #000;
+}
+
+.auctionChartsCard .entry p {
+  margin: 0 0 0 10px;
+  font-size: 16px;
+  color: #000;
+}
+
+.auctionChartsCard .user {
+  display: flex;
+  align-items: center;
+}
+
+.auctionChartsCard .quantity {
+  display: flex;
+  align-items: center;
+}
+
+.auctionChartsCard .link-see-all {
+  font-size: 12px;
+  color: #000;
+  font-weight: bold;
+  margin-top: 24px;
+  text-decoration: none;
+  align-self: flex-end;
+}
+
+@media (min-width: 599px) {
+  .auctionChartsCard {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    min-width: 400px;
+    box-sizing: border-box;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .auctionChartsCard {
+    margin-bottom: 2em;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.userAvatar {
+  border-radius: 50%;
+  height: 40px;
+  overflow: hidden;
+  text-align: center;
+  width: 40px;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.linkSeeAll {
+  font-size: 12px;
+  color: #000;
+  font-weight: 700;
+  margin-top: 24px;
+  text-decoration: none;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+/*
+  Auction Grid
+*/
+
+@media (min-width: 840px) {
+  .auctionActivityGrid {
+    padding: 8px;
+  }
+
+  .auctionActivityGridItem {
+    margin: 0 auto 3em;
+    width: 100%;
+    padding: 8px;
+  }
+
+  .artworkThumbnailContainer {
+    position: relative;
+  }
+
+  .recentActivityItemImg {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    -o-object-fit: cover;
+  }
+}
+
+@media (max-width: 839px) and (min-width: 576px) {
+  .auctionActivityGrid {
+    padding: 8px;
+  }
+
+  .auctionActivityGridItem {
+    margin: 0 auto 3em;
+    width: 100%;
+    padding: 8px;
+  }
+
+  .artworkThumbnailContainer {
+    position: relative;
+  }
+
+  .recentActivityItemImg {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .auctionActivityGrid {
+    padding: 8px;
+  }
+
+  .auctionActivityGridItem {
+    margin: 0 auto 3em;
+    width: 100%;
+    padding: 8px;
+  }
+
+  .artworkThumbnailContainer {
+    position: relative;
+  }
+
+  .recentActivityItemImg {
+    width: 100%;
+  }
+}
+
+.recentActivityItem .squareBox {
+  margin-bottom: 2em;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .recentActivityItem .squareBox {
+    overflow: hidden;
+  }
+}
+
+
+.recentActivityItem {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 3em auto;
+  padding-bottom: 3em;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+@media (min-width: 599px) {
+  .recentActivityItem {
+    align-items: center;
+    border-bottom: 1px solid #cfcfcf;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .recentActivityItem {
+    max-width: none;
+  }
+}
+
+.square-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  text-align: center;
+  height: 100%;
+}
+
+.artworkThumbnailIcon {
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: top;
+}
+
+.activityAvatar {
+  width: 40px;
+  height: 40px;
+}
+
+.recentActivityAction {
+  display: inline-block;
+
+}
+
+.auctionChartsSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.auctionChartsSection h2 {
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
+  font-family: "Eksell Display Large";
+  margin: 0.5em 0;
+  font-size: 30px;
+  width: 100%;
+  text-transform: none;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 599px) {
+  .auctionChartsSection h2 {
+    margin: 2em 0;
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 599px) {
+  .auctionChartsSection h2 {
+    font-size: 46px;
+  }
+}
+
+.auctionChartsSection .cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 599px) {
+  .auctionChartsSection .cta {
+    margin-top: 5em;
+  }
+}
+
+.auctionCharts-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+  min-width: 80%;
+}
+
+.auctionCharts-card .title-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auctionCharts-card .title {
+  font-family: "Founders Grotesk Regular";
+  font-size: 2rem;
+  width: 80%;
+  color: #000;
+  text-decoration: none;
+}
+
+.auctionCharts-card .subtitle {
+  font-family: "Founders Grotesk Regular";
+  color: #808080;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.auctionCharts-card .title-divider {
+  border: 1px solid #000;
+  margin: 0;
+}
+
+.auctionCharts-card .entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #000;
+}
+
+.auctionCharts-card .entry p {
+  margin: 0 0 0 10px;
+  font-size: 16px;
+}
+
+.auctionCharts-card .user {
+  display: flex;
+  align-items: center;
+}
+
+.auctionCharts-card .quantity {
+  display: flex;
+  align-items: center;
+}
+
+.auctionCharts-card .link-see-all {
+  font-size: 12px;
+  color: #000;
+  font-weight: bold;
+  margin-top: 24px;
+  text-decoration: none;
+  align-self: flex-end;
+}
+
+@media (min-width: 599px) {
+  .auctionCharts-card {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    min-width: 400px;
+    box-sizing: border-box;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .auctionCharts-card {
+    margin-bottom: 2em;
+  }
+}

@@ -1,0 +1,25 @@
+.head {
+  height: 8rem;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  padding-left: 4rem;
+  padding-right: 4rem;
+  background: #FFFFFF;
+}
+.head img {
+  width: 13.8rem;
+  float: left;
+  margin-top: 2.5rem;
+}
+.head select {
+  width: 16rem;
+  height: 4rem;
+  float: right;
+  margin-top: 2rem;
+  outline: none;
+  border: 1px solid rgb(100, 100, 100);
+}
+.head select option {
+  height: 5rem;
+}

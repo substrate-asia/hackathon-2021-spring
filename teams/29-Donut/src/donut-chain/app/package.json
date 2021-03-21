@@ -1,0 +1,16 @@
+{
+  "name": "donut-app",
+  "version": "0.1.0",
+  "description": "Simple app of Donut chain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wenfeng Wang",
+  "license": "MIT",
+  "dependencies": {
+    "@polkadot/api": "^4.0.3",
+    "@polkadot/util-crypto": "^6.0.5",
+    "bn.js": "^5.2.0"
+  }
+}

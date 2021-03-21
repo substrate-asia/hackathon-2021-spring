@@ -1,0 +1,18 @@
+type Collection @goModel(model: "nftmart/graph/models.Collection") {
+    id: Int
+    classId: Int!
+    categoryId: Int
+    metadata: String
+    name: String
+    owner: String
+    totalIssuance: Int
+    properties: Int
+    deposit: String
+    externalLinks: String
+    description: String
+    tradeTime: Time
+    shelveTime: Time
+    createdAt: Time!
+    updatedAt: Time
+}
+

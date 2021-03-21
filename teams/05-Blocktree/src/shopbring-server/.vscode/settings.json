@@ -1,0 +1,8 @@
+{
+	"typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+	"typescript.format.insertSpaceAfterConstructor": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"editor.insertSpaces": false,
+}

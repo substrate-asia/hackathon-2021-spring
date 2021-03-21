@@ -1,0 +1,6 @@
+<section class="phx-hero">
+  <h1>
+    <%= @payload.name %>
+  </h1>
+  <p><%= gettext "%{slogan}", slogan: @payload.slogan %></p>
+</section>

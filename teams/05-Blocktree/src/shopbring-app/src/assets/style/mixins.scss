@@ -1,0 +1,68 @@
+////////////////////////////////////
+///////Variables: $ 定义变量///////
+///////////////////////////////////
+$main-color: rgb(205, 32, 38);
+$hundred: 100%;
+
+////////////////////////////////////
+///Defining a Mixin 定义混合指令////
+///////////////////////////////////
+
+@mixin clear-box {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin border-radius ($radius: 5px) {
+  border-radius     : $radius;
+  -moz-border-radius    : $radius;
+  -webkit-border-radius : $radius;
+}
+
+@mixin opacity ($opacity: 0.5) {
+  $ieOpacity      : $opacity * 100;
+  opacity       : $opacity;
+  -moz-opacity    : $opacity;
+  -webkit-opacity   : $opacity;
+  -ms-filter      : progid:DXImageTransform.Microsoft.Alpha(opacity=#{$ieOpacity}); /* IE 8 */
+  filter        : alpha(opacity = #{$ieOpacity}); /* IE 5-7 */
+}
+
+@mixin background-alpha($color, $alpha) {
+  $acolor     : hsla(hue($color), saturation($color), lightness($color), $alpha);
+  $iecolor    : argb($acolor);
+
+  background-color  : $color; /* fallback color */
+  background-color  : $acolor;
+
+  /* IE */
+  background-color  : transparent\9;
+  filter        : progid:DXImageTransform.Microsoft.gradient(startColorstr= #{$iecolor}, endColorstr= #{$iecolor});
+  zoom:1;
+}
+
+@mixin box-shadow ($x-size:10px, $y-size:10px, $blur:5px, $color: $black, $spread:0) {
+  box-shadow      : $x-size $y-size $blur $spread $color;
+  -moz-box-shadow   : $x-size $y-size $blur $spread $color;
+  -webkit-box-shadow  : $x-size $y-size $blur $spread $color;
+}
+
+@mixin transition ($type:all, $time:0.3s, $ease:ease) {
+    transition      : $type $time $ease;
+    -moz-transition   : $type $time $ease;
+    -webkit-transition  : $type $time $ease;
+    -o-transition   : $type $time $ease;
+}
+
+@mixin animation ($name, $duration: 300ms, $delay: 0, $ease: ease) {
+  -moz-animation    : $name, $duration, $delay, $ease;
+  -ms-animation   : $name, $duration, $delay, $ease;
+  -webkit-animation : $name, $duration, $delay, $ease;
+}
+
+@mixin translateY ($deg) {
+  -moz-transform    : translateY($deg);
+  -ms-transform   : translateY($deg);
+  -o-transform    : translateY($deg);
+  -webkit-transform : translateY($deg);
+}

@@ -1,0 +1,37 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "fishDead002",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 3,
+  "sample": 1,
+  "speed": 3,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "c4f7dd85-e7c3-4389-9936-37b217781e47"
+            }
+          },
+          {
+            "frame": 1,
+            "value": {
+              "__uuid__": "b4e676e6-1240-4e7a-8c78-c6415b7571fc"
+            }
+          },
+          {
+            "frame": 2,
+            "value": {
+              "__uuid__": "c4f7dd85-e7c3-4389-9936-37b217781e47"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
