@@ -1,0 +1,82 @@
+.flex_{
+	width: 100%;
+	display: flex;
+}
+
+.margn10{
+	margin-right: 10px;
+}
+
+.font20{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.wd_50{
+	width: 60%;
+	display: flex;
+	justify-content: center;
+}
+.container{
+	padding: 10px;
+}
+.aggregation-box {
+    background: rgb(247, 252, 255);
+    width: 40%;
+    padding: 0.3rem;
+	line-height: 70px;
+	padding-left: 20px;
+	    font-size: 18px;
+		font-weight: bold;
+		color: #8E8E8E;
+}
+
+.mian24{
+	width: 100%;
+	height: 400px;
+	
+}
+.title{
+	height: 60px;
+	display: flex;
+	align-items: center;
+}
+
+.bottom{
+	margin-bottom: 100px;
+}
+	 #box{
+		 margin: 0 auto;
+		 display: flex;
+		 justify-content: center;
+		 width: 750px;
+		 height: 600px;
+	 }
+	 .vis__line{
+		stroke: #bdbdbd;
+		 stroke-width: 1;
+	 }
+	 .vis__line--pending {
+		animation: dash-animation 20s infinite linear;
+		stroke-dasharray: 1, 8;
+		stroke-width: 2;
+		stroke-dashoffset: 0;
+		stroke-linecap: round;
+		stroke: #a0a0a0;
+	}
+	.vis__contract {
+		cursor: pointer;
+		fill: #fff;
+		stroke: #8e8e8e;
+	}
+	@keyframes dash-animation {
+		100%{
+			stroke-dashoffset: 1000;
+		}
+	}
+
+
+	/* piceChain */
+	.withd80{
+		width: 80%;
+	}
