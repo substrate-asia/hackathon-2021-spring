@@ -142,21 +142,29 @@ function AddContact ({ className = '' }: Props): React.ReactElement<Props> {
   const [allChains, setAllChains] = useState<Chain[]>([]);
   const [identity, setIdentity] = useState<Identity>(emptyIdentity);
 
+  // Set time out
+  async function promiseTimeout () {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('Time out');
+      }, 10000);
+    });
+  }
+
   // Get identity from the specific chain state and then update the identity infomation
-  async function updateIdentity (endpoint: string, address: string): Promise<void> {
-    if (endpoint) {
-      setTips('Getting identity info from the chain state...');
-      const wsProvider = new WsProvider(endpoint);
-      const api = await ApiPromise.create({ provider: wsProvider });
-      const identity = await api.query.identity.identityOf(address);
-      const formatedIdentity = formatIdentity(identity.toJSON());
+  async function getIdentity (endpoint: string, address: string): Promise<Identity> {
+    return new Promise(async (resolve, reject) => {
+      if (endpoint) {
+        const wsProvider = new WsProvider(endpoint);
+        const api = await ApiPromise.create({ provider: wsProvider });
+        const identity = await api.query.identity.identityOf(address);
+        const formatedIdentity = formatIdentity(identity.toJSON());
 
-      setIdentity(formatedIdentity);
-    } else {
-      setIdentity(emptyIdentity);
-    }
-
-    setTips('');
+        resolve(formatedIdentity);
+      } else {
+        resolve(emptyIdentity);
+      }
+    });
   }
 
   useEffect(() => {
@@ -209,7 +217,16 @@ function AddContact ({ className = '' }: Props): React.ReactElement<Props> {
 
         setNetwork(chain?.chain);
         setError('');
-        updateIdentity(endpoint, address);
+        setTips('Getting identity info from the chain state...');
+        Promise.race([getIdentity(endpoint, address), promiseTimeout()]).then((res: Identity | string) => {
+          if (res === 'Time out') {
+            setIdentity(emptyIdentity);
+            setTips('Time out');
+          } else {
+            setIdentity(res);
+            setTips('');
+          }
+        });
       } else {
         setError('Invalid address');
       }
@@ -268,7 +285,7 @@ function AddContact ({ className = '' }: Props): React.ReactElement<Props> {
         showBackArrow
         showContactDelete={isEdit}
         smallMargin
-        text={t<string>('New Contact')}
+        text={t<string>(isEdit ? 'Edit Contact' : 'New Contact')}
         toggleDelete={_goToDelete}
       />
 
